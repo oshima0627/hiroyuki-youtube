@@ -176,16 +176,31 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
     return blocks
 
 
-def by_theme(blocks: list[dict], words: list[str]) -> list[dict]:
-    """タイトルにテーマ語を含むブロックだけ残す。
+def by_theme(blocks: list[dict], words: list[str], ratio: float = 0.6) -> list[dict]:
+    """テーマ語に合うブロックだけ残す。
 
     競合上位はどれも1テーマで束ねている（タトゥー／コンビニFC／不幸になる女性）。
     スコア上位を機械的に並べると話題がばらけて、まとめの言葉が書けない。
+
+    **タイトル全体への部分一致では駄目だった。** 短いトピックは前のブロックに
+    統合されて「A / B / C」という結合タイトルになる。どれか1つが当たれば通る
+    判定にすると、223秒のうち大半が容姿の話のブロックが「起業」で引っかかって
+    仕事テーマの回に混ざった（2026-08-14 実測）。
+
+    トピックの過半数が当たることを求める。既定を0.6にしたのは、2トピックの
+    結合で片方だけ当たった場合（1/2=0.5）を落とすため。
     """
     if not words:
         return blocks
-    return [b for b in blocks
-            if any(w in (b.get("title") or "") for w in words)]
+    out = []
+    for b in blocks:
+        segs = [s for s in (b.get("title") or "").split(" / ") if s]
+        if not segs:
+            continue
+        hit = sum(1 for s in segs if any(w in s for w in words))
+        if hit / len(segs) >= ratio:
+            out.append(b)
+    return out
 
 
 # 信号がまったく無いブロックを尺合わせのために入れない。テーマ語の部分一致で
