@@ -101,8 +101,6 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
 
     topics があればそれを境界にする。無ければ字幕の質問語から推定する。
     """
-    lexical = signals.get("lexical") or []
-    avoid = signals.get("avoid") or []
     comments = signals.get("comment_marks") or []
     heat = signals.get("heatmap") or []
     loud = signals.get("loudness") or []
@@ -116,8 +114,16 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
     if not bounds:
         return []
 
-    # AVOID をタイトルにも当てる。ASR字幕より綺麗なので精度が高い
-    from scripts.signals import AVOID
+    # **AVOID はここで毎回計算する。signals.json に焼き込まない。**
+    # 焼き込んでいたときに事故った: 語彙を足したあと1本しか probe を回さず、
+    # 残り4本は古い判定のまま候補に出た（脅迫性障害・母の虐待が素通りした）。
+    # 語彙は実測のたびに増えるので、キャッシュしてよい種類のデータではない。
+    # 語彙由来のものは全部ここで計算する。signals.json に残っているのは
+    # 再計算が高くつくもの（音量・コメント・熱）だけにする
+    from scripts.signals import AVOID, avoid_marks, lexical_marks
+
+    avoid = avoid_marks(cues)
+    lexical = lexical_marks(cues)
 
     blocks: list[dict] = []
     for start_raw, end_raw, title in bounds:

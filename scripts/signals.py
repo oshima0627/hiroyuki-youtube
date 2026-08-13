@@ -152,7 +152,8 @@ AVOID: dict[str, tuple[str, ...]] = {
     # 取りこぼしは「選ばれる側」なので危険度が高い。疑わしければ入れる
     "センシティブ": ("自殺", "死にたい", "性病", "セックス", "風俗", "レイプ",
                      "未成年", "小学生", "中学生", "うつ", "薬物", "休学",
-                     "死刑", "殺人", "虐待", "いじめ", "差別", "宗教", "障害者",
+                     "死刑", "殺人", "虐待", "ネグレクト", "いじめ", "差別", "宗教",
+                     "障害", "浮気", "不倫", "生活保護",
                      "トイレ侵入", "女子トイレ", "わいせつ", "痴漢", "停学", "退学"),
     # 中身が無い運営ブロック。挨拶・機材調整・配信の締めなど。
     # 実測で「配信終了と今後のコミュニティ形成」がコメント言及13件で
@@ -163,27 +164,55 @@ AVOID: dict[str, tuple[str, ...]] = {
 }
 
 
-def lexical_marks(cues: list[dict]) -> list[dict]:
-    """字幕から定型語彙を拾う。[{"seconds","kind","word","line"}, ...]"""
-    out = []
+def _flatten(cues: list[dict]) -> tuple[str, list[tuple[int, float, str]]]:
+    """全キューを1本の文字列に繋ぎ、(開始位置, 時刻, 元の行) の索引を返す。
+
+    **行ごとに検索してはいけない。** 自動字幕は任意の位置で行が割れるので、
+    「生活保護」が「…生活」「保護取った方が…」に分断されると、行単位の
+    `in` 判定はどの行にも当たらない。実際にこれで安全フィルタが黙って
+    素通りした（2026-08-14）。2文字の分断で検出が消える設計は使えない。
+    """
+    parts, index, pos = [], [], 0
     for c in cues:
         line = c.get("line") or ""
-        for kind, words in LEXICON.items():
-            hit = next((w for w in words if w in line), None)
-            if hit:
-                out.append({"seconds": int(c.get("t") or 0), "kind": kind,
-                            "word": hit, "line": line})
+        index.append((pos, float(c.get("t") or 0), line))
+        parts.append(line)
+        pos += len(line)
+    return "".join(parts), index
+
+
+def _time_at(index: list[tuple[int, float, str]], i: int) -> tuple[float, str]:
+    lo, hi, r = 0, len(index) - 1, 0
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        if index[mid][0] <= i:
+            r, lo = mid, mid + 1
+        else:
+            hi = mid - 1
+    return index[r][1], index[r][2]
+
+
+def _scan(cues: list[dict], table: dict[str, tuple[str, ...]]) -> list[dict]:
+    text, index = _flatten(cues)
+    out = []
+    for kind, words in table.items():
+        for w in words:
+            i = text.find(w)
+            while i >= 0:
+                # 時刻は float のまま持つ。int で切り捨てると 6561.4 が 6561 になり、
+                # ブロック開始 6561.4 の直前に落ちて範囲外と判定される（2026-08-14）
+                t, line = _time_at(index, i)
+                out.append({"seconds": t, "kind": kind, "word": w, "line": line})
+                i = text.find(w, i + 1)
+    out.sort(key=lambda m: m["seconds"])
     return out
+
+
+def lexical_marks(cues: list[dict]) -> list[dict]:
+    """字幕から定型語彙を拾う。[{"seconds","kind","word","line"}, ...]"""
+    return _scan(cues, LEXICON)
 
 
 def avoid_marks(cues: list[dict]) -> list[dict]:
     """使ってはいけない話題の出現位置。[{"seconds","kind","word","line"}, ...]"""
-    out = []
-    for c in cues:
-        line = c.get("line") or ""
-        for kind, words in AVOID.items():
-            hit = next((w for w in words if w in line), None)
-            if hit:
-                out.append({"seconds": int(c.get("t") or 0), "kind": kind,
-                            "word": hit, "line": line})
-    return out
+    return _scan(cues, AVOID)
