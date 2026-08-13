@@ -1,17 +1,25 @@
 #!/usr/bin/env python3
-"""配信を1問1答のブロックに割って、切り抜き候補として並べる。
+"""配信をブロックに割って、切り抜き候補として並べる。
 
 **tora-kirinuki の moments.py を置き換えたのがここ。**
 
 令和の虎は「持ち込み→詰め→判定」という一本の流れなので、スコアの積分が最大に
 なる連続区間をスライディングウィンドウで1つ取る設計でよかった。
-ひろゆきは質問と回答の繰り返しなので、同じことをすると**質問の途中で切れる**。
+ひろゆきは話題が次々に変わるので、同じことをすると**話題の途中で切れる**。
 
-なので先に質問境界でブロックに割り、ブロック単位でスコアを出す。
-1本の動画は複数ブロックを束ねて作る（競合上位も全員チャプター5〜8個の構成）。
+## 境界の取り方は2つある
 
-なお**令和の虎ガイドラインの「分割された本編を連結した投稿の禁止」は、
-ひろゆき側の許諾条件には無い。** 混同しないこと。
+1. **GCD の公式トピック（`topics.json`）。取れるなら必ずこちら。**
+   ガジェット通信の切り抜き用データベースが、時刻付きの話題一覧を出している。
+   実測（2026-08-14）で手作業の特定結果と完全に一致した。
+
+     手作業 0:52:35 職場に絡んでくる人  →  GCD 0:52:35 職場での無駄な絡みへの対処法
+     手作業 1:06:09 毒親と縁を切る      →  GCD 1:06:00 依存症の親との絶縁と住民票の移動
+
+   タイトルが付いているのでチャプター名と要注意判定にそのまま使える。
+
+2. **字幕の質問語からの推定（フォールバック）。**
+   GCD に載っていない古い回はこちら。境界は粗く、話題の融合も起きる。
 """
 
 from __future__ import annotations
@@ -29,16 +37,13 @@ ASSERT_CAP = 10       # 長いブロックが語彙数だけで勝たないよ�
 EVIDENCE_CAP = 6
 COMMENT_CAP = 3       # 1箇所あたりの言及数の上限
 
-# 質問文の読み上げにかかる時間。質問語がヒットする時刻は読み上げの**末尾**なので、
-# ブロックの頭はそのぶん手前に取る。実素材で20〜30秒だった（2026-08-14 実測）
+# --- 字幕から推定する場合だけ使う定数 ---------------------------------
+# 質問文の読み上げにかかる時間。質問語がヒットするのは読み上げの**末尾**
 LEAD_SEC = 28.0
-
-# 同じ質問の読み上げ中に複数の語がヒットするので、この秒数以内は1つに畳む。
-# 45秒だと連続する別の質問まで畳んでしまう（実素材で毒親の回答とKADOKAWAの
-# 回答が1ブロックに融合した）。18秒に下げて分離した（2026-08-14 実測）
+# 45秒だと連続する別の質問まで畳んでしまう（毒親の回答とKADOKAWAの回答が
+# 1ブロックに融合した）。18秒に下げて分離した（2026-08-14 実測）
 MERGE_GAP = 18.0
 
-# 1問の回答がこれより長いときは切る。雑談に流れているか、質問語を取り逃している
 MAX_BLOCK = 300.0
 MIN_BLOCK = 40.0
 
@@ -66,24 +71,58 @@ def _count(marks: list[dict], kind: str, start: float, end: float) -> int:
                if m["kind"] == kind and start <= m["seconds"] <= end)
 
 
-def split_blocks(signals: dict, cues: list[dict], duration: int) -> list[dict]:
-    """1問1答のブロックに割る。スコアと risk を付けて返す。"""
+def _bounds_from_topics(topics: list[dict], duration: int) -> list[tuple[float, float, str]]:
+    """公式トピックを (開始, 終了, タイトル) に変換する。短すぎるものは次と統合。"""
+    out: list[tuple[float, float, str]] = []
+    for i, tp in enumerate(topics):
+        start = float(tp["t"])
+        end = float(topics[i + 1]["t"]) if i + 1 < len(topics) else float(duration)
+        title = tp["title"]
+        if out and end - start < MIN_BLOCK:
+            ps, _pe, pt = out[-1]
+            out[-1] = (ps, end, f"{pt} / {title}")
+            continue
+        out.append((start, end, title))
+    return out
+
+
+def _bounds_from_questions(lexical: list[dict], duration: int) -> list[tuple[float, float, str]]:
+    qs = question_marks(lexical)
+    if not qs:
+        return []
+    edges = [max(0.0, q - LEAD_SEC) for q in qs] + [float(duration)]
+    return [(edges[i], min(edges[i + 1], edges[i] + MAX_BLOCK), "")
+            for i in range(len(edges) - 1)]
+
+
+def split_blocks(signals: dict, cues: list[dict], duration: int,
+                 topics: list[dict] | None = None) -> list[dict]:
+    """ブロックに割る。スコアと risk を付けて返す。
+
+    topics があればそれを境界にする。無ければ字幕の質問語から推定する。
+    """
     lexical = signals.get("lexical") or []
     avoid = signals.get("avoid") or []
     comments = signals.get("comment_marks") or []
     heat = signals.get("heatmap") or []
     loud = signals.get("loudness") or []
 
-    qs = question_marks(lexical)
-    if not qs:
+    if topics:
+        bounds = _bounds_from_topics(topics, duration)
+        source = "topics"
+    else:
+        bounds = _bounds_from_questions(lexical, duration)
+        source = "subtitles"
+    if not bounds:
         return []
 
-    bounds = [max(0.0, q - LEAD_SEC) for q in qs] + [float(duration)]
+    # AVOID をタイトルにも当てる。ASR字幕より綺麗なので精度が高い
+    from scripts.signals import AVOID
 
     blocks: list[dict] = []
-    for i in range(len(bounds) - 1):
-        start = snap_to_cues(bounds[i], cues)
-        end = snap_to_cues(min(bounds[i + 1], bounds[i] + MAX_BLOCK), cues)
+    for start_raw, end_raw, title in bounds:
+        start = snap_to_cues(start_raw, cues)
+        end = snap_to_cues(end_raw, cues)
         if end - start < MIN_BLOCK:
             continue
 
@@ -100,9 +139,13 @@ def split_blocks(signals: dict, cues: list[dict], duration: int) -> list[dict]:
         n_evid = min(_count(lexical, "根拠", start, end), EVIDENCE_CAP)
         n_hedge = _count(lexical, "留保", start, end)
 
-        risk = sorted({m["kind"] for m in avoid if start <= m["seconds"] <= end})
-        risk_words = sorted({m["word"] for m in avoid
-                             if start <= m["seconds"] <= end})
+        risk = {m["kind"] for m in avoid if start <= m["seconds"] <= end}
+        words = {m["word"] for m in avoid if start <= m["seconds"] <= end}
+        for kind, ws in AVOID.items():
+            for w in ws:
+                if w in title:
+                    risk.add(kind)
+                    words.add(w)
 
         score = (W_COMMENT * c_score + W_HEATMAP * h_score
                  + W_LOUD * l_score + W_ASSERT * n_assert
@@ -113,27 +156,43 @@ def split_blocks(signals: dict, cues: list[dict], duration: int) -> list[dict]:
             "start": start,
             "end": end,
             "seconds": round(end - start, 1),
+            "title": title,
+            "source": source,
             "score": round(score, 3),
             "signals": {"コメント": c_score, "断言": n_assert, "根拠": n_evid,
                         "留保": n_hedge, "熱": round(h_score, 2),
                         "音量": round(l_score, 2)},
-            "risk": risk,
-            "risk_words": risk_words,
-            "question": "".join(lines[:6])[:120],
+            "risk": sorted(risk),
+            "risk_words": sorted(words),
+            "question": title or "".join(lines[:6])[:120],
             "subtitles": lines,
         })
     return blocks
 
 
+def by_theme(blocks: list[dict], words: list[str]) -> list[dict]:
+    """タイトルにテーマ語を含むブロックだけ残す。
+
+    競合上位はどれも1テーマで束ねている（タトゥー／コンビニFC／不幸になる女性）。
+    スコア上位を機械的に並べると話題がばらけて、まとめの言葉が書けない。
+    """
+    if not words:
+        return blocks
+    return [b for b in blocks
+            if any(w in (b.get("title") or "") for w in words)]
+
+
+# 信号がまったく無いブロックを尺合わせのために入れない。テーマ語の部分一致で
+# 拾ってしまった無関係な回を落とす役目もある（「酵母の働き」が「働き」に当たった）
+MIN_SCORE = 0.5
+
+
 def bundle(blocks: list[dict], target_sec: float = 900.0,
-           max_items: int = 8, allow_risky: bool = False) -> list[dict]:
+           max_items: int = 12, allow_risky: bool = False) -> list[dict]:
     """スコアの高いブロックから、合計が target_sec に届くまで束ねる。
 
     **尺は13〜20分を狙う。** tora-kirinuki の実測で、この市場の検索上位は
     すべて14分以上だった。ひろゆき側の競合上位4本も同様の長尺構成。
-
-    risk が付いたブロックは既定で外す。allow_risky=True で残せるが、
-    残すかどうかは人が中身を見て決めること。
 
     **並べ替えは score をそのまま使わない。** コメント言及は長いブロックほど
     多く入るので、生スコア順にすると長い数本だけで尺が埋まりチャプターが
@@ -145,7 +204,8 @@ def bundle(blocks: list[dict], target_sec: float = 900.0,
       密度順       8本 / 10.3分   尺が足りない
       sqrt順       7本 / 18.0分   ← これを採る
     """
-    pool = [b for b in blocks if allow_risky or not b["risk"]]
+    pool = [b for b in blocks
+            if (allow_risky or not b["risk"]) and b["score"] >= MIN_SCORE]
     pool = sorted(pool, key=lambda b: -b["score"] / math.sqrt(max(b["seconds"], 1.0)))
 
     picked: list[dict] = []

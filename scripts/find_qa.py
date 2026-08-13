@@ -19,7 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.fetch_source import source_dir  # noqa: E402
-from scripts.qa import bundle, split_blocks  # noqa: E402
+from scripts.qa import bundle, by_theme, split_blocks  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -49,10 +49,14 @@ def main() -> None:
     # ひろゆき側の競合上位4本も同じく長尺・チャプター構成だった（2026-08-14 実測）
     ap.add_argument("--target", type=float, default=900.0,
                     help="束ねたときの目標尺（秒）。相場は13〜20分")
-    ap.add_argument("--max-items", type=int, default=8)
+    ap.add_argument("--max-items", type=int, default=12)
     ap.add_argument("--all", action="store_true", help="束ねずに全ブロックを出す")
     ap.add_argument("--allow-risky", action="store_true",
                     help="政治・個人・センシティブに触れるブロックも含める")
+    # 競合上位はどれも1テーマで束ねている。スコア順に並べるだけだと話題がばらけて
+    # まとめの言葉が書けない（2026-08-14 実測）
+    ap.add_argument("--theme", nargs="+", default=[],
+                    help="タイトルにこの語を含むブロックだけから選ぶ（例: --theme 仕事 転職 会社）")
     a = ap.parse_args()
 
     d = source_dir(a.video_id)
@@ -66,21 +70,30 @@ def main() -> None:
     meta = json.loads((d / "meta.json").read_text(encoding="utf-8"))
     duration = int(meta.get("duration_sec") or 0)
 
-    blocks = split_blocks(signals, cues, duration)
+    tp = d / "topics.json"
+    topics = json.loads(tp.read_text(encoding="utf-8")) if tp.exists() else None
+    if not topics:
+        print("- 公式トピックが無いので字幕から推定します（fetch_topics.py --save を試してください）")
+
+    blocks = split_blocks(signals, cues, duration, topics)
     (d / "blocks.json").write_text(
         json.dumps(blocks, ensure_ascii=False, indent=1), encoding="utf-8")
 
     if not blocks:
-        print("! ブロックが0件。質問語彙が拾えていません。signals.json を確認してください")
+        print("! ブロックが0件。signals.json と topics.json を確認してください")
         return
 
     risky = [b for b in blocks if b["risk"]]
-    print(f"{len(blocks)}ブロック（うち要注意 {len(risky)}）  尺 {hms(duration)}\n")
+    src = blocks[0].get("source")
+    print(f"{len(blocks)}ブロック（うち要注意 {len(risky)}）  尺 {hms(duration)}  境界={src}\n")
 
     if a.all:
         show(blocks, duration)
     else:
-        picked = bundle(blocks, a.target, a.max_items, a.allow_risky)
+        pool = by_theme(blocks, a.theme)
+        if a.theme:
+            print(f"テーマ {a.theme} に一致: {len(pool)}ブロック\n")
+        picked = bundle(pool, a.target, a.max_items, a.allow_risky)
         total = sum(b["seconds"] for b in picked)
         show(picked, duration)
         print(f"\n束ねた尺: {hms(total)}（目標 {hms(a.target)}）")
