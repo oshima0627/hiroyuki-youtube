@@ -47,8 +47,66 @@ def _post(path: str, params: dict, body: bytes | None = None) -> bytes:
     return urllib.request.urlopen(req, timeout=120).read()
 
 
+# **VOICEVOX は漢字を読み間違える。** 実測（2026-08-14）で
+#   未達 → ヒツジタチ（正: ミタツ）
+# が出た。意味が通らない音になるので、聞いた人には解説が壊れて聞こえる。
+#
+# 対策は2段構え。
+#   1. ここに読みを登録して VOICEVOX のユーザー辞書へ入れる
+#   2. `--kana <recipe>` で全文の読みを出し、公開前に目で確認する
+#
+# 連濁のように文脈で変わるもの（「上司の引き」が「ビキ」になる等）は
+# 辞書では直せない。**その場合は原稿の言い回しを変える。**
+READINGS: dict[str, tuple[str, int]] = {
+    # 表記: (カタカナ読み, アクセント核の位置。0は平板)
+    "未達": ("ミタツ", 0),
+    "切り抜き": ("キリヌキ", 0),
+    "元動画": ("モトドウガ", 0),
+    "概要欄": ("ガイヨウラン", 0),
+    "登録者": ("トウロクシャ", 3),
+}
+
+
+def register_readings() -> int:
+    """READINGS を VOICEVOX のユーザー辞書へ入れる。既にあるものは飛ばす。"""
+    try:
+        cur = json.load(urllib.request.urlopen(f"{HOST}/user_dict", timeout=30))
+    except Exception as e:                                  # noqa: BLE001
+        print(f"! ユーザー辞書を読めません（{str(e)[:50]}）")
+        return 0
+    have = {w.get("surface") for w in cur.values()}
+    n = 0
+    for surface, (pron, accent) in READINGS.items():
+        if surface in have:
+            continue
+        try:
+            _post("/user_dict_word", {"surface": surface, "pronunciation": pron,
+                                      "accent_type": accent})
+            n += 1
+        except Exception as e:                              # noqa: BLE001
+            print(f"! {surface} を登録できません: {str(e)[:60]}")
+    return n
+
+
+def kana_of(text: str, speaker: int = SPEAKER) -> str:
+    """読み仮名を返す。合成せずに読みだけ確認できる。"""
+    q = json.loads(_post("/audio_query", {"text": text, "speaker": speaker}))
+    return q.get("kana", "")
+
+
 def speakers() -> list[dict]:
     return json.load(urllib.request.urlopen(f"{HOST}/speakers", timeout=30))
+
+
+_DICT_DONE = False
+
+
+def _ensure_dict() -> None:
+    """合成の前に一度だけ辞書を入れる。入れ忘れると誤読のまま焼き込まれる。"""
+    global _DICT_DONE
+    if not _DICT_DONE:
+        register_readings()
+        _DICT_DONE = True
 
 
 def synth(text: str, speaker: int = SPEAKER, force: bool = False) -> Path:
@@ -57,6 +115,7 @@ def synth(text: str, speaker: int = SPEAKER, force: bool = False) -> Path:
     if not text:
         raise ValueError("空のテキストは合成できない")
 
+    _ensure_dict()
     key = hashlib.sha1(
         f"{speaker}:{SPEED}:{PITCH}:{INTONATION}:{text}".encode()).hexdigest()[:16]
     out = CACHE / f"{key}.wav"
@@ -105,7 +164,27 @@ def main() -> None:
     ap.add_argument("--speakers", action="store_true")
     ap.add_argument("--say")
     ap.add_argument("--speaker", type=int, default=SPEAKER)
+    ap.add_argument("--kana", type=Path,
+                    help="レシピの解説とまとめの読み仮名を全部出す（公開前の確認用）")
+    ap.add_argument("--register", action="store_true",
+                    help="READINGS を VOICEVOX のユーザー辞書へ登録する")
     a = ap.parse_args()
+
+    if a.register:
+        print(f"✓ {register_readings()}語を登録しました")
+        return
+
+    if a.kana:
+        import json as _json
+        r = _json.loads(a.kana.read_text(encoding="utf-8"))
+        register_readings()
+        for i, c in enumerate(r["clips"]):
+            print(f"■{i} {c['note']}")
+            print(f"  →{kana_of(c['note'])}\n")
+        if r.get("summary"):
+            print(f"■まとめ {r['summary']}")
+            print(f"  →{kana_of(r['summary'])}")
+        return
 
     if a.speakers:
         for s in speakers():

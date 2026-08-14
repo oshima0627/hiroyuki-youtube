@@ -59,11 +59,28 @@ def question_marks(lexical: list[dict]) -> list[float]:
     return merged
 
 
-def snap_to_cues(t: float, cues: list[dict]) -> float:
-    """最寄りの字幕キュー境界に寄せる。文の途中で切らないため。"""
+def snap_to_cues(t: float, cues: list[dict], direction: int = 0) -> float:
+    """字幕キュー境界に寄せる。文の途中で切らないため。
+
+    **方向を指定できるようにした。** 最寄りへ寄せるだけだと境界が前後どちらにも
+    動き、終端が次のトピックの開始を追い越す。実際にそうなって、次の質問の
+    冒頭が見出しも解説も無いまま流れ込んだ（2026-08-14）。視聴者からは
+    「解説が飛んでいる」ように見える。
+
+      direction < 0  t 以下の最大のキュー（後ろへはみ出さない）
+      direction > 0  t 以上の最小のキュー
+      direction = 0  最寄り
+    """
     if not cues:
         return t
-    return min((c["t"] for c in cues), key=lambda x: abs(x - t))
+    times = [c["t"] for c in cues]
+    if direction < 0:
+        cand = [x for x in times if x <= t]
+        return max(cand) if cand else min(times)
+    if direction > 0:
+        cand = [x for x in times if x >= t]
+        return min(cand) if cand else max(times)
+    return min(times, key=lambda x: abs(x - t))
 
 
 def _count(marks: list[dict], kind: str, start: float, end: float) -> int:
@@ -127,8 +144,10 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
 
     blocks: list[dict] = []
     for start_raw, end_raw, title in bounds:
-        start = snap_to_cues(start_raw, cues)
-        end = snap_to_cues(end_raw, cues)
+        # 開始は手前へ、終端も手前へ寄せる。**終端を後ろへ寄せてはいけない。**
+        # 次のトピックの開始を越えると、次の質問が見出しも解説も無いまま入る
+        start = snap_to_cues(start_raw, cues, -1)
+        end = snap_to_cues(end_raw, cues, -1)
         if end - start < MIN_BLOCK:
             continue
 

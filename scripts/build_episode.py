@@ -124,6 +124,28 @@ def build_clip(clip: dict, index: int, out_dir: Path, pad: float) -> Path:
 
 
 TAIL_SEC = 0.6           # 読み終わってから次のカットに移るまでの間
+HEAD_SEC = 2.5           # 冒頭に置くサムネカードの秒数
+
+
+def build_head(thumb: Path, out_dir: Path) -> Path:
+    """サムネイルを冒頭に静止画として置く。
+
+    **これだけでは YouTube の自動サムネイルにはならない。** 自動生成の候補は
+    動画のおよそ25%・50%・75%地点から作られるので、0秒地点は選ばれない。
+    それでも冒頭に置くのは、視聴者に何の動画かを最初の2秒で示せるから。
+    """
+    dst = out_dir / "part_head.mp4"
+    _run(["ffmpeg", "-y", "-loglevel", "error",
+          "-loop", "1", "-i", str(thumb),
+          "-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo",
+          "-t", f"{HEAD_SEC}",
+          "-vf", f"scale={W}:{H}:force_original_aspect_ratio=decrease,"
+                 f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:color=0x0E1116,fps={FPS}",
+          "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+          "-pix_fmt", "yuv420p",
+          "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
+          str(dst)])
+    return dst
 
 
 def build_note(text: str, index: int, out_dir: Path, kind: str = "note") -> Path:
@@ -153,7 +175,8 @@ def build_note(text: str, index: int, out_dir: Path, kind: str = "note") -> Path
     return dst
 
 
-def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
+def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
+          concat_only: bool = False) -> Path:
     recipe = json.loads(recipe_path.read_text(encoding="utf-8"))
 
     missing = preflight(recipe, pad)
@@ -181,13 +204,30 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
 
     out.mkdir(parents=True, exist_ok=True)
 
-    # 本編 → 解説板 → 本編 → 解説板 … の順に並べる
+    # 本編 → 解説板 → 本編 → 解説板 … の順に並べる。
+    # --concat-only は既にあるパーツを使い回して連結だけやり直す。
+    # サムネを冒頭に足すためだけに10分以上かけて再エンコードしないため
     parts: list[Path] = []
     for i, c in enumerate(clips):
-        parts.append(build_clip(c, i, out, pad))
-        parts.append(build_note(c["note"], i, out))
+        pc = out / f"part_{i:02d}.mp4"
+        parts.append(pc if (concat_only and pc.exists())
+                     else build_clip(c, i, out, pad))
+        pn = out / f"noteimg_{i:02d}.mp4"
+        parts.append(pn if (concat_only and pn.exists())
+                     else build_note(c["note"], i, out))
     if recipe.get("summary"):
-        parts.append(build_note(recipe["summary"], 99, out, kind="summary"))
+        ps = out / "summaryimg_99.mp4"
+        parts.append(ps if (concat_only and ps.exists())
+                     else build_note(recipe["summary"], 99, out, kind="summary"))
+
+    # サムネイルがあれば冒頭に置く。thumbnail.py は本編から1枚抜くので、
+    # 初回ビルドの時点ではまだ無い。作ったあと --concat-only で足す
+    thumb = out / "thumb.png"
+    if thumb.exists():
+        parts.insert(0, build_head(thumb, out))
+    else:
+        print("- thumb.png がまだ無いので冒頭カードは入れません"
+              "（thumbnail.py のあと --concat-only で足せます）")
 
     listing = out / "parts.txt"
     listing.write_text(
@@ -203,9 +243,11 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
         raise SystemExit(f"! 尺が合わない: 期待 {expected:.1f}s / 実測 {actual:.1f}s")
 
     # 目次は解説板のぶんもずれるので、実測の尺から積む
+    # 冒頭カードがあるぶんだけ本編の位置がずれる
+    head = 1 if parts and parts[0].name == "part_head.mp4" else 0
     offsets, t = [], 0.0
     for i, p in enumerate(parts):
-        if i % 2 == 0:                       # 偶数番が本編
+        if i >= head and (i - head) % 2 == 0:      # 本編は偶数番
             offsets.append(t)
         t += probe_duration(p)
 
@@ -234,8 +276,10 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--pad", type=float, default=2.0,
                     help="fetch_clips.py で付けた余白と同じ値にすること")
+    ap.add_argument("--concat-only", action="store_true",
+                    help="既存のパーツを使い回して連結だけやり直す")
     a = ap.parse_args()
-    build(a.recipe, a.dry_run, a.pad)
+    build(a.recipe, a.dry_run, a.pad, a.concat_only)
 
 
 if __name__ == "__main__":
