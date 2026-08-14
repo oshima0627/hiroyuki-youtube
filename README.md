@@ -56,13 +56,19 @@ uploads プレイリストに "Deleted video" だけが残る。
 ## パイプライン
 
 ```
-1. fetch_source.py    本編DL + 日本語字幕 + メタ    → work/<video_id>/
-   （--subs-only なら本編を落とさず字幕だけ。候補の検討はこれで足りる）
-2. probe_signals.py   音量 + 語彙 + 要注意 + コメント + 熱 → signals.json
-3. find_qa.py         1問1答に割って候補を出す      → blocks.json
+1. fetch_source.py --subs-only   字幕とメタだけ取る（候補検討はこれで足りる）
+2. fetch_topics.py --save        GCD の公式トピック → topics.json
+3. probe_signals.py --no-audio   コメント + 熱 → signals.json
+4. plan_episode.py --theme       配信をまたいでテーマで束ねる → 構成案
+   ↓ recipes/<id>.json に解説（note）とまとめ（summary）を書く
+5. fetch_clips.py                使う区間だけ落とす（全編は落とさない）
+6. build_episode.py              本編 → 解説板 → 本編 … を連結
+7. thumbnail.py                  サムネイル
+8. upload_youtube.py             private → 内容確認 → --publish
 ```
 
-`build_*` と `upload_youtube.py` は未移植。
+**`--subs-only` と区間ダウンロードで、全編（1本4〜8GB）を落とさずに済む。**
+実測で13区間・17分ぶんが合計150MB程度。
 
 ## tora-kirinuki から流用したもの
 
@@ -109,7 +115,7 @@ uploads プレイリストに "Deleted video" だけが残る。
 | コメント言及 | 243箇所（99件から） |
 | ヒートマップ | 100区間（この回は存在した） |
 | ブロック | 57（うち要注意18） |
-| 束ねた結果 | 7本 / 17〜19分 |
+| 束ねた結果 | 7本 / 17〜19分（現在は15分未満に制限） |
 
 ### パラメータはこう決めた
 
@@ -152,19 +158,47 @@ uploads プレイリストに "Deleted video" だけが残る。
 ```bash
 python -m pip install --user -r requirements.txt
 
+# 素材を集める
 python scripts/fetch_source.py --latest 10 --list      # 配信アーカイブ一覧
-python scripts/fetch_source.py --subs-only <URL>       # 字幕だけ（候補検討用）
+python scripts/fetch_source.py --subs-only <URL>       # 字幕だけ
+python scripts/fetch_topics.py --save                  # 公式トピック
 python scripts/probe_signals.py <video_id> --no-audio
-python scripts/find_qa.py <video_id> --target 900
 
-python scripts/fetch_source.py <URL>                   # 本編も取る（編集用）
-python scripts/probe_signals.py <video_id>
+# 1本ぶんの構成を組む
+python scripts/plan_episode.py --theme 仕事 転職 会社 --out recipes/ep.json
+#   → clips に note（20文字以上の解説）と summary を書く
+
+# 作る
+python scripts/fetch_clips.py recipes/<id>.json        # 区間だけ落とす
+python scripts/build_episode.py recipes/<id>.json
+python scripts/thumbnail.py recipes/<id>.json
+
+# 出す
+python scripts/upload_youtube.py --auth-only           # 初回だけ
+python scripts/upload_youtube.py work/<id>             # private
+python scripts/upload_youtube.py work/<id> --publish
 ```
+
+**VOICEVOX の起動が前提**（青山龍星 ノーマル / id 13）。
+**yt-dlp は cookie が要る**（Firefox 既定。cookie 無しだと403が続く）。
+
+## 独自性は18%を確保している
+
+YouTube の「再利用されたコンテンツ」対策。テロップだけだった頃は
+独自要素が 873秒中60秒（6.9%）で、数カ所サンプリングされたら素の映像に
+当たる状態だった。解説板（静止画＋VOICEVOX の読み上げ）を各クリップの
+直後に挟んで 996秒中183秒（18%）にした。
+
+**ただし独自性と再生数は連動しない。** 実測した競合はどれも解説なしで
+7,000〜9,500回（20時間）出ている。独自性は審査を通すためのもので、
+再生数は題材とタイトルとサムネで決まる。
 
 ## 状態
 
-候補抽出まで実装・実データで検証済み。ビルドと投稿は未移植。
+候補抽出からアップロードまで実装・実データで検証済み。
 EP002 は `recipes/2026-08-14-shigoto.json`（9本 / 14:03 / 5配信）。
-限定公開で投稿済み: https://www.youtube.com/watch?v=wNRK9SOJ1Bw
+限定公開で投稿済み: <https://www.youtube.com/watch?v=wNRK9SOJ1Bw>
+
+未実装: ショート版（`build_short.py` 相当）、`sync_metadata.py` 相当。
 
 
