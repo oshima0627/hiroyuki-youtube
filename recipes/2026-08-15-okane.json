@@ -1,0 +1,89 @@
+{
+  "id": "2026-08-15-okane",
+  "title": "【ひろゆき】お金の相談7連発。金額の話は一つもしていません",
+  "description": "ひろゆきさんの配信から、お金に関する相談だけを集めて解説を付けました。\n各チャプターの黄色い行は編集側の補足です。\n\n※動画内の数値は自動字幕由来のため正確でない場合があります。投資判断はご自身の責任で行ってください。",
+  "tags": [
+    "ひろゆき",
+    "切り抜き",
+    "解説",
+    "お金",
+    "投資"
+  ],
+  "category_id": "22",
+  "privacy_status": "private",
+  "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+  "summary": "七件に共通しているのは、ひろゆきさんが銘柄も利回りも一度も語っていないことです。話しているのは、制度がいつ変わるか、通貨をどれだけ持ち続けるか、逃げ道をいくつ用意しておくか。どれも金額ではなく、身動きが取れるかどうかの話でした。なお投資の判断はご自身の責任で判断してください。",
+  "thumb": {
+    "at": 300,
+    "main": [
+      "金額の話は",
+      "一つもしていません"
+    ],
+    "sub": "お金の相談7件"
+  },
+  "clips": [
+    {
+      "video_id": "23vSB2fXjc8",
+      "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+      "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+      "start": 7835.599,
+      "end": 7918.84,
+      "title": "ボーナスの平均額は誰を数えた数字か",
+      "note": "平均は母集団で変わる。上場企業だけを集めた平均と、全就業者の平均は別物。数字を見たらまず誰を数えたのかを問う"
+    },
+    {
+      "video_id": "5xJ3ZzEnyI8",
+      "video_title": "「暇は人生最高のスパイス」La Raoul",
+      "video_url": "https://www.youtube.com/watch?v=5xJ3ZzEnyI8",
+      "start": 3788.599,
+      "end": 3946.359,
+      "title": "長期間引き出せない仕組みのリスク",
+      "note": "利回りではなく、途中で制度が変わったときに自分で降りられるかを見ている。すぐ売れるかどうかを別の軸として評価している"
+    },
+    {
+      "video_id": "VYJ-zTB8TVY",
+      "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+      "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+      "start": 6804.0,
+      "end": 6914.8,
+      "title": "海外移住を考えている",
+      "note": "移住したいかではなく、移住できる状態を持っておくかという話。使わないかもしれない権利を保険として扱う考え方"
+    },
+    {
+      "video_id": "_o8W_QKNHEo",
+      "video_title": "5月病のみんな元気ー？",
+      "video_url": "https://www.youtube.com/watch?v=_o8W_QKNHEo",
+      "start": 3375.359,
+      "end": 3457.559,
+      "title": "円安はこの先も続くのか",
+      "note": "為替の予想ではなく、人口が減れば生み出せる価値も減るという構造から話している。短期の変動と長期の傾向を分けている"
+    },
+    {
+      "video_id": "c2X5ZUIpRSk",
+      "video_title": "心を開いてもらうにはどうしたらいいか？ La francaise",
+      "video_url": "https://www.youtube.com/watch?v=c2X5ZUIpRSk",
+      "start": 3915.079,
+      "end": 3969.52,
+      "title": "現金を持ち続けることの意味",
+      "note": "何に替えるべきかではなく、何を持ち続けると目減りするかという向きで考えている。判断の起点が逆になっている"
+    },
+    {
+      "video_id": "daulqJwmooE",
+      "video_title": "神を信じない経営者は傲慢である。",
+      "video_url": "https://www.youtube.com/watch?v=daulqJwmooE",
+      "start": 5644.28,
+      "end": 5789.6,
+      "title": "残業は増えるが年収が上がる転職",
+      "note": "体力が続くならという条件付き。増えた収入を貯めて早く働かなくて済む状態にする、という時間軸で答えている"
+    },
+    {
+      "video_id": "jHWUy2IiZvs",
+      "video_title": "『過程は自分を納得させ、結果は自分以外を納得させる』MIRA BLONDE",
+      "video_url": "https://www.youtube.com/watch?v=jHWUy2IiZvs",
+      "start": 6720.36,
+      "end": 6843.119,
+      "title": "積立の額を増やすべきか",
+      "note": "何を買うべきかの推奨ではなく、使える枠と残り年数から逆算しているだけ。銘柄の話を一切していない"
+    }
+  ]
+}

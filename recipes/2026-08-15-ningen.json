@@ -1,0 +1,182 @@
+{
+ "theme": [
+  "人間関係",
+  "友達",
+  "親",
+  "家族",
+  "コミュニケーション",
+  "性格",
+  "悩み",
+  "付き合い",
+  "距離",
+  "信頼",
+  "嫌い",
+  "他人",
+  "会話"
+ ],
+ "target_sec": 870.0,
+ "total_sec": 617.3,
+ "clips": [
+  {
+   "start": 6651.32,
+   "end": 6844.44,
+   "seconds": 193.1,
+   "title": "デートで会話が続かない時の「聞き上手」戦略 / 若者の流行「BeReal」を会話のネタにする / 毒親との裁判沙汰を弁護士に相談する重要性 / 給職中の過ごし方と海外旅行",
+   "source": "topics",
+   "score": 2.21,
+   "signals": {
+    "コメント": 2,
+    "断言": 8,
+    "根拠": 2,
+    "留保": 0,
+    "熱": 0.37,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "デートで会話が続かない時の「聞き上手」戦略 / 若者の流行「BeReal」を会話のネタにする / 毒親との裁判沙汰を弁護士に相談する重要性 / 給職中の過ごし方と海外旅行",
+   "subtitles": [],
+   "video_id": "_o8W_QKNHEo",
+   "video_title": "5月病のみんな元気ー？",
+   "video_url": "https://www.youtube.com/watch?v=_o8W_QKNHEo"
+  },
+  {
+   "start": 4957.96,
+   "end": 5022.48,
+   "seconds": 64.5,
+   "title": "社会人になってからの友達作りの難しさ",
+   "source": "topics",
+   "score": 1.821,
+   "signals": {
+    "コメント": 4,
+    "断言": 0,
+    "根拠": 0,
+    "留保": 1,
+    "熱": 0.05,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "社会人になってからの友達作りの難しさ",
+   "subtitles": [],
+   "video_id": "c2X5ZUIpRSk",
+   "video_title": "心を開いてもらうにはどうしたらいいか？ La francaise",
+   "video_url": "https://www.youtube.com/watch?v=c2X5ZUIpRSk"
+  },
+  {
+   "start": 5233.84,
+   "end": 5275.32,
+   "seconds": 41.5,
+   "title": "論破したいと思われないためのコミュニケーション",
+   "source": "topics",
+   "score": 2.188,
+   "signals": {
+    "コメント": 4,
+    "断言": 3,
+    "根拠": 0,
+    "留保": 0,
+    "熱": 0.07,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "論破したいと思われないためのコミュニケーション",
+   "subtitles": [],
+   "video_id": "c2X5ZUIpRSk",
+   "video_title": "心を開いてもらうにはどうしたらいいか？ La francaise",
+   "video_url": "https://www.youtube.com/watch?v=c2X5ZUIpRSk"
+  },
+  {
+   "start": 7101.0,
+   "end": 7157.48,
+   "seconds": 56.5,
+   "title": "女ばかりの職場の人間関係と転職",
+   "source": "topics",
+   "score": 0.69,
+   "signals": {
+    "コメント": 1,
+    "断言": 2,
+    "根拠": 0,
+    "留保": 0,
+    "熱": 0.0,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "女ばかりの職場の人間関係と転職",
+   "subtitles": [],
+   "video_id": "daulqJwmooE",
+   "video_title": "神を信じない経営者は傲慢である。",
+   "video_url": "https://www.youtube.com/watch?v=daulqJwmooE"
+  },
+  {
+   "start": 8960.2,
+   "end": 9093.439,
+   "seconds": 133.2,
+   "title": "オープンキッチンと仕込みの信頼性",
+   "source": "topics",
+   "score": 0.771,
+   "signals": {
+    "コメント": 1,
+    "断言": 2,
+    "根拠": 0,
+    "留保": 0,
+    "熱": 0.2,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "オープンキッチンと仕込みの信頼性",
+   "subtitles": [],
+   "video_id": "daulqJwmooE",
+   "video_title": "神を信じない経営者は傲慢である。",
+   "video_url": "https://www.youtube.com/watch?v=daulqJwmooE"
+  },
+  {
+   "start": 6972.239,
+   "end": 7026.76,
+   "seconds": 54.5,
+   "title": "ヨーロッパと日本の親の介護に関する価値観の違い",
+   "source": "topics",
+   "score": 2.16,
+   "signals": {
+    "コメント": 4,
+    "断言": 3,
+    "根拠": 0,
+    "留保": 1,
+    "熱": 0.0,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "ヨーロッパと日本の親の介護に関する価値観の違い",
+   "subtitles": [],
+   "video_id": "jHWUy2IiZvs",
+   "video_title": "『過程は自分を納得させ、結果は自分以外を納得させる』MIRA BLONDE",
+   "video_url": "https://www.youtube.com/watch?v=jHWUy2IiZvs"
+  },
+  {
+   "start": 7658.32,
+   "end": 7732.32,
+   "seconds": 74.0,
+   "title": "各国への印象と嫌いな国という概念の不在",
+   "source": "topics",
+   "score": 1.073,
+   "signals": {
+    "コメント": 2,
+    "断言": 0,
+    "根拠": 1,
+    "留保": 0,
+    "熱": 0.18,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "各国への印象と嫌いな国という概念の不在",
+   "subtitles": [],
+   "video_id": "jHWUy2IiZvs",
+   "video_title": "『過程は自分を納得させ、結果は自分以外を納得させる』MIRA BLONDE",
+   "video_url": "https://www.youtube.com/watch?v=jHWUy2IiZvs"
+  }
+ ]
+}
