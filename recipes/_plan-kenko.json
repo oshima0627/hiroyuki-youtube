@@ -1,0 +1,178 @@
+{
+ "theme": [
+  "食事",
+  "料理",
+  "健康",
+  "睡眠",
+  "運動",
+  "生活",
+  "習慣",
+  "体調",
+  "食べ"
+ ],
+ "target_sec": 870.0,
+ "total_sec": 744.3,
+ "clips": [
+  {
+   "start": 5227.28,
+   "end": 5308.181,
+   "seconds": 80.9,
+   "title": "食べ物に対して「まずい」と言わない理由",
+   "source": "topics",
+   "score": 1.35,
+   "signals": {
+    "コメント": 3,
+    "断言": 0,
+    "根拠": 0,
+    "留保": 0,
+    "熱": 0.0,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "食べ物に対して「まずい」と言わない理由",
+   "subtitles": [],
+   "video_id": "5xJ3ZzEnyI8",
+   "video_title": "「暇は人生最高のスパイス」La Raoul",
+   "video_url": "https://www.youtube.com/watch?v=5xJ3ZzEnyI8"
+  },
+  {
+   "start": 586.079,
+   "end": 632.24,
+   "seconds": 46.2,
+   "title": "快適な睡眠のための温度管理と扇風機の活用",
+   "source": "topics",
+   "score": 3.143,
+   "signals": {
+    "コメント": 6,
+    "断言": 0,
+    "根拠": 2,
+    "留保": 0,
+    "熱": 0.61,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "快適な睡眠のための温度管理と扇風機の活用",
+   "subtitles": [],
+   "video_id": "M7KWrHANxHs",
+   "video_title": "パリは燃えていたよ。AUBRAC",
+   "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs"
+  },
+  {
+   "start": 9517.96,
+   "end": 9565.439,
+   "seconds": 47.5,
+   "title": "フランスでの健康生活と狙撃技術の調整",
+   "source": "topics",
+   "score": 1.03,
+   "signals": {
+    "コメント": 1,
+    "断言": 4,
+    "根拠": 1,
+    "留保": 0,
+    "熱": 0.0,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "フランスでの健康生活と狙撃技術の調整",
+   "subtitles": [],
+   "video_id": "VYJ-zTB8TVY",
+   "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+   "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY"
+  },
+  {
+   "start": 7216.56,
+   "end": 7421.76,
+   "seconds": 205.2,
+   "title": "日の丸弁当を食べる行為は侮辱になるのか",
+   "source": "topics",
+   "score": 0.965,
+   "signals": {
+    "コメント": 1,
+    "断言": 1,
+    "根拠": 3,
+    "留保": 0,
+    "熱": 0.24,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "日の丸弁当を食べる行為は侮辱になるのか",
+   "subtitles": [],
+   "video_id": "_o8W_QKNHEo",
+   "video_title": "5月病のみんな元気ー？",
+   "video_url": "https://www.youtube.com/watch?v=_o8W_QKNHEo"
+  },
+  {
+   "start": 1391.159,
+   "end": 1519.159,
+   "seconds": 128.0,
+   "title": "最近の睡眠時間とコーヒーの影響",
+   "source": "topics",
+   "score": 2.715,
+   "signals": {
+    "コメント": 6,
+    "断言": 0,
+    "根拠": 0,
+    "留保": 0,
+    "熱": 0.04,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "最近の睡眠時間とコーヒーの影響",
+   "subtitles": [],
+   "video_id": "c2X5ZUIpRSk",
+   "video_title": "心を開いてもらうにはどうしたらいいか？ La francaise",
+   "video_url": "https://www.youtube.com/watch?v=c2X5ZUIpRSk"
+  },
+  {
+   "start": 8527.28,
+   "end": 8621.479,
+   "seconds": 94.2,
+   "title": "韓国料理の付け合わせ文化と合理性",
+   "source": "topics",
+   "score": 1.05,
+   "signals": {
+    "コメント": 1,
+    "断言": 5,
+    "根拠": 0,
+    "留保": 0,
+    "熱": 0.0,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "韓国料理の付け合わせ文化と合理性",
+   "subtitles": [],
+   "video_id": "daulqJwmooE",
+   "video_title": "神を信じない経営者は傲慢である。",
+   "video_url": "https://www.youtube.com/watch?v=daulqJwmooE"
+  },
+  {
+   "start": 10396.08,
+   "end": 10538.399,
+   "seconds": 142.3,
+   "title": "QAエンジニアの将来性とAIのできない仕事 / 睡眠不足と気分の落ち込みの関係 / 好きな男と生活力のある男の選択",
+   "source": "topics",
+   "score": 2.666,
+   "signals": {
+    "コメント": 5,
+    "断言": 2,
+    "根拠": 1,
+    "留保": 0,
+    "熱": 0.19,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "QAエンジニアの将来性とAIのできない仕事 / 睡眠不足と気分の落ち込みの関係 / 好きな男と生活力のある男の選択",
+   "subtitles": [],
+   "video_id": "daulqJwmooE",
+   "video_title": "神を信じない経営者は傲慢である。",
+   "video_url": "https://www.youtube.com/watch?v=daulqJwmooE"
+  }
+ ]
+}

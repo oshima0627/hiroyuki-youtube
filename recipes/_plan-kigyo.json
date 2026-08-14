@@ -1,0 +1,114 @@
+{
+ "theme": [
+  "起業",
+  "独立",
+  "経営",
+  "ビジネス",
+  "商売",
+  "事業",
+  "開業",
+  "個人事業",
+  "フリーランス",
+  "稼ぐ",
+  "集客",
+  "商品",
+  "サービス",
+  "単価"
+ ],
+ "target_sec": 870.0,
+ "total_sec": 787.1,
+ "clips": [
+  {
+   "start": 10142.16,
+   "end": 10540.76,
+   "seconds": 398.6,
+   "title": "回転寿司ビジネスの効率化とネタの鮮度",
+   "source": "topics",
+   "score": 2.576,
+   "signals": {
+    "コメント": 4,
+    "断言": 5,
+    "根拠": 0,
+    "留保": 1,
+    "熱": 0.44,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "回転寿司ビジネスの効率化とネタの鮮度",
+   "subtitles": [],
+   "video_id": "M7KWrHANxHs",
+   "video_title": "パリは燃えていたよ。AUBRAC",
+   "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs"
+  },
+  {
+   "start": 756.519,
+   "end": 855.32,
+   "seconds": 98.8,
+   "title": "スタック・オーバーフローのPV激減とビジネス転換",
+   "source": "topics",
+   "score": 1.26,
+   "signals": {
+    "コメント": 2,
+    "断言": 3,
+    "根拠": 0,
+    "留保": 0,
+    "熱": 0.0,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "スタック・オーバーフローのPV激減とビジネス転換",
+   "subtitles": [],
+   "video_id": "VYJ-zTB8TVY",
+   "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+   "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY"
+  },
+  {
+   "start": 2139.909,
+   "end": 2207.0,
+   "seconds": 67.1,
+   "title": "音声サービス「ポポポ」の終了発表とその背景",
+   "source": "topics",
+   "score": 0.666,
+   "signals": {
+    "コメント": 1,
+    "断言": 0,
+    "根拠": 0,
+    "留保": 0,
+    "熱": 0.54,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "音声サービス「ポポポ」の終了発表とその背景",
+   "subtitles": [],
+   "video_id": "Wl5-F216UJI",
+   "video_title": "【無駄に4K高画質】ヒカキンさんの『カレーみそきん』を発売前に食べてみたよ & POPOPOのサ終について【雑談】",
+   "video_url": "https://www.youtube.com/watch?v=Wl5-F216UJI"
+  },
+  {
+   "start": 3692.44,
+   "end": 3915.079,
+   "seconds": 222.6,
+   "title": "AIの悪用規制とビジネスアイデアを話すリスク / クラウド会計システムの集客戦略 / ガーシーさんと友達になれるか",
+   "source": "topics",
+   "score": 5.758,
+   "signals": {
+    "コメント": 11,
+    "断言": 5,
+    "根拠": 2,
+    "留保": 0,
+    "熱": 0.02,
+    "音量": 0.0
+   },
+   "risk": [],
+   "risk_words": [],
+   "question": "AIの悪用規制とビジネスアイデアを話すリスク / クラウド会計システムの集客戦略 / ガーシーさんと友達になれるか",
+   "subtitles": [],
+   "video_id": "c2X5ZUIpRSk",
+   "video_title": "心を開いてもらうにはどうしたらいいか？ La francaise",
+   "video_url": "https://www.youtube.com/watch?v=c2X5ZUIpRSk"
+  }
+ ]
+}
