@@ -22,7 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.fetch_source import WORK  # noqa: E402
+from scripts.fetch_source import ROOT, WORK  # noqa: E402
 from scripts.qa import MIN_SCORE, by_theme, split_blocks  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -41,6 +41,32 @@ NOTE_SEC = 11.5
 def hms(sec: float) -> str:
     s = int(sec)
     return f"{s // 3600:d}:{s % 3600 // 60:02d}:{s % 60:02d}"
+
+
+def used_ranges(exclude: Path | None) -> list[tuple[str, float, float]]:
+    """既にレシピで使った区間を集める。
+
+    **同じ話を2本目に入れない。** テーマを変えても素材は同じ5配信なので、
+    「上司」「職場」のような語はどのテーマからも引ける。気づかずに前回と
+    同じブロックを入れると、視聴者には使い回しに見える。
+    """
+    out: list[tuple[str, float, float]] = []
+    for p in sorted((ROOT / "recipes").glob("*.json")):
+        if exclude and p.resolve() == exclude.resolve():
+            continue
+        try:
+            r = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:                                   # noqa: BLE001
+            continue
+        for c in r.get("clips") or []:
+            if c.get("video_id") and c.get("start") is not None:
+                out.append((c["video_id"], float(c["start"]), float(c["end"])))
+    return out
+
+
+def overlaps(b: dict, used: list[tuple[str, float, float]]) -> bool:
+    return any(v == b["video_id"] and b["start"] < e and s < b["end"]
+               for v, s, e in used)
 
 
 def load_all() -> list[dict]:
@@ -76,6 +102,8 @@ def main() -> None:
     ap.add_argument("--max-items", type=int, default=12)
     ap.add_argument("--allow-risky", action="store_true")
     ap.add_argument("--out", type=Path, help="構成案の保存先 JSON")
+    ap.add_argument("--allow-used", action="store_true",
+                    help="既に他のレシピで使った区間も候補に含める")
     a = ap.parse_args()
 
     blocks = load_all()
@@ -83,8 +111,12 @@ def main() -> None:
         raise SystemExit("! ブロックがありません。fetch_topics.py --save を先に実行してください")
 
     vids = {b["video_id"] for b in blocks}
+    used = [] if a.allow_used else used_ranges(a.out)
     pool = [b for b in by_theme(blocks, a.theme)
-            if (a.allow_risky or not b["risk"]) and b["score"] >= MIN_SCORE]
+            if (a.allow_risky or not b["risk"]) and b["score"] >= MIN_SCORE
+            and not overlaps(b, used)]
+    if used:
+        print(f"（既に使った {len(used)}区間を除外）")
 
     # 同じ配信ばかりにならないよう、動画ごとに1本ずつ拾ってから2周目に入る。
     # 1本に偏ると「元動画へのリンク」が実質1本になり、束ねる意味が薄れる
