@@ -132,6 +132,10 @@ def main() -> None:
         print(f"\n! {len(failed)}区間が未取得。時間を置いて同じコマンドを再実行してください")
         for v, s_, e_ in failed:
             print(f"  {v} {s_}-{e_}")
+        # **未取得を残したまま成功で終わらない。** 一覧は出していたのに
+        # チェーン実行の中で流れてしまい、2回続けてビルドまで進めた
+        # （2026-08-14）。止まるべきところで止める
+        raise SystemExit(1)
 
     got = list(CLIPS.glob("*.mp4"))
     print(f"\n{len(got)}ファイル / "

@@ -1,0 +1,88 @@
+{
+  "id": "2026-08-16-kosodate",
+  "title": "【ひろゆき】子育てと教育の相談7連発。学校の勉強は意味があるのか",
+  "description": "ひろゆきさんの配信から、子育てと教育の相談だけを集めて解説を付けました。\n各チャプターの黄色い行は編集側の補足です。",
+  "tags": [
+    "ひろゆき",
+    "切り抜き",
+    "解説",
+    "子育て",
+    "教育"
+  ],
+  "category_id": "22",
+  "privacy_status": "private",
+  "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+  "summary": "七件に共通しているのは、ひろゆきさんが子供を変えようとしていないことです。課金したがる娘には稼ぐ工程を挟ませ、宿題を続ける娘には比べる相手を変え、友達のいない大学生には既にある場所へ入る方法を渡している。変えているのは本人ではなく、本人が置かれている条件のほうでした。",
+  "thumb": {
+    "main": [
+      "学校の勉強は",
+      "意味があるのか"
+    ],
+    "sub": "子育てと教育の相談7件"
+  },
+  "clips": [
+    {
+      "video_id": "5xJ3ZzEnyI8",
+      "video_title": "「暇は人生最高のスパイス」La Raoul",
+      "video_url": "https://www.youtube.com/watch?v=5xJ3ZzEnyI8",
+      "start": 7878.199,
+      "end": 7920.679,
+      "title": "小5の娘がゲームに課金したいと言う",
+      "note": "課金を禁じるのではなく、稼ぐ工程を先に挟ませている。同じ金額でも、労働を経てから使うと満足が続かないことが体験として分かる"
+    },
+    {
+      "video_id": "M7KWrHANxHs",
+      "video_title": "パリは燃えていたよ。AUBRAC",
+      "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+      "start": 7139.76,
+      "end": 7257.719,
+      "title": "コミ障だが大学事務職員を目指している",
+      "note": "民間を避けた理由が質問に書かれていない。避けている選択肢を本当に検討したのかを、答える前に確認している"
+    },
+    {
+      "video_id": "M7KWrHANxHs",
+      "video_title": "パリは燃えていたよ。AUBRAC",
+      "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+      "start": 7829.639,
+      "end": 7873.559,
+      "title": "大学生で起業した。就職・学業・企業のどれを捨てるか",
+      "note": "事業が伸びても卒業資格は消えない。海外でビザを取るときに効くという、いま本人に見えていない用途を挙げている"
+    },
+    {
+      "video_id": "VYJ-zTB8TVY",
+      "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+      "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+      "start": 2947.0,
+      "end": 3083.0,
+      "title": "学校の勉強は生産性を上げるのか",
+      "note": "学校の勉強が生産性を上げるという前提そのものを外している。読み書き計算までは要る、その先は職業と結びつくかで分かれる、という線引き"
+    },
+    {
+      "video_id": "VYJ-zTB8TVY",
+      "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+      "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+      "start": 6357.44,
+      "end": 6430.84,
+      "title": "今の6・3・3・4という学制を変えるなら",
+      "note": "小学校は変えず、その期間にスポーツと言語を厚くする。向き不向きが見えてから絞るという順番の話をしている"
+    },
+    {
+      "video_id": "_o8W_QKNHEo",
+      "video_title": "5月病のみんな元気ー？",
+      "video_url": "https://www.youtube.com/watch?v=_o8W_QKNHEo",
+      "start": 5118.199,
+      "end": 5185.32,
+      "title": "10歳の娘が寝る前まで宿題をやめない",
+      "note": "やっていない子と比べれば十分だ、と比較の相手を変えている。基準を下げるのではなく、何と比べるかを変えている"
+    },
+    {
+      "video_id": "daulqJwmooE",
+      "video_title": "神を信じない経営者は傲慢である。",
+      "video_url": "https://www.youtube.com/watch?v=daulqJwmooE",
+      "start": 3316.0,
+      "end": 3477.0,
+      "title": "大学で友達がいない",
+      "note": "友達を作る技術ではなく、既にあるコミュニティに入る技術だと言い換えている。会社に入っても同じものが要るという接続"
+    }
+  ]
+}

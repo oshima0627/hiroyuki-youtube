@@ -116,6 +116,47 @@ def head_box(src: Image.Image) -> tuple[int, int, int, int, int]:
     return (min(xs), max(xs), min(ys), max(ys), limit)
 
 
+def face_score(src: Image.Image) -> float:
+    """このフレームで顔がどれだけこちらを向いているか。0〜1。
+
+    **頭部検出だけでは向きが分からない。** 暗い画素の外接矩形は髪を拾うので、
+    後頭部でも同じように当たる。実際に後頭部のサムネイルができた（2026-08-14）。
+
+    顔が正面を向いていれば、頭部の下半分に肌色が多く出る。
+    後ろを向いていればそこも髪になる。肌色の比率で見分ける。
+    """
+    x0, x1, y0, y1, _ = head_box(src)
+    if x1 - x0 < 40 or y1 - y0 < 40:
+        return 0.0
+    box = src.crop((x0, (y0 + y1) // 2, x1, y1))     # 頭部の下半分
+    px = box.load()
+    skin = total = 0
+    for y in range(0, box.height, 3):
+        for x in range(0, box.width, 3):
+            r, g, b = px[x, y]
+            total += 1
+            if r > 95 and g > 40 and b > 20 and r > g > b and r - g > 15:
+                skin += 1
+    return skin / total if total else 0.0
+
+
+def pick_frame(video: Path, out_dir: Path, count: int = 9) -> tuple[Path, float, float]:
+    """顔がこちらを向いているフレームを選ぶ。(画像, 秒, スコア) を返す。"""
+    dur = float(subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=nw=1:nk=1", str(video)],
+        capture_output=True, text=True, check=True).stdout)
+    best: tuple[Path, float, float] | None = None
+    for i in range(count):
+        at = dur * (i + 1) / (count + 1)
+        p = out_dir / f"_cand{i:02d}.png"
+        grab_frame(video, at, p)
+        s = face_score(Image.open(p).convert("RGB"))
+        if best is None or s > best[2]:
+            best = (p, at, s)
+    return best                                       # type: ignore[return-value]
+
+
 def auto_crop(src: Image.Image, margin: float = 0.12) -> tuple[float, float, float]:
     """サムネイル用（PHOTO_W:H の比）のクロップを割合で返す。"""
     w, h = src.size
@@ -199,8 +240,16 @@ def main() -> None:
     if not video.exists():
         raise SystemExit(f"! {video} が無い。先に build_episode.py を実行してください")
 
-    at = a.at if a.at is not None else float(thumb.get("at", 30))
-    frame = grab_frame(video, at, out_dir / "_thumbframe.png")
+    if a.at is not None or thumb.get("at") is not None:
+        at = float(a.at if a.at is not None else thumb["at"])
+        frame = grab_frame(video, at, out_dir / "_thumbframe.png")
+        print(f"  指定の {at:.0f}秒 を使用（顔スコア "
+              f"{face_score(Image.open(frame).convert('RGB')):.3f}）")
+    else:
+        # **顔がこちらを向いているフレームを選ぶ。** 適当な秒を指定すると
+        # 後頭部のサムネイルになる（2026-08-14 に実際になった）
+        frame, at, sc = pick_frame(video, out_dir)
+        print(f"  {at:.0f}秒 を選択（顔スコア {sc:.3f}）")
 
     crop = tuple(thumb.get("crop") or (0.30, 0.25, 0.35))
     if a.auto_crop or not thumb.get("crop"):
