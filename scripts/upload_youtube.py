@@ -248,6 +248,8 @@ def main() -> None:
                     help="認証だけ行い、紐づくチャンネルを表示する")
     ap.add_argument("--publish", action="store_true", help="public にする")
     ap.add_argument("--schedule", help="予約公開の時刻（例 2026-08-15T03:00:00Z）")
+    ap.add_argument("--force-reupload", action="store_true",
+                    help="既に上げてあっても新規にアップロードし直す")
     ap.add_argument("--allow-long", action="store_true",
                     help="15分超を許可する。電話番号の確認が済んでいる場合のみ")
     a = ap.parse_args()
@@ -275,6 +277,26 @@ def main() -> None:
     privacy = "public" if a.publish else meta.get("privacy_status", "private")
     if a.schedule:
         privacy = "private"
+
+    # **既に上げてあるものは上げ直さない。**
+    # --publish が毎回新規アップロードになっていて、限定公開で確認したあと
+    # 公開すると同じ動画が2本並んだ（2026-08-14）。videos.insert は1,600
+    # ユニットで1日6本ぶんしかないのに、1本のために2回使うことになる。
+    # 既に上げてあるなら公開設定だけ変える（videos.update は50ユニット）。
+    prev = (json.loads(PUBLISHED.read_text(encoding="utf-8-sig"))["videos"].get(meta["id"])
+            if PUBLISHED.exists() else None)
+    if prev and prev.get("youtube_video_id") and not a.force_reupload:
+        vid = prev["youtube_video_id"]
+        print(f"→ 既存の {vid} の公開設定を {privacy} に変えます"
+              "（上げ直すなら --force-reupload）")
+        set_privacy(service, vid, privacy, a.schedule)
+        prev["privacy_status"] = privacy
+        data = json.loads(PUBLISHED.read_text(encoding="utf-8-sig"))
+        data["videos"][meta["id"]] = prev
+        PUBLISHED.write_text(
+            json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"✓ https://www.youtube.com/watch?v={vid}")
+        return
 
     print(f"→ {ch['title']} に {privacy} で投稿します")
     video_id = upload(service, a.workdir, meta, description, privacy,
