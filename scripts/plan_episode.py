@@ -29,6 +29,15 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 
+# **電話番号が未確認のチャンネルは15分を超える動画を上げられない。**
+# 超えると処理の途中で削除される。900秒ぴったりを狙うと編集の誤差で割るので、
+# 30秒の余裕を見る（2026-08-14 に16:36を上げて消された）
+MAX_EPISODE_SEC = 870.0
+
+# 解説板1枚あたりの実測平均。11枚で123秒だった（2026-08-14）
+NOTE_SEC = 11.5
+
+
 def hms(sec: float) -> str:
     s = int(sec)
     return f"{s // 3600:d}:{s % 3600 // 60:02d}:{s % 60:02d}"
@@ -58,8 +67,12 @@ def load_all() -> list[dict]:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--theme", nargs="+", required=True)
-    ap.add_argument("--target", type=float, default=1000.0,
-                    help="目標尺（秒）。相場は13〜20分なので既定は約17分")
+    # **これは完成尺。本編の合計ではない。**
+    # 解説板が後から乗るので、本編の合計で指定すると必ず超過する。
+    # 実際に本編16:40のつもりが完成19分になり、15分の上限に引っかかって
+    # YouTube に削除された（2026-08-14）
+    ap.add_argument("--target", type=float, default=MAX_EPISODE_SEC,
+                    help="**完成尺**（秒）。既定は15分の上限に対する安全側")
     ap.add_argument("--max-items", type=int, default=12)
     ap.add_argument("--allow-risky", action="store_true")
     ap.add_argument("--out", type=Path, help="構成案の保存先 JSON")
@@ -75,6 +88,11 @@ def main() -> None:
 
     # 同じ配信ばかりにならないよう、動画ごとに1本ずつ拾ってから2周目に入る。
     # 1本に偏ると「元動画へのリンク」が実質1本になり、束ねる意味が薄れる
+    # 完成尺から解説板のぶんを引いて、本編に使える尺を出す。
+    # 解説板はクリップ数＋まとめの1枚
+    def clip_budget(n: int) -> float:
+        return a.target - (n + 1) * NOTE_SEC
+
     ranked = sorted(pool, key=lambda b: -b["score"] / max(b["seconds"], 1) ** 0.5)
     picked: list[dict] = []
     total = 0.0
@@ -85,12 +103,14 @@ def main() -> None:
                 continue
             if rnd == 0 and b["video_id"] in seen:
                 continue
-            if len(picked) >= a.max_items or total >= a.target:
+            if len(picked) >= a.max_items:
                 break
+            if total + b["seconds"] > clip_budget(len(picked) + 1):
+                continue
             picked.append(b)
             seen.add(b["video_id"])
             total += b["seconds"]
-        if len(picked) >= a.max_items or total >= a.target:
+        if len(picked) >= a.max_items:
             break
 
     picked.sort(key=lambda b: (b["video_id"], b["start"]))
@@ -101,10 +121,14 @@ def main() -> None:
         print(f"{i:2d}. [{b['video_id']}] {hms(b['start'])}-{hms(b['end'])} "
               f"({b['seconds']:>4.0f}s) score={b['score']:5.2f}")
         print(f"     {b['title'][:74]}")
-    print(f"\n合計 {hms(total)}（目標 {hms(a.target)}） / "
+    est = total + (len(picked) + 1) * NOTE_SEC
+    print(f"\n本編 {hms(total)} ＋ 解説板 {len(picked) + 1}枚 "
+          f"→ 完成の見込み {hms(est)}（上限 {hms(MAX_EPISODE_SEC)}） / "
           f"{len({b['video_id'] for b in picked})}本の配信から")
-    if total < a.target * 0.8:
-        print("! 届いていません。テーマ語を広げるか、配信をもっと取り込んでください")
+    if est > MAX_EPISODE_SEC:
+        print("! 15分の上限に近い。クリップを減らしてください")
+    elif est < MAX_EPISODE_SEC * 0.85:
+        print("! 短い。テーマ語を広げるか、配信をもっと取り込んでください")
 
     if a.out:
         a.out.parent.mkdir(parents=True, exist_ok=True)
