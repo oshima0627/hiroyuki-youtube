@@ -75,24 +75,62 @@ def split_sentences(text: str) -> list[str]:
     return out
 
 
+OPEN_BRACKETS = "（［｛「『〈《〔"
+CLOSE_BRACKETS = "）］｝」』〉》〕"
+
+
+def _depths(s: str) -> list[int]:
+    """各文字の括弧の深さ。開き括弧の位置は0（＝その手前で折れる）。"""
+    out, depth = [], 0
+    for ch in s:
+        if ch in OPEN_BRACKETS:
+            out.append(depth)
+            depth += 1
+        elif ch in CLOSE_BRACKETS:
+            depth = max(0, depth - 1)
+            out.append(depth)
+        else:
+            out.append(depth)
+    return out
+
+
 def _break_at(s: str, limit: int) -> int:
     """limit 文字までに収まる範囲で、いちばん読みやすい改行位置を返す。
 
-    優先順は 読点の直後 → 閉じ括弧の直後 → 開き括弧の直前 → 幅いっぱい。
-    幅いっぱいで折るときも禁則を見る。
+    **括弧の中では折らない。** 引用は1つのまとまりなので、途中で切ると
+    読み手が繋ぎ直すことになる。実際に
+
+      …返ってくるのは「場所を変えるか、
+      順序を変えるか」でした。
+
+    と割れていた（2026-08-14）。括弧の手前で折れば
+
+      …返ってくるのは
+      「場所を変えるか、順序を変えるか」でした。
+
+    になる。優先順は 括弧外の読点の直後 → 開き括弧の直前 →
+    閉じ括弧の直後 → 幅いっぱい。
     """
+    d = _depths(s)
     window = max(1, int(limit * 0.45))          # これ以上戻ると行が短くなりすぎる
-    for lo in range(limit, limit - window, -1):
-        if lo <= 0 or lo >= len(s):
-            continue
-        if s[lo - 1] in SOFT_BREAK:
+    lows = [lo for lo in range(limit, max(0, limit - window), -1)
+            if 0 < lo < len(s)]
+
+    # 括弧の外にある読点
+    for lo in lows:
+        if s[lo - 1] in SOFT_BREAK and d[lo - 1] == 0:
             return lo
-    for lo in range(limit, limit - window, -1):
-        if lo <= 0 or lo >= len(s):
-            continue
-        if s[lo - 1] in "）」』】":
+    # 開き括弧の直前。引用まるごとを次の行に送る
+    for lo in lows:
+        if s[lo] in OPEN_BRACKETS and d[lo] == 0:
             return lo
-        if s[lo] in NO_END:
+    # 閉じ括弧の直後
+    for lo in lows:
+        if s[lo - 1] in CLOSE_BRACKETS and d[lo - 1] == 0:
+            return lo
+    # 括弧の外なら、どこでもいいので括弧を割らない位置
+    for lo in lows:
+        if d[lo] == 0 and s[lo] not in NO_START:
             return lo
 
     cut = min(limit, len(s))
