@@ -148,6 +148,19 @@ def build_head(thumb: Path, out_dir: Path) -> Path:
     return dst
 
 
+def note_is_current(text: str, index: int, out_dir: Path, kind: str = "note") -> bool:
+    """その解説板が今の文章で作られているか。
+
+    **--concat-only が古いパーツを使い回して事故った**（2026-08-14）。
+    まとめの文言を直したのに、ファイルが在るというだけで再生成されず、
+    古い読み上げのまま連結された。何を元に作ったかを横に置いて突き合わせる。
+    """
+    mp4 = out_dir / f"{kind}img_{index:02d}.mp4"
+    src = out_dir / f"{kind}img_{index:02d}.txt"
+    return (mp4.exists() and src.exists()
+            and src.read_text(encoding="utf-8") == text.strip())
+
+
 def build_note(text: str, index: int, out_dir: Path, kind: str = "note") -> Path:
     """解説板を作る。静止画＋VOICEVOX の読み上げ。
 
@@ -172,6 +185,8 @@ def build_note(text: str, index: int, out_dir: Path, kind: str = "note") -> Path
           # 本編と同じ音声パラメータにしないと concat -c copy が通らない
           "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
           str(dst)])
+    (out_dir / f"{kind}img_{index:02d}.txt").write_text(
+        text.strip(), encoding="utf-8")
     return dst
 
 
@@ -213,12 +228,13 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
         parts.append(pc if (concat_only and pc.exists())
                      else build_clip(c, i, out, pad))
         pn = out / f"noteimg_{i:02d}.mp4"
-        parts.append(pn if (concat_only and pn.exists())
+        parts.append(pn if (concat_only and note_is_current(c["note"], i, out))
                      else build_note(c["note"], i, out))
     if recipe.get("summary"):
         ps = out / "summaryimg_99.mp4"
-        parts.append(ps if (concat_only and ps.exists())
-                     else build_note(recipe["summary"], 99, out, kind="summary"))
+        parts.append(
+            ps if (concat_only and note_is_current(recipe["summary"], 99, out, "summary"))
+            else build_note(recipe["summary"], 99, out, kind="summary"))
 
     # サムネイルがあれば冒頭に置く。thumbnail.py は本編から1枚抜くので、
     # 初回ビルドの時点ではまだ無い。作ったあと --concat-only で足す
