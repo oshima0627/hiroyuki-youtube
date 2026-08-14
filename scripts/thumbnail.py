@@ -91,12 +91,15 @@ def card_top(src: Image.Image) -> int:
     return h
 
 
-def auto_crop(src: Image.Image, margin: float = 0.12) -> tuple[float, float, float]:
-    """人物の頭部を囲むクロップを算出する。
+def head_box(src: Image.Image) -> tuple[int, int, int, int, int]:
+    """頭部の外接矩形 (x0, x1, y0, y1) とカードの上端を返す。
 
-    手で係数を動かして何度も外した（カードが入る／頭が切れる）ので、
+    手で係数を動かして何度も外した（カードが入る／頭が切れる／顎が切れる）ので、
     フレームから測って決める。髪と顔は白い窓・壁より暗いので、暗部の
-    外接矩形を頭部とみなす。左のランプを拾わないよう右半分だけを見る。
+    外接矩形を頭部とみなす。左のランプを拾わないよう範囲を絞る。
+
+    **縦型でも横型でもここを共通で使う。** 別々に計算していたとき、
+    ショート側で中心の求め方を間違えて顎が切れた（2026-08-14）。
     """
     w, h = src.size
     limit = card_top(src)
@@ -109,9 +112,14 @@ def auto_crop(src: Image.Image, margin: float = 0.12) -> tuple[float, float, flo
                 xs.append(x)
                 ys.append(y)
     if not xs:
-        return (0.30, 0.25, 0.35)
+        return (int(w * 0.40), int(w * 0.60), int(h * 0.30), int(h * 0.60), limit)
+    return (min(xs), max(xs), min(ys), max(ys), limit)
 
-    x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
+
+def auto_crop(src: Image.Image, margin: float = 0.12) -> tuple[float, float, float]:
+    """サムネイル用（PHOTO_W:H の比）のクロップを割合で返す。"""
+    w, h = src.size
+    x0, x1, y0, y1, limit = head_box(src)
     top = max(0, int(y0 - (y1 - y0) * margin))
     bot = min(limit, int(y1 + (y1 - y0) * margin))
     ch = bot - top

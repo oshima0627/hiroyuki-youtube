@@ -44,7 +44,7 @@ from PIL import Image, ImageDraw  # noqa: E402
 from scripts.build_episode import resolve_source  # noqa: E402
 from scripts.draw import GOLD, INK, RED, WHITE, fit_font, pick_font, wrap  # noqa: E402
 from scripts.recipe import CREDIT, validate_short  # noqa: E402
-from scripts.thumbnail import auto_crop  # noqa: E402
+from scripts.thumbnail import head_box  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -84,11 +84,10 @@ def render_frame(hook: str, footer: str) -> Image.Image:
     d.text((PAD, 44), "ひろゆき切り抜き＋解説", font=f_label, fill=(*RED, 255))
 
     # フックは冒頭2秒で読ませる。1行に収まらないなら折る
-    fh = pick_font(76)
-    lines = wrap(d, hook, fh, W - PAD * 2)[:3]
-    if len(lines) > 2:
-        fh = pick_font(62)
-        lines = wrap(d, hook, fh, W - PAD * 2)[:3]
+    # **フックは1行に収める。** 76pxのまま折ったら「ません」だけが2行目に
+    # 残った（2026-08-14）。冒頭2秒で読ませる文字が割れては意味がない
+    fh = fit_font(d, hook, W - PAD * 2, 76)
+    lines = wrap(d, hook, fh, W - PAD * 2)[:2]
     y = VIDEO_Y - 40 - len(lines) * int(fh.size * 1.3)
     for ln in lines:
         d.text((PAD + 3, y + 3), ln, font=fh, fill=(0, 0, 0, 255))
@@ -143,13 +142,20 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
           "-i", str(src), "-frames:v", "1", str(probe_png)])
     frame = Image.open(probe_png).convert("RGB")
     fw, fh_ = frame.size
-    cl, ct, chh = auto_crop(frame, margin=0.35)
-    ch = int(fh_ * chh)
-    cw = ch                                    # 正方形
-    cx = int(fw * cl) + int(ch * 560 / 720) // 2
-    x0 = max(0, min(fw - cw, cx - cw // 2))
-    y0 = max(0, min(fh_ - ch, int(fh_ * ct)))
-    print(f"  切り出し {cw}x{ch} @ ({x0},{y0}) / 拡大 {VIDEO_H / ch:.2f}倍")
+    hx0, hx1, hy0, hy1, card = head_box(frame)
+    # 頭が収まる正方形を作る。**頭の高さより小さくしない。**
+    # 中心の求め方を間違えて顎が切れたので、外接矩形から直接組む
+    # **カードの上端に下揃えする。** 顎はカードのすぐ上にあるので、
+    # 正方形を大きく取ると上の白い天井ばかりが入る。実際に顔の上に
+    # 空白が空いた（2026-08-14）。下を基準にして上へ伸ばす
+    side = int((hy1 - hy0) * 1.6)
+    side = min(side, card, fw, fh_)
+    cx = (hx0 + hx1) // 2
+    x0 = max(0, min(fw - side, cx - side // 2))
+    y0 = max(0, card - side)
+    cw = ch = side
+    print(f"  頭部 x{hx0}-{hx1} y{hy0}-{hy1} / 切り出し {side}x{side} @ ({x0},{y0})"
+          f" / 拡大 {VIDEO_H / side:.2f}倍")
 
     png = out / "frame.png"
     render_frame(short.get("hook", ""), short.get("footer", "")).save(png)

@@ -128,6 +128,36 @@ def probe_seconds(path: Path) -> float:
     return float(out.stdout.strip())
 
 
+FUNNEL_HEAD = "▼この回をフルで見る"
+
+
+def with_long_form_link(meta: dict, description: str) -> str:
+    """ショートの概要欄に、同じ回の長尺へのリンクを差し込む。
+
+    **ショートは長尺への導線として出している。** それなのに概要欄のリンクが
+    元動画（本人チャンネル）だけだと、ショートを見た人の行き先が本人の
+    チャンネルにしか無い。tora-kirinuki では実際に7本ともその状態で公開された。
+
+    長尺のURLはアップロードするまで決まらないので、ビルド時ではなくここで
+    差し込む。長尺 → ショートの順に上げれば必ず解決する。
+    """
+    vid_id = meta["id"]
+    if not vid_id.endswith("-short"):
+        return description
+
+    base = vid_id[: -len("-short")]
+    if not PUBLISHED.exists():
+        die(f"長尺 {base} が未アップロードです。先に長尺を上げてください")
+    entry = json.loads(PUBLISHED.read_text(encoding="utf-8-sig"))["videos"].get(base)
+    if not entry:
+        die(f"長尺 {base} が未アップロードです。先に長尺を上げてください")
+
+    lines = [ln for ln in description.split("\n")
+             if "長尺のURLはアップロード時に差し込まれます" not in ln]
+    text = "\n".join(lines)
+    return text.replace(FUNNEL_HEAD, f"{FUNNEL_HEAD}\n{entry['url']}", 1)
+
+
 def upload(service, workdir: Path, meta: dict, description: str, privacy: str,
            allow_long: bool = False) -> str:
     from googleapiclient.http import MediaFileUpload
@@ -272,6 +302,7 @@ def main() -> None:
 
     meta = json.loads((a.workdir / "meta.json").read_text(encoding="utf-8"))
     description = (a.workdir / "description.txt").read_text(encoding="utf-8")
+    description = with_long_form_link(meta, description)
 
     ch = assert_expected_channel(service, meta)
     privacy = "public" if a.publish else meta.get("privacy_status", "private")
