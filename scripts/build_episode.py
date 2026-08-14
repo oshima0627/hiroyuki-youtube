@@ -221,6 +221,9 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
         "sources": sorted({c["video_id"] for c in clips}),
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
+    if actual > 15 * 60:
+        print(f"! 尺が {int(actual) // 60}:{int(actual) % 60:02d}。"
+              "電話番号が未確認のチャンネルは15分超を上げられません（上げると削除されます）")
     print(f"✓ {video}  {int(actual) // 60}:{int(actual) % 60:02d}")
     return out
 

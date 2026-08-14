@@ -18,6 +18,7 @@ import argparse
 import hashlib
 import json
 import subprocess
+import time
 import sys
 import urllib.parse
 import urllib.request
@@ -63,12 +64,20 @@ def synth(text: str, speaker: int = SPEAKER, force: bool = False) -> Path:
         return out
     CACHE.mkdir(parents=True, exist_ok=True)
 
-    try:
-        q = json.loads(_post("/audio_query", {"text": text, "speaker": speaker}))
-    except Exception as e:                                  # noqa: BLE001
-        raise SystemExit(
-            f"! VOICEVOX に接続できません（{HOST}）: {str(e)[:80]}\n"
-            "  VOICEVOX を起動してから再実行してください") from e
+    # 長い文でエンジンが詰まって recv がタイムアウトすることがある。
+    # ビルド全体が落ちると10分ぶんのエンコードをやり直すので、ここで粘る
+    q = None
+    for attempt in range(3):
+        try:
+            q = json.loads(_post("/audio_query", {"text": text, "speaker": speaker}))
+            break
+        except Exception as e:                              # noqa: BLE001
+            if attempt == 2:
+                raise SystemExit(
+                    f"! VOICEVOX に接続できません（{HOST}）: {str(e)[:80]}\n"
+                    "  VOICEVOX を起動してから再実行してください") from e
+            print(f"  VOICEVOX 再試行 {attempt + 1}/2（{str(e)[:40]}）")
+            time.sleep(5)
 
     q["speedScale"] = SPEED
     q["pitchScale"] = PITCH

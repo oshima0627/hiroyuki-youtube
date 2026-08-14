@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -111,12 +112,37 @@ def assert_expected_channel(service, meta: dict) -> dict | None:
     return ch
 
 
-def upload(service, workdir: Path, meta: dict, description: str, privacy: str) -> str:
+# **電話番号が未確認のチャンネルは15分を超える動画を上げられない。**
+# 上げること自体は成功するが、処理の途中で YouTube に削除される。
+# 実際に16分36秒の動画を上げて消された（2026-08-14）。API 上は
+# videos.list から消え、uploads プレイリストに "Deleted video" だけが残る。
+# https://support.google.com/youtube/answer/171664
+UNVERIFIED_MAX_SEC = 15 * 60
+
+
+def probe_seconds(path: Path) -> float:
+    out = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=nw=1:nk=1", str(path)],
+        capture_output=True, text=True, check=True)
+    return float(out.stdout.strip())
+
+
+def upload(service, workdir: Path, meta: dict, description: str, privacy: str,
+           allow_long: bool = False) -> str:
     from googleapiclient.http import MediaFileUpload
 
     video = workdir / "video.mp4"
     if not video.exists():
         die(f"{video} がありません。先に build_episode.py を実行してください")
+
+    sec = probe_seconds(video)
+    if sec > UNVERIFIED_MAX_SEC and not allow_long:
+        die(f"尺が {int(sec) // 60}:{int(sec) % 60:02d} で15分を超えています。\n"
+            "  電話番号が未確認のチャンネルは15分超の動画を上げられません。\n"
+            "  上げても処理の途中で削除されます（実際に消えました）。\n"
+            "  15分未満に詰めるか、https://www.youtube.com/verify で確認を済ませてから\n"
+            "  --allow-long を付けて再実行してください。")
 
     # 言語は必ず明示する。省略すると YouTube が推測し、日本語の動画が
     # en と判定されることがある（tora-kirinuki の元になった BGM チャンネルで
@@ -222,6 +248,8 @@ def main() -> None:
                     help="認証だけ行い、紐づくチャンネルを表示する")
     ap.add_argument("--publish", action="store_true", help="public にする")
     ap.add_argument("--schedule", help="予約公開の時刻（例 2026-08-15T03:00:00Z）")
+    ap.add_argument("--allow-long", action="store_true",
+                    help="15分超を許可する。電話番号の確認が済んでいる場合のみ")
     a = ap.parse_args()
 
     service = get_service()
@@ -249,7 +277,8 @@ def main() -> None:
         privacy = "private"
 
     print(f"→ {ch['title']} に {privacy} で投稿します")
-    video_id = upload(service, a.workdir, meta, description, privacy)
+    video_id = upload(service, a.workdir, meta, description, privacy,
+                      a.allow_long)
     print(f"✓ https://www.youtube.com/watch?v={video_id}")
 
     thumb_ok = set_thumbnail(service, video_id, a.workdir)
