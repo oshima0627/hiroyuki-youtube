@@ -113,9 +113,9 @@ def assert_expected_channel(service, meta: dict) -> dict | None:
 
 
 # **電話番号が未確認のチャンネルは15分を超える動画を上げられない。**
-# 上げること自体は成功するが、処理の途中で YouTube に削除される。
-# 実際に16分36秒の動画を上げて消された（2026-08-14）。API 上は
-# videos.list から消え、uploads プレイリストに "Deleted video" だけが残る。
+# API 呼び出しは成功するが、処理が中止される（2026-08-14 に16分36秒で発生）。
+# Studio には「処理を中止しました／動画が長すぎます」と残って削除ボタンが出る。
+# 一方 videos.list には出てこなくなるので、API だけ見ていると消えたように見える。
 # https://support.google.com/youtube/answer/171664
 UNVERIFIED_MAX_SEC = 15 * 60
 
