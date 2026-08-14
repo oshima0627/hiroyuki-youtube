@@ -104,16 +104,21 @@ def source_list(recipe: dict) -> list[tuple[str, str, str]]:
     return list(seen.values())
 
 
-def build_chapters(recipe: dict) -> list[str]:
-    """概要欄の目次。連結後の経過時間で振る。"""
+def build_chapters(recipe: dict, offsets: list[float] | None = None) -> list[str]:
+    """概要欄の目次。連結後の経過時間で振る。
+
+    **offsets を渡すこと。** 解説板を挟むので、本編の尺を足すだけでは実際の
+    再生位置とずれる。ビルド側が各パートの実測尺から積んだ値を持っている。
+    """
     out, t = [], 0.0
-    for c in recipe["clips"]:
-        out.append(f"{int(t) // 60:02d}:{int(t) % 60:02d} {c['title']}")
+    for i, c in enumerate(recipe["clips"]):
+        at = offsets[i] if offsets and i < len(offsets) else t
+        out.append(f"{int(at) // 60:02d}:{int(at) % 60:02d} {c['title']}")
         t += c["end"] - c["start"]
     return out
 
 
-def build_description(recipe: dict) -> str:
+def build_description(recipe: dict, offsets: list[float] | None = None) -> str:
     """概要欄。元動画のリンクは手書きさせず、ここで必ず全部付ける。"""
     body = (recipe.get("description") or "").strip()
     tags = " ".join(f"#{t}" for t in (recipe.get("tags") or []))
@@ -124,7 +129,7 @@ def build_description(recipe: dict) -> str:
     parts += ["【本人チャンネル】", "https://www.youtube.com/@hirox246", ""]
     if body:
         parts += [body, ""]
-    parts += ["【目次】"] + build_chapters(recipe) + ["", CREDIT]
+    parts += ["【目次】"] + build_chapters(recipe, offsets) + ["", CREDIT]
     if tags:
         parts += ["", tags]
     return "\n".join(parts).strip() + "\n"

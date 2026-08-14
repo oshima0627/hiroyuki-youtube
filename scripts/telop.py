@@ -63,19 +63,39 @@ def render_lower_third(title: str, note: str | None = None,
     return img
 
 
+MAX_TEXT_H = 720          # 板に使ってよい縦幅
+
+
 def render_note(note: str) -> Image.Image:
-    """解説だけを大きく出す板。区間の切れ目に短く挟む用。"""
+    """解説だけを大きく出す板。区間の切れ目に挟む。
+
+    **文字を切り捨ててはいけない。** ナレーションは全文を読むので、画面だけ
+    途中で切れると音と表示がずれる。実際にまとめ（183文字）が4行で切れて
+    「相手を変えるのは成功」で止まった（2026-08-14）。
+    行数を固定せず、全文が収まるまでフォントを縮める。
+    """
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     d.rectangle([0, 0, W, H], fill=(*INK, 214))
-    d.rectangle([PAD, 300, PAD + 8, 300 + 220], fill=(*RED, 255))
 
-    f = pick_font(54)
-    lines = wrap(d, note, f, W - PAD * 2 - 40)[:4]
-    y = 300
+    size = 54
+    while size > 24:
+        f = pick_font(size)
+        lines = wrap(d, note, f, W - PAD * 2 - 40)
+        lh = int(size * 1.38)
+        if len(lines) * lh <= MAX_TEXT_H:
+            break
+        size -= 4
+    else:
+        f, lines, lh = pick_font(24), wrap(d, note, pick_font(24), W - PAD * 2 - 40), 34
+
+    block = len(lines) * lh
+    y = top = (H - block) // 2
+    d.rectangle([PAD, top, PAD + 8, top + block], fill=(*RED, 255))
+
     for ln in lines:
         d.text((PAD + 40, y), ln, font=f, fill=(*WHITE, 255))
-        y += 74
+        y += lh
 
     fs = pick_font(30)
     d.text((PAD + 40, y + 24), "※この解説は編集側による補足です",

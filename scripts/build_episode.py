@@ -29,8 +29,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.fetch_clips import clip_path  # noqa: E402
 from scripts.fetch_source import source_dir  # noqa: E402
+from scripts.narration import duration as wav_duration  # noqa: E402
+from scripts.narration import synth  # noqa: E402
 from scripts.recipe import build_description, validate  # noqa: E402
-from scripts.telop import render_lower_third  # noqa: E402
+from scripts.telop import render_lower_third, render_note  # noqa: E402
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -99,9 +101,10 @@ def build_clip(clip: dict, index: int, out_dir: Path, pad: float) -> Path:
     src, offset = resolved
     length = clip["end"] - clip["start"]
 
+    # 見出し帯には**タイトルだけ**を出す。解説は直後の解説板で読み上げるので、
+    # ここにも書くと同じ文が二度出て画面が重くなる
     png = out_dir / f"telop_{index:02d}.png"
-    render_lower_third(clip["title"], clip.get("note"),
-                       index=f"{index + 1:02d}").save(png)
+    render_lower_third(clip["title"], None, index=f"{index + 1:02d}").save(png)
 
     dst = out_dir / f"part_{index:02d}.mp4"
     _run(["ffmpeg", "-y", "-loglevel", "error",
@@ -115,6 +118,36 @@ def build_clip(clip: dict, index: int, out_dir: Path, pad: float) -> Path:
           "-map", "[o]", "-map", "0:a",
           "-c:v", "libx264", "-preset", "medium", "-crf", "20",
           "-pix_fmt", "yuv420p",
+          "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
+          str(dst)])
+    return dst
+
+
+TAIL_SEC = 0.6           # 読み終わってから次のカットに移るまでの間
+
+
+def build_note(text: str, index: int, out_dir: Path, kind: str = "note") -> Path:
+    """解説板を作る。静止画＋VOICEVOX の読み上げ。
+
+    **ここが「再利用されたコンテンツ」対策の本体。** テロップだけだったときは
+    独自要素が 873秒中60秒（6.9%）しかなく、審査担当が数カ所サンプリングしたら
+    高い確率で素の映像に当たる状態だった。音声解説を独立した区間として挟むと、
+    元配信には存在しない区間が構造として分離される。
+    """
+    wav = synth(text)
+    length = wav_duration(wav) + TAIL_SEC
+
+    png = out_dir / f"{kind}_{index:02d}.png"
+    render_note(text).save(png)
+
+    dst = out_dir / f"{kind}img_{index:02d}.mp4"
+    _run(["ffmpeg", "-y", "-loglevel", "error",
+          "-loop", "1", "-i", str(png), "-i", str(wav),
+          "-t", f"{length}",
+          "-vf", f"scale={W}:{H},fps={FPS}",
+          "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+          "-pix_fmt", "yuv420p",
+          # 本編と同じ音声パラメータにしないと concat -c copy が通らない
           "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
           str(dst)])
     return dst
@@ -147,7 +180,14 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
         return out
 
     out.mkdir(parents=True, exist_ok=True)
-    parts = [build_clip(c, i, out, pad) for i, c in enumerate(clips)]
+
+    # 本編 → 解説板 → 本編 → 解説板 … の順に並べる
+    parts: list[Path] = []
+    for i, c in enumerate(clips):
+        parts.append(build_clip(c, i, out, pad))
+        parts.append(build_note(c["note"], i, out))
+    if recipe.get("summary"):
+        parts.append(build_note(recipe["summary"], 99, out, kind="summary"))
 
     listing = out / "parts.txt"
     listing.write_text(
@@ -156,11 +196,21 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
     _run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
           "-i", str(listing), "-c", "copy", str(video)])
 
+    # 解説板を挟むので、期待尺は本編の合計ではなく各パートの合計で見る
+    expected = sum(probe_duration(p) for p in parts)
     actual = probe_duration(video)
-    if abs(actual - total) > DUR_TOLERANCE:
-        raise SystemExit(f"! 尺が合わない: 期待 {total:.1f}s / 実測 {actual:.1f}s")
+    if abs(actual - expected) > DUR_TOLERANCE:
+        raise SystemExit(f"! 尺が合わない: 期待 {expected:.1f}s / 実測 {actual:.1f}s")
 
-    (out / "description.txt").write_text(build_description(recipe), encoding="utf-8")
+    # 目次は解説板のぶんもずれるので、実測の尺から積む
+    offsets, t = [], 0.0
+    for i, p in enumerate(parts):
+        if i % 2 == 0:                       # 偶数番が本編
+            offsets.append(t)
+        t += probe_duration(p)
+
+    (out / "description.txt").write_text(
+        build_description(recipe, offsets), encoding="utf-8")
     (out / "meta.json").write_text(json.dumps({
         "id": recipe["id"],
         "title": recipe["title"],
