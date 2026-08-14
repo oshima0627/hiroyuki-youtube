@@ -38,13 +38,19 @@ CLIPS = WORK / "clips"
 RETRIES = 4          # 403 が出たら間隔を倍にして待ち直す
 BACKOFF_SEC = 30
 
+# **cookie 無しでは1本目の直後から 403 が続く**（2026-08-14 実測）。
+# プレーヤークライアントもコーデックも変えたが抜けられず、cookie で解決した。
+# Chrome は起動中だと Windows がDBをロックするので読めない。Edge は DPAPI の
+# 復号に失敗する。Firefox は起動していても読めた。
+DEFAULT_BROWSER = "firefox"
+
 
 def clip_path(video_id: str, start: float, end: float) -> Path:
     return CLIPS / f"{video_id}_{int(start)}-{int(end)}.mp4"
 
 
 def fetch(video_id: str, start: float, end: float, pad: float = 2.0,
-          force: bool = False) -> Path:
+          force: bool = False, browser: str | None = DEFAULT_BROWSER) -> Path:
     """指定区間を落とす。前後に pad 秒の余白を付ける。
 
     余白は編集で頭とお尻を詰められるようにするため。キーフレーム境界の
@@ -62,7 +68,10 @@ def fetch(video_id: str, start: float, end: float, pad: float = 2.0,
     a = max(0.0, start - pad)
     b = end + pad
     cmd = [sys.executable, "-m", "yt_dlp",
-           "--no-warnings",
+           "--no-warnings"]
+    if browser:
+        cmd += ["--cookies-from-browser", browser]
+    cmd += [
            "--extractor-args", "youtube:lang=ja",
            "--download-sections", f"*{a:.2f}-{b:.2f}",
            "--force-keyframes-at-cuts",
@@ -100,6 +109,8 @@ def main() -> None:
     ap.add_argument("recipe", type=Path)
     ap.add_argument("--pad", type=float, default=2.0)
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--browser", default=DEFAULT_BROWSER,
+                    help="cookie を読むブラウザ。none で cookie 無し")
     a = ap.parse_args()
 
     recipe = json.loads(a.recipe.read_text(encoding="utf-8"))
@@ -108,7 +119,8 @@ def main() -> None:
     print(f"{len(clips)}区間 / 合計 {int(total) // 60}:{int(total) % 60:02d}\n")
 
     for c in clips:
-        fetch(c["video_id"], c["start"], c["end"], a.pad, a.force)
+        fetch(c["video_id"], c["start"], c["end"], a.pad, a.force,
+              None if a.browser == "none" else a.browser)
 
     got = list(CLIPS.glob("*.mp4"))
     print(f"\n{len(got)}ファイル / "
