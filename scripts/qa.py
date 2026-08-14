@@ -122,15 +122,6 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
     heat = signals.get("heatmap") or []
     loud = signals.get("loudness") or []
 
-    if topics:
-        bounds = _bounds_from_topics(topics, duration)
-        source = "topics"
-    else:
-        bounds = _bounds_from_questions(lexical, duration)
-        source = "subtitles"
-    if not bounds:
-        return []
-
     # **AVOID はここで毎回計算する。signals.json に焼き込まない。**
     # 焼き込んでいたときに事故った: 語彙を足したあと1本しか probe を回さず、
     # 残り4本は古い判定のまま候補に出た（脅迫性障害・母の虐待が素通りした）。
@@ -141,6 +132,18 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
 
     avoid = avoid_marks(cues)
     lexical = lexical_marks(cues)
+
+    # 語彙を出してから境界を決める。**順番が逆だと落ちる。**
+    # 質問語からの推定は lexical を使うのに、定義より前で呼んでいた。
+    # トピック無しの回をスキップしていたので発現していなかった（2026-08-14）
+    if topics:
+        bounds = _bounds_from_topics(topics, duration)
+        source = "topics"
+    else:
+        bounds = _bounds_from_questions(lexical, duration)
+        source = "subtitles"
+    if not bounds:
+        return []
 
     blocks: list[dict] = []
     for start_raw, end_raw, title in bounds:
@@ -166,9 +169,10 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
 
         risk = {m["kind"] for m in avoid if start <= m["seconds"] <= end}
         words = {m["word"] for m in avoid if start <= m["seconds"] <= end}
+        # タイトルがあるときはそこも見る。ASR字幕より綺麗なので精度が高い
         for kind, ws in AVOID.items():
             for w in ws:
-                if w in title:
+                if title and w in title:
                     risk.add(kind)
                     words.add(w)
 
@@ -190,9 +194,31 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
             "risk": sorted(risk),
             "risk_words": sorted(words),
             "question": title or "".join(lines[:6])[:120],
+            # テーマ判定に使う本文。plan_episode は subtitles を捨てるので、
+            # 判定に足りるぶんだけ別に持たせる
+            "text": "".join(lines)[:1200],
             "subtitles": lines,
         })
     return blocks
+
+
+# 質問の読み上げはこのくらいの長さ。ここにテーマ語が無ければ主題ではない
+HEAD_CHARS = 180
+
+
+def theme_hits(b: dict, words: list[str]) -> int:
+    """このブロックがテーマ語に何回当たるか。
+
+    **タイトルが無いブロックがある。** GCD の公式トピックが付いている回は
+    タイトルで判定できるが、字幕から推定した回はタイトルが空になる。
+    その場合は字幕本文で数える。本文は長いので、当たった語の種類を数える
+    （同じ語が何度出ても1と数える）。
+    """
+    title = b.get("title") or ""
+    if title:
+        return sum(1 for w in words if w in title)
+    text = b.get("text") or "".join(b.get("subtitles") or [])
+    return sum(1 for w in words if w in text)
 
 
 def by_theme(blocks: list[dict], words: list[str], ratio: float = 0.6) -> list[dict]:
@@ -213,11 +239,22 @@ def by_theme(blocks: list[dict], words: list[str], ratio: float = 0.6) -> list[d
         return blocks
     out = []
     for b in blocks:
-        segs = [s for s in (b.get("title") or "").split(" / ") if s]
-        if not segs:
+        title = b.get("title") or ""
+        if title:
+            segs = [s for s in title.split(" / ") if s]
+            hit = sum(1 for s in segs if any(w in s for w in words))
+            if segs and hit / len(segs) >= ratio:
+                out.append(b)
             continue
-        hit = sum(1 for s in segs if any(w in s for w in words))
-        if hit / len(segs) >= ratio:
+        # **タイトルが無い回は、質問文にテーマ語があることを求める。**
+        # 本文のどこかに1語でもあれば通す判定にしたら、子育ての回に
+        # 「フランスにクマ出ますか」「5.1チャンネル音響」が入った（2026-08-14）。
+        # ブロックの冒頭は質問の読み上げで、そこが主題を決める。
+        # 言及があるだけのブロックと、その話をしているブロックを分ける
+        head = (b.get("text") or "")[:HEAD_CHARS]
+        if not any(w in head for w in words):
+            continue
+        if theme_hits(b, words) >= 3:
             out.append(b)
     return out
 

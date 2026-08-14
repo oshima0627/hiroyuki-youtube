@@ -77,10 +77,12 @@ def load_all() -> list[dict]:
         if not all(p.exists() for p in need):
             continue
         signals, cues, meta = (json.loads(p.read_text(encoding="utf-8")) for p in need)
+        # **公式トピックが無い回も使う。** GCD に載っているのは12本だけで
+        # （ページ送りも無い、2026-08-14 実測）、共演2本を除くと10本しか
+        # 使えない。一週間分に届かないので、字幕から推定した回も混ぜる。
+        # ただし境界は粗く、見出しは自分で書くことになる
         tp = d / "topics.json"
         topics = json.loads(tp.read_text(encoding="utf-8")) if tp.exists() else None
-        if not topics:
-            continue                       # 公式トピックが無い回はここでは使わない
         for b in split_blocks(signals, cues, int(meta.get("duration_sec") or 0), topics):
             b["video_id"] = meta["video_id"]
             b["video_title"] = meta.get("title") or ""
