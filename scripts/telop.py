@@ -10,8 +10,17 @@ tora は「案件カード（希望金額・事業内容）」「論点カード
   解説行     **元の配信に無い情報。** ここが「再利用されたコンテンツ」判定を
              避ける根拠になる。要約や言い換えを書いても付加価値にならない
 
-**元動画は画面下部にテロップを焼き込んでいない**（ひろゆきの配信は素の画面）ので
-下に置ける。令和の虎は下に大きなテロップが常時出ていて上に逃がす必要があった。
+## 帯は画面の上に出す
+
+最初に下三分の一に置いたが、実ビルドで確認したら**スパチャのカードと重なった**。
+ひろゆきの配信は素の画面だと思い込んでいたのが誤りで、スクリーンショット1枚で
+判断していた。実際にはカードが画面下部の2〜3割を占め、回によって高さも違う。
+
+**そのカードには質問文が載っている。** 視聴者が課金して質問し、その本文が
+表示される仕組みなので、隠すと何の話か分からなくなる。避けて上に置く。
+
+結果として tora-kirinuki が令和の虎で得た結論と同じになった
+（「論点カードは画面の上部に出す。下部に大きなテロップが常時あるとぶつかる」）。
 """
 
 from __future__ import annotations
@@ -22,14 +31,14 @@ from scripts.draw import GOLD, INK, MUTED, RED, WHITE, fit_font, pick_font, wrap
 
 W, H = 1920, 1080
 
-BAR_H = 168           # 見出し帯の高さ
-BAR_Y = H - BAR_H - 48
+BAR_H = 218           # 見出し帯の高さ。解説を2行ぶん入れる
+BAR_Y = 40            # **上に置く。** 下はスパチャのカードが占有している
 PAD = 64
 
 
 def render_lower_third(title: str, note: str | None = None,
                        index: str | None = None) -> Image.Image:
-    """下三分の一に置く見出し帯。透過PNGを返す（本編に重ねる）。"""
+    """画面上部に置く見出し帯。透過PNGを返す（本編に重ねる）。"""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
 
@@ -46,9 +55,11 @@ def render_lower_third(title: str, note: str | None = None,
     d.text((x, BAR_Y + 26), title, font=ft, fill=(*WHITE, 255))
 
     if note:
+        # 1行しか描いておらず、実ビルドで解説が途中で切れていた（2026-08-14）。
+        # 解説は付加価値の本体なので、途中で切れるのは中身が無いのと同じ
         fn = pick_font(36)
-        lines = wrap(d, note, fn, W - x - PAD)[:1]
-        d.text((x, BAR_Y + 100), lines[0], font=fn, fill=(*GOLD, 255))
+        for i, ln in enumerate(wrap(d, note, fn, W - x - PAD)[:2]):
+            d.text((x, BAR_Y + 100 + i * 50), ln, font=fn, fill=(*GOLD, 255))
     return img
 
 

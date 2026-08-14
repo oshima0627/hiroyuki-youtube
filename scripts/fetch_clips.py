@@ -118,9 +118,20 @@ def main() -> None:
     total = sum(c["end"] - c["start"] for c in clips)
     print(f"{len(clips)}区間 / 合計 {int(total) // 60}:{int(total) % 60:02d}\n")
 
+    # **1本失敗しても残りを続ける。** 途中で止めると、後ろのぶんを取り直すために
+    # また全部を舐め直すことになる。403 は区間ごとに出たり出なかったりする
+    failed = []
     for c in clips:
-        fetch(c["video_id"], c["start"], c["end"], a.pad, a.force,
-              None if a.browser == "none" else a.browser)
+        try:
+            fetch(c["video_id"], c["start"], c["end"], a.pad, a.force,
+                  None if a.browser == "none" else a.browser)
+        except SystemExit as e:
+            print(str(e).splitlines()[0])
+            failed.append((c["video_id"], int(c["start"]), int(c["end"])))
+    if failed:
+        print(f"\n! {len(failed)}区間が未取得。時間を置いて同じコマンドを再実行してください")
+        for v, s_, e_ in failed:
+            print(f"  {v} {s_}-{e_}")
 
     got = list(CLIPS.glob("*.mp4"))
     print(f"\n{len(got)}ファイル / "
