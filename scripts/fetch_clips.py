@@ -40,8 +40,17 @@ BACKOFF_SEC = 30
 
 # **cookie 無しでは1本目の直後から 403 が続く**（2026-08-14 実測）。
 # プレーヤークライアントもコーデックも変えたが抜けられず、cookie で解決した。
-# Chrome は起動中だと Windows がDBをロックするので読めない。Edge は DPAPI の
-# 復号に失敗する。Firefox は起動していても読めた。
+#
+# **Chrome と Edge からは cookie を取れない。** 2026-08-18 の実測:
+#   起動中の Chrome        Could not copy Chrome cookie database（DBロック）
+#   閉じている Profile 1   Failed to decrypt with DPAPI（アプリバウンド暗号化）
+#   Edge                   Failed to decrypt with DPAPI
+# ロックを外しても復号で落ちるので、**Chrome を閉じても解決しない**。
+# Firefox は暗号化方式が違うので起動していても読める。ただし
+# プロファイルにログイン済みの cookie が無ければ 0件になる（2026-08-18 に遭遇。
+# cookies.sqlite が1年前から更新されておらず、全区間が 403 になった）。
+#
+# ブラウザから取れないときは Netscape 形式の cookies.txt を --cookies で渡す。
 DEFAULT_BROWSER = "firefox"
 
 
@@ -50,7 +59,8 @@ def clip_path(video_id: str, start: float, end: float) -> Path:
 
 
 def fetch(video_id: str, start: float, end: float, pad: float = 2.0,
-          force: bool = False, browser: str | None = DEFAULT_BROWSER) -> Path:
+          force: bool = False, browser: str | None = DEFAULT_BROWSER,
+          cookies: Path | None = None) -> Path:
     """指定区間を落とす。前後に pad 秒の余白を付ける。
 
     余白は編集で頭とお尻を詰められるようにするため。キーフレーム境界の
@@ -69,7 +79,10 @@ def fetch(video_id: str, start: float, end: float, pad: float = 2.0,
     b = end + pad
     cmd = [sys.executable, "-m", "yt_dlp",
            "--no-warnings"]
-    if browser:
+    # cookies.txt があればそちらを優先する。ブラウザから取れない環境用
+    if cookies:
+        cmd += ["--cookies", str(cookies)]
+    elif browser:
         cmd += ["--cookies-from-browser", browser]
     cmd += [
            "--extractor-args", "youtube:lang=ja",
@@ -111,7 +124,12 @@ def main() -> None:
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--browser", default=DEFAULT_BROWSER,
                     help="cookie を読むブラウザ。none で cookie 無し")
+    ap.add_argument("--cookies", type=Path,
+                    help="Netscape 形式の cookies.txt。指定すると --browser より優先")
     a = ap.parse_args()
+
+    if a.cookies and not a.cookies.exists():
+        raise SystemExit(f"! {a.cookies} がありません")
 
     recipe = json.loads(a.recipe.read_text(encoding="utf-8"))
     clips = recipe.get("clips") or recipe.get("clips", [])
@@ -124,7 +142,7 @@ def main() -> None:
     for c in clips:
         try:
             fetch(c["video_id"], c["start"], c["end"], a.pad, a.force,
-                  None if a.browser == "none" else a.browser)
+                  None if a.browser == "none" else a.browser, a.cookies)
         except SystemExit as e:
             print(str(e).splitlines()[0])
             failed.append((c["video_id"], int(c["start"]), int(c["end"])))
