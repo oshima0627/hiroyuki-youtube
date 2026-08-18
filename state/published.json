@@ -86,7 +86,7 @@
       "youtube_video_id": "f_pERzvz3uA",
       "url": "https://www.youtube.com/watch?v=f_pERzvz3uA",
       "title": "【ひろゆき】フランス暮らし8連発。パリに住んでいる理由は自分の中にありません",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
@@ -98,8 +98,8 @@
         "_o8W_QKNHEo",
         "daulqJwmooE"
       ],
-      "publish_at": "2026-08-18T03:00:00Z",
-      "published_at": "2026-08-17T08:07:31Z",
+      "publish_at": null,
+      "published_at": "2026-08-18T03:00:32Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT13M"
