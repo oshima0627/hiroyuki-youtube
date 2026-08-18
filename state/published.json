@@ -14,7 +14,12 @@
         "c2X5ZUIpRSk",
         "daulqJwmooE",
         "jHWUy2IiZvs"
-      ]
+      ],
+      "publish_at": null,
+      "published_at": "2026-08-14T04:15:46Z",
+      "upload_status": "processed",
+      "view_count": 134,
+      "duration": "PT13M55S"
     },
     "2026-08-14-shigoto-short": {
       "youtube_video_id": "1T2lpHPudds",
@@ -26,13 +31,18 @@
       "thumbnail_set": false,
       "sources": [
         "jHWUy2IiZvs"
-      ]
+      ],
+      "publish_at": null,
+      "published_at": "2026-08-14T04:26:27Z",
+      "upload_status": "processed",
+      "view_count": 2,
+      "duration": "PT1M8S"
     },
     "2026-08-15-okane": {
       "youtube_video_id": "jaQZTRkMN4E",
       "url": "https://www.youtube.com/watch?v=jaQZTRkMN4E",
       "title": "【ひろゆき】お金の相談7連発。金額の話は一つもしていません",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
@@ -44,13 +54,18 @@
         "c2X5ZUIpRSk",
         "daulqJwmooE",
         "jHWUy2IiZvs"
-      ]
+      ],
+      "publish_at": null,
+      "published_at": "2026-08-15T03:00:12Z",
+      "upload_status": "processed",
+      "view_count": 301,
+      "duration": "PT14M5S"
     },
     "2026-08-16-kosodate": {
       "youtube_video_id": "1Qk53tSphDg",
       "url": "https://www.youtube.com/watch?v=1Qk53tSphDg",
       "title": "【ひろゆき】子育てと教育の相談7連発。学校の勉強は意味があるのか",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
@@ -60,7 +75,78 @@
         "VYJ-zTB8TVY",
         "_o8W_QKNHEo",
         "daulqJwmooE"
-      ]
+      ],
+      "publish_at": null,
+      "published_at": "2026-08-16T03:00:04Z",
+      "upload_status": "processed",
+      "view_count": 46,
+      "duration": "PT12M12S"
+    },
+    "2026-08-18-france": {
+      "youtube_video_id": "f_pERzvz3uA",
+      "url": "https://www.youtube.com/watch?v=f_pERzvz3uA",
+      "title": "【ひろゆき】フランス暮らし8連発。パリに住んでいる理由は自分の中にありません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "23vSB2fXjc8",
+        "5xJ3ZzEnyI8",
+        "M7KWrHANxHs",
+        "VYJ-zTB8TVY",
+        "_o8W_QKNHEo",
+        "daulqJwmooE"
+      ],
+      "publish_at": "2026-08-18T03:00:00Z",
+      "published_at": "2026-08-17T08:07:31Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT13M"
+    },
+    "2026-08-19-shigoto2": {
+      "youtube_video_id": "Di-K-jhqgMg",
+      "url": "https://www.youtube.com/watch?v=Di-K-jhqgMg",
+      "title": "【ひろゆき】仕事の相談10連発。退職理由にポジティブなものはありません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "23vSB2fXjc8",
+        "M7KWrHANxHs",
+        "_o8W_QKNHEo",
+        "a3zM5hCv-Uo",
+        "daulqJwmooE",
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-08-19T03:00:00Z",
+      "published_at": "2026-08-17T08:36:21Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT13M1S"
+    },
+    "2026-08-20-kurashi": {
+      "youtube_video_id": "scYtiTD_GG4",
+      "url": "https://www.youtube.com/watch?v=scYtiTD_GG4",
+      "title": "【ひろゆき】睡眠と食事の話6連発。昨日は11時間寝ました",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "23vSB2fXjc8",
+        "5xJ3ZzEnyI8",
+        "M7KWrHANxHs",
+        "VYJ-zTB8TVY",
+        "c2X5ZUIpRSk",
+        "daulqJwmooE"
+      ],
+      "publish_at": "2026-08-20T03:00:00Z",
+      "published_at": "2026-08-17T08:42:50Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT10M58S"
     }
   }
 }

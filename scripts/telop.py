@@ -63,6 +63,43 @@ def render_lower_third(title: str, note: str | None = None,
     return img
 
 
+SLIM_H = 104          # 見出し帯を出しっぱなしにするときの高さ
+
+
+def render_top_bar_slim(title: str, index: str | None = None) -> Image.Image:
+    """クリップの間ずっと出しておく細い見出し帯。
+
+    **カスタムサムネイルが使えないチャンネルでは、本編のフレームがそのまま
+    サムネイルになる。** 電話番号未確認だと thumbnails.set が 403 で通らない
+    （2026-08-17 に実測。"doesn't have permissions to upload and set custom
+    video thumbnails"）ので、YouTube が自動生成する候補から選ぶしかない。
+
+    自動候補は動画のおよそ25%・50%・75%地点から作られる。見出し帯を冒頭6秒
+    だけ出す設計では、90秒級のクリップで帯が乗っている時間は7%ほどしかなく、
+    候補に文字が入るかどうかが運になる。実際に EP004（1Qk53tSphDg）は帯の
+    無いフレームが選ばれ、元配信のコメント欄だけが写ったサムネイルになった。
+    EP002・EP003 は帯のあるフレームが選ばれている。
+
+    そこで冒頭6秒はこれまで通り大きい帯を出し、その後はこの細い帯に
+    差し替えて出し続ける。**どのフレームが選ばれても質問文が読める。**
+    """
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+
+    d.rectangle([0, BAR_Y, W, BAR_Y + SLIM_H], fill=(*INK, 210))
+    d.rectangle([0, BAR_Y, W, BAR_Y + 5], fill=(*RED, 255))
+
+    x = PAD
+    if index:
+        f = pick_font(34)
+        d.text((x, BAR_Y + 32), index, font=f, fill=(*RED, 255))
+        x += d.textbbox((0, 0), index, font=f)[2] + 24
+
+    ft = fit_font(d, title, W - x - PAD, 50)
+    d.text((x, BAR_Y + 26), title, font=ft, fill=(*WHITE, 255))
+    return img
+
+
 MAX_TEXT_H = 720          # 板に使ってよい縦幅
 
 

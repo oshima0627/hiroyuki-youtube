@@ -32,7 +32,8 @@ from scripts.fetch_source import source_dir  # noqa: E402
 from scripts.narration import duration as wav_duration  # noqa: E402
 from scripts.narration import synth  # noqa: E402
 from scripts.recipe import build_description, validate  # noqa: E402
-from scripts.telop import render_lower_third, render_note  # noqa: E402
+from scripts.telop import (  # noqa: E402
+    render_lower_third, render_note, render_top_bar_slim)
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -106,15 +107,22 @@ def build_clip(clip: dict, index: int, out_dir: Path, pad: float) -> Path:
     png = out_dir / f"telop_{index:02d}.png"
     render_lower_third(clip["title"], None, index=f"{index + 1:02d}").save(png)
 
+    # 6秒を過ぎたら細い帯に差し替えて出し続ける。**カスタムサムネイルが
+    # 403 で使えないので、本編のフレームがそのままサムネイルになる。**
+    # 帯が冒頭だけだと、自動生成の候補に文字が入るかどうかが運になる
+    slim = out_dir / f"telopslim_{index:02d}.png"
+    render_top_bar_slim(clip["title"], index=f"{index + 1:02d}").save(slim)
+
     dst = out_dir / f"part_{index:02d}.mp4"
     _run(["ffmpeg", "-y", "-loglevel", "error",
           "-ss", f"{offset}", "-i", str(src),
-          "-i", str(png),
+          "-i", str(png), "-i", str(slim),
           "-t", f"{length}",
           "-filter_complex",
           f"[0:v]scale={W}:{H}:force_original_aspect_ratio=decrease,"
           f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:color=black,fps={FPS}[v];"
-          f"[v][1:v]overlay=0:0:enable='between(t,0,{TELOP_SEC})'[o]",
+          f"[v][1:v]overlay=0:0:enable='between(t,0,{TELOP_SEC})'[o1];"
+          f"[o1][2:v]overlay=0:0:enable='gt(t,{TELOP_SEC})'[o]",
           "-map", "[o]", "-map", "0:a",
           "-c:v", "libx264", "-preset", "medium", "-crf", "20",
           "-pix_fmt", "yuv420p",

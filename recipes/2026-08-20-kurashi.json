@@ -1,0 +1,80 @@
+{
+  "id": "2026-08-20-kurashi",
+  "title": "【ひろゆき】睡眠と食事の話6連発。昨日は11時間寝ました",
+  "description": "ひろゆきさんの配信から、睡眠と食事の話だけを集めて解説を付けました。\n各チャプターの黄色い行は編集側の補足です。",
+  "tags": [
+    "ひろゆき",
+    "切り抜き",
+    "解説",
+    "睡眠",
+    "食事"
+  ],
+  "category_id": "22",
+  "privacy_status": "private",
+  "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+  "summary": "六件とも、体に良い悪いという話をしていません。睡眠は自分の記録で、食事は献立の組み方で、味は言葉の使い方で見ています。一般論として正しいかどうかではなく、自分の場合はどうなのかを毎回データか理屈に落としてから話していました。",
+  "thumb": {
+    "main": [
+      "昨日は11時間",
+      "寝ました"
+    ],
+    "sub": "睡眠と食事の話6件",
+    "at": 110
+  },
+  "clips": [
+    {
+      "video_id": "c2X5ZUIpRSk",
+      "video_title": "心を開いてもらうにはどうしたらいいか？ La francaise",
+      "video_url": "https://www.youtube.com/watch?v=c2X5ZUIpRSk",
+      "start": 1391.0,
+      "end": 1519.0,
+      "title": "昨日の睡眠時間は十一時間",
+      "note": "夜の七時間五十六分に昼寝の二時間三十五分を足して十一時間。彼女が不在でコーヒーを四杯淹れてしまい、その反動で前の日が眠れなかったという因果まで自分で説明している"
+    },
+    {
+      "video_id": "M7KWrHANxHs",
+      "video_title": "パリは燃えていたよ。AUBRAC",
+      "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+      "start": 586.0,
+      "end": 632.0,
+      "title": "快適に眠れる温度をデータで探している",
+      "note": "寝具でも就寝時刻でもなく、部屋の温度と扇風機の距離を記録している。快適な温度は人によって違うという前提なので、一般的な推奨値ではなく自分の記録を見ている"
+    },
+    {
+      "video_id": "VYJ-zTB8TVY",
+      "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+      "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+      "start": 5819.0,
+      "end": 5865.0,
+      "title": "小五の娘が夜十一時まで寝ない",
+      "note": "就寝時刻ではなく朝の起き方だけを判断材料にしている。自分から目覚めて動き出せるなら足りている、という一つの基準に絞って心配の要否を決めている"
+    },
+    {
+      "video_id": "23vSB2fXjc8",
+      "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+      "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+      "start": 9773.0,
+      "end": 9899.0,
+      "title": "焼きそばを自分では買わない理由",
+      "note": "炭水化物を減らすという言い方をしていない。おかずを美味しく食べるための主食という順番で献立を組むと、結果として炭水化物が減るという構成の話になっている"
+    },
+    {
+      "video_id": "5xJ3ZzEnyI8",
+      "video_title": "「暇は人生最高のスパイス」La Raoul",
+      "video_url": "https://www.youtube.com/watch?v=5xJ3ZzEnyI8",
+      "start": 5227.0,
+      "end": 5308.0,
+      "title": "「まずい」という言葉を使わない",
+      "note": "まずいという味は存在しない、という言葉の切り分け。しょっぱい・甘すぎるなど自分に合わない理由は言えるが、他人がどう感じるかは分からないので使わないという理屈"
+    },
+    {
+      "video_id": "daulqJwmooE",
+      "video_title": "神を信じない経営者は傲慢である。",
+      "video_url": "https://www.youtube.com/watch?v=daulqJwmooE",
+      "start": 7571.0,
+      "end": 7708.0,
+      "title": "「飲み物がないと食べられない」は嘘",
+      "note": "できないのではなく、やりたくないだけだと分けている。三日絶食すれば飲み物が無くても食べる、という極端な条件を置いて、できないという言葉の使われ方そのものを指している"
+    }
+  ]
+}
