@@ -141,11 +141,18 @@ def with_long_form_link(meta: dict, description: str) -> str:
     長尺のURLはアップロードするまで決まらないので、ビルド時ではなくここで
     差し込む。長尺 → ショートの順に上げれば必ず解決する。
     """
-    vid_id = meta["id"]
-    if not vid_id.endswith("-short"):
-        return description
+    # **親は meta["parent"] を見る。** 1つの長尺から複数本のショートを出すように
+    # なったので（plan_shorts.py）、id のサフィックスから逆算できない。
+    # 2026-08-14-shigoto-short のような従来の命名も読めるまま残す
+    base = meta.get("parent")
+    if not base:
+        vid_id = meta["id"]
+        if not vid_id.endswith("-short"):
+            return description
+        base = vid_id[: -len("-short")]
 
-    base = vid_id[: -len("-short")]
+    if FUNNEL_HEAD not in description:
+        return description
     if not PUBLISHED.exists():
         die(f"長尺 {base} が未アップロードです。先に長尺を上げてください")
     entry = json.loads(PUBLISHED.read_text(encoding="utf-8-sig"))["videos"].get(base)

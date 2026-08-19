@@ -1,0 +1,34 @@
+{
+ "id": "2026-08-23-pm",
+ "parent": "2026-08-20-kurashi",
+ "publish_at": "2026-08-23T09:00:00Z",
+ "title": "【ひろゆき】「まずい」という言葉を使わない【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "睡眠",
+  "食事",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "5xJ3ZzEnyI8",
+  "video_title": "「暇は人生最高のスパイス」La Raoul",
+  "video_url": "https://www.youtube.com/watch?v=5xJ3ZzEnyI8",
+  "start": 5227.0,
+  "end": 5308.0,
+  "title": "「まずい」という言葉を使わない",
+  "note": "まずいという味は存在しない、という言葉の切り分け。しょっぱい・甘すぎるなど自分に合わない理由は言えるが、他人がどう感じるかは分からないので使わないという理屈"
+ },
+ "short": {
+  "start": 0.28,
+  "end": 39.04,
+  "hook": "「まずい」という言葉を使わない",
+  "hook_px": 64,
+  "footer": "本編：睡眠と食事の話6連発"
+ },
+ "score": 0.2168
+}

@@ -70,15 +70,21 @@ def probe_duration(path: Path) -> float:
     return float(out.stdout.strip())
 
 
-def render_frame(hook: str, footer: str) -> Image.Image:
-    """上にフック、下に補足を置いた透過PNG。映像の上下に重なる。"""
+def render_frame(hook: str, footer: str, cover: int = 0) -> Image.Image:
+    """上にフック、下に補足を置いた透過PNG。映像の上下に重なる。
+
+    `cover` は映像の下端をさらに何px黒帯で潰すか。スパチャのカードは尺の中で
+    上端が動くので（実測で1本の窓の中を 650〜794px）、クロップの幾何だけでは
+    毎フレーム外し切れない。**残った侵入ぶんをここで確実に潰す。**
+    """
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
+    bottom = VIDEO_Y + VIDEO_H - cover
 
     d.rectangle([0, 0, W, VIDEO_Y], fill=(*INK, 255))
-    d.rectangle([0, VIDEO_Y + VIDEO_H, W, H], fill=(*INK, 255))
+    d.rectangle([0, bottom, W, H], fill=(*INK, 255))
     d.rectangle([0, VIDEO_Y - 6, W, VIDEO_Y], fill=(*RED, 255))
-    d.rectangle([0, VIDEO_Y + VIDEO_H, W, VIDEO_Y + VIDEO_H + 6], fill=(*RED, 255))
+    d.rectangle([0, bottom, W, bottom + 6], fill=(*RED, 255))
 
     f_label = pick_font(34)
     d.text((PAD, 44), "ひろゆき切り抜き＋解説", font=f_label, fill=(*RED, 255))
@@ -97,7 +103,7 @@ def render_frame(hook: str, footer: str) -> Image.Image:
     if footer:
         ff = pick_font(44)
         fl = wrap(d, footer, ff, W - PAD * 2)[:2]
-        y = VIDEO_Y + VIDEO_H + 60
+        y = bottom + 60
         for ln in fl:
             d.text((PAD, y), ln, font=ff, fill=(*GOLD, 255))
             y += 58
@@ -107,11 +113,93 @@ def render_frame(hook: str, footer: str) -> Image.Image:
     return img
 
 
+# **1フレームで決めてはいけない。** 当初は開始3秒地点の1枚だけを測って
+# クロップを固定していた。ひろゆきは前後にかなり動くので、測った瞬間は
+# 顔が中央でも2秒後には枠から外れる。14本作って3本（08-20-am / 08-23-pm /
+# 08-25-pm）で顔が左端で切れた（2026-08-19、コンタクトシートで確認）。
+# 窓の全体を密に見て、頭部の外接矩形の**合併**を取る。
+#
+# **等間隔の数点では足りない。** 7点にしたらカードの写り込みが1本残った
+# （08-22-pm）。この窓のカード上端を21点で測ると 650〜794px を行き来していて、
+# 7点はいちばん高い 650 を踏み外していた。スパチャは短時間で差し替わるので、
+# 跳ねを取りこぼすと必ずカードが入る。**1回の ffmpeg で SCAN_FPS 刻みに
+# 全フレームを出して、全部見る。**
+SCAN_FPS = 0.5                  # 2秒に1枚。38〜66秒の窓で19〜33枚
+CARD_PAD = 8                    # カード上端からさらに空ける保険
+
+# **縦は合併（最小・最大）で取ってはいけない。** 合併にしたら、頭がいちばん
+# 下がったフレームの顎（y=671）とカードがいちばん高いフレームの上端（y=626）が
+# 両立せず、14本中7本で口から下が切れた（2026-08-19、コンタクトシートで確認）。
+# 一瞬の外れ値まで含めるとどちらも満たせないので、縦だけ分位点で妥協する。
+# 横は合併のまま。**顔が左右にはみ出すほうが目立つ。**
+P_TOP, P_CHIN, P_CARD = 0.20, 0.80, 0.20
+
+# 分位点で外したぶんは黒帯で潰す。ただし潰しすぎると顔が隠れるので上限を置く
+MAX_COVER = int(VIDEO_H * 0.14)
+
+
+def _pct(values: list[int], q: float) -> int:
+    v = sorted(values)
+    return v[min(len(v) - 1, max(0, int(round(q * (len(v) - 1)))))]
+
+
+def scan_head(src: Path, at: float, length: float,
+              out: Path) -> tuple[int, int, tuple[int, int, int, int], int, int]:
+    """窓全体を測り、(幅, 高さ, 頭部の合併矩形, カード上端) を返す。
+
+    カードの上端はフレームごとに変わる（文面の長さで高さが変わる）ので、
+    **一番高い位置**を採る。低いほうに合わせるとカードが写り込む。
+    """
+    scan = out / "_scan"
+    if scan.exists():
+        for old in scan.glob("*.png"):
+            old.unlink()
+    scan.mkdir(parents=True, exist_ok=True)
+    _run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{at}", "-t", f"{length}",
+          "-i", str(src), "-vf", f"fps={SCAN_FPS}", str(scan / "f%03d.png")])
+
+    xs0, xs1, ys0, ys1, cards = [], [], [], [], []
+    size = (0, 0)
+    for png in sorted(scan.glob("*.png")):
+        frame = Image.open(png).convert("RGB")
+        size = frame.size
+        hx0, hx1, hy0, hy1, card = head_box(frame)
+        xs0.append(hx0), xs1.append(hx1), ys0.append(hy0), ys1.append(hy1)
+        cards.append(card)
+        png.unlink()
+    scan.rmdir()
+    if not xs0:
+        raise SystemExit(f"! {src.name} からフレームを取れなかった")
+    print(f"  走査 {len(cards)}枚 / カード上端 {min(cards)}〜{max(cards)}"
+          f"（{int(P_CARD * 100)}%点 {_pct(cards, P_CARD)}）")
+    return (size[0], size[1],
+            (min(xs0), max(xs1), _pct(ys0, P_TOP), _pct(ys1, P_CHIN)),
+            max(0, _pct(cards, P_CARD) - CARD_PAD), min(cards))
+
+
+def resolve_recipe(recipe: dict) -> tuple[dict, dict, str, str | None, Path]:
+    """(クリップ, short, 出力ID, 親の長尺ID, 出力先) を返す。
+
+    形式が2つある。
+
+    1. **単体**（`plan_shorts.py` の出力）。`clip` にクリップが直接入っていて、
+       1ファイル＝1本。毎日出すぶんはこちら。
+    2. **埋め込み**（従来）。長尺レシピの `short.clip` が `clips` の添字。
+       1レシピ1本しか出せない。EP002 がこれで出ているので読めるまま残す。
+    """
+    short = recipe.get("short") or {}
+    if isinstance(recipe.get("clip"), dict):
+        rid = recipe["id"]
+        return recipe["clip"], short, rid, recipe.get("parent"), WORK / "shorts" / rid
+    idx = short.get("clip", 0)
+    rid = f"{recipe['id']}-short"
+    return recipe["clips"][idx], short, rid, recipe["id"], WORK / rid
+
+
 def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
     recipe = json.loads(recipe_path.read_text(encoding="utf-8"))
-    short = recipe.get("short") or {}
-    idx = short.get("clip", 0)
-    clip = recipe["clips"][idx]
+    clip, short, rid, parent, out = resolve_recipe(recipe)
+    standalone_title = recipe["title"] if isinstance(recipe.get("clip"), dict) else ""
 
     length_all = clip["end"] - clip["start"]
     s = float(short.get("start", 0.0))
@@ -124,41 +212,50 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
 
     resolved = resolve_source(clip, pad)
     if resolved is None:
-        raise SystemExit(f"! clips[{idx}] の素材が無い。fetch_clips.py を先に")
+        raise SystemExit(f"! {rid} の素材が無い。fetch_clips.py を先に")
     src, offset = resolved
 
-    out = WORK / f"{recipe['id']}-short"
     if dry_run:
-        print(f"[dry-run] {recipe['id']}-short")
-        print(f"  クリップ{idx}「{clip['title']}」の {s:.0f}〜{e:.0f}秒")
+        print(f"[dry-run] {rid}")
+        print(f"  「{clip['title']}」の {s:.0f}〜{e:.0f}秒")
         print(f"  尺 {e - s:.0f}秒 / フック「{short.get('hook')}」")
         return out
 
     out.mkdir(parents=True, exist_ok=True)
 
-    # 顔の位置を測って正方形に切る。手で係数を触ると必ずずれる
-    probe_png = out / "_probe.png"
-    _run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{offset + s + 3}",
-          "-i", str(src), "-frames:v", "1", str(probe_png)])
-    frame = Image.open(probe_png).convert("RGB")
-    fw, fh_ = frame.size
-    hx0, hx1, hy0, hy1, card = head_box(frame)
-    # 頭が収まる正方形を作る。**頭の高さより小さくしない。**
-    # 中心の求め方を間違えて顎が切れたので、外接矩形から直接組む
-    # **カードの上端に下揃えする。** 顎はカードのすぐ上にあるので、
-    # 正方形を大きく取ると上の白い天井ばかりが入る。実際に顔の上に
-    # 空白が空いた（2026-08-14）。下を基準にして上へ伸ばす
-    side = int((hy1 - hy0) * 1.6)
-    side = min(side, card, fw, fh_)
+    fw, fh_, (hx0, hx1, hy0, hy1), card, card_min = scan_head(
+        src, offset + s, e - s, out)
+    # 頭が収まる正方形を作る。
+    # **幅も見る。** 高さだけを1.6倍していたころ、横を向いて頭が横長になった
+    # フレームで正方形が頭より狭くなった。長い方の辺に合わせる
+    side = int(max(hx1 - hx0, hy1 - hy0) * 1.15)
+    # **顎の少し下に下端を置く。** カードの上端に下揃えしていたころ、顎と
+    # カードの間が空いているフレームで正方形が上へ伸び、白い天井が
+    # 200px 入った（2026-08-19）。カードは越えない
+    bottom = min(card, hy1 + int(side * 0.10))
+    # **下端が足りないときは正方形を縮める。** y0 を 0 で丸めていたら、
+    # 正方形が下へはみ出してカードに食い込んだ（08-22-pm、2026-08-19）。
+    # 位置を丸めるのではなく辺を詰めれば、カードを越えないことが構造で決まる
+    side = min(side, bottom, fw, fh_)
+    # カードがいちばん高く出るフレームでの侵入ぶんを、黒帯で潰す量に直す。
+    # **潰す量が大きすぎるときは諦めてクロップを詰める。** 顔の半分を黒で
+    # 隠すくらいなら、寄りが強くなるほうがまだ見られる
+    over = max(0, bottom - card_min)
+    cover = -(-over * VIDEO_H // side)
+    if cover > MAX_COVER:
+        bottom = card_min
+        side = min(side, bottom, fw, fh_)
+        cover = 0
     cx = (hx0 + hx1) // 2
     x0 = max(0, min(fw - side, cx - side // 2))
-    y0 = max(0, card - side)
+    y0 = max(0, bottom - side)
     cw = ch = side
-    print(f"  頭部 x{hx0}-{hx1} y{hy0}-{hy1} / 切り出し {side}x{side} @ ({x0},{y0})"
-          f" / 拡大 {VIDEO_H / side:.2f}倍")
+    print(f"  頭部（合併） x{hx0}-{hx1} y{hy0}-{hy1} / 下端 {bottom}"
+          f" / 切り出し {side}x{side} @ ({x0},{y0}) / 拡大 {VIDEO_H / side:.2f}倍"
+          f" / 黒帯 {cover}px")
 
     png = out / "frame.png"
-    render_frame(short.get("hook", ""), short.get("footer", "")).save(png)
+    render_frame(short.get("hook", ""), short.get("footer", ""), cover).save(png)
 
     video = out / "video.mp4"
     _run(["ffmpeg", "-y", "-loglevel", "error",
@@ -176,7 +273,8 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
           str(video)])
 
     actual = probe_duration(video)
-    tags = list(recipe.get("tags") or []) + ["Shorts"]
+    # plan_shorts.py は既に Shorts を付けて出す。順序を保ったまま重複だけ落とす
+    tags = list(dict.fromkeys(list(recipe.get("tags") or []) + ["Shorts"]))
     desc = "\n".join([
         short.get("hook", ""), "",
         "▼この回をフルで見る",
@@ -188,8 +286,15 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
     ]).strip() + "\n"
     (out / "description.txt").write_text(desc, encoding="utf-8")
     (out / "meta.json").write_text(json.dumps({
-        "id": f"{recipe['id']}-short",
-        "title": short.get("title") or short.get("hook", "")[:100],
+        "id": rid,
+        # **parent を必ず残す。** 概要欄の「▼この回をフルで見る」に長尺のURLを
+        # 差し込むのに要る。1つの長尺から複数本出すので、id のサフィックスから
+        # 逆算する従来のやり方では親を特定できない
+        "parent": parent,
+        "publish_at": recipe.get("publish_at"),
+        # 埋め込み形式の recipe["title"] は**長尺のタイトル**なので使わない
+        "title": (short.get("title") or standalone_title
+                  or short.get("hook", ""))[:100],
         "tags": tags,
         "category_id": recipe.get("category_id", "22"),
         "privacy_status": "private",
