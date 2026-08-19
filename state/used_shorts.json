@@ -1,0 +1,39 @@
+{
+ "windows": [
+  {
+   "short_id": "2026-08-20-am",
+   "video_id": "jHWUy2IiZvs",
+   "start": 9220.6,
+   "end": 9258.8,
+   "hook": "簿記1級を取るか税理士を目指すか"
+  },
+  {
+   "short_id": "2026-08-20-pm",
+   "video_id": "c2X5ZUIpRSk",
+   "start": 1391.16,
+   "end": 1432.76,
+   "hook": "昨日の睡眠時間は十一時間"
+  },
+  {
+   "short_id": "2026-08-21-am",
+   "video_id": "jHWUy2IiZvs",
+   "start": 6515.8,
+   "end": 6557.0,
+   "hook": "退職理由をポジティブに伝えたい"
+  },
+  {
+   "short_id": "2026-08-21-pm",
+   "video_id": "jHWUy2IiZvs",
+   "start": 6720.36,
+   "end": 6766.08,
+   "hook": "積立の額を増やすべきか"
+  },
+  {
+   "short_id": "2026-08-22-am",
+   "video_id": "daulqJwmooE",
+   "start": 3316.92,
+   "end": 3355.68,
+   "hook": "大学で友達がいない"
+  }
+ ]
+}

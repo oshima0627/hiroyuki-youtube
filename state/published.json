@@ -147,6 +147,91 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT10M58S"
+    },
+    "2026-08-20-am": {
+      "youtube_video_id": "MzfotCIK5z8",
+      "url": "https://www.youtube.com/watch?v=MzfotCIK5z8",
+      "title": "【ひろゆき】簿記1級を取るか税理士を目指すか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-08-19T22:00:00Z",
+      "published_at": "2026-08-19T01:33:48Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT39S"
+    },
+    "2026-08-20-pm": {
+      "youtube_video_id": "OwA9rNy2k9c",
+      "url": "https://www.youtube.com/watch?v=OwA9rNy2k9c",
+      "title": "【ひろゆき】昨日の睡眠時間は十一時間【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "c2X5ZUIpRSk"
+      ],
+      "publish_at": "2026-08-20T09:00:00Z",
+      "published_at": "2026-08-19T01:33:55Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT42S"
+    },
+    "2026-08-21-am": {
+      "youtube_video_id": "VBIM-15qbBY",
+      "url": "https://www.youtube.com/watch?v=VBIM-15qbBY",
+      "title": "【ひろゆき】退職理由をポジティブに伝えたい【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-08-20T22:00:00Z",
+      "published_at": "2026-08-19T01:34:03Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT42S"
+    },
+    "2026-08-21-pm": {
+      "youtube_video_id": "ZTp3PjAFJUs",
+      "url": "https://www.youtube.com/watch?v=ZTp3PjAFJUs",
+      "title": "【ひろゆき】積立の額を増やすべきか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-08-21T09:00:00Z",
+      "published_at": "2026-08-19T01:34:11Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT46S"
+    },
+    "2026-08-22-am": {
+      "youtube_video_id": "QMiwYSsJTCc",
+      "url": "https://www.youtube.com/watch?v=QMiwYSsJTCc",
+      "title": "【ひろゆき】大学で友達がいない【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "daulqJwmooE"
+      ],
+      "publish_at": "2026-08-21T22:00:00Z",
+      "published_at": "2026-08-19T01:34:19Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT39S"
     }
   }
 }
