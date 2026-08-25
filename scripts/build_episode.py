@@ -156,6 +156,19 @@ def build_head(thumb: Path, out_dir: Path) -> Path:
     return dst
 
 
+def clip_notes(clip: dict) -> list[str]:
+    """クリップの解説文を並べて返す。
+
+    `notes`（配列）があればそれを、無ければ `note`（単数）を1枚として扱う。
+    **既存のレシピを壊さないための後方互換。** 総集編のレシピは全部 note 単数で書いてある。
+    """
+    notes = clip.get("notes")
+    if notes:
+        return [str(t).strip() for t in notes if str(t).strip()]
+    note = (clip.get("note") or "").strip()
+    return [note] if note else []
+
+
 def note_is_current(text: str, index: int, out_dir: Path, kind: str = "note") -> bool:
     """その解説板が今の文章で作られているか。
 
@@ -235,9 +248,17 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
         pc = out / f"part_{i:02d}.mp4"
         parts.append(pc if (concat_only and pc.exists())
                      else build_clip(c, i, out, pad))
-        pn = out / f"noteimg_{i:02d}.mp4"
-        parts.append(pn if (concat_only and note_is_current(c["note"], i, out))
-                     else build_note(c["note"], i, out))
+        for j, text in enumerate(clip_notes(c)):
+            # 解説板は1クリップに複数枚置ける。**検索語で束ねる回で必要になる。**
+            # 1問あたりの素材は1分前後しかないので（2026-08-25 実測、43〜118秒）、
+            # 板が1枚だと本編の9割が素材そのままになり、「再利用されたコンテンツ」
+            # 判定にとって総集編より悪い比率になる。
+            # 添字は 100*i+j。単数 note のときは j=0 なので従来と同じ番号になり、
+            # --concat-only の作り置きがそのまま効く。
+            idx = i if j == 0 else 100 * (i + 1) + j
+            pn = out / f"noteimg_{idx:02d}.mp4"
+            parts.append(pn if (concat_only and note_is_current(text, idx, out))
+                         else build_note(text, idx, out))
     if recipe.get("summary"):
         ps = out / "summaryimg_99.mp4"
         parts.append(

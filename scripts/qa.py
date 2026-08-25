@@ -128,10 +128,12 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
     # 語彙は実測のたびに増えるので、キャッシュしてよい種類のデータではない。
     # 語彙由来のものは全部ここで計算する。signals.json に残っているのは
     # 再計算が高くつくもの（音量・コメント・熱）だけにする
-    from scripts.signals import AVOID, avoid_marks, lexical_marks
+    from scripts.signals import (AVOID, SEARCH, avoid_marks, lexical_marks,
+                                 search_marks)
 
     avoid = avoid_marks(cues)
     lexical = lexical_marks(cues)
+    search = search_marks(cues)
 
     # 語彙を出してから境界を決める。**順番が逆だと落ちる。**
     # 質問語からの推定は lexical を使うのに、定義より前で呼んでいた。
@@ -180,6 +182,17 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
                  + W_LOUD * l_score + W_ASSERT * n_assert
                  + W_EVIDENCE * n_evid)
 
+        # 検索される固有名詞。**score には混ぜない。**
+        # 混ぜると総集編モード（plan_episode.py）の選別まで黙って変わる。
+        # ここは測るだけにして、使うかどうかは planner に決めさせる。
+        #
+        # **タイトル一致と字幕一致を分ける。** ASR は固有名詞を崩すので、
+        # 字幕だけの一致は誤検出でありうる。混ぜると区別できなくなる。
+        # 語は集合で持つ。同じ語の連呼で順位を稼がせない。
+        s_title = {w for ws in SEARCH.values() for w in ws
+                   if title and w in title}
+        s_text = {m["word"] for m in search if start <= m["seconds"] <= end}
+
         lines = [c["line"] for c in cues if start <= c["t"] <= end]
         blocks.append({
             "start": start,
@@ -193,6 +206,14 @@ def split_blocks(signals: dict, cues: list[dict], duration: int,
                         "音量": round(l_score, 2)},
             "risk": sorted(risk),
             "risk_words": sorted(words),
+            # **束ねるときはタイトル一致だけを使うこと。**
+            # 字幕一致で束ねたら「サグラダ・ファミリア完成と『未完成のロマン』」が
+            # 「看護師」の回に入った（2026-08-25 実測）。話の中で一度触れただけで、
+            # 主題ではない。字幕側は語彙を育てるときの手がかりとして残す。
+            "search_title_words": sorted(s_title),
+            "search_text_words": sorted(s_text),
+            "search_words": sorted(s_title | s_text),
+            "search_in_title": bool(s_title),
             "question": title or "".join(lines[:6])[:120],
             # テーマ判定に使う本文。plan_episode は subtitles を捨てるので、
             # 判定に足りるぶんだけ別に持たせる
