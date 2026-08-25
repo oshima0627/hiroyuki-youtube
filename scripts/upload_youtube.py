@@ -54,6 +54,7 @@ def die(msg: str) -> None:
 
 def get_service():
     try:
+        from google.auth.exceptions import RefreshError
         from google.auth.transport.requests import Request
         from google.oauth2.credentials import Credentials
         from google_auth_oauthlib.flow import InstalledAppFlow
@@ -66,7 +67,15 @@ def get_service():
     if TOKEN.exists():
         creds = Credentials.from_authorized_user_file(str(TOKEN), SCOPES)
     if creds and creds.expired and creds.refresh_token:
-        creds.refresh(Request())
+        try:
+            creds.refresh(Request())
+        except RefreshError as e:
+            # **失効したトークンで例外を投げると、その先の再認証に入れないまま詰む。**
+            # 2026-08-25 に `--auth-only` が invalid_grant で落ちた。取り直したくて
+            # 叩くコマンドなのに、取り直せないので手の打ちようが無くなる。
+            # 失効は想定内の状態なので、握りつぶして通常の同意フローへ落とす。
+            print(f"! 保存済みのトークンが使えません（{e}）。取り直します")
+            creds = None
     if not creds or not creds.valid:
         if not CLIENT_SECRET.exists():
             die(f"{CLIENT_SECRET.name} がありません。\n"
