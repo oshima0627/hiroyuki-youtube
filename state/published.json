@@ -232,6 +232,31 @@
       "upload_status": "uploaded",
       "view_count": 0,
       "duration": "PT39S"
+    },
+    "2026-08-26-nisa": {
+      "youtube_video_id": "u11KwZDUe0s",
+      "url": "https://www.youtube.com/watch?v=u11KwZDUe0s",
+      "title": "【ひろゆき】新NISAが円安を加速させる理由。NISAとiDeCoの決定的な違い",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "5xJ3ZzEnyI8"
+      ]
+    },
+    "2026-08-27-fudosan": {
+      "youtube_video_id": "TtJKOPH0PCU",
+      "url": "https://www.youtube.com/watch?v=TtJKOPH0PCU",
+      "title": "【ひろゆき】不動産価格が下がっても庶民が買えない理由。不景気で不動産営業が儲かるのはなぜか",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "Fydc3YFumow",
+        "VYJ-zTB8TVY"
+      ]
     }
   }
 }
