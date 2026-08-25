@@ -141,7 +141,13 @@ def face_score(src: Image.Image) -> float:
 
 
 def pick_frame(video: Path, out_dir: Path, count: int = 9) -> tuple[Path, float, float]:
-    """顔がこちらを向いているフレームを選ぶ。(画像, 秒, スコア) を返す。"""
+    """顔がこちらを向いているフレームを選ぶ。(画像, 秒, スコア) を返す。
+
+    候補が9点だと尺13分に対して約80秒おきにしか見ておらず、たまたま全部が
+    伏し目のフレームに当たることがある。実際に 8/14・8/15・8/16 の3本が
+    下を向いた絵になった（2026-08-25 に確認）。本数が少ないうちは candidates を
+    増やして選び直すほうが安い。
+    """
     dur = float(subprocess.run(
         ["ffprobe", "-v", "error", "-show_entries", "format=duration",
          "-of", "default=nw=1:nk=1", str(video)],
@@ -231,6 +237,10 @@ def main() -> None:
     ap.add_argument("--at", type=float, help="レシピの thumb.at を上書きする")
     ap.add_argument("--auto-crop", action="store_true",
                     help="頭部を測ってクロップを決める（手で係数を触らない）")
+    ap.add_argument("--candidates", type=int, default=9,
+                    help="顔を探すときに見るフレーム数（既定 9）")
+    ap.add_argument("--ignore-at", action="store_true",
+                    help="レシピの thumb.at を無視してフレームを探し直す")
     a = ap.parse_args()
 
     recipe = json.loads(a.recipe.read_text(encoding="utf-8"))
@@ -240,7 +250,7 @@ def main() -> None:
     if not video.exists():
         raise SystemExit(f"! {video} が無い。先に build_episode.py を実行してください")
 
-    if a.at is not None or thumb.get("at") is not None:
+    if not a.ignore_at and (a.at is not None or thumb.get("at") is not None):
         at = float(a.at if a.at is not None else thumb["at"])
         frame = grab_frame(video, at, out_dir / "_thumbframe.png")
         print(f"  指定の {at:.0f}秒 を使用（顔スコア "
@@ -248,8 +258,9 @@ def main() -> None:
     else:
         # **顔がこちらを向いているフレームを選ぶ。** 適当な秒を指定すると
         # 後頭部のサムネイルになる（2026-08-14 に実際になった）
-        frame, at, sc = pick_frame(video, out_dir)
-        print(f"  {at:.0f}秒 を選択（顔スコア {sc:.3f}）")
+        frame, at, sc = pick_frame(video, out_dir, a.candidates)
+        print(f"  {at:.0f}秒 を選択（顔スコア {sc:.3f}／候補 {a.candidates}点）")
+        print(f"  レシピに残すなら \"at\": {at:.0f}")
 
     crop = tuple(thumb.get("crop") or (0.30, 0.25, 0.35))
     if a.auto_crop or not thumb.get("crop"):
