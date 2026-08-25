@@ -20,6 +20,15 @@ from __future__ import annotations
 
 REQUIRED = ("id", "title", "expected_channel_id")
 
+
+def clip_notes(clip: dict) -> list[str]:
+    """クリップの解説文。`notes`（配列）優先、無ければ `note`（単数）。"""
+    notes = clip.get("notes")
+    if notes:
+        return [str(t).strip() for t in notes if str(t).strip()]
+    note = (clip.get("note") or "").strip()
+    return [note] if note else []
+
 # 「公認」「公式」とは書かない。権利者は「あくまでご本人は黙認」という立場で、
 # 受付メールに「‟公式”や‟公認”という記載はお控えください」と明記されている。
 # 申請済みという事実だけを書く。
@@ -51,12 +60,25 @@ def validate(recipe: dict) -> None:
             raise ValueError(
                 f"clips[{i}] の範囲が不正: start={c['start']} end={c['end']}")
 
-        note = (c.get("note") or "").strip()
-        if len(note) < NOTE_MIN_LEN:
-            raise ValueError(
-                f"clips[{i}] の note が {len(note)}文字。"
-                f"{NOTE_MIN_LEN}文字以上の解説を書くこと。"
-                "解説を省いた切り抜きは「再利用されたコンテンツ」で収益化が通らない")
+        notes = clip_notes(c)
+        if not notes:
+            raise ValueError(f"clips[{i}] に note / notes が無い")
+        for j, note in enumerate(notes):
+            if len(note) < NOTE_MIN_LEN:
+                where = f"clips[{i}] の note" if len(notes) == 1 else f"clips[{i}].notes[{j}]"
+                raise ValueError(
+                    f"{where} が {len(note)}文字。"
+                    f"{NOTE_MIN_LEN}文字以上の解説を書くこと。"
+                    "解説を省いた切り抜きは「再利用されたコンテンツ」で収益化が通らない")
+
+    # **検索語で束ねる回は解説の比率が効く。**
+    # 1問あたりの素材は1分前後しかないので（2026-08-25 実測）、クリップが少ないほど
+    # 素材そのままの割合が上がる。3問以下のときは解説板を合計4枚以上求める。
+    total_notes = sum(len(clip_notes(c)) for c in clips)
+    if len(clips) <= 3 and total_notes < 4:
+        raise ValueError(
+            f"クリップ {len(clips)}件に対して解説板が {total_notes}枚。"
+            "本編の大半が素材そのままになる。notes を増やして合計4枚以上にすること")
 
     title = recipe["title"]
     hit = next((w for w in BANNED_IN_TITLE if w in title), None)
