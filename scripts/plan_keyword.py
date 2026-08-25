@@ -55,6 +55,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 from scripts.plan_episode import NOTE_SEC, hms, load_all, overlaps, used_ranges  # noqa: E402
 from scripts.qa import MIN_SCORE  # noqa: E402
+from scripts.signals import search_avoid_conflicts  # noqa: E402
 
 # 完成尺の目安。上限ではなく「これを超えたらクリップを減らす」の目印。
 # 15分の制約とは別で、検索から来た人が1つの疑問を解くのに付き合う長さ。
@@ -117,6 +118,14 @@ def main() -> None:
     ap.add_argument("--allow-used", action="store_true",
                     help="既に他のレシピで使った区間も候補に含める")
     a = ap.parse_args()
+
+    conflicts = search_avoid_conflicts()
+    if conflicts:
+        # 黙って0件になるより、語彙の矛盾として画面に出す
+        print("! SEARCH の語が AVOID に当たっています。この語では候補が出ません:")
+        for w, aw in conflicts:
+            print(f"    {w}（AVOID の「{aw}」に一致）")
+        print()
 
     pool = candidates(a.out, a.allow_used)
     if not pool:
