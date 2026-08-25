@@ -244,8 +244,13 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
     # --concat-only は既にあるパーツを使い回して連結だけやり直す。
     # サムネを冒頭に足すためだけに10分以上かけて再エンコードしないため
     parts: list[Path] = []
+    # 本編がパート列の何番目かを覚えておく。**並びから当てない。**
+    # 「本編は偶数番」という前提で計算していたが、それは1クリップに解説板1枚のとき
+    # だけ成り立つ。notes を複数持たせたら目次が39秒ずれた（2026-08-25 実測）。
+    clip_at: list[int] = []
     for i, c in enumerate(clips):
         pc = out / f"part_{i:02d}.mp4"
+        clip_at.append(len(parts))
         parts.append(pc if (concat_only and pc.exists())
                      else build_clip(c, i, out, pad))
         for j, text in enumerate(clip_notes(c)):
@@ -270,6 +275,7 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
     thumb = out / "thumb.png"
     if thumb.exists():
         parts.insert(0, build_head(thumb, out))
+        clip_at = [n + 1 for n in clip_at]        # 冒頭カードのぶん後ろへずれる
     else:
         print("- thumb.png がまだ無いので冒頭カードは入れません"
               "（thumbnail.py のあと --concat-only で足せます）")
@@ -288,13 +294,11 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
         raise SystemExit(f"! 尺が合わない: 期待 {expected:.1f}s / 実測 {actual:.1f}s")
 
     # 目次は解説板のぶんもずれるので、実測の尺から積む
-    # 冒頭カードがあるぶんだけ本編の位置がずれる
-    head = 1 if parts and parts[0].name == "part_head.mp4" else 0
-    offsets, t = [], 0.0
-    for i, p in enumerate(parts):
-        if i >= head and (i - head) % 2 == 0:      # 本編は偶数番
-            offsets.append(t)
+    starts, t = [], 0.0
+    for p in parts:
+        starts.append(t)
         t += probe_duration(p)
+    offsets = [starts[n] for n in clip_at]
 
     (out / "description.txt").write_text(
         build_description(recipe, offsets), encoding="utf-8")
