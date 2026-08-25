@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 import time
@@ -54,6 +55,24 @@ BACKOFF_SEC = 30
 DEFAULT_BROWSER = "firefox"
 
 
+
+# **yt-dlp は JS ランタイムが無いと動画フォーマットを1つも返さない。**
+# 2026-08-25 に全区間が "Requested format is not available" で落ちた。Cookie は通っていて、
+# --list-formats がストーリーボード（sb0..sb3）しか返さない状態だった。原因は
+# YouTube の n チャレンジで、yt-dlp 2026.08.19 は js_runtimes の既定が deno だけ。
+# この環境に deno は無く、Node v24.1.0 はあるのに使われていなかった。
+# 明示的に渡さないと毎回同じ所で落ちるので、使えるものを探して渡す。
+JS_RUNTIMES = ("deno", "node", "bun")
+
+
+def available_js_runtime() -> str | None:
+    """yt-dlp に渡せる JS ランタイム名。無ければ None。"""
+    for name in JS_RUNTIMES:
+        if shutil.which(name):
+            return name
+    return None
+
+
 def clip_path(video_id: str, start: float, end: float) -> Path:
     return CLIPS / f"{video_id}_{int(start)}-{int(end)}.mp4"
 
@@ -84,6 +103,12 @@ def fetch(video_id: str, start: float, end: float, pad: float = 2.0,
         cmd += ["--cookies", str(cookies)]
     elif browser:
         cmd += ["--cookies-from-browser", browser]
+    runtime = available_js_runtime()
+    if runtime:
+        cmd += ["--js-runtimes", runtime]
+    else:
+        print("! JS ランタイム（deno / node / bun）が見つかりません。"
+              "動画フォーマットが1つも返らずに落ちる可能性があります")
     cmd += [
            "--extractor-args", "youtube:lang=ja",
            "--download-sections", f"*{a:.2f}-{b:.2f}",
