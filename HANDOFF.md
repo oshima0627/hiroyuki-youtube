@@ -56,28 +56,50 @@ YouTube 側には1枚も設定されていない。
 `state/published.json` は全件 `thumbnail_set: false`。Studio の動画詳細でもカスタムサムネイルは未設定。
 一方 `work/<id>/thumb.png` は**8本ぶん全部すでに生成済み**（1280x720）。作ったが適用されていない。
 
-### カスタムサムネイルはチャンネルで使える
+### カスタムサムネイルは使えない。電話番号の確認が未実行
 
-Studio の動画詳細のサムネイル欄に「ファイルをアップロード」が出ており、電話番号確認を促す表示は無い。
-**「電話番号未確認だからサムネイルが設定できなかった」という説は否定された。**
+Studio → 設定 → チャンネル → **機能の利用資格**:
+
+| | 状態 |
+|---|---|
+| 1. 標準機能 | 有効 |
+| 2. 中級者向け機能（カスタム サムネイル / ライブ配信 / 15分を超える動画） | **利用資格あり**（未有効） |
+| 3. 上級者向け機能 | 利用資格あり |
+
+2 の要件は「✓ 標準機能が有効になっている ＋ 電話番号の確認」で、`電話番号を確認` ボタンが未実行。
+
+API も同じことを返す:
+
+```
+HttpError 403 ... thumbnails/set
+"The authenticated user doesn't have permissions to upload and set custom video thumbnails."
+```
+
+**動画詳細のサムネイル欄に「ファイルをアップロード」ボタンが出ていることは、資格の有無の判定にならない。**
+一度これを根拠に「使える」と誤って判断した。判定は必ず「機能の利用資格」を見ること。
+
+`https://www.youtube.com/verify_phone_number` は「確認済み」と表示するが、
+**これは開いたときのチャンネル文脈（＝個人チャンネル）の話で、ブランドアカウント側の資格とは別。**
 
 ### 収益化ページは判定不能
 
 「収益化」タブは進捗ではなく
 「居住国が設定されていないため、収益化の資格を判定できません。居住国を更新してください」だけを表示する。
 
-### YouTube API の認証が切れている（パイプライン全体が止まっている）
+### YouTube API の認証は復旧済み
+
+`token.json` のリフレッシュトークンが失効していたが（`invalid_grant: Token has been expired or revoked.`）、
+2026-08-25 にオーナー本人が再認証して復旧した。
 
 ```
-google.auth.exceptions.RefreshError:
-  ('invalid_grant: Token has been expired or revoked.', ...)
+✓ 一致  ひろゆき解説ch【切り抜き】（UCqK3KYqEeeJiAWr4nSryJYQ）
 ```
 
-`token.json` のリフレッシュトークンが失効している。**サムネイル適用も新規アップロードも通らない。**
+失効の理由は未特定。疑った「OAuth 同意画面がテストモード（＝7日で失効）」は**否定された**
+（Google Cloud プロジェクト `hiroyuki-kirinuki-505500` の公開ステータスは「本番環境」）。
 
-原因として疑った「OAuth 同意画面がテストモード（＝7日でトークンが失効）」は**否定された**。
-Google Cloud コンソール（プロジェクト `hiroyuki-kirinuki-505500`）の公開ステータスは **「本番環境」**。
-失効の理由は未特定。
+**このとき `--auth-only` 自体が落ちて再認証できなかった。** `get_service()` が失効トークンで
+`creds.refresh()` の例外を素通しし、その先の同意フローに入れていなかった。修正済み。
 
 ### フレーム選択は candidates を増やしても直らない
 
@@ -95,35 +117,32 @@ Google Cloud コンソール（プロジェクト `hiroyuki-kirinuki-505500`）�
 - `scripts/thumbnail.py` に `--candidates` / `--ignore-at` を追加。
   併せて「増やしても横顔問題は直らない」ことを実測結果として docstring に残した。
 - Studio の数値・リーチ・申し立て・収益化・サムネイル可否を確認（上記すべて）。
-- YouTube 側は**何も変更していない**。サムネイルの適用は認証で止まっており、保存操作も行っていない。
+- `scripts/upload_youtube.py` の `get_service()` を修正。失効したトークンで落ちずに同意フローへ落とす。
+- YouTube 側は**何も変更していない**。サムネイル適用は 403 で止まり、Studio 上の保存操作も行っていない。
 
 ## 次にやること
 
-### 1. オーナー本人が再認証する（これが通らないと先へ進めない）
+### 1. オーナー本人が電話番号を確認する（これが通らないと先へ進めない）
 
-ブラウザの同意画面で**必ず「ひろゆき解説ch」を選ぶ**。同じ Google アカウントには他に3チャンネルある。
+Studio → 設定 → チャンネル → 機能の利用資格 → 「2. 中級者向け機能」を開く → **電話番号を確認**。
+SMS コードの受信が要るので代行できない。
 
-```bash
-cd /c/Users/oshim/Documents/projects/hiroyuki-youtube && python scripts/upload_youtube.py --auth-only
-```
-
-`✓ 一致` が出れば成功。
+これが通るとカスタムサムネイルと**15分を超える動画**が両方使えるようになる。
 
 ### 2. サムネイルを6本に適用する
 
-```bash
-cd /c/Users/oshim/Documents/projects/hiroyuki-youtube && python scripts/set_thumbnails.py --dry-run
-```
+コマンドは PowerShell 前提（`&&` は Windows PowerShell 5.1 では使えない。`;` を使う）。
 
-```bash
-cd /c/Users/oshim/Documents/projects/hiroyuki-youtube && python scripts/set_thumbnails.py
+```
+cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/set_thumbnails.py
 ```
 
 各本で「平均差分」が出る。25 未満なら反映済みとして `published.json` に書く。
 
 ### 3. 居住国を設定する（オーナー本人の操作）
 
-Studio → 設定 → チャンネル → 詳細設定 → 居住国。設定後に収益化ページで進捗が出るようになる。
+Studio → 設定 → チャンネル → 基本情報 → 居住国。**2026-08-25 時点で「選択」のまま未設定**なのを画面で確認済み。
+設定後に収益化ページで進捗が出るようになる。
 
 ### 4. フレーム選択の指標を替える
 
