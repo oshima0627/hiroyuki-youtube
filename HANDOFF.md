@@ -253,9 +253,16 @@ cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/plan_keywo
 そのあと `--out` の構成案に title / description / tags / notes を書き足してレシピにし、
 `build_episode.py` → `upload_youtube.py`。**タイトルには検索語を必ず入れること。**
 
-いま組めるのは NISA（2問・最短3:25）と iDeCo（2問・最短2:49）の2語だけ。
-増やすには `signals.py` の `SEARCH` 語彙を Studio の検索語レポートで育てるか、
-`fetch_source.py` で配信を増やす。
+いま組めるのは **不動産（2問・最短5:57）と 為替（2問・最短4:12）**。
+NISA と iDeCo はレシピを作った時点で `used_ranges` に入るので候補から消える（正常）。
+
+**「為替」を作る前に確認**: 使うブロックの片方が `_Qc2ZF3MLO0` で、この回は 2026-08-25 時点の
+GCD ページに出てこなかった。ローカルの `topics.json` は残っているので候補には出るが、
+掲載から外れたのか、GCD が新しい回だけを載せる作りなのかは未確認。
+
+増やすには `fetch_topics.py --save` で GCD の掲載を取り込む（**素材の全編ダウンロードは不要**。
+`--subs-only` ＋ `probe_signals.py --no-audio` で足りる）。
+`SEARCH` に語を足すのは、**使用済み除外を効かせた条件で2問組めることを確かめてから**にすること。
 
 ### 2. サムネイルを6本に適用する（電話認証が通った場合のみ）
 
