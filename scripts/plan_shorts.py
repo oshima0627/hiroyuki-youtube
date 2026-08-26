@@ -280,13 +280,21 @@ def interleave(cands: list[dict], count: int) -> list[dict]:
     return out
 
 
-def slot_times(first: datetime, days: int) -> list[tuple[str, datetime]]:
-    """(スロット名, UTCの公開時刻) を朝→夜の順で days 日ぶん。"""
+def slot_times(first: datetime, days: int,
+               slots: list[str] | None = None) -> list[tuple[str, datetime]]:
+    """(スロット名, UTCの公開時刻) を朝→夜の順で days 日ぶん。
+
+    slots で使うスロットを絞れる。1日1本にするときは ["am"]。
+    **在庫は有限なので、本数を増やすほど日数が短くなる。** 跳ねるまで
+    続けられるかが効くので、1日2本で14日より1日1本で28日を選ぶ場面がある
+    （2026-08-26 の兄弟チャンネル比較。docs/superpowers/specs 参照）。
+    """
+    names = slots or list(SLOTS)
     out = []
     for d in range(days):
         day = first + timedelta(days=d)
-        for name, hour_jst in SLOTS.items():
-            jst = day.replace(hour=hour_jst, minute=0, second=0, microsecond=0)
+        for name in names:
+            jst = day.replace(hour=SLOTS[name], minute=0, second=0, microsecond=0)
             out.append((f"{day:%Y-%m-%d}-{name}",
                         (jst - timedelta(hours=9)).replace(tzinfo=timezone.utc)))
     return out
@@ -319,6 +327,9 @@ def to_recipe(cand: dict, short_id: str, publish_at: datetime) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=7)
+    ap.add_argument("--slots", default=",".join(SLOTS),
+                    help=f"使うスロット。既定 {','.join(SLOTS)}（1日{len(SLOTS)}本）。"
+                         "1日1本にするなら am")
     ap.add_argument("--from", dest="first", help="最初の公開日（既定は明日）")
     ap.add_argument("--write", action="store_true", help="recipes/shorts に書き出す")
     ap.add_argument("--allow-unpublished", action="store_true",
@@ -329,9 +340,13 @@ def main() -> None:
     used = (load_json(USED, {"windows": []}) or {}).get("windows", [])
 
     cands, skipped = collect(pub, used, a.allow_unpublished)
+    want = [x.strip() for x in a.slots.split(",") if x.strip()]
+    bad = [x for x in want if x not in SLOTS]
+    if bad or not want:
+        sys.exit(f"--slots が不正: {a.slots!r}。使えるのは {','.join(SLOTS)}")
     slots = slot_times(
         datetime.strptime(a.first, "%Y-%m-%d") if a.first
-        else datetime.now() + timedelta(days=1), a.days)
+        else datetime.now() + timedelta(days=1), a.days, want)
 
     print(f"候補 {len(cands)}本 / 必要 {len(slots)}本")
     for reason, n in sorted(skipped.items(), key=lambda x: -x[1]):
