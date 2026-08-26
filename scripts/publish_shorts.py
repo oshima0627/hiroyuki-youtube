@@ -5,18 +5,24 @@
   python scripts/publish_shorts.py            # 上限5本まで
   python scripts/publish_shorts.py --limit 6
 
-## クォータの歯止めが本体
+## 効く上限は API クォータではない（2026-08-26 に実測して前提を訂正）
 
-`videos.insert` は **1,600ユニット**で、1日の上限は 10,000。つまり**1日6本**しか
-上げられない。長尺も同じ枠を食うので、既定は**5本**にしてある。
+**当初ここには「videos.insert は 1,600 ユニット、1日の枠 10,000 なので1日6本が上限」と
+書いていた。実測すると違った。**
 
-1日2本を7日ぶん＝14本は、**1日では上げ切れない**。3日に分けて回すこと。
-上げ終わったものは `state/published.json` に載るので、翌日そのまま再実行すれば
-続きから上がる。
+同じクォータ日（PT の 0:00 を跨いでいないことを確認済み）に **22本が通り、23本目で落ちた。**
+落ち方は 400 で、内容は:
 
-    8/19  python scripts/publish_shorts.py          → 5本（8/20朝〜8/22夜）
-    8/20  python scripts/publish_shorts.py          → 5本（8/23朝〜8/25朝）
-    8/21  python scripts/publish_shorts.py          → 4本（8/25夜〜8/26夜）
+    uploadLimitExceeded / "The user has exceeded the number of videos they may upload."
+
+これは **YouTube 側の「1日にアップロードできる本数」**の上限で、API クォータとは別物。
+電話番号が未確認のチャンネルは本数が絞られる。**実測値は 22本/日**（変動しうる）。
+
+前提が6本だったせいで既定が5本になり、「毎日回さないとキューが排けない」運用になっていた。
+**それが 2026-08-25 に投稿が途切れた原因。** 14本ビルドして5本しか上がっていなかった。
+
+上げ終わったものは `state/published.json` に載る。上限に当たったら 400 で綺麗に止まるので、
+そのまま再実行すれば続きから上がる。
 
 **予約時刻を過ぎたものは上げない。** publishAt に過去を渡すと即時公開になる。
 気づかないうちに全部出てしまうので、ここで止める。
@@ -43,8 +49,9 @@ WORK = ROOT / "work" / "shorts"
 PUBLISHED = ROOT / "state" / "published.json"
 USED = ROOT / "state" / "used_shorts.json"
 
-# videos.insert 1,600 × 6 = 9,600。10,000 の枠に長尺ぶんを1本残して5本
-DEFAULT_LIMIT = 5
+# 実測の上限は 22本/日（2026-08-26）。変動しうるので手前で止める。
+# 足りなければ --limit で上げる。当たっても 400 で綺麗に止まるので損はしない
+DEFAULT_LIMIT = 15
 
 
 def load(path: Path, default):
@@ -100,8 +107,8 @@ def main() -> None:
 
     batch = queue[:a.limit]
     if len(queue) > a.limit:
-        print(f"\n! {len(queue) - a.limit}本はクォータのため今回は上げない。"
-              "明日そのまま再実行すれば続きから上がる")
+        print(f"\n! {len(queue) - a.limit}本は --limit のため今回は上げない。"
+              "そのまま再実行すれば続きから上がる")
 
     for path, recipe, at in batch:
         rid = recipe["id"]
@@ -112,7 +119,9 @@ def main() -> None:
         cmd = [sys.executable, str(ROOT / "scripts" / "upload_youtube.py"),
                str(WORK / rid), "--schedule", recipe["publish_at"]]
         if subprocess.run(cmd, cwd=ROOT).returncode != 0:
-            print(f"✗ {rid} で失敗した。ここで止める（残りは次回）")
+            print(f"✗ {rid} で失敗した。ここで止める（残りは次回）\n"
+                  "  uploadLimitExceeded なら YouTube 側の1日の本数上限。"
+                  "翌日そのまま再実行すれば続きから上がる")
             sys.exit(1)
         mark_used(recipe)
 
