@@ -1,0 +1,34 @@
+{
+  "id": "2026-08-28-am",
+  "parent": "2026-08-14-shigoto",
+  "publish_at": "2026-08-27T22:00:00Z",
+  "title": "【ひろゆき】資格は取れるが実務で通用するか不安【切り抜き】",
+  "tags": [
+    "ひろゆき",
+    "切り抜き",
+    "解説",
+    "仕事",
+    "転職",
+    "Shorts"
+  ],
+  "category_id": "22",
+  "privacy_status": "private",
+  "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+  "clip": {
+    "video_id": "daulqJwmooE",
+    "video_title": "神を信じない経営者は傲慢である。",
+    "video_url": "https://www.youtube.com/watch?v=daulqJwmooE",
+    "start": 12463.88,
+    "end": 12595.64,
+    "title": "資格は取れるが実務で通用するか不安",
+    "note": "向き不向きは会社によって変わるので事前に判定しようとしない。受かるかどうかで確かめる、判断を先送りして情報を増やす手順"
+  },
+  "short": {
+    "start": 0.0,
+    "end": 40.21,
+    "hook": "資格は取れるが実務で通用するか不安",
+    "hook_px": 56,
+    "footer": "本編：仕事と年収の相談9連発"
+  },
+  "score": 0.1577
+}

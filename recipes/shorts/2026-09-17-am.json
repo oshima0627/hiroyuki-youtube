@@ -1,0 +1,34 @@
+{
+ "id": "2026-09-17-am",
+ "parent": "2026-08-18-france",
+ "publish_at": "2026-09-16T22:00:00Z",
+ "title": "【ひろゆき】酒を飲むのは十日に一回【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "フランス",
+  "海外移住",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "VYJ-zTB8TVY",
+  "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+  "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+  "start": 8709.0,
+  "end": 8871.0,
+  "title": "酒を飲むのは十日に一回",
+  "note": "お酒好きというイメージは配信の場だけのもの。素面で二時間カメラに向かうのが無理だから飲むという順番で、酒そのものが目的ではないと説明している"
+ },
+ "short": {
+  "start": 40.8,
+  "end": 79.64,
+  "hook": "酒を飲むのは十日に一回",
+  "hook_px": 76,
+  "footer": "本編：フランス暮らし8連発"
+ },
+ "score": 0.0883
+}

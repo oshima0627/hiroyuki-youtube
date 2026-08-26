@@ -1,0 +1,34 @@
+{
+ "id": "2026-09-23-am",
+ "parent": "2026-08-15-okane",
+ "publish_at": "2026-09-22T22:00:00Z",
+ "title": "【ひろゆき】ボーナスの平均額は誰を数えた数字か【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "お金",
+  "投資",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "23vSB2fXjc8",
+  "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+  "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+  "start": 7835.599,
+  "end": 7918.84,
+  "title": "ボーナスの平均額は誰を数えた数字か",
+  "note": "平均は母集団で変わる。上場企業だけを集めた平均と、全就業者の平均は別物。数字を見たらまず誰を数えたのかを問う"
+ },
+ "short": {
+  "start": 0.0,
+  "end": 40.56,
+  "hook": "ボーナスの平均額は誰を数えた数字か",
+  "hook_px": 56,
+  "footer": "本編：お金の相談7連発"
+ },
+ "score": 0.1413
+}

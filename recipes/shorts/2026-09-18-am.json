@@ -1,0 +1,34 @@
+{
+ "id": "2026-09-18-am",
+ "parent": "2026-08-19-shigoto2",
+ "publish_at": "2026-09-17T22:00:00Z",
+ "title": "【ひろゆき】仕事ができず、人に助けられてばかり【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "仕事",
+  "転職",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "_o8W_QKNHEo",
+  "video_title": "5月病のみんな元気ー？",
+  "video_url": "https://www.youtube.com/watch?v=_o8W_QKNHEo",
+  "start": 6482.0,
+  "end": 6569.0,
+  "title": "仕事ができず、人に助けられてばかり",
+  "note": "能力ではなく雰囲気で助けてもらえることを長所として数えている。能力は弁護士のように外から買えるが空気は買えない、という会社側の勘定が答えの根拠になっている"
+ },
+ "short": {
+  "start": 2.92,
+  "end": 41.48,
+  "hook": "仕事ができず、人に助けられてばかり",
+  "hook_px": 56,
+  "footer": "本編：仕事の相談10連発"
+ },
+ "score": 0.1127
+}

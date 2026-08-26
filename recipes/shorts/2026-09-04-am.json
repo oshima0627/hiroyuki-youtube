@@ -1,0 +1,34 @@
+{
+  "id": "2026-09-04-am",
+  "parent": "2026-08-20-kurashi",
+  "publish_at": "2026-09-03T22:00:00Z",
+  "title": "【ひろゆき】焼きそばを自分では買わない理由【切り抜き】",
+  "tags": [
+    "ひろゆき",
+    "切り抜き",
+    "解説",
+    "睡眠",
+    "食事",
+    "Shorts"
+  ],
+  "category_id": "22",
+  "privacy_status": "private",
+  "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+  "clip": {
+    "video_id": "23vSB2fXjc8",
+    "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+    "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+    "start": 9773.0,
+    "end": 9899.0,
+    "title": "焼きそばを自分では買わない理由",
+    "note": "炭水化物を減らすという言い方をしていない。おかずを美味しく食べるための主食という順番で献立を組むと、結果として炭水化物が減るという構成の話になっている"
+  },
+  "short": {
+    "start": 0.88,
+    "end": 65.52,
+    "hook": "焼きそばを自分では買わない理由",
+    "hook_px": 64,
+    "footer": "本編：睡眠と食事の話6連発"
+  },
+  "score": 0.1679
+}

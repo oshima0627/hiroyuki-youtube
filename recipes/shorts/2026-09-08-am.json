@@ -1,0 +1,34 @@
+{
+ "id": "2026-09-08-am",
+ "parent": "2026-08-16-kosodate",
+ "publish_at": "2026-09-07T22:00:00Z",
+ "title": "【ひろゆき】学校の勉強は生産性を上げるのか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "子育て",
+  "教育",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "VYJ-zTB8TVY",
+  "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+  "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+  "start": 2947.0,
+  "end": 3083.0,
+  "title": "学校の勉強は生産性を上げるのか",
+  "note": "学校の勉強が生産性を上げるという前提そのものを外している。読み書き計算までは要る、その先は職業と結びつくかで分かれる、という線引き"
+ },
+ "short": {
+  "start": 7.32,
+  "end": 46.36,
+  "hook": "学校の勉強は生産性を上げるのか",
+  "hook_px": 64,
+  "footer": "本編：子育てと教育の相談7連発"
+ },
+ "score": 0.16
+}

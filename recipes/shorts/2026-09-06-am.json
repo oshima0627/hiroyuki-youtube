@@ -1,0 +1,34 @@
+{
+ "id": "2026-09-06-am",
+ "parent": "2026-08-15-okane",
+ "publish_at": "2026-09-05T22:00:00Z",
+ "title": "【ひろゆき】円安はこの先も続くのか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "お金",
+  "投資",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "_o8W_QKNHEo",
+  "video_title": "5月病のみんな元気ー？",
+  "video_url": "https://www.youtube.com/watch?v=_o8W_QKNHEo",
+  "start": 3375.359,
+  "end": 3457.559,
+  "title": "円安はこの先も続くのか",
+  "note": "為替の予想ではなく、人口が減れば生み出せる価値も減るという構造から話している。短期の変動と長期の傾向を分けている"
+ },
+ "short": {
+  "start": 0.0,
+  "end": 39.04,
+  "hook": "円安はこの先も続くのか",
+  "hook_px": 76,
+  "footer": "本編：お金の相談7連発"
+ },
+ "score": 0.2321
+}
