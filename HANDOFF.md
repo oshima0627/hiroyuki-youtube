@@ -2,6 +2,37 @@
 
 最終更新: 2026-08-26
 
+---
+
+## ▶ このセッションで最初に実行するコマンド
+
+**ショートの上げ残し 6本（09/18〜09/23）を投稿する。** ビルド・検証は済んでいる。実行するだけ。
+
+```bash
+cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/publish_shorts.py
+```
+
+実行前に中身を見たいときは `--dry-run` を付ける。上げ残しが0なら「待ち 0」と出る。
+
+```bash
+cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/publish_shorts.py --dry-run
+```
+
+- **`--limit` は要らない**（既定15本。実測上限は22本/日）
+- 上限に当たったら 400 `uploadLimitExceeded` で綺麗に止まる。翌日そのまま再実行すれば続きから上がる
+- **上げたら必ず API で実状態を確認すること。** `published.json` は投稿時の申告であって実状態ではない
+
+```bash
+cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/ops_youtube.py --status
+```
+
+### 期限のあるもの
+
+**09/07 までに不動産回 `TtJKOPH0PCU` を公開する。** 09/07 と 09/14 のショート
+（`bZV29-wLKE8` / `xRNih8qkIdE`）がこれを親に持ち、概要欄が非公開動画を指している。
+
+---
+
 ## いま何をしているのか
 
 ひろゆき切り抜きチャンネル「ひろゆき解説ch【切り抜き】」(`UCqK3KYqEeeJiAWr4nSryJYQ` / `@hiroyuki_kaisetsu`) の運用。
@@ -124,32 +155,14 @@ ffprobe で尺を突き合わせて気づいた。**md5 とファイルサイズ
 
 ## 次にやること
 
-### 1. 残り6本を上げる（09/18〜09/23）
-
-**明日1回これを回せば終わる。** 既定15本なので `--limit` は要らない。
-
-```bash
-cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/publish_shorts.py
-```
-
-上げ残しの確認:
-
-```bash
-cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/publish_shorts.py --dry-run
-```
+### 1. 残り6本を上げる（09/18〜09/23）→ **コマンドは冒頭の「最初に実行するコマンド」**
 
 **日次実行の自動化はもう要らない。** 上限が22本/日と分かったので、28本規模なら1〜2回で排ける。
 前回切れたのは「1日6本」という誤った前提で運用していたため。
 
-### 2. 長尺2本を公開する（09/07 までに）
+### 2. 長尺2本を公開する（不動産回は 09/07 までに。冒頭の「期限のあるもの」参照）
 
 `u11KwZDUe0s`（NISA・5:37）と `TtJKOPH0PCU`（不動産・7:50）が **private のまま**。
-**09/07 と 09/14 のショートは `2026-08-27-fudosan` を親に持ち、概要欄が非公開動画を指す。**
-それまでに不動産回を公開すること。
-
-```bash
-cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/ops_youtube.py --status
-```
 
 **NISA 回の公開前に確認**: 解説板で元配信の数字を2箇所訂正している。
 iDeCo の「65歳」→原則60歳、税率「20%」→20.315%。
