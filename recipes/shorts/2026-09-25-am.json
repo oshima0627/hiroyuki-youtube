@@ -1,0 +1,35 @@
+{
+ "id": "2026-09-25-am",
+ "parent": "2026-08-21-okane2",
+ "publish_at": "2026-09-24T22:00:00Z",
+ "title": "【ひろゆき】Switch2の値上げをどう見るか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "お金",
+  "投資",
+  "NISA",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "VYJ-zTB8TVY",
+  "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+  "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+  "start": 5680.0,
+  "end": 5744.0,
+  "title": "Switch2の値上げをどう見るか",
+  "note": "値上げではなく、日本だけ一万五千円ほど安く売っていたものを世界の価格に近づけただけだという説明。上がった額ではなく、元の水準がどこにあったかを見ている"
+ },
+ "short": {
+  "start": 0.08,
+  "end": 44.12,
+  "hook": "Switch2の値上げをどう見るか",
+  "hook_px": 68,
+  "footer": "本編：お金の相談8連発"
+ },
+ "score": 0.2637
+}
