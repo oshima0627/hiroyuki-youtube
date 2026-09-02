@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-14-am",
+ "parent": "2026-08-14-shigoto",
+ "publish_at": "2026-10-13T22:00:00Z",
+ "title": "【ひろゆき】ゴマすりで上げた給料は実力か【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "仕事",
+  "転職",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "jHWUy2IiZvs",
+  "video_title": "『過程は自分を納得させ、結果は自分以外を納得させる』MIRA BLONDE",
+  "video_url": "https://www.youtube.com/watch?v=jHWUy2IiZvs",
+  "start": 3539.84,
+  "end": 3607.0,
+  "title": "上司にゴマをすって上がった給料はキャリアか",
+  "note": "社内評価と市場価値は別物。上司に引き上げられた給料は転職先で再現できないので、検証できるかどうかが分かれ目",
+  "hook": "ゴマすりで上げた給料は実力か"
+ },
+ "short": {
+  "start": 15.52,
+  "end": 67.16,
+  "hook": "ゴマすりで上げた給料は実力か",
+  "hook_px": 68,
+  "footer": "本編：仕事と年収の相談9連発"
+ },
+ "score": 0.1252
+}

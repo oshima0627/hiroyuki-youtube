@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-10-am",
+ "parent": "2026-08-18-france",
+ "publish_at": "2026-10-09T22:00:00Z",
+ "title": "【ひろゆき】フランスでパルクールを見るか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "フランス",
+  "海外移住",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "23vSB2fXjc8",
+  "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+  "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+  "start": 5053.0,
+  "end": 5118.0,
+  "title": "フランスの町中でパルクールを見かけるか",
+  "note": "見かけるが多くはない、と答えたうえで趣味としては勧めている。上達や競技としての先行きではなく、体を動かす癖が付くかどうかだけを基準にしている",
+  "hook": "フランスでパルクールを見るか"
+ },
+ "short": {
+  "start": 0.48,
+  "end": 65.0,
+  "hook": "フランスでパルクールを見るか",
+  "hook_px": 68,
+  "footer": "本編：フランス暮らし8連発"
+ },
+ "score": -0.0062
+}

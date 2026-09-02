@@ -1,0 +1,36 @@
+{
+ "id": "2026-10-06-am",
+ "parent": "2026-08-21-okane2",
+ "publish_at": "2026-10-05T22:00:00Z",
+ "title": "【ひろゆき】月三十万の積立でFIREできるか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "お金",
+  "投資",
+  "NISA",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "ckrdZp1fQZw",
+  "video_title": "日銀の政策金利上がると、どうなるの？",
+  "video_url": "https://www.youtube.com/watch?v=ckrdZp1fQZw",
+  "start": 7994.0,
+  "end": 8139.0,
+  "title": "月三十万の積立で十五年後にFIREできるか",
+  "note": "仮に一億に届いたとしても、利回り五パーセントを維持する前提が甘いと計算し直している。実際は二から三パーセントで、一億でも年二百万から三百万で暮らす話になるという置き換え",
+  "hook": "月三十万の積立でFIREできるか"
+ },
+ "short": {
+  "start": 52.48,
+  "end": 110.64,
+  "hook": "月三十万の積立でFIREできるか",
+  "hook_px": 66,
+  "footer": "本編：お金の相談8連発"
+ },
+ "score": 0.2623
+}

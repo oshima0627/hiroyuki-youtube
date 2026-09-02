@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-09-am",
+ "parent": "2026-08-19-shigoto2",
+ "publish_at": "2026-10-08T22:00:00Z",
+ "title": "【ひろゆき】未経験からフルリモートで働きたい【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "仕事",
+  "転職",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "23vSB2fXjc8",
+  "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+  "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+  "start": 9431.0,
+  "end": 9493.0,
+  "title": "未経験からフルリモートのITに就きたい",
+  "note": "未経験で最初からフルリモートという求人はほぼ無い、という前提を先に置いている。会社に選ばれる道ではなく、一人で完成品を作って売る側に回る道を勧めているのが答えの中身",
+  "hook": "未経験からフルリモートで働きたい"
+ },
+ "short": {
+  "start": 0.12,
+  "end": 62.0,
+  "hook": "未経験からフルリモートで働きたい",
+  "hook_px": 60,
+  "footer": "本編：仕事の相談10連発"
+ },
+ "score": 0.2924
+}

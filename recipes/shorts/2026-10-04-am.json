@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-04-am",
+ "parent": "2026-08-19-shigoto2",
+ "publish_at": "2026-10-03T22:00:00Z",
+ "title": "【ひろゆき】働くことでしか自分を証明できない【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "仕事",
+  "転職",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "jHWUy2IiZvs",
+  "video_title": "『過程は自分を納得させ、結果は自分以外を納得させる』MIRA BLONDE",
+  "video_url": "https://www.youtube.com/watch?v=jHWUy2IiZvs",
+  "start": 4673.0,
+  "end": 4797.0,
+  "title": "労働でしか自分の存在価値を証明できない",
+  "note": "積み重ねが後から効いた経験の回数が少ないだけだ、と原因のほうに返している。資格で給料が三千円上がるような分かりやすい見返りに飛びつくのも、その経験が無いからだという説明",
+  "hook": "働くことでしか自分を証明できない"
+ },
+ "short": {
+  "start": 0.0,
+  "end": 62.0,
+  "hook": "働くことでしか自分を証明できない",
+  "hook_px": 60,
+  "footer": "本編：仕事の相談10連発"
+ },
+ "score": 0.362
+}

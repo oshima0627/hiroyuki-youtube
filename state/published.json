@@ -58,7 +58,7 @@
       "publish_at": null,
       "published_at": "2026-08-15T03:00:12Z",
       "upload_status": "processed",
-      "view_count": 398,
+      "view_count": 400,
       "duration": "PT14M5S"
     },
     "2026-08-16-kosodate": {
@@ -367,7 +367,7 @@
       "publish_at": null,
       "published_at": "2026-08-31T22:00:25Z",
       "upload_status": "processed",
-      "view_count": 1171,
+      "view_count": 1172,
       "duration": "PT1M6S"
     },
     "2026-09-02-am": {
@@ -384,7 +384,7 @@
       "publish_at": null,
       "published_at": "2026-09-01T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1166,
+      "view_count": 1189,
       "duration": "PT39S"
     },
     "2026-09-03-am": {
@@ -880,9 +880,281 @@
       ],
       "publish_at": "2026-09-29T22:00:00Z",
       "published_at": "2026-09-02T05:07:25Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT39S"
+    },
+    "2026-10-01-am": {
+      "youtube_video_id": "AFw0cJlMmzY",
+      "url": "https://www.youtube.com/watch?v=AFw0cJlMmzY",
+      "title": "【ひろゆき】コミ障だが大学事務職を目指す【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "M7KWrHANxHs"
+      ],
+      "publish_at": "2026-09-30T22:00:00Z",
+      "published_at": "2026-09-02T05:54:22Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT1M5S"
+    },
+    "2026-10-02-am": {
+      "youtube_video_id": "FxQT7vKcSZM",
+      "url": "https://www.youtube.com/watch?v=FxQT7vKcSZM",
+      "title": "【ひろゆき】派遣から正社員になりたい【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "c2X5ZUIpRSk"
+      ],
+      "publish_at": "2026-10-01T22:00:00Z",
+      "published_at": "2026-09-02T05:54:30Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT43S"
+    },
+    "2026-10-03-am": {
+      "youtube_video_id": "yVDGXvz8DdQ",
+      "url": "https://www.youtube.com/watch?v=yVDGXvz8DdQ",
+      "title": "【ひろゆき】快適に眠れる温度をデータで探す【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "M7KWrHANxHs"
+      ],
+      "publish_at": "2026-10-02T22:00:00Z",
+      "published_at": "2026-09-02T05:54:38Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT45S"
+    },
+    "2026-10-04-am": {
+      "youtube_video_id": "4yu_i7RH1nE",
+      "url": "https://www.youtube.com/watch?v=4yu_i7RH1nE",
+      "title": "【ひろゆき】働くことでしか自分を証明できない【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-10-03T22:00:00Z",
+      "published_at": "2026-09-02T05:54:46Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT1M3S"
+    },
+    "2026-10-05-am": {
+      "youtube_video_id": "AVwLVMi_4_c",
+      "url": "https://www.youtube.com/watch?v=AVwLVMi_4_c",
+      "title": "【ひろゆき】フランスに住む理由が自分に無い【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "daulqJwmooE"
+      ],
+      "publish_at": "2026-10-04T22:00:00Z",
+      "published_at": "2026-09-02T05:54:54Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT41S"
+    },
+    "2026-10-06-am": {
+      "youtube_video_id": "rM4ftL719w4",
+      "url": "https://www.youtube.com/watch?v=rM4ftL719w4",
+      "title": "【ひろゆき】月三十万の積立でFIREできるか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "ckrdZp1fQZw"
+      ],
+      "publish_at": "2026-10-05T22:00:00Z",
+      "published_at": "2026-09-02T05:55:03Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT59S"
+    },
+    "2026-10-07-am": {
+      "youtube_video_id": "V8z1YsBJe3M",
+      "url": "https://www.youtube.com/watch?v=V8z1YsBJe3M",
+      "title": "【ひろゆき】起業した大学生は何を捨てるか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "M7KWrHANxHs"
+      ],
+      "publish_at": "2026-10-06T22:00:00Z",
+      "published_at": "2026-09-02T05:55:27Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT44S"
+    },
+    "2026-10-08-am": {
+      "youtube_video_id": "3tjHZxmugwE",
+      "url": "https://www.youtube.com/watch?v=3tjHZxmugwE",
+      "title": "【ひろゆき】在宅テスターから抜け出したい【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "c2X5ZUIpRSk"
+      ],
+      "publish_at": "2026-10-07T22:00:00Z",
+      "published_at": "2026-09-02T05:55:46Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT55S"
+    },
+    "2026-10-09-am": {
+      "youtube_video_id": "7nfTKl2Bbow",
+      "url": "https://www.youtube.com/watch?v=7nfTKl2Bbow",
+      "title": "【ひろゆき】未経験からフルリモートで働きたい【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "23vSB2fXjc8"
+      ],
+      "publish_at": "2026-10-08T22:00:00Z",
+      "published_at": "2026-09-02T05:56:04Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT1M2S"
+    },
+    "2026-10-10-am": {
+      "youtube_video_id": "T9g4Zm8oVeQ",
+      "url": "https://www.youtube.com/watch?v=T9g4Zm8oVeQ",
+      "title": "【ひろゆき】フランスでパルクールを見るか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "23vSB2fXjc8"
+      ],
+      "publish_at": "2026-10-09T22:00:00Z",
+      "published_at": "2026-09-02T05:56:23Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT1M5S"
+    },
+    "2026-10-11-am": {
+      "youtube_video_id": "2M-KzHnID_o",
+      "url": "https://www.youtube.com/watch?v=2M-KzHnID_o",
+      "title": "【ひろゆき】6・3・3・4の学制を変えるなら【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "VYJ-zTB8TVY"
+      ],
+      "publish_at": "2026-10-10T22:00:00Z",
+      "published_at": "2026-09-02T05:56:41Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT57S"
+    },
+    "2026-10-12-am": {
+      "youtube_video_id": "Eiwh5C540IA",
+      "url": "https://www.youtube.com/watch?v=Eiwh5C540IA",
+      "title": "【ひろゆき】無理な営業目標を断ったら詰められた【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "23vSB2fXjc8"
+      ],
+      "publish_at": "2026-10-11T22:00:00Z",
+      "published_at": "2026-09-02T05:56:55Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT40S"
+    },
+    "2026-10-13-am": {
+      "youtube_video_id": "RMBxw4tSNBY",
+      "url": "https://www.youtube.com/watch?v=RMBxw4tSNBY",
+      "title": "【ひろゆき】年上のバイトにどう接するか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "M7KWrHANxHs"
+      ],
+      "publish_at": "2026-10-12T22:00:00Z",
+      "published_at": "2026-09-02T05:57:06Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT43S"
+    },
+    "2026-10-14-am": {
+      "youtube_video_id": "4CIkzIwtq5M",
+      "url": "https://www.youtube.com/watch?v=4CIkzIwtq5M",
+      "title": "【ひろゆき】ゴマすりで上げた給料は実力か【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-10-13T22:00:00Z",
+      "published_at": "2026-09-02T05:57:16Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT52S"
+    },
+    "2026-10-15-am": {
+      "youtube_video_id": "u_vN9xYpzyI",
+      "url": "https://www.youtube.com/watch?v=u_vN9xYpzyI",
+      "title": "【ひろゆき】すぐ辞めたくなる性格は直すべきか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "M7KWrHANxHs"
+      ],
+      "publish_at": "2026-10-14T22:00:00Z",
+      "published_at": "2026-09-02T05:57:27Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT43S"
+    },
+    "2026-10-16-am": {
+      "youtube_video_id": "5UDR-8tVjAE",
+      "url": "https://www.youtube.com/watch?v=5UDR-8tVjAE",
+      "title": "【ひろゆき】復職に引っ越し。大手を辞めるか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-10-15T22:00:00Z",
+      "published_at": "2026-09-02T05:57:48Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT41S"
     }
   }
 }
