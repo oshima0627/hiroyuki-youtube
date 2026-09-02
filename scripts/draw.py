@@ -10,6 +10,7 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 from PIL import ImageDraw, ImageFont
@@ -78,6 +79,26 @@ def split_sentences(text: str) -> list[str]:
 OPEN_BRACKETS = "（［｛「『〈《〔"
 CLOSE_BRACKETS = "）］｝」』〉》〕"
 
+# 助詞の直後は語の切れ目であることが多い。読点も括弧も無い長い文で、
+# 「立候補して」／「いる」のように活用語尾で割れるのを防ぐ。
+PARTICLES = "はがをにへとでもやのかねよ"
+_HIRAGANA = re.compile(r"[ぁ-ゟ]")
+
+# 数値と単位はひとかたまり。途中で折ると行をまたいだ数字が別の額に読める
+# （実測で「231万5」／「000円」に割れていた）。
+_NUM = r"[0-9A-Za-z][0-9A-Za-z.,]*"
+_UNIT = (r"パーセント|ポイント|項目|時間|キロ|メートル|トン|ドル|"
+         r"[%％万億兆円年月日人名件回倍割歳個台本社校票席分秒]")
+_NUM_TOKEN_RE = re.compile(rf"(?:{_NUM}(?:{_UNIT})*)+")
+
+
+def _number_interiors(s: str) -> set[int]:
+    """数値＋単位の途中にあたる位置。ここでは折らない。"""
+    inside: set[int] = set()
+    for m in _NUM_TOKEN_RE.finditer(s):
+        inside.update(range(m.start() + 1, m.end()))
+    return inside
+
 
 def _depths(s: str) -> list[int]:
     """各文字の括弧の深さ。開き括弧の位置は0（＝その手前で折れる）。"""
@@ -112,9 +133,10 @@ def _break_at(s: str, limit: int) -> int:
     閉じ括弧の直後 → 幅いっぱい。
     """
     d = _depths(s)
+    inside = _number_interiors(s)
     window = max(1, int(limit * 0.45))          # これ以上戻ると行が短くなりすぎる
     lows = [lo for lo in range(limit, max(0, limit - window), -1)
-            if 0 < lo < len(s)]
+            if 0 < lo < len(s) and lo not in inside]
 
     # 括弧の外にある読点
     for lo in lows:
@@ -128,12 +150,23 @@ def _break_at(s: str, limit: int) -> int:
     for lo in lows:
         if s[lo - 1] in CLOSE_BRACKETS and d[lo - 1] == 0:
             return lo
+    # 助詞の直後。読点も括弧も無い長い文はここで切ると語の途中を避けられる
+    for lo in lows:
+        if s[lo - 1] in PARTICLES and d[lo - 1] == 0 and s[lo] not in NO_START:
+            return lo
+    # ひらがな → 漢字・カタカナ の変わり目。送りがなの途中を避ける
+    for lo in lows:
+        if (d[lo] == 0 and s[lo] not in NO_START
+                and _HIRAGANA.match(s[lo - 1]) and not _HIRAGANA.match(s[lo])):
+            return lo
     # 括弧の外なら、どこでもいいので括弧を割らない位置
     for lo in lows:
         if d[lo] == 0 and s[lo] not in NO_START:
             return lo
 
     cut = min(limit, len(s))
+    while cut in inside and cut > 1:            # 数値の途中で折らない
+        cut -= 1
     # 行頭に来てはいけない文字なら1つ後ろへ送り、それでも駄目なら手前で折る
     while cut < len(s) and s[cut] in NO_START:
         cut += 1
