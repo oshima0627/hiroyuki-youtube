@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-08-am",
+ "parent": "2026-08-14-shigoto",
+ "publish_at": "2026-10-07T22:00:00Z",
+ "title": "【ひろゆき】在宅テスターから抜け出したい【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "仕事",
+  "転職",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "c2X5ZUIpRSk",
+  "video_title": "心を開いてもらうにはどうしたらいいか？ La francaise",
+  "video_url": "https://www.youtube.com/watch?v=c2X5ZUIpRSk",
+  "start": 1628.36,
+  "end": 1685.0,
+  "title": "在宅テスターのバイトから抜け出したい",
+  "note": "雇われる側は単価を相手が決めるが、受注側は自分で決められる。スキル不足の解決ではなく価格決定権の移動を勧めている",
+  "hook": "在宅テスターから抜け出したい"
+ },
+ "short": {
+  "start": 0.0,
+  "end": 54.6,
+  "hook": "在宅テスターから抜け出したい",
+  "hook_px": 68,
+  "footer": "本編：仕事と年収の相談9連発"
+ },
+ "score": 0.2504
+}

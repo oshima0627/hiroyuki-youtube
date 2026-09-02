@@ -1,0 +1,35 @@
+{
+ "id": "2026-09-24-am",
+ "parent": "2026-08-21-okane2",
+ "publish_at": "2026-09-23T22:00:00Z",
+ "title": "【ひろゆき】年収千四百万だが税金で何も残らない【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "お金",
+  "投資",
+  "NISA",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "M7KWrHANxHs",
+  "video_title": "パリは燃えていたよ。AUBRAC",
+  "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+  "start": 6273.0,
+  "end": 6347.0,
+  "title": "年収千四百万だが税金で何も残らない",
+  "note": "税金に全部持っていかれたという申告を、売上と年収の混同として指摘している。売上千四百万から経費を引いた残りが税金で消えるなら、それは年収五十万や百万と変わらないという計算"
+ },
+ "short": {
+  "start": 0.92,
+  "end": 42.12,
+  "hook": "年収千四百万だが税金で何も残らない",
+  "hook_px": 56,
+  "footer": "本編：お金の相談8連発"
+ },
+ "score": 0.4051
+}

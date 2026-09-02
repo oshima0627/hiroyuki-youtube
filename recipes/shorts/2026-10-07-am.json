@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-07-am",
+ "parent": "2026-08-16-kosodate",
+ "publish_at": "2026-10-06T22:00:00Z",
+ "title": "【ひろゆき】起業した大学生は何を捨てるか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "子育て",
+  "教育",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "M7KWrHANxHs",
+  "video_title": "パリは燃えていたよ。AUBRAC",
+  "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+  "start": 7829.639,
+  "end": 7873.559,
+  "title": "大学生で起業した。就職・学業・企業のどれを捨てるか",
+  "note": "事業が伸びても卒業資格は消えない。海外でビザを取るときに効くという、いま本人に見えていない用途を挙げている",
+  "hook": "起業した大学生は何を捨てるか"
+ },
+ "short": {
+  "start": 0.0,
+  "end": 43.92,
+  "hook": "起業した大学生は何を捨てるか",
+  "hook_px": 68,
+  "footer": "本編：子育てと教育の相談7連発"
+ },
+ "score": 0.2792
+}

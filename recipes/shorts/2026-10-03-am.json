@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-03-am",
+ "parent": "2026-08-20-kurashi",
+ "publish_at": "2026-10-02T22:00:00Z",
+ "title": "【ひろゆき】快適に眠れる温度をデータで探す【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "睡眠",
+  "食事",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "M7KWrHANxHs",
+  "video_title": "パリは燃えていたよ。AUBRAC",
+  "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+  "start": 586.0,
+  "end": 632.0,
+  "title": "快適に眠れる温度をデータで探している",
+  "note": "寝具でも就寝時刻でもなく、部屋の温度と扇風機の距離を記録している。快適な温度は人によって違うという前提なので、一般的な推奨値ではなく自分の記録を見ている",
+  "hook": "快適に眠れる温度をデータで探す"
+ },
+ "short": {
+  "start": 0.08,
+  "end": 44.36,
+  "hook": "快適に眠れる温度をデータで探す",
+  "hook_px": 64,
+  "footer": "本編：睡眠と食事の話6連発"
+ },
+ "score": 0.4358
+}

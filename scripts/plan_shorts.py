@@ -123,9 +123,23 @@ def hook_px(draw: ImageDraw.ImageDraw, text: str) -> int | None:
     return None
 
 
-def make_hook(draw: ImageDraw.ImageDraw, title: str) -> tuple[str, int] | None:
-    """クリップの見出しをそのままフックにする。収まらなければ None（＝捨てる）。"""
-    text = title.strip("、。 ")
+def make_hook(draw: ImageDraw.ImageDraw,
+              clip: dict) -> tuple[str, int] | None:
+    """フックを決める。`clips[].hook` があればそれを、無ければ見出しを使う。
+
+    **機械で短くするのは禁止のまま。** 末尾を削ると動詞の途中で切れる
+    （2026-08-19 実測。「在宅テスターのバイトから抜け出したい」→
+    「在宅テスターのバイトから抜け出」）。言っていないことを冒頭2秒に大きく
+    出すことになるので、そこは踏まない。
+
+    代わりに**人が書き直したものを置く経路**を開ける。2026-09-02 の実測で、
+    素材も親も揃っているのに見出しの幅だけで落ちているクリップが16件あった。
+    捨てるには惜しいが、機械には直させない。だから `clips[].hook` に手で書く。
+
+    収まらなければ None（＝捨てる）。手書きの hook が収まらないのは書き手の
+    ミスなので、collect() 側で別の理由として数える。
+    """
+    text = (clip.get("hook") or clip.get("title") or "").strip("、。 ")
     if len(text) < 6:
         return None
     size = hook_px(draw, text)
@@ -228,9 +242,10 @@ def collect(pub: dict, used: list[dict],
                 skip("字幕が無い")
                 continue
 
-            hook = make_hook(draw, clip["title"])
+            hook = make_hook(draw, clip)
             if hook is None:
-                skip("フックが1行に収まらない")
+                skip("手書き hook が1行に収まらない" if clip.get("hook")
+                     else "フックが1行に収まらない（clips[].hook を書けば通る）")
                 continue
 
             win = best_window(cues, sig, float(clip["start"]), float(clip["end"]))

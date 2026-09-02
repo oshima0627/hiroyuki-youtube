@@ -30,8 +30,31 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parents[1]
-CLIENT_SECRET = ROOT / "client_secret.json"
-TOKEN = ROOT / "token.json"
+
+
+def _cred_dir() -> Path:
+    """認証情報の置き場。ワークツリーには無いので本体のチェックアウトを辿る。
+
+    token.json / client_secret.json は .gitignore なので、git worktree で
+    作った作業用チェックアウトには複製されない。ワークツリー側で実行すると
+    毎回ブラウザの同意フローに落ちるので、共有の .git から本体を辿って
+    そこの認証情報を使う。
+    """
+    if (ROOT / "token.json").exists():
+        return ROOT
+    git = ROOT / ".git"
+    if git.is_file():                       # ワークツリーでは .git はファイル
+        # "gitdir: C:/.../hiroyuki-youtube/.git/worktrees/<名前>"
+        gitdir = Path(git.read_text(encoding="utf-8").split(":", 1)[1].strip())
+        main = gitdir.parents[2]            # .git/worktrees/<名前> → 本体の直下
+        if (main / "token.json").exists():
+            return main
+    return ROOT
+
+
+CRED_DIR = _cred_dir()
+CLIENT_SECRET = CRED_DIR / "client_secret.json"
+TOKEN = CRED_DIR / "token.json"
 PUBLISHED = ROOT / "state" / "published.json"
 
 CHANNEL_ID = "UCqK3KYqEeeJiAWr4nSryJYQ"      # ひろゆき解説ch【切り抜き】
@@ -52,13 +75,12 @@ def die(msg: str) -> None:
     sys.exit(1)
 
 
-def get_service():
+def get_credentials():
     try:
         from google.auth.exceptions import RefreshError
         from google.auth.transport.requests import Request
         from google.oauth2.credentials import Credentials
         from google_auth_oauthlib.flow import InstalledAppFlow
-        from googleapiclient.discovery import build
     except ImportError:
         die("依存が足りません。"
             "`pip install google-api-python-client google-auth-oauthlib`")
@@ -89,7 +111,12 @@ def get_service():
         TOKEN.write_text(creds.to_json(), encoding="utf-8")
         print(f"✓ 認証情報を保存しました: {TOKEN.name}（コミットしないこと）")
 
-    return build("youtube", "v3", credentials=creds)
+    return creds
+
+
+def get_service():
+    from googleapiclient.discovery import build
+    return build("youtube", "v3", credentials=get_credentials())
 
 
 def current_channel(service) -> dict | None:

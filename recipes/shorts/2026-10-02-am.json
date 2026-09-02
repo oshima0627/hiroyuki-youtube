@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-02-am",
+ "parent": "2026-08-14-shigoto",
+ "publish_at": "2026-10-01T22:00:00Z",
+ "title": "【ひろゆき】派遣から正社員になりたい【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "仕事",
+  "転職",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "c2X5ZUIpRSk",
+  "video_title": "心を開いてもらうにはどうしたらいいか？ La francaise",
+  "video_url": "https://www.youtube.com/watch?v=c2X5ZUIpRSk",
+  "start": 4252.36,
+  "end": 4356.04,
+  "title": "インフラエンジニアの派遣から正社員になりたい",
+  "note": "派遣で数年の実務があること自体が応募要件を満たす。資格を足すより実務年数を根拠に応募数を増やすほうが早いという判断",
+  "hook": "派遣から正社員になりたい"
+ },
+ "short": {
+  "start": 0.0,
+  "end": 42.32,
+  "hook": "派遣から正社員になりたい",
+  "hook_px": 76,
+  "footer": "本編：仕事と年収の相談9連発"
+ },
+ "score": 0.5611
+}

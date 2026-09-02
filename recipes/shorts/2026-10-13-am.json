@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-13-am",
+ "parent": "2026-08-19-shigoto2",
+ "publish_at": "2026-10-12T22:00:00Z",
+ "title": "【ひろゆき】年上のバイトにどう接するか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "仕事",
+  "転職",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "M7KWrHANxHs",
+  "video_title": "パリは燃えていたよ。AUBRAC",
+  "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+  "start": 9469.0,
+  "end": 9513.0,
+  "title": "年上のアルバイトへの接し方が分からない",
+  "note": "上司だから上から言わなければならない、という思い込みを外している。注意するときもルールを主語にして、下から頼む言い方でよいという具体的な言い換えを渡している",
+  "hook": "年上のバイトにどう接するか"
+ },
+ "short": {
+  "start": 0.28,
+  "end": 42.52,
+  "hook": "年上のバイトにどう接するか",
+  "hook_px": 74,
+  "footer": "本編：仕事の相談10連発"
+ },
+ "score": 0.2616
+}

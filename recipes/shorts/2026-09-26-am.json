@@ -1,0 +1,35 @@
+{
+ "id": "2026-09-26-am",
+ "parent": "2026-08-21-okane2",
+ "publish_at": "2026-09-25T22:00:00Z",
+ "title": "【ひろゆき】住宅ローンは固定か変動か【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "お金",
+  "投資",
+  "NISA",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "5xJ3ZzEnyI8",
+  "video_title": "「暇は人生最高のスパイス」La Raoul",
+  "video_url": "https://www.youtube.com/watch?v=5xJ3ZzEnyI8",
+  "start": 7407.0,
+  "end": 7497.0,
+  "title": "住宅ローンは固定か変動か",
+  "note": "損得ではなく、リスクが計算できるかどうかで比べている。固定は上限が決まっていて変動は青天井。三十年国債の利回りを根拠に、二十年のうちに三.五パーセントを超えると見ている"
+ },
+ "short": {
+  "start": 50.0,
+  "end": 90.0,
+  "hook": "住宅ローンは固定か変動か",
+  "hook_px": 76,
+  "footer": "本編：お金の相談8連発"
+ },
+ "score": 0.1976
+}

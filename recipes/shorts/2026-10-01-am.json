@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-01-am",
+ "parent": "2026-08-16-kosodate",
+ "publish_at": "2026-09-30T22:00:00Z",
+ "title": "【ひろゆき】コミ障だが大学事務職を目指す【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "子育て",
+  "教育",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "M7KWrHANxHs",
+  "video_title": "パリは燃えていたよ。AUBRAC",
+  "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+  "start": 7139.76,
+  "end": 7257.719,
+  "title": "コミ障だが大学事務職員を目指している",
+  "note": "民間を避けた理由が質問に書かれていない。避けている選択肢を本当に検討したのかを、答える前に確認している",
+  "hook": "コミ障だが大学事務職を目指す"
+ },
+ "short": {
+  "start": 0.0,
+  "end": 64.28,
+  "hook": "コミ障だが大学事務職を目指す",
+  "hook_px": 68,
+  "footer": "本編：子育てと教育の相談7連発"
+ },
+ "score": 0.58
+}
