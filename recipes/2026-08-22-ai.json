@@ -1,0 +1,89 @@
+{
+  "id": "2026-08-22-ai",
+  "title": "【ひろゆき】AIに仕事を取られる話7連発。人間に最後に残るのは選ぶ仕事です",
+  "description": "ひろゆきさんの配信から、AIと仕事の話だけを集めて解説を付けました。\n各チャプターの黄色い行は編集側の補足です。",
+  "tags": [
+    "ひろゆき",
+    "切り抜き",
+    "解説",
+    "AI",
+    "仕事",
+    "ChatGPT"
+  ],
+  "category_id": "22",
+  "privacy_status": "private",
+  "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+  "summary": "七件を通して、AIに何ができるかという話はほとんど出てきません。元のサイトに人が来なくなると書く人がいなくなる、能力が落ちたのではなく必要がなくなった、仕様通りかを確かめる工程は機械に寄せられる。どれも仕事のどこが機械に寄るかを順番で言い直していて、残るのは何が良いかを決める側だという結論になっていました。",
+  "thumb": {
+    "main": [
+      "AIに残されるのは",
+      "選ぶ仕事だけ"
+    ],
+    "sub": "AIと仕事の話7件"
+  },
+  "clips": [
+    {
+      "video_id": "VYJ-zTB8TVY",
+      "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+      "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+      "start": 570.0,
+      "end": 664.0,
+      "title": "ChatGPTに聞くとレシピを書いた人に一円も入らない",
+      "note": "AIの精度の話をしていない。元のサイトに人間が来なくなると広告費が入らず、書く人がいなくなり、最後はAIの学習元が枯れるという順番で、お金の流れが切れる場所を指している"
+    },
+    {
+      "video_id": "VYJ-zTB8TVY",
+      "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+      "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+      "start": 855.0,
+      "end": 977.0,
+      "title": "暗算も記憶力も、もう余興でしかない",
+      "note": "能力が落ちたのではなく必要がなくなったと言い直している。足の速さや筋力が給料に結びつかなくなったのと同じ経路を、知性と呼ばれる能力がこれから通るという見方"
+    },
+    {
+      "video_id": "VYJ-zTB8TVY",
+      "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+      "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+      "start": 1031.0,
+      "end": 1128.0,
+      "title": "人間に最後に残るのは選ぶ仕事",
+      "note": "作る側ではなく、何が良くて何が悪いかを決める側が残るという話。正解のないものに基準を与えて機械に教えるところまでが人間の担当で、そこには正しさの証明がないと言っている"
+    },
+    {
+      "video_id": "daulqJwmooE",
+      "video_title": "神を信じない経営者は傲慢である。",
+      "video_url": "https://www.youtube.com/watch?v=daulqJwmooE",
+      "start": 10396.0,
+      "end": 10500.0,
+      "title": "QAエンジニアはAIに持っていかれる",
+      "note": "仕様通り動くかを確かめる工程は機械に寄せられると見ている。逃げ先として挙げるのは技術ではなく、この国の言語ならこういうバグが出るといった、市場の側を見る仕事だった"
+    },
+    {
+      "video_id": "M7KWrHANxHs",
+      "video_title": "パリは燃えていたよ。AUBRAC",
+      "video_url": "https://www.youtube.com/watch?v=M7KWrHANxHs",
+      "start": 3636.0,
+      "end": 3699.0,
+      "title": "五十代のインフラエンジニアは食いっぱぐれない",
+      "note": "若い人が持っていないのはクラウドの知識ではなく、物理サーバーとクラウドのどちらに置くかを決めた経験。設計を年長者、実装を若手という分業が成立するので需要が残るという説明"
+    },
+    {
+      "video_id": "jHWUy2IiZvs",
+      "video_title": "『過程は自分を納得させ、結果は自分以外を納得させる』MIRA BLONDE",
+      "video_url": "https://www.youtube.com/watch?v=jHWUy2IiZvs",
+      "start": 1831.0,
+      "end": 1915.0,
+      "title": "切り抜きは営業代行が要る仕事になる",
+      "note": "動画編集で仕事が取れないという相談に、作る技術ではなく発注の集め方で答えている。単価と再生数で配分する仕組みが先にあり、その仕組みに乗れという順番になっている"
+    },
+    {
+      "video_id": "5xJ3ZzEnyI8",
+      "video_title": "「暇は人生最高のスパイス」La Raoul",
+      "video_url": "https://www.youtube.com/watch?v=5xJ3ZzEnyI8",
+      "start": 1248.0,
+      "end": 1304.0,
+      "title": "切り抜きは置いておくと落ちてくる",
+      "note": "月に数万円の副収入という報告への返答。伸ばす方法ではなく、作り終えた後も再生が続くという性質のほうを評価していて、労働時間と収入が切れている点を残ると言う理由にしている"
+    }
+  ]
+}
