@@ -1,0 +1,35 @@
+{
+ "id": "2026-09-24-am-v2",
+ "parent": "2026-09-07-shumi",
+ "publish_at": "2026-09-23T22:00:00Z",
+ "title": "【ひろゆき】音楽も映画も、無くても人は死なない【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "趣味",
+  "エンタメ",
+  "映画",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "ISHh67atXTI",
+  "video_title": "「言葉の刃より行動の矢」S23",
+  "video_url": "https://www.youtube.com/watch?v=ISHh67atXTI",
+  "start": 1264.0,
+  "end": 1466.0,
+  "title": "音楽も映画も、無くても人は死なない",
+  "note": "娯楽が要るか要らないかではなく、必須と効率の二段に分けている。食事や電気が止まれば人は死ぬが、エンタメが止まっても死なない。あった方がいいという話と、無いと困るという話は別だという線引き"
+ },
+ "short": {
+  "start": 36.12,
+  "end": 99.42,
+  "hook": "音楽も映画も、無くても人は死なない",
+  "hook_px": 56,
+  "footer": "本編：趣味と娯楽の話6連発"
+ },
+ "score": 0.2137
+}

@@ -16,7 +16,30 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.plan_shorts import (  # noqa: E402
     MAX_SEC, MIN_SEC, best_window, is_question_lead, is_used, sentences,
+    thin_opening,
 )
+
+
+def test_1文目が相づちや配信の進行なら弱いとみなす():
+    """文の頭から始めるだけでは足りない（2026-09-10 実測）。"""
+    assert thin_opening("はい。")
+    assert thin_opening("えっと、あの、はい。")
+    assert thin_opening("失礼しましたというわけで、そろそろ終わらないと厳しい感じなんで")
+    assert thin_opening("はい、ありがとうございました。")
+    assert thin_opening("[笑い]うん。")
+
+
+def test_前を受ける接続詞で始まる1文目は弱いとみなす():
+    """文の頭ではあるが、指すものが画面に無い（2026-09-10 実測）。"""
+    assert thin_opening("ただ基本的にはその、テムとかがやってるのって大量の発注を受けて")
+    assert thin_opening("で、あの、大手代理店というのは自分が知らなかったとしても")
+    assert thin_opening("ま、あのそのなんかアスリートを熱狂的なファンは別にしてね。")
+
+
+def test_中身のある1文目は通す():
+    assert not thin_opening("僕ね楽器引かないですよね。")
+    assert not thin_opening("あの、石は蓄熱するんで、1日2日その40度近くになった日は")
+    assert not thin_opening("辞めてから探すと足元を見られるので。")
 
 
 USED = [{"short_id": "x", "video_id": "AAA", "start": 100.0, "end": 145.0,
@@ -96,6 +119,13 @@ def test_相談文を見分ける():
     assert is_question_lead("どうすればいいですか?")
     assert is_question_lead("フランスにも敬語的な言葉あるんでしょうか？")
     assert not is_question_lead("辞めてから探すと足元を見られるので。")
+
+
+def test_疑問符が無い質問も見分ける():
+    """2026-09-10 実測。句点で終わる質問が1本すり抜けた。"""
+    assert is_question_lead("30分程点の購入は1年目としてはなかなかいいのでしょうか。")
+    assert is_question_lead("これは買ったほうがいいですか。")
+    assert not is_question_lead("だから在職中に動くのが普通に正解です。")
 
 
 def test_窓は文の途中から始まらない():

@@ -5,6 +5,7 @@
   python scripts/ops_youtube.py --playlist            # 再生リストを作って全話を入れる
   python scripts/ops_youtube.py --crosslink           # 概要欄に他の回への導線を足す
   python scripts/ops_youtube.py --publish ID [ID...]  # private / 予約 を今すぐ public にする
+  python scripts/ops_youtube.py --unschedule ID [ID...]  # 予約だけ外す（削除しない）
   python scripts/ops_youtube.py --status --playlist --crosslink
 
 `--publish` は**外に出る操作**なので、他と違って published.json を見ずに
@@ -253,6 +254,36 @@ def cmd_publish(service, video_ids: list[str]) -> None:
               f"{v['snippet']['title'][:44]}")
 
 
+def cmd_unschedule(service, video_ids: list[str]) -> None:
+    """予約を外して private のまま置く。**削除はしない。**
+
+    差し替えのときに使う。予約公開の日時を消すだけなので、動画そのものは
+    残る（消しても取り返せないうえ、残しておく費用はゼロ）。
+    """
+    for vid in video_ids:
+        items = service.videos().list(part="snippet,status", id=vid).execute()["items"]
+        if not items:
+            print(f"! {vid} が見つかりません")
+            continue
+        v = items[0]
+        if v["snippet"].get("channelId") != CHANNEL_ID:
+            print(f"! {vid} はこのチャンネルの動画ではありません")
+            continue
+        if v["status"]["privacyStatus"] == "public":
+            print(f"! {vid} は既に public。予約は外せません")
+            continue
+        at = v["status"].get("publishAt")
+        if not at:
+            print(f"- {vid} に予約はありません")
+            continue
+        status = {k: val for k, val in v["status"].items() if k != "publishAt"}
+        status["privacyStatus"] = "private"
+        service.videos().update(part="status",
+                                body={"id": vid, "status": status}).execute()
+        print(f"✓ {vid} 予約 {at} を解除（private のまま）  "
+              f"{v['snippet']['title'][:40]}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--status", action="store_true")
@@ -260,9 +291,11 @@ def main() -> None:
     ap.add_argument("--crosslink", action="store_true")
     ap.add_argument("--publish", nargs="+", metavar="VIDEO_ID",
                     help="この動画を今すぐ public にする（予約は解除される）")
+    ap.add_argument("--unschedule", nargs="+", metavar="VIDEO_ID",
+                    help="予約を外して private のまま置く（削除はしない）")
     a = ap.parse_args()
-    if not (a.status or a.playlist or a.crosslink or a.publish):
-        ap.error("--status / --playlist / --crosslink / --publish "
+    if not (a.status or a.playlist or a.crosslink or a.publish or a.unschedule):
+        ap.error("--status / --playlist / --crosslink / --publish / --unschedule "
                  "のどれかを指定してください")
 
     service = get_service()
@@ -272,6 +305,8 @@ def main() -> None:
 
     if a.publish:
         cmd_publish(service, a.publish)
+    if a.unschedule:
+        cmd_unschedule(service, a.unschedule)
 
     data = load_published()
     live = None

@@ -1,0 +1,35 @@
+{
+ "id": "2026-09-28-am-v2",
+ "parent": "2026-09-07-kaigai",
+ "publish_at": "2026-09-27T22:00:00Z",
+ "title": "【ひろゆき】日本で石造りの家を建てたい【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "海外",
+  "英語",
+  "移住",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "Fydc3YFumow",
+  "video_title": "この先、日本はどうなるのか会議。",
+  "video_url": "https://www.youtube.com/watch?v=Fydc3YFumow",
+  "start": 2986.8,
+  "end": 3060.8,
+  "title": "日本で石造りの家を建てたい",
+  "note": "暑さの話を、その日の気温ではなく蓄熱で説明している。四十度の日が続くと建物自体が熱を持ち、外気が二十度でも室内が三十度になる。木と隙間で作ってきたのはそれを避けるためだという読み"
+ },
+ "short": {
+  "start": 12.48,
+  "end": 66.18,
+  "hook": "日本で石造りの家を建てたい",
+  "hook_px": 74,
+  "footer": "本編：海外の相談7連発"
+ },
+ "score": 0.1228
+}

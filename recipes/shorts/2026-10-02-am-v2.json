@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-02-am-v2",
+ "parent": "2026-09-07-business",
+ "publish_at": "2026-10-01T22:00:00Z",
+ "title": "【ひろゆき】テムやアリエクはなぜ異常に安いのか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "ビジネス",
+  "経営",
+  "投資",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "23vSB2fXjc8",
+  "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+  "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+  "start": 1223.4,
+  "end": 1318.9,
+  "title": "テムやアリエクはなぜ異常に安いのか",
+  "note": "強制労働ではなく、不良率を見込んだ過剰生産の余りだと説明している。十万個の発注に対し十二万個作り、納品しなかったぶんが在庫として残る。それを一括で安く引き取るので原価がほぼ関係なくなる"
+ },
+ "short": {
+  "start": 8.01,
+  "end": 71.94,
+  "hook": "テムやアリエクはなぜ異常に安いのか",
+  "hook_px": 56,
+  "footer": "本編：ビジネスの話6連発"
+ },
+ "score": 0.1188
+}

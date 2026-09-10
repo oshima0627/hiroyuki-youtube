@@ -258,13 +258,54 @@ def sentences(cues: list[dict]) -> list[tuple[float, float, str]]:
     return out
 
 
-def is_question_lead(text: str) -> bool:
-    """相談文の読み上げか。疑問符で終わる文を質問とみなす。
+# 文の頭から始めるだけでは足りない。**1文目が中身を持っている必要がある。**
+# 2026-09-10 に文境界へ移した直後、09/24 が「はい。」、09/28 が「失礼しましたと
+# いうわけで、…そろそろ終わらないと厳しい感じなんで」（配信の締め）で始まった。
+# どちらも文の頭ではあるが、冒頭2秒に置くものではない。
+_BRACKET = re.compile(r"\[[^\]]*\]")
+FILLER = ("あの", "えっと", "ええと", "まあ", "なんか", "そうですね",
+          "はい", "うん", "ええ", "その")
+# 配信の進行そのものに関する文。中身の話をしていない
+ADMIN = ("失礼しました", "というわけで", "そろそろ終わ", "お疲れ様",
+         "ありがとうございました", "よろしくお願い", "次の質問", "どうぞ",
+         "こんにちは", "こんばんは", "始めます", "終わります", "また来週",
+         "配信を", "読み上げ")
+OPEN_MIN_CHARS = 12        # フィラーを抜いたあとの1文目の最小文字数
 
-    語彙で判定しようとすると ASR の崩れに当たる（「フルリモート」→「振りモ」）。
-    疑問符は崩れにくいので、そこだけを見る。
-    """
-    return text.rstrip().endswith(("?", "？"))
+# **前を受ける接続詞で始まる文は冒頭に置けない。** 文法上は文の頭でも、
+# 「ただ〜」「で、〜」は直前の話を受けているので、いきなり見せられた側には
+# 指すものが無い。2026-09-10 の実測で、文境界に直した直後の7本のうち4本が
+# これで始まっていた（「ただ基本的には」「で、あの、大手代理店というのは」）。
+# 実素材104クリップで、弾くと窓は 68→59 に減る。
+LEAD = ("ただ", "で、", "なので", "だから", "というのは", "それで",
+        "でも", "が、", "ま、", "つまり", "なんで")
+
+
+def thin_opening(text: str) -> bool:
+    """1文目として弱すぎるか。相づち・配信の進行・短すぎる文・接続詞始まりを弾く。"""
+    t = _BRACKET.sub("", text)
+    if any(w in t for w in ADMIN):
+        return True
+    if t.lstrip("　 ").startswith(LEAD):
+        return True
+    for w in FILLER:
+        t = t.replace(w, "")
+    return len(t.strip("、。 　")) < OPEN_MIN_CHARS
+
+
+# 疑問符が付かない質問がある。2026-09-10 実測:
+#   「…1年目としてはなかなかいいのでしょうか。」← 句点で終わる質問
+# 語彙で相談文を見分けようとすると ASR の崩れに当たる（「フルリモート」→「振りモ」）が、
+# **文末の助動詞は崩れにくい**ので、そこだけを足す。
+Q_TAIL = ("ですか", "ますか", "でしょうか", "ませんか", "だろうか", "かな")
+
+
+def is_question_lead(text: str) -> bool:
+    """相談文の読み上げか。疑問符、または疑問の文末で終わる文を質問とみなす。"""
+    t = text.rstrip()
+    if t.endswith(("?", "？")):
+        return True
+    return t.rstrip("。 　").endswith(Q_TAIL)
 
 
 def opens_with_question(sents: list[tuple[float, float, str]],
@@ -297,7 +338,9 @@ def best_window(cues: list[dict], sig: dict, start: float,
         return None
 
     best = None
-    for i, (lo, _, _) in enumerate(sents):
+    for i, (lo, _, head) in enumerate(sents):
+        if thin_opening(head):
+            continue
         for _, hi, _ in sents[i + 1:]:
             span = hi - lo
             if span < MIN_SEC:
