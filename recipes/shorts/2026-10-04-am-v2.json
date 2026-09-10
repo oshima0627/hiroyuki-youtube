@@ -1,0 +1,35 @@
+{
+ "id": "2026-10-04-am-v2",
+ "parent": "2026-08-22-ai",
+ "publish_at": "2026-10-03T22:00:00Z",
+ "title": "【ひろゆき】QAエンジニアはAIに持っていかれる【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "AI",
+  "仕事",
+  "ChatGPT",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "daulqJwmooE",
+  "video_title": "神を信じない経営者は傲慢である。",
+  "video_url": "https://www.youtube.com/watch?v=daulqJwmooE",
+  "start": 10396.0,
+  "end": 10500.0,
+  "title": "QAエンジニアはAIに持っていかれる",
+  "note": "仕様通り動くかを確かめる工程は機械に寄せられると見ている。逃げ先として挙げるのは技術ではなく、この国の言語ならこういうバグが出るといった、市場の側を見る仕事だった"
+ },
+ "short": {
+  "start": 7.22,
+  "end": 50.48,
+  "hook": "QAエンジニアはAIに持っていかれる",
+  "hook_px": 58,
+  "footer": "本編：AIに仕事を取られる話7連発"
+ },
+ "score": 0.076
+}

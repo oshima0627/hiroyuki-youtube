@@ -1,0 +1,35 @@
+{
+ "id": "2026-09-26-am-v2",
+ "parent": "2026-09-07-gaishoku",
+ "publish_at": "2026-09-25T22:00:00Z",
+ "title": "【ひろゆき】飲食店は落とした食べ物を戻している【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "外食",
+  "グルメ",
+  "サイゼリア",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "daulqJwmooE",
+  "video_title": "神を信じない経営者は傲慢である。",
+  "video_url": "https://www.youtube.com/watch?v=daulqJwmooE",
+  "start": 8415.2,
+  "end": 8527.3,
+  "title": "飲食店は落とした食べ物を戻している",
+  "note": "衛生の是非ではなく、現場の人がどう動くかで説明している。捨てるたびに怒られる仕組みになっていれば戻すほうが合理的で、だから店を選ぶ側が前提を変えるしかない、という順番になっている"
+ },
+ "short": {
+  "start": 4.68,
+  "end": 49.04,
+  "hook": "飲食店は落とした食べ物を戻している",
+  "hook_px": 56,
+  "footer": "本編：外食の話7連発"
+ },
+ "score": 0.1501
+}
