@@ -184,21 +184,121 @@ def blocked(sig: dict, lo: float, hi: float) -> str | None:
     return None
 
 
+# ── 冒頭の作り ─────────────────────────────────────────────────────
+# **2026-09-10 の実測でここを作り直した。**
+#
+# それまで best_window() は**字幕キューの境界**にスナップしていて、docstring には
+# 「行の途中では切らない」と書いてあった。書いてある意図と、使っている仕組みが
+# 一致していない。自動字幕のキュー境界は2行ローリング表示の都合で決まるもので、
+# 文の切れ目とは関係がない（subtitles.py の冒頭にあるとおり）。
+#
+# 予約済み30本の冒頭を字幕の実文で当たった結果:
+#   - 冒頭が前の話題の文の途中から始まるものが並んでいた
+#     「ないですか。」「なと思いますけども。はい。」「これさっき読んだやつじゃん。」
+#   - 30本中22本は、ひろゆき氏の答えが始まるまでに**尺の 7〜80%**（中央値およそ35%）
+#     を相談文の読み上げに使っていた
+#
+# 同じ日のアナリティクスで、維持率の崖は上位8本すべて 10%→20% にあり、
+# relativeRetentionPerformance の谷も同じ位置だった。ちょうど読み上げの最中に当たる。
+#
+# **相談文の中身はフックが既に1行で言っている。** 読み上げは重複であって、
+# 冒頭の一番高い場所を潰している。MIN_SEC を 38 に上げてあるのは「質問の前提を
+# 落とすと回答だけが浮く」ためだったが、前提はフックが担うのでここでは落とす。
+SENT_END = "。？?！!"
+# 0.30〜0.70 を実素材104クリップで振った結果（2026-09-10）:
+#   0.30 → 窓79本 / 冒頭に質問が残るもの8本
+#   0.50 → 窓78本 / 3本
+#   0.60 → 窓76本 / 0本      ← ここで消える
+#   0.70 → 窓76本 / 0本      （それ以上は取れる本数だけ減る）
+# 疑問符で終わらない相談文（自己紹介から入るもの）は 0.30 だとすり抜ける。
+OPEN_GUARD = 0.60          # 冒頭のこの割合には相談文の読み上げを入れない
+
+# 使用済みの判定は**重なりで見る**。窓の位置が少し動いただけの同じ話を
+# 別物として数えないため。2026-09-10 に best_window を文境界へ移したとき、
+# 完全一致で持っていた used_keys が全て外れて、既出56本が再び候補に
+# 戻ってしまうことが分かった（実測）。
+USED_OVERLAP = 0.5
+
+
+def sentences(cues: list[dict]) -> list[tuple[float, float, str]]:
+    """字幕キューを文に組み直す。[(開始秒, 終了秒, 本文), ...]
+
+    キュー内の文字位置を時間に線形で割り当てて、句点で切り直す。ASR は語を
+    崩すが**句点の位置は崩れにくい**ので、切れ目としては使える（本文をフックに
+    使うのは従来どおり禁止。make_hook を参照）。
+    """
+    chars: list[tuple[float, str]] = []
+    for i, c in enumerate(cues):
+        line = (c.get("line") or "").strip()
+        if not line:
+            continue
+        t0 = float(c["t"])
+        t1 = (float(cues[i + 1]["t"]) if i + 1 < len(cues)
+              else t0 + max(1.0, len(line) * 0.12))
+        span = max(0.05, t1 - t0)
+        for j, ch in enumerate(line):
+            chars.append((t0 + span * j / len(line), ch))
+
+    out: list[tuple[float, float, str]] = []
+    buf: list[str] = []
+    start: float | None = None
+    for t, ch in chars:
+        if start is None:
+            start = t
+        buf.append(ch)
+        if ch in SENT_END:
+            text = "".join(buf).strip()
+            if text:
+                out.append((start, t, text))
+            buf, start = [], None
+    if buf and start is not None:
+        text = "".join(buf).strip()
+        if text:
+            out.append((start, chars[-1][0], text))
+    return out
+
+
+def is_question_lead(text: str) -> bool:
+    """相談文の読み上げか。疑問符で終わる文を質問とみなす。
+
+    語彙で判定しようとすると ASR の崩れに当たる（「フルリモート」→「振りモ」）。
+    疑問符は崩れにくいので、そこだけを見る。
+    """
+    return text.rstrip().endswith(("?", "？"))
+
+
+def opens_with_question(sents: list[tuple[float, float, str]],
+                        lo: float, hi: float) -> bool:
+    """窓の冒頭 OPEN_GUARD ぶんに相談文の読み上げが入っているか。"""
+    limit = lo + (hi - lo) * OPEN_GUARD
+    for s0, _s1, text in sents:
+        if s0 < lo:
+            continue
+        if s0 > limit:
+            return False
+        if is_question_lead(text):
+            return True
+    return False
+
+
 def best_window(cues: list[dict], sig: dict, start: float,
                 end: float) -> tuple[float, float, float] | None:
-    """字幕行の境界にスナップした最良の窓 (絶対開始, 絶対終了, スコア)。
+    """**文の境界**にスナップした最良の窓 (絶対開始, 絶対終了, スコア)。
 
-    **行の途中では切らない。** 縦型は冒頭2秒が勝負なので、言葉の途中から
-    始まると何の話か分からないまま2秒が終わる。
+    縦型は冒頭2秒が勝負なので、
+      1. 文の途中からは始めない（キュー境界ではなく句点で切る）
+      2. 冒頭 OPEN_GUARD ぶんに相談文の読み上げを入れない
+
+    2 を満たす窓が無ければ None を返して**その候補を捨てる**。削って辻褄を
+    合わせない（make_hook と同じ方針）。
     """
-    ts = sorted({float(c["t"]) for c in cues if start <= float(c["t"]) <= end})
-    if len(ts) < 2:
+    sents = [s for s in sentences(cues) if start <= s[0] and s[1] <= end]
+    if len(sents) < 2:
         return None
-    ts.append(end)
 
     best = None
-    for i, lo in enumerate(ts):
-        for hi in ts[i + 1:]:
+    for i, (lo, _, _) in enumerate(sents):
+        for _, hi, _ in sents[i + 1:]:
             span = hi - lo
             if span < MIN_SEC:
                 continue
@@ -206,16 +306,36 @@ def best_window(cues: list[dict], sig: dict, start: float,
                 break
             if blocked(sig, lo, hi):
                 continue
+            if opens_with_question(sents, lo, hi):
+                continue
             sc = window_score(sig, lo, hi)
             if best is None or sc > best[2]:
                 best = (lo, hi, sc)
     return best
 
 
+def is_used(video_id: str, lo: float, hi: float, hook: str,
+            used: list[dict]) -> bool:
+    """この窓は既に出したものか。
+
+    **完全一致で見てはいけない。** 窓の取り方を変えると位置が数秒動くので、
+    同じ話が別物として通ってしまう（2026-09-10 実測）。重なりとフックで見る。
+    """
+    for u in used:
+        if u.get("video_id") != video_id:
+            continue
+        if hook and u.get("hook") == hook:
+            return True
+        us, ue = float(u["start"]), float(u["end"])
+        overlap = min(hi, ue) - max(lo, us)
+        if overlap > 0 and overlap / min(hi - lo, ue - us) >= USED_OVERLAP:
+            return True
+    return False
+
+
 def collect(pub: dict, used: list[dict],
             allow_unpublished: bool) -> tuple[list[dict], dict[str, int]]:
     draw = _draw()
-    used_keys = {(u["video_id"], round(u["start"]), round(u["end"])) for u in used}
     out, skipped = [], {}
 
     def skip(reason: str) -> None:
@@ -253,7 +373,7 @@ def collect(pub: dict, used: list[dict],
                 skip(f"{MIN_SEC:.0f}〜{MAX_SEC:.0f}秒の窓が取れない")
                 continue
             lo, hi, score = win
-            if (clip["video_id"], round(lo), round(hi)) in used_keys:
+            if is_used(clip["video_id"], lo, hi, hook[0], used):
                 skip("使用済み")
                 continue
 

@@ -4,7 +4,11 @@
   python scripts/ops_youtube.py --status              # 実状態を見て published.json を直す
   python scripts/ops_youtube.py --playlist            # 再生リストを作って全話を入れる
   python scripts/ops_youtube.py --crosslink           # 概要欄に他の回への導線を足す
+  python scripts/ops_youtube.py --publish ID [ID...]  # private / 予約 を今すぐ public にする
   python scripts/ops_youtube.py --status --playlist --crosslink
+
+`--publish` は**外に出る操作**なので、他と違って published.json を見ずに
+API の実状態だけを見て動く。予約（publishAt）は解除される。
 
 **published.json は投稿時の申告であって、実状態ではない。**
 予約公開が発火しても誰も書き戻さないので、`privacy_status` は private の
@@ -222,19 +226,52 @@ def cmd_crosslink(service, data: dict, live: dict[str, dict] | None = None) -> N
         print(f"✓ {vid} の概要欄に導線を入れました")
 
 
+def cmd_publish(service, video_ids: list[str]) -> None:
+    """private / 予約 の動画を今すぐ public にする。
+
+    **予約公開（publishAt）は private とセットでしか意味を持たない。** public に
+    するときは publishAt を消さないと 400 が返る。
+    """
+    for vid in video_ids:
+        items = service.videos().list(part="snippet,status", id=vid).execute()["items"]
+        if not items:
+            print(f"! {vid} が見つかりません")
+            continue
+        v = items[0]
+        if v["snippet"].get("channelId") != CHANNEL_ID:
+            print(f"! {vid} はこのチャンネルの動画ではありません")
+            continue
+        before = v["status"]["privacyStatus"]
+        if before == "public":
+            print(f"- {vid} は既に public です")
+            continue
+        status = {k: val for k, val in v["status"].items() if k != "publishAt"}
+        status["privacyStatus"] = "public"
+        r = service.videos().update(part="status",
+                                    body={"id": vid, "status": status}).execute()
+        print(f"✓ {vid} {before} → {r['status']['privacyStatus']}  "
+              f"{v['snippet']['title'][:44]}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--status", action="store_true")
     ap.add_argument("--playlist", action="store_true")
     ap.add_argument("--crosslink", action="store_true")
+    ap.add_argument("--publish", nargs="+", metavar="VIDEO_ID",
+                    help="この動画を今すぐ public にする（予約は解除される）")
     a = ap.parse_args()
-    if not (a.status or a.playlist or a.crosslink):
-        ap.error("--status / --playlist / --crosslink のどれかを指定してください")
+    if not (a.status or a.playlist or a.crosslink or a.publish):
+        ap.error("--status / --playlist / --crosslink / --publish "
+                 "のどれかを指定してください")
 
     service = get_service()
     ch = service.channels().list(part="snippet", mine=True).execute()["items"][0]
     if ch["id"] != CHANNEL_ID:
         raise SystemExit(f"! チャンネルが違います: {ch['snippet']['title']}（{ch['id']}）")
+
+    if a.publish:
+        cmd_publish(service, a.publish)
 
     data = load_published()
     live = None
