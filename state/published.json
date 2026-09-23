@@ -254,7 +254,7 @@
       "youtube_video_id": "TtJKOPH0PCU",
       "url": "https://www.youtube.com/watch?v=TtJKOPH0PCU",
       "title": "【ひろゆき】不動産価格が下がっても庶民が買えない理由。不景気で不動産営業が儲かるのはなぜか",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
@@ -262,8 +262,8 @@
         "Fydc3YFumow",
         "VYJ-zTB8TVY"
       ],
-      "publish_at": "2026-09-21T09:00:00Z",
-      "published_at": "2026-08-25T08:29:28Z",
+      "publish_at": null,
+      "published_at": "2026-09-21T09:00:34Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT7M50S"
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1342,
+      "view_count": 1343,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -690,7 +690,7 @@
       "publish_at": null,
       "published_at": "2026-09-19T22:00:24Z",
       "upload_status": "processed",
-      "view_count": 1271,
+      "view_count": 1273,
       "duration": "PT42S"
     },
     "2026-09-21-am": {
@@ -707,24 +707,24 @@
       "publish_at": null,
       "published_at": "2026-09-20T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1181,
+      "view_count": 1402,
       "duration": "PT55S"
     },
     "2026-09-22-am": {
       "youtube_video_id": "-TP1ouxQVGY",
       "url": "https://www.youtube.com/watch?v=-TP1ouxQVGY",
       "title": "【ひろゆき】三か月休めるなら何をするか【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "5xJ3ZzEnyI8"
       ],
-      "publish_at": "2026-09-21T22:00:00Z",
-      "published_at": "2026-09-02T05:01:50Z",
+      "publish_at": null,
+      "published_at": "2026-09-21T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 882,
       "duration": "PT41S"
     },
     "2026-09-23-am": {
@@ -1215,7 +1215,7 @@
       "publish_at": null,
       "published_at": "2026-09-15T03:00:22Z",
       "upload_status": "processed",
-      "view_count": 5,
+      "view_count": 6,
       "duration": "PT10M4S"
     },
     "2026-09-07-kaigai": {
