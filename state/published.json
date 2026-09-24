@@ -247,7 +247,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T09:00:37Z",
       "upload_status": "processed",
-      "view_count": 3,
+      "view_count": 5,
       "duration": "PT5M37S"
     },
     "2026-08-27-fudosan": {
@@ -265,7 +265,7 @@
       "publish_at": null,
       "published_at": "2026-09-21T09:00:34Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT7M50S"
     },
     "2026-08-27-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1343,
+      "view_count": 1344,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -486,7 +486,7 @@
       "publish_at": null,
       "published_at": "2026-09-07T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1724,
+      "view_count": 1726,
       "duration": "PT40S"
     },
     "2026-09-09-am": {
@@ -520,7 +520,7 @@
       "publish_at": null,
       "published_at": "2026-09-09T22:00:28Z",
       "upload_status": "processed",
-      "view_count": 1316,
+      "view_count": 1318,
       "duration": "PT1M3S"
     },
     "2026-09-11-am": {
@@ -537,7 +537,7 @@
       "publish_at": null,
       "published_at": "2026-09-10T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1362,
+      "view_count": 1364,
       "duration": "PT43S"
     },
     "2026-09-12-am": {
@@ -639,7 +639,7 @@
       "publish_at": null,
       "published_at": "2026-09-16T22:00:19Z",
       "upload_status": "processed",
-      "view_count": 1576,
+      "view_count": 1577,
       "duration": "PT39S"
     },
     "2026-09-18-am": {
@@ -656,7 +656,7 @@
       "publish_at": null,
       "published_at": "2026-09-17T22:00:03Z",
       "upload_status": "processed",
-      "view_count": 1317,
+      "view_count": 1315,
       "duration": "PT39S"
     },
     "2026-09-19-am": {
@@ -673,7 +673,7 @@
       "publish_at": null,
       "published_at": "2026-09-18T22:00:28Z",
       "upload_status": "processed",
-      "view_count": 1206,
+      "view_count": 1205,
       "duration": "PT39S"
     },
     "2026-09-20-am": {
@@ -690,7 +690,7 @@
       "publish_at": null,
       "published_at": "2026-09-19T22:00:24Z",
       "upload_status": "processed",
-      "view_count": 1273,
+      "view_count": 1280,
       "duration": "PT42S"
     },
     "2026-09-21-am": {
@@ -707,7 +707,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1402,
+      "view_count": 1482,
       "duration": "PT55S"
     },
     "2026-09-22-am": {
@@ -724,24 +724,24 @@
       "publish_at": null,
       "published_at": "2026-09-21T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 882,
+      "view_count": 1329,
       "duration": "PT41S"
     },
     "2026-09-23-am": {
       "youtube_video_id": "UFNtmiYMXEE",
       "url": "https://www.youtube.com/watch?v=UFNtmiYMXEE",
       "title": "【ひろゆき】ボーナスの平均額は誰を数えた数字か【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "23vSB2fXjc8"
       ],
-      "publish_at": "2026-09-22T22:00:00Z",
-      "published_at": "2026-09-02T05:02:01Z",
+      "publish_at": null,
+      "published_at": "2026-09-22T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1498,
       "duration": "PT41S"
     },
     "2026-08-21-okane2": {
@@ -762,24 +762,24 @@
       "publish_at": null,
       "published_at": "2026-09-12T03:00:27Z",
       "upload_status": "processed",
-      "view_count": 7,
+      "view_count": 10,
       "duration": "PT13M50S"
     },
     "2026-09-24-am": {
       "youtube_video_id": "zM9PSQYdD50",
       "url": "https://www.youtube.com/watch?v=zM9PSQYdD50",
       "title": "【ひろゆき】年収千四百万だが税金で何も残らない【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "M7KWrHANxHs"
       ],
-      "publish_at": "2026-09-23T22:00:00Z",
-      "published_at": "2026-09-02T05:06:34Z",
+      "publish_at": null,
+      "published_at": "2026-09-23T22:00:33Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1251,
       "duration": "PT42S"
     },
     "2026-09-25-am": {
@@ -1215,7 +1215,7 @@
       "publish_at": null,
       "published_at": "2026-09-15T03:00:22Z",
       "upload_status": "processed",
-      "view_count": 6,
+      "view_count": 7,
       "duration": "PT10M4S"
     },
     "2026-09-07-kaigai": {
@@ -1278,7 +1278,7 @@
       "publish_at": null,
       "published_at": "2026-09-18T03:00:02Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT10M47S"
     },
     "2026-09-07-business": {
