@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1344,
+      "view_count": 1346,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -486,7 +486,7 @@
       "publish_at": null,
       "published_at": "2026-09-07T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1726,
+      "view_count": 1727,
       "duration": "PT40S"
     },
     "2026-09-09-am": {
@@ -707,7 +707,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1482,
+      "view_count": 1528,
       "duration": "PT55S"
     },
     "2026-09-22-am": {
@@ -724,7 +724,7 @@
       "publish_at": null,
       "published_at": "2026-09-21T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1329,
+      "view_count": 1401,
       "duration": "PT41S"
     },
     "2026-09-23-am": {
@@ -741,7 +741,7 @@
       "publish_at": null,
       "published_at": "2026-09-22T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1498,
+      "view_count": 1577,
       "duration": "PT41S"
     },
     "2026-08-21-okane2": {
@@ -762,7 +762,7 @@
       "publish_at": null,
       "published_at": "2026-09-12T03:00:27Z",
       "upload_status": "processed",
-      "view_count": 10,
+      "view_count": 11,
       "duration": "PT13M50S"
     },
     "2026-09-24-am": {
@@ -779,24 +779,24 @@
       "publish_at": null,
       "published_at": "2026-09-23T22:00:33Z",
       "upload_status": "processed",
-      "view_count": 1251,
+      "view_count": 1579,
       "duration": "PT42S"
     },
     "2026-09-25-am": {
       "youtube_video_id": "xR-FlQjz0uQ",
       "url": "https://www.youtube.com/watch?v=xR-FlQjz0uQ",
       "title": "【ひろゆき】Switch2の値上げをどう見るか【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "VYJ-zTB8TVY"
       ],
-      "publish_at": "2026-09-24T22:00:00Z",
-      "published_at": "2026-09-02T05:06:42Z",
+      "publish_at": null,
+      "published_at": "2026-09-24T22:00:37Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 919,
       "duration": "PT45S"
     },
     "2026-09-26-am": {
@@ -1174,7 +1174,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T03:00:17Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 2,
       "duration": "PT12M16S"
     },
     "2026-09-07-gaishoku": {
