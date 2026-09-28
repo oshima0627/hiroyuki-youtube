@@ -830,7 +830,7 @@
       "publish_at": null,
       "published_at": "2026-09-26T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1245,
+      "view_count": 1243,
       "duration": "PT40S"
     },
     "2026-09-28-am": {
@@ -847,7 +847,7 @@
       "publish_at": null,
       "published_at": "2026-09-27T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 995,
+      "view_count": 1163,
       "duration": "PT1M8S"
     },
     "2026-09-29-am": {
@@ -1301,6 +1301,25 @@
       "upload_status": "processed",
       "view_count": 1,
       "duration": "PT13M23S"
+    },
+    "2026-09-28-manner": {
+      "youtube_video_id": "pt6OrlocARY",
+      "url": "https://www.youtube.com/watch?v=pt6OrlocARY",
+      "title": "【ひろゆき】公共マナーの話5連発。シートを倒す前に聞いてる人は茶番です",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "5xJ3ZzEnyI8",
+        "daulqJwmooE",
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-09-28T09:00:00Z",
+      "published_at": "2026-09-28T02:15:17Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "P0D"
     }
   }
 }
