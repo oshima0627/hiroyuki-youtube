@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1375,
+      "view_count": 1381,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -796,7 +796,7 @@
       "publish_at": null,
       "published_at": "2026-09-24T22:00:37Z",
       "upload_status": "processed",
-      "view_count": 1300,
+      "view_count": 1301,
       "duration": "PT45S"
     },
     "2026-09-26-am": {
@@ -813,7 +813,7 @@
       "publish_at": null,
       "published_at": "2026-09-25T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 1731,
+      "view_count": 1738,
       "duration": "PT41S"
     },
     "2026-09-27-am": {
@@ -830,7 +830,7 @@
       "publish_at": null,
       "published_at": "2026-09-26T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1280,
+      "view_count": 1296,
       "duration": "PT40S"
     },
     "2026-09-28-am": {
@@ -847,7 +847,7 @@
       "publish_at": null,
       "published_at": "2026-09-27T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1441,
+      "view_count": 1454,
       "duration": "PT1M8S"
     },
     "2026-09-29-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 958,
+      "view_count": 1476,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -1325,7 +1325,7 @@
       "youtube_video_id": "smoNVDDOI6M",
       "url": "https://www.youtube.com/watch?v=smoNVDDOI6M",
       "title": "【ひろゆき】YouTubeの話5連発。切り抜きが流行ったのは運とタイミングです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
@@ -1335,9 +1335,9 @@
         "_Qc2ZF3MLO0",
         "daulqJwmooE"
       ],
-      "publish_at": "2026-09-29T03:00:00Z",
-      "published_at": "2026-09-29T01:46:22Z",
-      "upload_status": "uploaded",
+      "publish_at": null,
+      "published_at": "2026-09-29T03:00:08Z",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M56S"
     }
