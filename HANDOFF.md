@@ -1,69 +1,53 @@
 ﻿# HANDOFF
-
-最終更新: 2026-09-28（長尺「マナー」回をビルド済み・未アップロード）
+最終更新: 2026-09-29（日次ops: 長尺YouTube回を12:00 JST予約・前日ショート導線更新）
 
 ---
 
 ## ▶ このセッションで最初に実行するコマンド
 
-**長尺 `2026-09-28-manner` はビルド済み。アップロードだけ残っている。**
-ユーザー承認後に次を叩く（承認なしでは上げない）:
-
 ```bash
-cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/upload_youtube.py work/2026-09-28-manner
+cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/ops_youtube.py --status
 ```
 
-private のまま上がる。公開予約するならそのあと Studio か `ops_youtube.py` で日時を付ける。
-**カスタムサムネは API が 403 のまま**（アカウント側の機能利用資格）。`thumb.png` は作ってあるが `set_thumbnails.py` は通らない想定。
+本日（2026-09-29）の枠は埋まっている。次の日次は 2026-09-30 10:00 JST。
 
 ---
 
 ## いま何をしているのか
 
-ひろゆき切り抜きチャンネル「ひろゆき解説ch【切り抜き】」(`UCqK3KYqEeeJiAWr4nSryJYQ` /
-`@hiroyuki_kaisetsu`) の運用。
+ひろゆき切り抜きチャンネル「ひろゆき解説ch【切り抜き】」(`UCqK3KYqEeeJiAWr4nSryJYQ`) の日次運用。
 
-**2026-09-28 に長尺レシピ `recipes/2026-09-28-manner.json`（公共マナー5連発）を承認どおりビルドした。**
-アップロード・予約はまだ。
+## 今回やったこと（2026-09-29）
 
-## 今回やったこと（2026-09-28）
-
-1. `python scripts/fetch_clips.py recipes/2026-09-28-manner.json` → 5区間取得成功（1本は取得済み）
-2. VOICEVOX 0.25.2 は既に起動中（`http://127.0.0.1:50021`）
-3. `python scripts/build_episode.py recipes/2026-09-28-manner.json` → `work/2026-09-28-manner/video.mp4` **14:27**（冒頭カードなし）
-4. `contact_sheet.py` で候補を見て `thumb.at` を **60 → 180** に変更（60は横顔・下向き、180は笑顔）
-5. `thumbnail.py` → `build_episode.py --concat-only` → 冒頭カード付き **14:30**
+1. `python scripts/ops_youtube.py --status` で実状態取得
+2. 前日ショート `Wye2vEUDOz0` の「▼この回をフルで見る」を前日長尺 `pt6OrlocARY` へ差し替え
+3. 新規長尺 `recipes/2026-09-29-youtube.json`（YouTubeの話5連発）を作成・ビルド・アップロード
+4. `smoNVDDOI6M` を 2026-09-29 12:00 JST（`2026-09-29T03:00:00Z`）に予約
 
 ## 検証済みの事実
 
-- 出力: `C:\Users\oshim\Documents\projects\hiroyuki-youtube\work\2026-09-28-manner\`
-  - `video.mp4` 870.1s（**14:30**） / 約128MB
-  - `thumb.png` 1280x720
-  - `meta.json` / `description.txt`
-- クリップ元: `jHWUy2IiZvs` / `daulqJwmooE` / `5xJ3ZzEnyI8`
-- `thumb.at=180` は笑顔だが顔スコア表示は 0.001、下端彩度警告あり（スパチャ帯の名残。目視では顔寄りクロップで概ね問題なし）
-- アップロード・予約は**していない**
+- 当日ショート: `V0rWOURVbo8`（資産四千六百万でサイドFIREしたい）07:00 JST 公開済
+- 当日長尺: `smoNVDDOI6M` private→2026-09-29T03:00:00Z / 14:56 / 冒頭カードなし（15分上限のため）
+- 前日導線: `Wye2vEUDOz0` → `https://www.youtube.com/watch?v=pt6OrlocARY` に更新済（APIで確認）
+- VOICEVOX 0.25.2 / YouTube auth は稼働
+- カスタムサムネ API は従来どおりアカウント側403想定。今回は thumb.png 未生成
 
 ## 未検証のもの
 
-- 通し再生（画・音・解説板の読み上げ）
-- `upload_youtube.py` での本番アップロード
-- サムネ API 403 が解けているか（2026-09-10 時点では未解決）
+- 通し再生（画・音・解説板）
+- 12:00 予約の発火後の再生数
+- 冒頭カード無しでの自動サムネ品質
 
 ## 次にやること
 
-1. 通しで再生して問題が無いか確認
-2. 承認後: `python scripts/upload_youtube.py work/2026-09-28-manner`（private）
-3. Studio で機能の利用資格を確認し、カスタムサムネが使えるなら `set_thumbnails.py`
-4. 公開日時を決めて予約
+1. 2026-09-30 日次: ops status → 当日短長枠 → 前日（9/29）ショートへ前日長尺 `smoNVDDOI6M` を導線付け
+2. 必要なら `smoNVDDOI6M` に Studio で自動サムネ候補を目視確認
+3. `_plan-kenko/kosodate/kigyo` は使用禁止。海外・恋愛・趣味の `_plan` も埋めない
 
 ## 触ってはいけないところ
 
-- **「公式」「公認」と書かない**
-- 黙認の対象は西村博之氏の素材のみ
-- 収益化が通ったら必ず <get-clip@razil.jp> へ連絡
+- 「公式」「公認」と書かない
 - 切り抜き禁止: `exnFXUMMLLI` / `q0GyNI3X8cg`
-- **政治的な話題は落とす**
-- **カスタムサムネイルは 403 の可能性が高い**（アカウント側）
-- **フックを機械で短くしない**
-- この回は**まだアップロードしていない**。承認なしで上げない
+- 政治的な話題は落とす
+- 予約時刻を過ぎた publishAt を渡さない（即時公開になる）
+- 15分超は上げない（電話番号未確認）
