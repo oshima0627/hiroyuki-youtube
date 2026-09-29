@@ -147,8 +147,25 @@ def cmd_playlist(service, data: dict) -> None:
         if not token:
             break
 
+    def _is_short_key(k: str, e: dict) -> bool:
+        # 日次ショートは 2026-09-29-am 形式。旧来は *-short。
+        # duration が3分未満ならショート扱い（保険）。
+        if k.endswith("-short") or k.endswith("-am") or k.endswith("-pm"):
+            return True
+        if "-am-" in k or "-pm-" in k:  # 2026-09-24-am-v2 など
+            return True
+        dur = e.get("duration") or ""
+        import re
+        m = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", dur)
+        if not m:
+            return False
+        secs = (int(m.group(1) or 0) * 3600
+                + int(m.group(2) or 0) * 60
+                + int(m.group(3) or 0))
+        return 0 < secs < 180
+
     targets = [(k, e) for k, e in data["videos"].items()
-               if not k.endswith("-short")
+               if not _is_short_key(k, e)
                and e.get("privacy_status") in ("public", "unlisted", "private")
                and e.get("youtube_video_id")]
     targets.sort(key=lambda kv: kv[0])
