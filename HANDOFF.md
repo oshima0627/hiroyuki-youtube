@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-09-30（日次ops: 長尺「転職と働き方」を18:30 JST予約・前日ショート導線更新）
+最終更新: 2026-10-01（日次ops: 長尺「住まいと家賃」を18:30 JST予約・前日ショート導線更新）
 
 ---
 
@@ -9,7 +9,7 @@
 cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/ops_youtube.py --status
 ```
 
-本日（2026-09-30）の枠は埋まっている。次の日次制作は 2026-10-01 10:13 JST。関連動画紐づけは夕方ルーチン（18:35）。
+本日（2026-10-01）の枠は埋まっている。次の日次制作は 2026-10-02 10:13 JST。関連動画紐づけは夕方ルーチン（18:35）。
 
 ---
 
@@ -17,19 +17,19 @@ cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/ops_youtub
 
 ひろゆき切り抜きチャンネル「ひろゆき解説ch【切り抜き】」(`UCqK3KYqEeeJiAWr4nSryJYQ`) の日次運用。
 
-## 今回やったこと（2026-09-30）
+## 今回やったこと（2026-10-01）
 
 1. `python scripts/ops_youtube.py --status` で実状態取得
-2. 前日ショート `V0rWOURVbo8` の「▼この回をフルで見る」を前日長尺 `smoNVDDOI6M` へ差し替え（APIで確認）
-3. 新規長尺 `recipes/2026-09-30-tenshoku.json`（転職と働き方の話5連発）を作成・ビルド・アップロード
-4. `zKKJ1kktGIs` を 2026-09-30 18:30 JST（`2026-09-30T09:30:00Z`）に予約
-5. 当日ショートは既存のため作成せず（`fs9CywDsa4I` 07:00公開済）。Studio関連動画は夕方ルーチン担当のため未実施
+2. 前日ショート `fs9CywDsa4I` の「▼この回をフルで見る」を前日長尺 `zKKJ1kktGIs` へ差し替え（APIで確認）
+3. 新規長尺 `recipes/2026-10-01-sumai.json`（住まいと家賃の話5連発）を作成・ビルド・アップロード
+4. `mUAjW7cCUxY` を 2026-10-01 18:30 JST（`2026-10-01T09:30:00Z`）に予約
+5. 当日ショートは既存のため作成せず（`AFw0cJlMmzY` 07:00公開済）。Studio関連動画は夕方ルーチン担当のため未実施
 
 ## 検証済みの事実
 
-- 当日ショート: `fs9CywDsa4I`（NISA以外におすすめの投資はあるか）07:00 JST 公開済
-- 当日長尺: `zKKJ1kktGIs` private→2026-09-30T09:30:00Z / 11:46 / 冒頭カードあり（thumb.at=150）
-- 前日導線: `V0rWOURVbo8` → `https://www.youtube.com/watch?v=smoNVDDOI6M` に更新済（APIで確認）
+- 当日ショート: `AFw0cJlMmzY`（コミ障だが大学事務職を目指す）07:00 JST 公開済（published_at `2026-09-30T22:00:07Z`）
+- 当日長尺: `mUAjW7cCUxY` private→2026-10-01T09:30:00Z / 13:20 / 冒頭カードあり（thumb.at=120）
+- 前日導線: `fs9CywDsa4I` → `https://www.youtube.com/watch?v=zKKJ1kktGIs` に更新済（APIで確認）
 - VOICEVOX 0.25.2 / YouTube auth は稼働
 - カスタムサムネ API は従来どおりアカウント側403想定。`thumb.png` は生成済（Studio目視用）
 
@@ -41,8 +41,8 @@ cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/ops_youtub
 
 ## 次にやること
 
-1. 夕方 18:35 関連動画紐づけ: 当日ショート `fs9CywDsa4I` ← 当日長尺 `zKKJ1kktGIs`（Studio）
-2. 必要なら `zKKJ1kktGIs` の自動サムネ候補を Studio で目視
+1. 夕方 18:35 関連動画紐づけ: 当日ショート `AFw0cJlMmzY` ← 当日長尺 `mUAjW7cCUxY`（Studio）
+2. 必要なら `mUAjW7cCUxY` の自動サムネ候補を Studio で目視
 3. `_plan-kenko/kosodate/kigyo` は使用禁止。海外・恋愛・趣味の `_plan` も埋めない
 
 ## 触ってはいけないところ
