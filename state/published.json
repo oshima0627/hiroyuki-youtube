@@ -247,7 +247,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T09:00:37Z",
       "upload_status": "processed",
-      "view_count": 11,
+      "view_count": 12,
       "duration": "PT5M37S"
     },
     "2026-08-27-fudosan": {
@@ -265,7 +265,7 @@
       "publish_at": null,
       "published_at": "2026-09-21T09:00:34Z",
       "upload_status": "processed",
-      "view_count": 4,
+      "view_count": 5,
       "duration": "PT7M50S"
     },
     "2026-08-27-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1394,
+      "view_count": 1397,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -762,7 +762,7 @@
       "publish_at": null,
       "published_at": "2026-09-12T03:00:27Z",
       "upload_status": "processed",
-      "view_count": 14,
+      "view_count": 15,
       "duration": "PT13M50S"
     },
     "2026-09-24-am": {
@@ -813,7 +813,7 @@
       "publish_at": null,
       "published_at": "2026-09-25T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 1760,
+      "view_count": 1759,
       "duration": "PT41S"
     },
     "2026-09-27-am": {
@@ -847,7 +847,7 @@
       "publish_at": null,
       "published_at": "2026-09-27T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1496,
+      "view_count": 1508,
       "duration": "PT1M8S"
     },
     "2026-09-29-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 1845,
+      "view_count": 1921,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1372,
+      "view_count": 1395,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -898,24 +898,24 @@
       "publish_at": null,
       "published_at": "2026-09-30T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1058,
+      "view_count": 1260,
       "duration": "PT1M5S"
     },
     "2026-10-02-am": {
       "youtube_video_id": "FxQT7vKcSZM",
       "url": "https://www.youtube.com/watch?v=FxQT7vKcSZM",
       "title": "【ひろゆき】派遣から正社員になりたい【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "c2X5ZUIpRSk"
       ],
-      "publish_at": "2026-10-01T22:00:00Z",
-      "published_at": "2026-09-02T05:54:30Z",
+      "publish_at": null,
+      "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1157,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1194,7 +1194,7 @@
       "publish_at": null,
       "published_at": "2026-09-14T03:00:25Z",
       "upload_status": "processed",
-      "view_count": 4,
+      "view_count": 5,
       "duration": "PT13M2S"
     },
     "2026-09-07-renai": {
@@ -1366,7 +1366,7 @@
       "youtube_video_id": "mUAjW7cCUxY",
       "url": "https://www.youtube.com/watch?v=mUAjW7cCUxY",
       "title": "【ひろゆき】住まいと家賃の話5連発。家賃は毎月削られるヒットポイントです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1374,11 +1374,29 @@
         "Fydc3YFumow",
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-01T09:30:00Z",
-      "published_at": "2026-10-01T01:38:24Z",
+      "publish_at": null,
+      "published_at": "2026-10-01T09:30:33Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT13M21S"
+    },
+    "2026-10-02-benkyo": {
+      "youtube_video_id": "8-p8sIG6jZg",
+      "url": "https://www.youtube.com/watch?v=8-p8sIG6jZg",
+      "title": "【ひろゆき】勉強と学び方の話5連発。ちゃんと寝た方が覚えるんです",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "O0YEy2NB3os",
+        "skPyrH0WTzY"
+      ],
+      "publish_at": "2026-10-02T09:30:00Z",
+      "published_at": "2026-10-02T01:47:56Z",
       "upload_status": "uploaded",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT14M17S"
     }
   }
 }
