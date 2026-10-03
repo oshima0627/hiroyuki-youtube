@@ -316,7 +316,7 @@
       "publish_at": null,
       "published_at": "2026-08-28T22:00:39Z",
       "upload_status": "processed",
-      "view_count": 2459,
+      "view_count": 2461,
       "duration": "PT39S"
     },
     "2026-08-30-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1397,
+      "view_count": 1399,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -520,7 +520,7 @@
       "publish_at": null,
       "published_at": "2026-09-09T22:00:28Z",
       "upload_status": "processed",
-      "view_count": 1320,
+      "view_count": 1322,
       "duration": "PT1M3S"
     },
     "2026-09-11-am": {
@@ -779,7 +779,7 @@
       "publish_at": null,
       "published_at": "2026-09-23T22:00:33Z",
       "upload_status": "processed",
-      "view_count": 2491,
+      "view_count": 2492,
       "duration": "PT42S"
     },
     "2026-09-25-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 1921,
+      "view_count": 1997,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1395,
+      "view_count": 1424,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -898,7 +898,7 @@
       "publish_at": null,
       "published_at": "2026-09-30T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1260,
+      "view_count": 1247,
       "duration": "PT1M5S"
     },
     "2026-10-02-am": {
@@ -915,24 +915,24 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1157,
+      "view_count": 1284,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
       "youtube_video_id": "yVDGXvz8DdQ",
       "url": "https://www.youtube.com/watch?v=yVDGXvz8DdQ",
       "title": "【ひろゆき】快適に眠れる温度をデータで探す【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "M7KWrHANxHs"
       ],
-      "publish_at": "2026-10-02T22:00:00Z",
-      "published_at": "2026-09-02T05:54:38Z",
+      "publish_at": null,
+      "published_at": "2026-10-02T22:00:34Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1140,
       "duration": "PT45S"
     },
     "2026-10-04-am": {
@@ -1257,7 +1257,7 @@
       "publish_at": null,
       "published_at": "2026-09-17T03:00:25Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT12M57S"
     },
     "2026-09-07-shumi": {
@@ -1384,6 +1384,24 @@
       "youtube_video_id": "8-p8sIG6jZg",
       "url": "https://www.youtube.com/watch?v=8-p8sIG6jZg",
       "title": "【ひろゆき】勉強と学び方の話5連発。ちゃんと寝た方が覚えるんです",
+      "privacy_status": "public",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "O0YEy2NB3os",
+        "skPyrH0WTzY"
+      ],
+      "publish_at": null,
+      "published_at": "2026-10-02T09:30:33Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT14M17S"
+    },
+    "2026-10-03-sousaku": {
+      "youtube_video_id": "DZHevK7l12g",
+      "url": "https://www.youtube.com/watch?v=DZHevK7l12g",
+      "title": "【ひろゆき】創作と表現の話5連発。正解は一つじゃない",
       "privacy_status": "private",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
@@ -1392,11 +1410,11 @@
         "O0YEy2NB3os",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-02T09:30:00Z",
-      "published_at": "2026-10-02T01:47:56Z",
+      "publish_at": "2026-10-03T09:30:00Z",
+      "published_at": "2026-10-03T01:44:23Z",
       "upload_status": "uploaded",
       "view_count": 0,
-      "duration": "PT14M17S"
+      "duration": "PT14M16S"
     }
   }
 }
