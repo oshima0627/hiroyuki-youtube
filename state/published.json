@@ -101,7 +101,7 @@
       "publish_at": null,
       "published_at": "2026-08-18T03:00:32Z",
       "upload_status": "processed",
-      "view_count": 398,
+      "view_count": 399,
       "duration": "PT13M"
     },
     "2026-08-19-shigoto2": {
@@ -333,7 +333,7 @@
       "publish_at": null,
       "published_at": "2026-08-29T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1692,
+      "view_count": 1696,
       "duration": "PT39S"
     },
     "2026-08-31-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1399,
+      "view_count": 1429,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -813,7 +813,7 @@
       "publish_at": null,
       "published_at": "2026-09-25T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 1759,
+      "view_count": 1757,
       "duration": "PT41S"
     },
     "2026-09-27-am": {
@@ -830,7 +830,7 @@
       "publish_at": null,
       "published_at": "2026-09-26T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1336,
+      "view_count": 1338,
       "duration": "PT40S"
     },
     "2026-09-28-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 1997,
+      "view_count": 2018,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1424,
+      "view_count": 1429,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -898,7 +898,7 @@
       "publish_at": null,
       "published_at": "2026-09-30T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1247,
+      "view_count": 1246,
       "duration": "PT1M5S"
     },
     "2026-10-02-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1284,
+      "view_count": 1296,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -932,22 +932,22 @@
       "publish_at": null,
       "published_at": "2026-10-02T22:00:34Z",
       "upload_status": "processed",
-      "view_count": 1140,
+      "view_count": 1254,
       "duration": "PT45S"
     },
     "2026-10-04-am": {
       "youtube_video_id": "4yu_i7RH1nE",
       "url": "https://www.youtube.com/watch?v=4yu_i7RH1nE",
       "title": "【ひろゆき】働くことでしか自分を証明できない【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-03T22:00:00Z",
-      "published_at": "2026-09-02T05:54:46Z",
+      "publish_at": null,
+      "published_at": "2026-10-03T22:00:35Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT1M3S"
@@ -956,17 +956,17 @@
       "youtube_video_id": "AVwLVMi_4_c",
       "url": "https://www.youtube.com/watch?v=AVwLVMi_4_c",
       "title": "【ひろゆき】フランスに住む理由が自分に無い【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "daulqJwmooE"
       ],
-      "publish_at": "2026-10-04T22:00:00Z",
-      "published_at": "2026-09-02T05:54:54Z",
+      "publish_at": null,
+      "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1659,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1194,7 +1194,7 @@
       "publish_at": null,
       "published_at": "2026-09-14T03:00:25Z",
       "upload_status": "processed",
-      "view_count": 5,
+      "view_count": 7,
       "duration": "PT13M2S"
     },
     "2026-09-07-renai": {
@@ -1299,7 +1299,7 @@
       "publish_at": null,
       "published_at": "2026-09-19T03:00:13Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 2,
       "duration": "PT13M23S"
     },
     "2026-09-28-manner": {
@@ -1402,7 +1402,7 @@
       "youtube_video_id": "DZHevK7l12g",
       "url": "https://www.youtube.com/watch?v=DZHevK7l12g",
       "title": "【ひろゆき】創作と表現の話5連発。正解は一つじゃない",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1410,10 +1410,10 @@
         "O0YEy2NB3os",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-03T09:30:00Z",
-      "published_at": "2026-10-03T01:44:23Z",
-      "upload_status": "uploaded",
-      "view_count": 0,
+      "publish_at": null,
+      "published_at": "2026-10-03T09:30:14Z",
+      "upload_status": "processed",
+      "view_count": 1,
       "duration": "PT14M16S"
     }
   }
