@@ -983,7 +983,7 @@
       "publish_at": null,
       "published_at": "2026-10-05T22:00:10Z",
       "upload_status": "processed",
-      "view_count": 726,
+      "view_count": 843,
       "duration": "PT59S"
     },
     "2026-10-07-am": {
@@ -1455,7 +1455,7 @@
       ],
       "publish_at": "2026-10-07T09:30:00Z",
       "published_at": "2026-10-06T00:13:31Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT13M52S"
     },
@@ -1475,7 +1475,7 @@
       ],
       "publish_at": "2026-10-08T09:30:00Z",
       "published_at": "2026-10-06T00:14:55Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M4S"
     }
