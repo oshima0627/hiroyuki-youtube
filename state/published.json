@@ -966,24 +966,24 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1659,
+      "view_count": 1708,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
       "youtube_video_id": "rM4ftL719w4",
       "url": "https://www.youtube.com/watch?v=rM4ftL719w4",
       "title": "【ひろゆき】月三十万の積立でFIREできるか【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "ckrdZp1fQZw"
       ],
-      "publish_at": "2026-10-05T22:00:00Z",
-      "published_at": "2026-09-02T05:55:03Z",
+      "publish_at": null,
+      "published_at": "2026-10-05T22:00:10Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 726,
       "duration": "PT59S"
     },
     "2026-10-07-am": {
@@ -1415,6 +1415,69 @@
       "upload_status": "processed",
       "view_count": 1,
       "duration": "PT14M16S"
+    },
+    "2026-10-06-ningen": {
+      "youtube_video_id": "xAHwnOlrbpw",
+      "url": "https://www.youtube.com/watch?v=xAHwnOlrbpw",
+      "title": "【ひろゆき】人間関係の相談6連発。マウントは取り返しても得をしません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "0ojMhUyiHB4",
+        "4vmH4mejnjI",
+        "M7KWrHANxHs",
+        "O0YEy2NB3os",
+        "VYJ-zTB8TVY",
+        "skPyrH0WTzY"
+      ],
+      "publish_at": "2026-10-06T09:30:00Z",
+      "published_at": "2026-10-05T23:49:53Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT13M"
+    },
+    "2026-10-07-un": {
+      "youtube_video_id": "IYcOd70aT_g",
+      "url": "https://www.youtube.com/watch?v=IYcOd70aT_g",
+      "title": "【ひろゆき】運と才能の話5連発。運は打席に立った回数です",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "23vSB2fXjc8",
+        "4vmH4mejnjI",
+        "Fydc3YFumow",
+        "M7KWrHANxHs",
+        "O0YEy2NB3os"
+      ],
+      "publish_at": "2026-10-07T09:30:00Z",
+      "published_at": "2026-10-06T00:13:31Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT13M52S"
+    },
+    "2026-10-08-gaman": {
+      "youtube_video_id": "hFeUyOQ1QO0",
+      "url": "https://www.youtube.com/watch?v=hFeUyOQ1QO0",
+      "title": "【ひろゆき】我慢とストレスの話6連発。人は痛みを忘れて我慢してしまいます",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "0ojMhUyiHB4",
+        "4vmH4mejnjI",
+        "5xJ3ZzEnyI8",
+        "c2X5ZUIpRSk"
+      ],
+      "publish_at": "2026-10-08T09:30:00Z",
+      "published_at": "2026-10-06T00:14:55Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT14M4S"
     }
   }
 }
