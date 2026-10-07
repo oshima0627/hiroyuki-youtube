@@ -1,15 +1,15 @@
 # HANDOFF
-最終更新: 2026-10-06（日次ops: 新規レシピで長尺3本を作成し 10/6・10/7・10/8 18:30 JST に予約）
+最終更新: 2026-10-07（日次ops再実行: 当日枠確認、ショート導線更新、10/9長尺を新規作成して18:30予約）
 
 ---
 
 ## ▶ このセッションで最初に実行するコマンド
 
-```bash
+`ash
 cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/ops_youtube.py --status
-```
+`
 
-10/6・10/7・10/8 の長尺は予約済み。次に作るのは 10/9 以降の長尺。関連動画紐づけは夕方ルーチン（18:35）。10/4・10/5 長尺空白は未補填（過去日付は即時公開になるので埋めない）。
+10/7・10/8・10/9 の長尺は予約済み（10/7・10/8は既存、10/9は本日作成）。関連動画紐づけは夕方ルーチン（18:35）。10/4・10/5 長尺空白は未補填（過去日付は即時公開になるので埋めない）。
 
 ---
 
@@ -17,43 +17,45 @@ cd C:/Users/oshim/Documents/projects/hiroyuki-youtube; python scripts/ops_youtub
 
 ひろゆき切り抜きチャンネル「ひろゆき解説ch【切り抜き】」(UCqK3KYqEeeJiAWr4nSryJYQ) の日次運用。
 
-## 今回やったこと（2026-10-06）
+## 今回やったこと（2026-10-07）
 
-1. `ops_youtube.py --status` で実状態取得
-2. 未取得だった配信 2本（0ojMhUyiHB4 / 4vmH4mejnjI）の字幕・signals を取得（`fetch_source.py --subs-only` → `probe_signals.py --no-audio`）
-3. `plan_episode.py --theme` はタイトル冒頭一致が狭く在庫が少なく見えたので、未使用ブロック一覧（`work/_unused_1006.py` → `work/_unused_1006.txt`、使用済み区間・ショート窓・共演回を除外）から字幕を読んで手で構成
-4. 新規レシピ3本を作成（note は全クリップ 90字以上、summary/title/thumb あり）
-5. fetch_clips → build_episode → contact_sheet で thumb.at を目視決定 → thumbnail → build --concat-only → upload（--schedule）
-6. 前日（10/05）長尺が無いため、前日ショートのフル導線差し替えは未実施
+1. ops_youtube.py --status で実状態取得（API正）
+2. 当日ショート V8z1YsBJe3M は既に public（07:00公開済み）→ 作成スキップ
+3. 当日長尺 IYcOd70aT_g は private→2026-10-07T09:30:00Z（18:30 JST）予約済み → 作成スキップ
+4. 翌日長尺 hFeUyOQ1QO0 も 10/8 18:30 予約済みを確認
+5. 在庫補充として新規レシピ 
+ecipes/2026-10-09-aijob.json を作成 → fetch → build（8:48）→ upload → 10/9 18:30 予約（718Lsuq9bgE）。サムネ API 成功
+6. 当日ショート V8z1YsBJe3M の「フルで見る」を 1Qk53tSphDg → xAHwnOlrbpw（10/6長尺）へ差し替え
 7. Studio 関連動画は触っていない
 
 ## 予約済み長尺
 
 | 公開 (JST) | レシピ | ID | 尺 | タイトル |
 | --- | --- | --- | --- | --- |
-| 10/6 18:30 | 2026-10-06-ningen | `xAHwnOlrbpw` | 12:59 | 【ひろゆき】人間関係の相談6連発。マウントは取り返しても得をしません |
-| 10/7 18:30 | 2026-10-07-un | `IYcOd70aT_g` | 13:52 | 【ひろゆき】運と才能の話5連発。運は打席に立った回数です |
-| 10/8 18:30 | 2026-10-08-gaman | `hFeUyOQ1QO0` | 14:03 | 【ひろゆき】我慢とストレスの話6連発。人は痛みを忘れて我慢してしまいます |
+| 10/7 18:30 | 2026-10-07-un | IYcOd70aT_g | 13:52 | 【ひろゆき】運と才能の話5連発。運は打席に立った回数です |
+| 10/8 18:30 | 2026-10-08-gaman | hFeUyOQ1QO0 | 14:04 | 【ひろゆき】我慢とストレスの話6連発。人は痛みを忘れて我慢してしまいます |
+| 10/9 18:30 | 2026-10-09-aijob | 718Lsuq9bgE | 8:48 | 【ひろゆき】AIと仕事の話6連発。デスクワークは機械に勝てません |
 
-サムネ API（thumbnails.set）: 3本とも成功（published.json thumbnail_set=true）。
+公開済み: 10/6 18:30 xAHwnOlrbpw（人間関係）public。
 
 ## 検証済みの事実
 
-- 3本とも API 上 private→publishAt（2026-10-06/07/08T09:30:00Z）
-- 当日ショート rM4ftL719w4 は既存・public（触っていない）
-- 0ojMhUyiHB4 / 4vmH4mejnjI は collab_warning=null（単独配信）
+- status 上 IYcOd70aT_g / hFeUyOQ1QO0 / 718Lsuq9bgE は private→publishAt（09:30Z）
+- V8z1YsBJe3M の description「フルで見る」は xAHwnOlrbpw を指す（API更新済み）
+- ショート予約在庫は 10/8〜10/16 朝 07:00（API: 10/7〜10/15T22:00Z）まで存在
+- サムネ API（thumbnails.set）: 718Lsuq9bgE 成功
 - VOICEVOX 0.25.2 稼働
-- 3本とも処理完了（API duration: 13M / 13M52S / 14M4S）
 
 ## 未検証のもの
 
-- 新テーマ（人間関係／運と才能／我慢とストレス）の再生数
+- 新テーマ（AIと仕事）の再生数
+- 8:48はやや短め（15分未満はクリア）。次回は本編尺を厚くしてもよい
 
 ## 次にやること
 
-1. 10/9 以降の長尺: `work/_unused_1006.txt` の残りから新テーマで構成（今回使った区間は recipes/ に入ったので used_ranges で自動除外される）
-2. 10/7 朝: 前日（10/6）長尺 xAHwnOlrbpw ができたので、10/7 当日ショート（V8z1YsBJe3M）の「フルで見る」導線を差し替え可
-3. 夕方 18:35 関連動画紐づけ（夕方ルーチン）
+1. 夕方 18:35 関連動画紐づけ（夕方ルーチン）
+2. 10/10 以降の長尺在庫が薄くなったら新規レシピで追加（過去日付は不可）
+3. 必要なら rM4ftL719w4（10/6ショート）のフル導線も見直し（現状は uoU2nsKnMrA のまま）
 
 ## 触ってはいけないところ
 

@@ -282,7 +282,7 @@
       "publish_at": null,
       "published_at": "2026-08-26T22:00:39Z",
       "upload_status": "processed",
-      "view_count": 2174,
+      "view_count": 2176,
       "duration": "PT45S"
     },
     "2026-08-28-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1429,
+      "view_count": 1433,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2018,
+      "view_count": 2021,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1296,
+      "view_count": 1298,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -932,7 +932,7 @@
       "publish_at": null,
       "published_at": "2026-10-02T22:00:34Z",
       "upload_status": "processed",
-      "view_count": 1254,
+      "view_count": 1253,
       "duration": "PT45S"
     },
     "2026-10-04-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1708,
+      "view_count": 1822,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -983,24 +983,24 @@
       "publish_at": null,
       "published_at": "2026-10-05T22:00:10Z",
       "upload_status": "processed",
-      "view_count": 843,
+      "view_count": 1123,
       "duration": "PT59S"
     },
     "2026-10-07-am": {
       "youtube_video_id": "V8z1YsBJe3M",
       "url": "https://www.youtube.com/watch?v=V8z1YsBJe3M",
       "title": "【ひろゆき】起業した大学生は何を捨てるか【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "M7KWrHANxHs"
       ],
-      "publish_at": "2026-10-06T22:00:00Z",
-      "published_at": "2026-09-02T05:55:27Z",
+      "publish_at": null,
+      "published_at": "2026-10-06T22:00:19Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1249,
       "duration": "PT44S"
     },
     "2026-10-08-am": {
@@ -1174,7 +1174,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T03:00:17Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT12M16S"
     },
     "2026-09-07-gaishoku": {
@@ -1257,7 +1257,7 @@
       "publish_at": null,
       "published_at": "2026-09-17T03:00:25Z",
       "upload_status": "processed",
-      "view_count": 3,
+      "view_count": 6,
       "duration": "PT12M57S"
     },
     "2026-09-07-shumi": {
@@ -1338,7 +1338,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T03:00:08Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 2,
       "duration": "PT14M56S"
     },
     "2026-09-30-tenshoku": {
@@ -1413,14 +1413,14 @@
       "publish_at": null,
       "published_at": "2026-10-03T09:30:14Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 0,
       "duration": "PT14M16S"
     },
     "2026-10-06-ningen": {
       "youtube_video_id": "xAHwnOlrbpw",
       "url": "https://www.youtube.com/watch?v=xAHwnOlrbpw",
       "title": "【ひろゆき】人間関係の相談6連発。マウントは取り返しても得をしません",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1432,10 +1432,10 @@
         "VYJ-zTB8TVY",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-06T09:30:00Z",
-      "published_at": "2026-10-05T23:49:53Z",
+      "publish_at": null,
+      "published_at": "2026-10-06T09:30:38Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT13M"
     },
     "2026-10-07-un": {
@@ -1478,6 +1478,28 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M4S"
+    },
+    "2026-10-09-aijob": {
+      "youtube_video_id": "718Lsuq9bgE",
+      "url": "https://www.youtube.com/watch?v=718Lsuq9bgE",
+      "title": "【ひろゆき】AIと仕事の話6連発。デスクワークは機械に勝てません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "23vSB2fXjc8",
+        "4vmH4mejnjI",
+        "5xJ3ZzEnyI8",
+        "O0YEy2NB3os",
+        "VYJ-zTB8TVY",
+        "_Qc2ZF3MLO0"
+      ],
+      "publish_at": "2026-10-09T09:30:00Z",
+      "published_at": "2026-10-07T05:11:05Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT8M48S"
     }
   }
 }
