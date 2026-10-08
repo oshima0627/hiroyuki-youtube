@@ -101,7 +101,7 @@
       "publish_at": null,
       "published_at": "2026-08-18T03:00:32Z",
       "upload_status": "processed",
-      "view_count": 399,
+      "view_count": 400,
       "duration": "PT13M"
     },
     "2026-08-19-shigoto2": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1433,
+      "view_count": 1434,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2021,
+      "view_count": 2025,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1429,
+      "view_count": 1430,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1822,
+      "view_count": 1827,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -983,7 +983,7 @@
       "publish_at": null,
       "published_at": "2026-10-05T22:00:10Z",
       "upload_status": "processed",
-      "view_count": 1123,
+      "view_count": 1126,
       "duration": "PT59S"
     },
     "2026-10-07-am": {
@@ -1000,24 +1000,24 @@
       "publish_at": null,
       "published_at": "2026-10-06T22:00:19Z",
       "upload_status": "processed",
-      "view_count": 1249,
+      "view_count": 1256,
       "duration": "PT44S"
     },
     "2026-10-08-am": {
       "youtube_video_id": "3tjHZxmugwE",
       "url": "https://www.youtube.com/watch?v=3tjHZxmugwE",
       "title": "【ひろゆき】在宅テスターから抜け出したい【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "c2X5ZUIpRSk"
       ],
-      "publish_at": "2026-10-07T22:00:00Z",
-      "published_at": "2026-09-02T05:55:46Z",
+      "publish_at": null,
+      "published_at": "2026-10-07T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 739,
       "duration": "PT55S"
     },
     "2026-10-09-am": {
@@ -1442,7 +1442,7 @@
       "youtube_video_id": "IYcOd70aT_g",
       "url": "https://www.youtube.com/watch?v=IYcOd70aT_g",
       "title": "【ひろゆき】運と才能の話5連発。運は打席に立った回数です",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1453,8 +1453,8 @@
         "M7KWrHANxHs",
         "O0YEy2NB3os"
       ],
-      "publish_at": "2026-10-07T09:30:00Z",
-      "published_at": "2026-10-06T00:13:31Z",
+      "publish_at": null,
+      "published_at": "2026-10-07T09:30:23Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT13M52S"
@@ -1497,7 +1497,7 @@
       ],
       "publish_at": "2026-10-09T09:30:00Z",
       "published_at": "2026-10-07T05:11:05Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT8M48S"
     }
