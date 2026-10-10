@@ -1,0 +1,99 @@
+{
+  "id": "2026-10-10-okane",
+  "title": "【ひろゆき】お金と投資の話6連発。お金がないなら計算ができていません",
+  "description": "ひろゆきさんの配信から、お金・投資・老後の話だけを集めて解説を付けました。\n各チャプターの黄色い行は編集側の補足です。",
+  "tags": [
+    "ひろゆき",
+    "切り抜き",
+    "解説",
+    "お金",
+    "投資",
+    "新NISA",
+    "iDeCo",
+    "奨学金",
+    "相続税",
+    "早期退職"
+  ],
+  "category_id": "22",
+  "privacy_status": "private",
+  "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+  "summary": "六本を通して、ギャンブルより期待値がプラスの積立投資、迷ったらインデックスファンド、売れないiDeCoには慎重に、という現実的なお金の話が並びました。若い世代は奨学金という借金から始まる人も多く、早期退職も何もしない暮らしは意外と難しい、という整理です。",
+  "thumb": {
+    "main": [
+      "お金がない人は",
+      "計算ができない"
+    ],
+    "sub": "お金と投資の話6連発",
+    "at": 60
+  },
+  "theme": [
+    "お金",
+    "投資",
+    "NISA",
+    "iDeCo",
+    "老後",
+    "相続"
+  ],
+  "clips": [
+    {
+      "video_id": "skPyrH0WTzY",
+      "video_title": "「逮捕されるとハンドサインする人」MIRA BLONDE",
+      "video_url": "https://www.youtube.com/watch?v=skPyrH0WTzY",
+      "start": 6779.0,
+      "end": 6867.0,
+      "title": "ギャンブル好きにどう言うか",
+      "note": "職場の仲間がパチンコや競馬でお金がないと言うのを見下してしまう相談。投資はアドレナリンが出ない地味な安心感なので求めるものが違うだけ、ただお金がないと言うなら計算はできていない、という話",
+      "hook": "期待値マイナスの娯楽"
+    },
+    {
+      "video_id": "0ojMhUyiHB4",
+      "video_title": "「イケメンが女を殴る理由。」Tripel Karmelietを呑みながら",
+      "video_url": "https://www.youtube.com/watch?v=0ojMhUyiHB4",
+      "start": 6982.0,
+      "end": 7038.0,
+      "title": "積立はインデックスでいい",
+      "note": "子どものためと老後に備えた資産運用の相談。無駄遣いをやめて夫婦と子どもの枠で毎月積立NISAを入れ続け、オルカンや日経連動のインデックスファンドでいい、個別株は勉強しないと損をする、という話",
+      "hook": "迷ったらオルカン"
+    },
+    {
+      "video_id": "_o8W_QKNHEo",
+      "video_title": "5月病のみんな元気ー？",
+      "video_url": "https://www.youtube.com/watch?v=_o8W_QKNHEo",
+      "start": 3734.0,
+      "end": 3769.0,
+      "title": "iDeCoは売れないから反対",
+      "note": "NISAとiDeCoの組み合わせを聞かれ、オルカンでいいがiDeCoには反対だと答える。NISAは制度が変わっても売れるが、iDeCoは六十歳過ぎまで売れず、制度の改悪に逃げられない、という理由",
+      "hook": "iDeCo反対派"
+    },
+    {
+      "video_id": "skPyrH0WTzY",
+      "video_title": "「逮捕されるとハンドサインする人」MIRA BLONDE",
+      "video_url": "https://www.youtube.com/watch?v=skPyrH0WTzY",
+      "start": 3681.0,
+      "end": 3745.0,
+      "title": "若者はお金がないのか",
+      "note": "若者の車離れはお金の問題ではないという投稿に、資産中央値の数字が違うと返す。大学進学者の半分が平均三百万円の奨学金を背負って社会に出るので、二十代がそんなに資産を持っているはずがない、という話",
+      "hook": "奨学金はマイナス"
+    },
+    {
+      "video_id": "O0YEy2NB3os",
+      "video_title": "「獅子は我が子を千尋の谷に落とす、現代で通じるか？」OX IPA",
+      "video_url": "https://www.youtube.com/watch?v=O0YEy2NB3os",
+      "start": 2682.0,
+      "end": 2731.0,
+      "title": "親のマンションと相続税",
+      "note": "親が買った都内のマンションを継ぐ予定で相続税を聞かれる。一定額を超える相続には税金がかかり、相続人の人数で一人あたりの控除が変わるので、計算式に当てはめれば答えが出る、という話",
+      "hook": "9000万の相続"
+    },
+    {
+      "video_id": "4vmH4mejnjI",
+      "video_title": "いつになったらホルムズ海峡は解放されるのか？ Venus",
+      "video_url": "https://www.youtube.com/watch?v=4vmH4mejnjI",
+      "start": 5642.0,
+      "end": 5708.0,
+      "title": "早期退職で幸せになれるか",
+      "note": "人付き合いが苦手で早期退職したい三十四歳男性の相談。人と関わらない仕事に変えればいいし、何もせずに暮らす早期退職は意外と難しいので、勤務を減らして副収入を育ててから判断すべき、という話",
+      "hook": "早期退職は難しい"
+    }
+  ]
+}

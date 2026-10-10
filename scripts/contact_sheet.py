@@ -34,7 +34,13 @@ def main() -> None:
     video, out = sys.argv[1], sys.argv[2]
     times = [float(t) for t in sys.argv[3:]]
 
-    font = ImageFont.truetype("C:/Windows/Fonts/arialbd.ttf", 34)
+    for _f in ("C:/Windows/Fonts/arialbd.ttf",
+               "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"):
+        if Path(_f).exists():
+            font = ImageFont.truetype(_f, 34)
+            break
+    else:
+        font = ImageFont.load_default()
     tmp = Path(tempfile.mkdtemp())
     tiles = []
     for t in times:

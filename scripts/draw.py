@@ -19,6 +19,8 @@ FONT_SANS = [
     r"C:\Windows\Fonts\YuGothB.ttc",
     r"C:\Windows\Fonts\meiryob.ttc",
     r"C:\Windows\Fonts\msgothic.ttc",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",       # Linux box
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
 ]
 
 INK = (14, 17, 22)          # 帯の地
