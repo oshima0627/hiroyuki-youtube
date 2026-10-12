@@ -230,7 +230,7 @@
       "publish_at": null,
       "published_at": "2026-08-21T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 7,
+      "view_count": 8,
       "duration": "PT39S"
     },
     "2026-08-26-nisa": {
@@ -333,7 +333,7 @@
       "publish_at": null,
       "published_at": "2026-08-29T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1696,
+      "view_count": 1697,
       "duration": "PT39S"
     },
     "2026-08-31-am": {
@@ -401,7 +401,7 @@
       "publish_at": null,
       "published_at": "2026-09-02T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1838,
+      "view_count": 1840,
       "duration": "PT44S"
     },
     "2026-09-04-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1444,
+      "view_count": 1449,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2045,
+      "view_count": 2056,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1301,
+      "view_count": 1303,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -932,7 +932,7 @@
       "publish_at": null,
       "published_at": "2026-10-02T22:00:34Z",
       "upload_status": "processed",
-      "view_count": 1255,
+      "view_count": 1256,
       "duration": "PT45S"
     },
     "2026-10-04-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1834,
+      "view_count": 1838,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1000,7 +1000,7 @@
       "publish_at": null,
       "published_at": "2026-10-06T22:00:19Z",
       "upload_status": "processed",
-      "view_count": 1359,
+      "view_count": 1356,
       "duration": "PT44S"
     },
     "2026-10-08-am": {
@@ -1017,7 +1017,7 @@
       "publish_at": null,
       "published_at": "2026-10-07T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1005,
+      "view_count": 1007,
       "duration": "PT55S"
     },
     "2026-10-09-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1318,
+      "view_count": 1355,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1051,41 +1051,41 @@
       "publish_at": null,
       "published_at": "2026-10-09T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 972,
+      "view_count": 1194,
       "duration": "PT1M5S"
     },
     "2026-10-11-am": {
       "youtube_video_id": "2M-KzHnID_o",
       "url": "https://www.youtube.com/watch?v=2M-KzHnID_o",
       "title": "【ひろゆき】6・3・3・4の学制を変えるなら【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "VYJ-zTB8TVY"
       ],
-      "publish_at": "2026-10-10T22:00:00Z",
-      "published_at": "2026-09-02T05:56:41Z",
+      "publish_at": null,
+      "published_at": "2026-10-10T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1093,
       "duration": "PT57S"
     },
     "2026-10-12-am": {
       "youtube_video_id": "Eiwh5C540IA",
       "url": "https://www.youtube.com/watch?v=Eiwh5C540IA",
       "title": "【ひろゆき】無理な営業目標を断ったら詰められた【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "23vSB2fXjc8"
       ],
-      "publish_at": "2026-10-11T22:00:00Z",
-      "published_at": "2026-09-02T05:56:55Z",
+      "publish_at": null,
+      "published_at": "2026-10-11T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1264,
       "duration": "PT40S"
     },
     "2026-10-13-am": {
@@ -1318,7 +1318,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T09:00:01Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT14M31S"
     },
     "2026-09-29-youtube": {
@@ -1435,7 +1435,7 @@
       "publish_at": null,
       "published_at": "2026-10-06T09:30:38Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 5,
       "duration": "PT13M"
     },
     "2026-10-07-un": {
@@ -1505,7 +1505,7 @@
       "youtube_video_id": "A06Ijn-FpMM",
       "url": "https://www.youtube.com/watch?v=A06Ijn-FpMM",
       "title": "【ひろゆき】お金と投資の話6連発。お金がないなら計算ができていません",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1516,17 +1516,17 @@
         "_o8W_QKNHEo",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-10T12:30:00Z",
-      "published_at": "2026-10-10T11:02:18Z",
-      "upload_status": "uploaded",
-      "view_count": 0,
+      "publish_at": null,
+      "published_at": "2026-10-10T12:30:15Z",
+      "upload_status": "processed",
+      "view_count": 1,
       "duration": "PT7M53S"
     },
     "2026-10-11-gadget": {
       "youtube_video_id": "hiQQsH2Sf6Q",
       "url": "https://www.youtube.com/watch?v=hiQQsH2Sf6Q",
       "title": "【ひろゆき】ガジェットと道具選びの話7連発。スマホが割れるのはケース選びのミスです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1538,8 +1538,50 @@
         "jHWUy2IiZvs",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-11T09:30:00Z",
-      "published_at": "2026-10-10T11:02:40Z",
+      "publish_at": null,
+      "published_at": "2026-10-11T09:30:20Z",
+      "upload_status": "processed",
+      "view_count": 1,
+      "duration": "PT14M16S"
+    },
+    "2026-10-12-shoku": {
+      "youtube_video_id": "eG8IEYEkbTA",
+      "url": "https://www.youtube.com/watch?v=eG8IEYEkbTA",
+      "title": "【ひろゆき】食と料理の話6連発。料理がうまい人は仕事の段取りもうまいです",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "23vSB2fXjc8",
+        "4vmH4mejnjI",
+        "VYJ-zTB8TVY",
+        "_o8W_QKNHEo",
+        "daulqJwmooE",
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-10-12T09:30:00Z",
+      "published_at": "2026-10-11T06:07:44Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT12M47S"
+    },
+    "2026-10-13-bouhan": {
+      "youtube_video_id": "kMPbU2q7328",
+      "url": "https://www.youtube.com/watch?v=kMPbU2q7328",
+      "title": "【ひろゆき】防犯と護身の話6連発。スタンガンより防犯ブザーです",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "0ojMhUyiHB4",
+        "23vSB2fXjc8",
+        "4vmH4mejnjI",
+        "Fydc3YFumow"
+      ],
+      "publish_at": "2026-10-13T09:30:00Z",
+      "published_at": "2026-10-12T05:53:55Z",
       "upload_status": "uploaded",
       "view_count": 0,
       "duration": "P0D"

@@ -113,7 +113,12 @@ def fetch(video_id: str, start: float, end: float, pad: float = 2.0,
            "--extractor-args", "youtube:lang=ja",
            "--download-sections", f"*{a:.2f}-{b:.2f}",
            "--force-keyframes-at-cuts",
-           "-f", "bestvideo[height<=1080]+bestaudio/best",
+           # **Premium（itag 616 など）を避ける。** cookie 無しのボックスで
+           # bestvideo が Premium の HLS を選び、15分で200MB読んでも1バイトも
+           # 書けなかった（2026-10-12 実測）。avc1 の HLS（270/232）なら
+           # 区間だけ取れて 1080p 映像付きになる。
+           "-f", ("bestvideo[height<=1080][vcodec^=avc1][protocol^=m3u8]+bestaudio[ext=m4a]"
+                  "/bestvideo[height<=1080][format_note!*=Premium]+bestaudio/best"),
            "--merge-output-format", "mp4",
            "-o", str(out),
            f"https://www.youtube.com/watch?v={video_id}"]

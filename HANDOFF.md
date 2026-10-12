@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-10 20:10 JST（日次ops、初めて Linux ボックスで実行）
+最終更新: 2026-10-12 15:00 JST（日次ops、ボックス単独で素材取得〜予約まで完了）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -18,12 +18,19 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 1. `work/` は git 管理外。候補探しに必要な字幕・メタ（work/**/*.json, *.txt, *.py、約5MB zip）は PC から tar で CopyToBox して展開した。新しい配信を候補に足すときは fetch_source.py --subs-only（ボックスで未検証）か PC から再コピー。
 2. 未使用ブロック一覧: `work/_unused_1006.py` の出力先を変えて実行 → `work/_unused_1010.txt`（908件）。
 3. レシピを recipes/ に作り `PYTHONPATH=. .venv/bin/python -c "from scripts.recipe import validate ..."` で検証。
-4. **クリップ取得（fetch_clips.py）はボックスでは不可**。cookie 無し yt-dlp（deno あり）で試したところ、音声のみ（映像0KB）かつ 2KB/s で11秒に2分。
-   → PC で `python scripts/fetch_clips.py recipes/<id>.json`（Firefox cookie）→ work/clips/*.mp4 を tar（1ファイル100MB未満に分割）→ CopyToBox → ボックスの work/clips/ に展開。
+4. **クリップ取得はボックスで可（2026-10-12〜）**: `PYTHONPATH=. .venv/bin/python scripts/fetch_clips.py recipes/<id>.json --browser none`。
+   cookie 無しだと bestvideo が Premium の HLS（itag 616）を選んで書き出し0のまま止まるため、fetch_clips.py の -f を avc1 の HLS（270/232）+ m4a 優先に変更済み。6区間10分が約5分・1080p映像付きで取れた。
+   取れなくなったら PC で `python scripts/fetch_clips.py recipes/<id>.json`（Firefox cookie）→ work/clips/*.mp4 を tar → CopyToBox。
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。Linux フォント対応（scripts/draw.py, contact_sheet.py）で問題なくビルドできた。
 6. `ops_youtube.py --status` で private→publishAt を確認。
 
-## 今回やったこと（2026-10-10）
+## 今回やったこと（2026-10-12）
+
+- 10/13 18:30 長尺 2026-10-13-bouhan → kMPbU2q7328「防犯と護身の話6連発。スタンガンより防犯ブザーです」11:53、thumbnail_set=true（素材取得からボックスのみ）
+- フルで見る: 2M-KzHnID_o 1Qk53tSphDg→hiQQsH2Sf6Q、Eiwh5C540IA ssy9pUfgCNc→eG8IEYEkbTA（API で取り直して確認）
+- 10/14 以降の長尺は未作成。ショート予約在庫は 10/16 朝07:00 JST まで
+
+## 前回やったこと（2026-10-10）
 
 - 新規長尺2本を作成・予約（両方ボックスでビルド・アップロード、サムネ API 成功 thumbnail_set=true）
 
@@ -43,13 +50,13 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 未検証のもの
 
-- ボックスで yt-dlp に cookies.txt を渡した場合の取得可否（未試行）
+- ボックスで yt-dlp に cookies.txt を渡した場合の取得可否（未試行。cookie 無しで取れたので不要になった）
 - ボックスでの fetch_source.py --subs-only
 
 ## 次にやること
 
-1. 10/12 以降の長尺レシピ（未使用テーマ候補: 健康以外の生活ネタ、防犯・治安、食・料理など。_unused_1010.txt を参照）
-2. ボックス単独化: YouTube cookie を Netscape 形式 cookies.txt で用意して `fetch_clips.py --cookies` を試す（ユーザー判断が必要）
+1. 10/14 以降の長尺レシピ（使用済み: 防犯・食・ガジェット・お金 ほか。_unused_1010.txt は 10/12 分を未反映なので _unused_1006.py で再生成してから選ぶ）
+2. cookie 無し取得が 403 等で再び落ちる場合のみ cookies.txt を検討（ユーザー判断が必要）
 3. 夕方の関連動画紐づけ（Studio）
 
 ## 触ってはいけないところ
