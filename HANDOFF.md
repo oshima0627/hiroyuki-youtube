@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-12 15:00 JST（日次ops、ボックス単独で素材取得〜予約まで完了）
+最終更新: 2026-10-13 15:00 JST（日次ops、ボックス単独で10/14長尺を予約）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,13 +24,21 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。Linux フォント対応（scripts/draw.py, contact_sheet.py）で問題なくビルドできた。
 6. `ops_youtube.py --status` で private→publishAt を確認。
 
-## 今回やったこと（2026-10-12）
+## 今回やったこと（2026-10-13）
+
+- 10/14 18:30 長尺 2026-10-14-ryokou → EY3dsQ3MUPY「旅行の話7連発。パリに手頃ないいホテルはありません」13:30、thumbnail_set=true（thumb.at=250, crop 指定。自動選択は後頭部になったため）
+- 素材は cookie 無しでボックス取得（7区間、403 レート制限で1回再試行のみ）
+- フルで見る: RMBxw4tSNBY Di-K-jhqgMg→kMPbU2q7328（API で取り直して確認）。Eiwh5C540IA は eG8IEYEkbTA のまま
+- 未使用ブロック一覧は work/_unused_1013.py → work/_unused_1013.txt（868件、10/13分まで反映）。全字幕キーワード検索は work/_kw_scan.py "<正規表現>"（使用済み区間を除外）
+- 10/15 以降の長尺は未作成。ショート予約在庫は 10/16 朝07:00 JST まで
+
+## 前回やったこと（2026-10-12）
 
 - 10/13 18:30 長尺 2026-10-13-bouhan → kMPbU2q7328「防犯と護身の話6連発。スタンガンより防犯ブザーです」11:53、thumbnail_set=true（素材取得からボックスのみ）
 - フルで見る: 2M-KzHnID_o 1Qk53tSphDg→hiQQsH2Sf6Q、Eiwh5C540IA ssy9pUfgCNc→eG8IEYEkbTA（API で取り直して確認）
 - 10/14 以降の長尺は未作成。ショート予約在庫は 10/16 朝07:00 JST まで
 
-## 前回やったこと（2026-10-10）
+## 前々回（2026-10-10）
 
 - 新規長尺2本を作成・予約（両方ボックスでビルド・アップロード、サムネ API 成功 thumbnail_set=true）
 
@@ -55,7 +63,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/14 以降の長尺レシピ（使用済み: 防犯・食・ガジェット・お金 ほか。_unused_1010.txt は 10/12 分を未反映なので _unused_1006.py で再生成してから選ぶ）
+1. 10/15 以降の長尺レシピ（使用済み: 旅行・防犯・食・ガジェット・お金 ほか。候補例: ペットと動物、車と移動。_unused_1013.py で再生成してから選ぶ）
 2. cookie 無し取得が 403 等で再び落ちる場合のみ cookies.txt を検討（ユーザー判断が必要）
 3. 夕方の関連動画紐づけ（Studio）
 

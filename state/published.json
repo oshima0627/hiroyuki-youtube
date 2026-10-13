@@ -162,7 +162,7 @@
       "publish_at": null,
       "published_at": "2026-08-19T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 25,
+      "view_count": 27,
       "duration": "PT39S"
     },
     "2026-08-20-pm": {
@@ -247,7 +247,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T09:00:37Z",
       "upload_status": "processed",
-      "view_count": 12,
+      "view_count": 13,
       "duration": "PT5M37S"
     },
     "2026-08-27-fudosan": {
@@ -282,7 +282,7 @@
       "publish_at": null,
       "published_at": "2026-08-26T22:00:39Z",
       "upload_status": "processed",
-      "view_count": 2178,
+      "view_count": 2179,
       "duration": "PT45S"
     },
     "2026-08-28-am": {
@@ -401,7 +401,7 @@
       "publish_at": null,
       "published_at": "2026-09-02T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1840,
+      "view_count": 1841,
       "duration": "PT44S"
     },
     "2026-09-04-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1449,
+      "view_count": 1455,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -588,7 +588,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T22:00:19Z",
       "upload_status": "processed",
-      "view_count": 1341,
+      "view_count": 1342,
       "duration": "PT1M5S"
     },
     "2026-09-15-am": {
@@ -762,7 +762,7 @@
       "publish_at": null,
       "published_at": "2026-09-12T03:00:27Z",
       "upload_status": "processed",
-      "view_count": 17,
+      "view_count": 19,
       "duration": "PT13M50S"
     },
     "2026-09-24-am": {
@@ -779,7 +779,7 @@
       "publish_at": null,
       "published_at": "2026-09-23T22:00:33Z",
       "upload_status": "processed",
-      "view_count": 2492,
+      "view_count": 2493,
       "duration": "PT42S"
     },
     "2026-09-25-am": {
@@ -830,7 +830,7 @@
       "publish_at": null,
       "published_at": "2026-09-26T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1338,
+      "view_count": 1350,
       "duration": "PT40S"
     },
     "2026-09-28-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2056,
+      "view_count": 2061,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1430,
+      "view_count": 1435,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1838,
+      "view_count": 1848,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1017,7 +1017,7 @@
       "publish_at": null,
       "published_at": "2026-10-07T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1007,
+      "view_count": 1008,
       "duration": "PT55S"
     },
     "2026-10-09-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1355,
+      "view_count": 1359,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1051,7 +1051,7 @@
       "publish_at": null,
       "published_at": "2026-10-09T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1194,
+      "view_count": 1196,
       "duration": "PT1M5S"
     },
     "2026-10-11-am": {
@@ -1068,7 +1068,7 @@
       "publish_at": null,
       "published_at": "2026-10-10T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 1093,
+      "view_count": 1102,
       "duration": "PT57S"
     },
     "2026-10-12-am": {
@@ -1085,24 +1085,24 @@
       "publish_at": null,
       "published_at": "2026-10-11T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1264,
+      "view_count": 1272,
       "duration": "PT40S"
     },
     "2026-10-13-am": {
       "youtube_video_id": "RMBxw4tSNBY",
       "url": "https://www.youtube.com/watch?v=RMBxw4tSNBY",
       "title": "【ひろゆき】年上のバイトにどう接するか【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "M7KWrHANxHs"
       ],
-      "publish_at": "2026-10-12T22:00:00Z",
-      "published_at": "2026-09-02T05:57:06Z",
+      "publish_at": null,
+      "published_at": "2026-10-12T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1020,
       "duration": "PT43S"
     },
     "2026-10-14-am": {
@@ -1215,7 +1215,7 @@
       "publish_at": null,
       "published_at": "2026-09-15T03:00:22Z",
       "upload_status": "processed",
-      "view_count": 7,
+      "view_count": 8,
       "duration": "PT10M4S"
     },
     "2026-09-07-kaigai": {
@@ -1413,7 +1413,7 @@
       "publish_at": null,
       "published_at": "2026-10-03T09:30:14Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 6,
       "duration": "PT14M16S"
     },
     "2026-10-06-ningen": {
@@ -1435,7 +1435,7 @@
       "publish_at": null,
       "published_at": "2026-10-06T09:30:38Z",
       "upload_status": "processed",
-      "view_count": 5,
+      "view_count": 7,
       "duration": "PT13M"
     },
     "2026-10-07-un": {
@@ -1548,7 +1548,7 @@
       "youtube_video_id": "eG8IEYEkbTA",
       "url": "https://www.youtube.com/watch?v=eG8IEYEkbTA",
       "title": "【ひろゆき】食と料理の話6連発。料理がうまい人は仕事の段取りもうまいです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1560,8 +1560,8 @@
         "daulqJwmooE",
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-12T09:30:00Z",
-      "published_at": "2026-10-11T06:07:44Z",
+      "publish_at": null,
+      "published_at": "2026-10-12T09:30:04Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT12M47S"
@@ -1582,9 +1582,31 @@
       ],
       "publish_at": "2026-10-13T09:30:00Z",
       "published_at": "2026-10-12T05:53:55Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT11M54S"
+    },
+    "2026-10-14-ryokou": {
+      "youtube_video_id": "EY3dsQ3MUPY",
+      "url": "https://www.youtube.com/watch?v=EY3dsQ3MUPY",
+      "title": "【ひろゆき】旅行の話7連発。パリに手頃ないいホテルはありません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "2pnqE4CFFNU",
+        "5xJ3ZzEnyI8",
+        "6Pg_wE6hX7w",
+        "BUxzb5vf8yQ",
+        "N1Rylk50gpw",
+        "kJA_F3-icqY"
+      ],
+      "publish_at": "2026-10-14T09:30:00Z",
+      "published_at": "2026-10-13T05:32:07Z",
       "upload_status": "uploaded",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT13M31S"
     }
   }
 }
