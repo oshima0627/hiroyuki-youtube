@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-13 15:00 JST（日次ops、ボックス単独で10/14長尺を予約）
+最終更新: 2026-10-14 14:30 JST（日次ops、ボックス単独で10/15長尺を予約）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,16 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。Linux フォント対応（scripts/draw.py, contact_sheet.py）で問題なくビルドできた。
 6. `ops_youtube.py --status` で private→publishAt を確認。
 
-## 今回やったこと（2026-10-13）
+## 今回やったこと（2026-10-14）
+
+- 当日ショート 4CIkzIwtq5M（ゴマすりで上げた給料は実力か・07:00公開済）と当日長尺 EY3dsQ3MUPY（旅行・18:30）は既存のためスキップ
+- 10/15 18:30 長尺 2026-10-15-kuruma → hZCbbUwQVOI「車と移動の話6連発。軽自動車は走る棺です」8:21、thumbnail_set=true（thumb.at=50, crop 指定）
+- 素材は cookie 無しでボックス取得（6区間）
+- フルで見る: 4CIkzIwtq5M ssy9pUfgCNc→EY3dsQ3MUPY（API で取り直して確認）。RMBxw4tSNBY は kMPbU2q7328 のまま
+- 未使用ブロック一覧は work/_unused_1014.py → work/_unused_1014.txt（867件、10/14分まで反映）
+- 10/16 以降の長尺は未作成。ショート予約在庫は 10/16 朝07:00 JST まで
+
+## 前回やったこと（2026-10-13）
 
 - 10/14 18:30 長尺 2026-10-14-ryokou → EY3dsQ3MUPY「旅行の話7連発。パリに手頃ないいホテルはありません」13:30、thumbnail_set=true（thumb.at=250, crop 指定。自動選択は後頭部になったため）
 - 素材は cookie 無しでボックス取得（7区間、403 レート制限で1回再試行のみ）
@@ -32,28 +41,10 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - 未使用ブロック一覧は work/_unused_1013.py → work/_unused_1013.txt（868件、10/13分まで反映）。全字幕キーワード検索は work/_kw_scan.py "<正規表現>"（使用済み区間を除外）
 - 10/15 以降の長尺は未作成。ショート予約在庫は 10/16 朝07:00 JST まで
 
-## 前回やったこと（2026-10-12）
-
-- 10/13 18:30 長尺 2026-10-13-bouhan → kMPbU2q7328「防犯と護身の話6連発。スタンガンより防犯ブザーです」11:53、thumbnail_set=true（素材取得からボックスのみ）
-- フルで見る: 2M-KzHnID_o 1Qk53tSphDg→hiQQsH2Sf6Q、Eiwh5C540IA ssy9pUfgCNc→eG8IEYEkbTA（API で取り直して確認）
-- 10/14 以降の長尺は未作成。ショート予約在庫は 10/16 朝07:00 JST まで
-
-## 前々回（2026-10-10）
-
-- 新規長尺2本を作成・予約（両方ボックスでビルド・アップロード、サムネ API 成功 thumbnail_set=true）
-
-| 公開 (JST) | レシピ | ID | 尺 | タイトル |
-| --- | --- | --- | --- | --- |
-| 10/10 21:30 | 2026-10-10-okane | A06Ijn-FpMM | 7:53 | 【ひろゆき】お金と投資の話6連発。お金がないなら計算ができていません |
-| 10/11 18:30 | 2026-10-11-gadget | hiQQsH2Sf6Q | 14:15 | 【ひろゆき】ガジェットと道具選びの話7連発。スマホが割れるのはケース選びのミスです |
-
-- 当日ショート T9g4Zm8oVeQ の「フルで見る」を f_pERzvz3uA → 718Lsuq9bgE（10/9長尺）へ API 更新
-- Studio 関連動画は触っていない
-
 ## 検証済みの事実
 
-- status: A06Ijn-FpMM private→2026-10-10T12:30Z、hiQQsH2Sf6Q private→2026-10-11T09:30Z
-- T9g4Zm8oVeQ description が 718Lsuq9bgE を指す（API で取り直して確認）
+- status: hZCbbUwQVOI private→2026-10-15T09:30Z、EY3dsQ3MUPY private→2026-10-14T09:30Z
+- 4CIkzIwtq5M description が EY3dsQ3MUPY を指す（API で取り直して確認）
 - ショート予約在庫は 10/16 朝07:00 JST まで
 
 ## 未検証のもの
@@ -63,7 +54,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/15 以降の長尺レシピ（使用済み: 旅行・防犯・食・ガジェット・お金 ほか。候補例: ペットと動物、車と移動。_unused_1013.py で再生成してから選ぶ）
+1. 10/16 以降の長尺レシピ（使用済み: 車・旅行・防犯・食・ガジェット・お金 ほか。候補例: ペットと動物、見た目と美容。_unused_1014.py で再生成してから選ぶ）
 2. cookie 無し取得が 403 等で再び落ちる場合のみ cookies.txt を検討（ユーザー判断が必要）
 3. 夕方の関連動画紐づけ（Studio）
 
