@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1452,
+      "view_count": 1454,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -1136,7 +1136,7 @@
       "publish_at": null,
       "published_at": "2026-10-14T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1161,
+      "view_count": 1170,
       "duration": "PT43S"
     },
     "2026-10-16-am": {
@@ -1456,7 +1456,7 @@
       "publish_at": null,
       "published_at": "2026-10-07T09:30:23Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 2,
       "duration": "PT13M52S"
     },
     "2026-10-08-gaman": {
@@ -1612,7 +1612,7 @@
       "youtube_video_id": "hZCbbUwQVOI",
       "url": "https://www.youtube.com/watch?v=hZCbbUwQVOI",
       "title": "【ひろゆき】車と移動の話6連発。軽自動車は走る棺です",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1623,8 +1623,8 @@
         "M7KWrHANxHs",
         "O0YEy2NB3os"
       ],
-      "publish_at": "2026-10-15T09:30:00Z",
-      "published_at": "2026-10-14T05:29:42Z",
+      "publish_at": null,
+      "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT8M22S"
@@ -1646,7 +1646,7 @@
       ],
       "publish_at": "2026-10-16T09:30:00Z",
       "published_at": "2026-10-15T05:32:28Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT9M40S"
     }
