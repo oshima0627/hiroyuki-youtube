@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-15 12:20 JST（エンゲージメント施策を実装。手順は docs/engagement.md）
+最終更新: 2026-10-15 14:35 JST（日次ops: 10/16 資格とキャリア長尺を18:30予約）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -16,57 +16,41 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 ## Linux ボックスでの手順（2026-10-10 実績）
 
 1. `work/` は git 管理外。候補探しに必要な字幕・メタ（work/**/*.json, *.txt, *.py、約5MB zip）は PC から tar で CopyToBox して展開した。新しい配信を候補に足すときは fetch_source.py --subs-only（ボックスで未検証）か PC から再コピー。
-2. 未使用ブロック一覧: `work/_unused_1006.py` の出力先を変えて実行 → `work/_unused_1010.txt`（908件）。
+2. 未使用ブロック一覧: `work/_unused_1014.py` の出力先を変えて実行 → `work/_unused_1014.txt`（再生成で更新）。
 3. レシピを recipes/ に作り `PYTHONPATH=. .venv/bin/python -c "from scripts.recipe import validate ..."` で検証。
 4. **クリップ取得はボックスで可（2026-10-12〜）**: `PYTHONPATH=. .venv/bin/python scripts/fetch_clips.py recipes/<id>.json --browser none`。
-   cookie 無しだと bestvideo が Premium の HLS（itag 616）を選んで書き出し0のまま止まるため、fetch_clips.py の -f を avc1 の HLS（270/232）+ m4a 優先に変更済み。6区間10分が約5分・1080p映像付きで取れた。
+   cookie 無しだと bestvideo が Premium の HLS（itag 616）を選んで書き出し0のまま止まるため、fetch_clips.py の -f を avc1 の HLS（270/232）+ m4a 優先に変更済み。
    取れなくなったら PC で `python scripts/fetch_clips.py recipes/<id>.json`（Firefox cookie）→ work/clips/*.mp4 を tar → CopyToBox。
-5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。Linux フォント対応（scripts/draw.py, contact_sheet.py）で問題なくビルドできた。
-6. `ops_youtube.py --status` で private→publishAt を確認。
+5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
+6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-15）エンゲージメント施策（ユーザー承認済み）
+## 今回やったこと（2026-10-15 14:13 日次）
 
-- 新規: scripts/engagement.py（問いかけ文・禁止語・見送り目安）、scripts/engage.py（コメント投稿・返信・Studio 手作業記録）、docs/engagement.md、tests/test_engagement.py
-- build_episode.py: 冒頭カードに問いかけ帯（3.5秒）、最後に終了画面用の板 outroimg.mp4（20秒、15分未満を守るため最短10秒まで縮む）。meta.json に engagement_question
-- build_short.py: 最後の3.5秒に問いかけテロップ（下の黒帯のみ）
-- upload_youtube.py: 概要欄の先頭行に問いかけ（publish_shorts も経由）。recipe.py: 任意フィールド engagement の検証
-- 予約済み2本の概要欄先頭に問いかけ行を追加（engage.py --update-scheduled-descriptions）: hZCbbUwQVOI（10/15 18:30）、5UDR-8tVjAE（10/16 07:00）。公開状態・publishAt は不変を API で確認
-- 既存動画へのコメント投稿は**していない**（夕方ルーチンから開始）。--list-unreplied は読み取りで動作確認（直近14日は0件、120日では4件）
+- 当日ショート u_vN9xYpzyI（すぐ辞めたくなる性格は直すべきか・公開済）既存スキップ
+- 当日長尺 hZCbbUwQVOI（車と移動・10/15 18:30 JST＝09:30Z）既存スキップ
+- 翌日ショート 5UDR-8tVjAE（復職に引っ越し・10/16 07:00 JST）既存
+- **新規** 翌日長尺 2026-10-16-shikaku → Mw4CM0_gFhw「資格とキャリアの話7連発。エンジニアで優秀なやつは試験を受けません」9:40、18:30 JST（09:30Z）予約、thumbnail_set=true（差分0.8で確認）
+- フルで見る: 4CIkzIwtq5M → EY3dsQ3MUPY は既に設定済みのため変更なし
+- エンゲージメント: 概要欄1行目・冒頭/終盤テロップは新規長尺に自動入り。Studio関連動画・コメント固定は夕方ルーチン
+- 未使用ブロック再生成: work/_unused_1014.txt（852件）
 
-## 日次ルーチン（追加分。詳細は docs/engagement.md）
+## 前回やったこと（2026-10-15 昼）エンゲージメント施策
 
-- 朝: いつものビルド・予約でテロップ・終盤の板・概要欄1行目は自動。予約済みで行が無いものは `engage.py --update-scheduled-descriptions`
-- 夕方: `engage.py --post <videoId>`（公開済みのみ）→ `engage.py --todo` を見て Studio で固定・終了画面（最後20秒）・ショートの関連動画 → `--done <id> pin|endscreen|related` → `engage.py --list-unreplied` を読んで `--reply-to <commentId> --text "1〜2文"`（20件/日まで）
-
-## 前回やったこと（2026-10-14）
-
-- 10/15 18:30 長尺 2026-10-15-kuruma → hZCbbUwQVOI「車と移動の話6連発。軽自動車は走る棺です」8:21、thumbnail_set=true
-- フルで見る: 4CIkzIwtq5M → EY3dsQ3MUPY。未使用ブロック一覧は work/_unused_1014.txt（867件）
-- 10/16 以降の長尺は未作成。ショート予約在庫は 10/16 朝07:00 JST まで
+- scripts/engagement.py / engage.py、docs/engagement.md、tests/test_engagement.py
+- 予約済み2本の概要欄先頭に問いかけ行: hZCbbUwQVOI、5UDR-8tVjAE
 
 ## 検証済みの事実
 
-- pytest 36 passed（既存18＋新規18）
-- status（2026-10-15 12:10 JST）: hZCbbUwQVOI private→2026-10-15T09:30Z、EY3dsQ3MUPY public
-- 予約済み2本の概要欄先頭行を API で取り直して確認。hZCbbUwQVOI の最後 19.2 秒はまとめ板（終了画面用の余白板は無い。再アップロードはしない）
-- ショートの最後テロップの ffmpeg フィルタは合成映像で確認。長尺の outroimg / 冒頭帯は kuruma の素材で /tmp に単体生成して目視
-- 4CIkzIwtq5M description が EY3dsQ3MUPY を指す（API で取り直して確認）
-- ショート予約在庫は 10/16 朝07:00 JST まで
-
-## 未検証のもの
-
-- 実レシピでの長尺・ショートのフルビルド（問いかけ入り）。次の長尺で初めて通る
-- engage.py --post / --reply-to の実投稿（dry-run のみ）。commentThreads.insert の 403（コメント無効など）時の挙動
-
-- ボックスで yt-dlp に cookies.txt を渡した場合の取得可否（未試行。cookie 無しで取れたので不要になった）
-- ボックスでの fetch_source.py --subs-only
+- status（2026-10-15 14:33 JST）: Mw4CM0_gFhw private→2026-10-16T09:30Z 9M40S、hZCbbUwQVOI private→2026-10-15T09:30Z、5UDR-8tVjAE private→2026-10-15T22:00Z
+- 4CIkzIwtq5M description が EY3dsQ3MUPY を指す（変更なし）
+- cookie 無し fetch_clips 7区間成功（403 再試行ありだが完了）
+- ショート予約在庫は 10/16 朝07:00 JST まで。10/17 以降の長尺・ショートは未作成
 
 ## 次にやること
 
-1. 10/16 以降の長尺レシピ（使用済み: 車・旅行・防犯・食・ガジェット・お金 ほか。候補例: ペットと動物、見た目と美容。_unused_1014.py で再生成してから選ぶ）
-2. cookie 無し取得が 403 等で再び落ちる場合のみ cookies.txt を検討（ユーザー判断が必要）
-3. 夕方: hZCbbUwQVOI（10/15 18:30 公開）に `engage.py --post hZCbbUwQVOI` → Studio で固定。終了画面は最後のまとめ板に被るので要素を下段に小さめに置く
-4. 夕方の関連動画紐づけ（Studio）。`engage.py --todo` に残りが出る
+1. 10/17 以降の長尺・ショート在庫（候補: ペットと動物、見た目と美容、酒と飲み物。_unused 再生成してから選ぶ）
+2. 夕方: hZCbbUwQVOI（10/15 18:30 公開）に `engage.py --post hZCbbUwQVOI` → Studio で固定・終了画面・関連動画（当日ショート u_vN9xYpzyI ← 当日長尺 hZCbbUwQVOI）
+3. cookie 無し取得が再び落ちる場合のみ cookies.txt を検討
 
 ## 触ってはいけないところ
 

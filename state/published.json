@@ -673,7 +673,7 @@
       "publish_at": null,
       "published_at": "2026-09-18T22:00:28Z",
       "upload_status": "processed",
-      "view_count": 1207,
+      "view_count": 1210,
       "duration": "PT39S"
     },
     "2026-09-20-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1362,
+      "view_count": 1363,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1136,7 +1136,7 @@
       "publish_at": null,
       "published_at": "2026-10-14T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1153,
+      "view_count": 1161,
       "duration": "PT43S"
     },
     "2026-10-16-am": {
@@ -1519,7 +1519,7 @@
       "publish_at": null,
       "published_at": "2026-10-10T12:30:15Z",
       "upload_status": "processed",
-      "view_count": 56,
+      "view_count": 57,
       "duration": "PT7M53S"
     },
     "2026-10-11-gadget": {
@@ -1628,6 +1628,27 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT8M22S"
+    },
+    "2026-10-16-shikaku": {
+      "youtube_video_id": "Mw4CM0_gFhw",
+      "url": "https://www.youtube.com/watch?v=Mw4CM0_gFhw",
+      "title": "【ひろゆき】資格とキャリアの話7連発。エンジニアで優秀なやつは試験を受けません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "0ojMhUyiHB4",
+        "O0YEy2NB3os",
+        "VYJ-zTB8TVY",
+        "c2X5ZUIpRSk",
+        "skPyrH0WTzY"
+      ],
+      "publish_at": "2026-10-16T09:30:00Z",
+      "published_at": "2026-10-15T05:32:28Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT9M40S"
     }
   }
 }
