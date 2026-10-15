@@ -27,6 +27,7 @@ from __future__ import annotations
 
 from PIL import Image, ImageDraw
 
+from scripts.engagement import split_question
 from scripts.draw import GOLD, INK, MUTED, RED, WHITE, fit_font, pick_font, wrap
 
 W, H = 1920, 1080
@@ -137,4 +138,73 @@ def render_note(note: str) -> Image.Image:
     fs = pick_font(30)
     d.text((PAD + 40, y + 24), "※この解説は編集側による補足です",
            font=fs, fill=(*MUTED, 255))
+    return img
+
+
+def layout_question(d: ImageDraw.ImageDraw, question: str, max_w: int, size: int,
+                    max_lines: int, min_size: int = 32):
+    """問いかけ文を折る。「…」と二択を別の行にし、二択（「アリ？ナシ？」）は割らない。
+
+    draw.wrap は「？」で文を切るので、そのまま渡すと「アリ？」「ナシ？」が別の行に
+    割れた（2026-10-15）。全文が max_lines 行に収まるまで縮める。
+    """
+    while True:
+        f = pick_font(size)
+        lines = []
+        for seg in split_question(question):
+            if d.textbbox((0, 0), seg, font=f)[2] <= max_w:
+                lines.append(seg)
+            else:
+                lines += wrap(d, seg, f, max_w)
+        if len(lines) <= max_lines or size <= min_size:
+            return f, lines
+        size -= 4
+
+
+QBAND_Y = 790         # 冒頭カードに重ねる問いかけ帯。サムネ下端の注記（「公式チャンネルでは
+QBAND_H = 170         # ありません」）にかからない高さに置く
+
+
+def render_question_band(question: str, cta: str = "あなたの反論をコメントで") -> Image.Image:
+    """冒頭カード（サムネイル静止画）に重ねる問いかけ帯。透過PNG。
+
+    **本編の映像には重ねない。** 切り抜きの中身は変えず、編集側の冒頭カードにだけ置く。
+    """
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, QBAND_Y, W, QBAND_Y + QBAND_H], fill=(*INK, 235))
+    d.rectangle([0, QBAND_Y, W, QBAND_Y + 6], fill=(*GOLD, 255))
+    fq = fit_font(d, question, W - PAD * 2, 64)
+    d.text((PAD, QBAND_Y + 22), question, font=fq, fill=(*WHITE, 255))
+    fc = pick_font(40)
+    d.text((PAD, QBAND_Y + 108), f"▶ {cta}", font=fc, fill=(*GOLD, 255))
+    return img
+
+
+OUTRO_TEXT_BOTTOM = 400   # ここより下は終了画面の要素（登録ボタン・関連動画）用に空ける
+
+
+def render_outro(question: str, cta: str = "あなたの反論をコメントで") -> Image.Image:
+    """最後の終了画面用の板。上に問いかけ、下 6 割強は何も置かない。
+
+    YouTube の終了画面（登録ボタン・動画2本）は Studio で手作業で置く。
+    要素が文字に被らないよう、文字は上部 OUTRO_TEXT_BOTTOM px までに収める。
+    """
+    img = Image.new("RGB", (W, H), INK)
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, W, 8], fill=RED)
+    fl = pick_font(40)
+    d.text((PAD, 56), "最後にひとつ質問です", font=fl, fill=(*RED, 255))
+    fq, lines = layout_question(d, question, W - PAD * 2, 72, 2)
+    y = 130
+    for ln in lines:
+        d.text((PAD + 3, y + 3), ln, font=fq, fill=(0, 0, 0))
+        d.text((PAD, y), ln, font=fq, fill=(*WHITE, 255))
+        y += int(fq.size * 1.3)
+    fc = pick_font(44)
+    d.text((PAD, min(y + 16, OUTRO_TEXT_BOTTOM - 56)), f"▶ {cta}",
+           font=fc, fill=(*GOLD, 255))
+    fn = pick_font(28)
+    d.text((PAD, H - 60), "ひろゆき解説ch【切り抜き】 運営者より ／ 公式チャンネルではありません",
+           font=fn, fill=(*MUTED, 255))
     return img

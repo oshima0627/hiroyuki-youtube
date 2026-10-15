@@ -80,11 +80,30 @@ def validate(recipe: dict) -> None:
             f"クリップ {len(clips)}件に対して解説板が {total_notes}枚。"
             "本編の大半が素材そのままになる。notes を増やして合計4枚以上にすること")
 
+    validate_engagement(recipe)
+
     title = recipe["title"]
     hit = next((w for w in BANNED_IN_TITLE if w in title), None)
     if hit:
         raise ValueError(
             f"タイトルに「{hit}」が入っている。権利者が明示的に禁じている表記")
+
+
+def validate_engagement(recipe: dict) -> None:
+    """任意フィールド engagement の文体チェック。書いてあるときだけ見る。"""
+    from scripts.engagement import (COMMENT_MAX, QUESTION_MAX, check_own_text)
+    eng = recipe.get("engagement")
+    if eng is None:
+        return
+    if not isinstance(eng, dict):
+        raise ValueError("engagement はオブジェクトで書く（question / comment / enabled）")
+    errs = []
+    if eng.get("question"):
+        errs += check_own_text(eng["question"], QUESTION_MAX, "engagement.question")
+    if eng.get("comment"):
+        errs += check_own_text(eng["comment"], COMMENT_MAX, "engagement.comment")
+    if errs:
+        raise ValueError(" / ".join(errs))
 
 
 SHORT_MAX_SEC = 180.0

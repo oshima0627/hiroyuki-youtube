@@ -43,6 +43,9 @@ from PIL import Image, ImageDraw  # noqa: E402
 
 from scripts.build_episode import resolve_source  # noqa: E402
 from scripts.draw import GOLD, INK, RED, WHITE, fit_font, pick_font, wrap  # noqa: E402
+from scripts.engagement import CTA  # noqa: E402
+from scripts.engagement import short_question  # noqa: E402
+from scripts.telop import layout_question  # noqa: E402
 from scripts.recipe import CREDIT, validate_short  # noqa: E402
 from scripts.thumbnail import head_box  # noqa: E402
 
@@ -110,6 +113,29 @@ def render_frame(hook: str, footer: str, cover: int = 0) -> Image.Image:
 
     fn = pick_font(28)
     d.text((PAD, H - 90), "公式チャンネルではありません", font=fn, fill=(150, 158, 168, 255))
+    return img
+
+
+END_SEC = 3.5            # 最後の一言テロップを出す秒数
+
+
+def render_end_line(question: str, cover: int = 0) -> Image.Image:
+    """最後の数秒だけ下の補足欄を問いかけに差し替える透過PNG。
+
+    映像の上には重ねない（下の黒帯の中だけ）。切り抜きの中身は変えない。
+    """
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    bottom = VIDEO_Y + VIDEO_H - cover
+    d.rectangle([0, bottom + 6, W, H - 110], fill=(*INK, 255))
+    # **全文を出す。** 2行で切ったら「イエス？ノー？」の「ノー？」が落ちた（2026-10-15）
+    fq, lines = layout_question(d, question, W - PAD * 2, 52, 3, 36)
+    y = bottom + 30
+    for ln in lines:
+        d.text((PAD, y), ln, font=fq, fill=(*WHITE, 255))
+        y += int(fq.size * 1.22)
+    fc = pick_font(44)
+    d.text((PAD, y + 10), f"▶ {CTA}", font=fc, fill=(*GOLD, 255))
     return img
 
 
@@ -219,6 +245,8 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
         print(f"[dry-run] {rid}")
         print(f"  「{clip['title']}」の {s:.0f}〜{e:.0f}秒")
         print(f"  尺 {e - s:.0f}秒 / フック「{short.get('hook')}」")
+        if short_question(recipe):
+            print(f"  最後の{END_SEC}秒に「{short_question(recipe)}」")
         return out
 
     out.mkdir(parents=True, exist_ok=True)
@@ -257,15 +285,24 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
     png = out / "frame.png"
     render_frame(short.get("hook", ""), short.get("footer", ""), cover).save(png)
 
+    question = short_question(recipe)
+    end_in, end_fc = [], "[v][1:v]overlay=0:0[o]"
+    if question and e - s > END_SEC * 2:
+        endpng = out / "endline.png"
+        render_end_line(question, cover).save(endpng)
+        end_in = ["-i", str(endpng)]
+        end_fc = ("[v][1:v]overlay=0:0[f];"
+                  f"[f][2:v]overlay=0:0:enable='gte(t,{e - s - END_SEC:.2f})'[o]")
+
     video = out / "video.mp4"
     _run(["ffmpeg", "-y", "-loglevel", "error",
           "-ss", f"{offset + s}", "-i", str(src),
-          "-i", str(png),
+          "-i", str(png), *end_in,
           "-t", f"{e - s}",
           "-filter_complex",
           f"[0:v]crop={cw}:{ch}:{x0}:{y0},scale={W}:{VIDEO_H},"
           f"pad={W}:{H}:0:{VIDEO_Y}:color=0x0E1116,fps={FPS}[v];"
-          f"[v][1:v]overlay=0:0[o]",
+          f"{end_fc}",
           "-map", "[o]", "-map", "0:a",
           "-c:v", "libx264", "-preset", "medium", "-crf", "20",
           "-pix_fmt", "yuv420p",
@@ -300,6 +337,7 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
         "privacy_status": "private",
         "expected_channel_id": recipe["expected_channel_id"],
         "sources": [clip["video_id"]],
+        "engagement_question": question,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     print(f"✓ {video}  {actual:.0f}秒  {W}x{H}")

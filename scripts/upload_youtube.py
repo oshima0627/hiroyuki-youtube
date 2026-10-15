@@ -201,6 +201,30 @@ def with_long_form_link(meta: dict, description: str) -> str:
     return text.replace(FUNNEL_HEAD, f"{FUNNEL_HEAD}\n{entry['url']}", 1)
 
 
+def engagement_question(meta: dict) -> str | None:
+    """概要欄1行目の問いかけ文。build が meta に入れたもの、無ければタイトルから。
+
+    meta に engagement_question が None で入っていれば（レシピで無効化）付けない。
+    """
+    sys.path.insert(0, str(ROOT))
+    from scripts.engagement import default_question
+    if "engagement_question" in meta:
+        return meta["engagement_question"]
+    return default_question(meta.get("title", ""), meta.get("id", ""))
+
+
+def with_engagement_line(meta: dict, description: str) -> str:
+    """概要欄の先頭行に問いかけを置く（2026-10-15〜）。既にあれば足さない。"""
+    from scripts.engagement import QUESTION_MAX, check_own_text, prepend_description
+    q = engagement_question(meta)
+    if not q:
+        return description
+    errs = check_own_text(q, QUESTION_MAX, "問いかけ文")
+    if errs:
+        die("問いかけ文が文体ルールに反しています: " + " / ".join(errs))
+    return prepend_description(description, q)
+
+
 def upload(service, workdir: Path, meta: dict, description: str, privacy: str,
            allow_long: bool = False) -> str:
     from googleapiclient.http import MediaFileUpload
@@ -346,6 +370,7 @@ def main() -> None:
     meta = json.loads((a.workdir / "meta.json").read_text(encoding="utf-8"))
     description = (a.workdir / "description.txt").read_text(encoding="utf-8")
     description = with_long_form_link(meta, description)
+    description = with_engagement_line(meta, description)
 
     ch = assert_expected_channel(service, meta)
     privacy = "public" if a.publish else meta.get("privacy_status", "private")

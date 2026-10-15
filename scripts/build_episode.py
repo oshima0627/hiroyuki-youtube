@@ -32,8 +32,11 @@ from scripts.fetch_source import source_dir  # noqa: E402
 from scripts.narration import duration as wav_duration  # noqa: E402
 from scripts.narration import synth  # noqa: E402
 from scripts.recipe import build_description, validate  # noqa: E402
+from scripts.engagement import enabled as engagement_enabled  # noqa: E402
+from scripts.engagement import question_for  # noqa: E402
 from scripts.telop import (  # noqa: E402
-    render_lower_third, render_note, render_top_bar_slim)
+    render_lower_third, render_note, render_outro, render_question_band,
+    render_top_bar_slim)
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -133,9 +136,46 @@ def build_clip(clip: dict, index: int, out_dir: Path, pad: float) -> Path:
 
 TAIL_SEC = 0.6           # 読み終わってから次のカットに移るまでの間
 HEAD_SEC = 2.5           # 冒頭に置くサムネカードの秒数
+HEAD_Q_SEC = 3.5         # 問いかけ帯を重ねるときの冒頭カードの秒数（読める長さ）
+
+# 終了画面（Studio で手作業）の要素は最後の 5〜20 秒に置ける。要素が解説板の
+# 文字に被らないよう、専用の板を最後に置いて 20 秒確保する（2026-10-15）。
+OUTRO_SEC = 20.0
+OUTRO_MIN_SEC = 10.0
+# **15分未満を必ず守る。** 電話番号未確認だと15分超は処理中止で消える
+MAX_TOTAL_SEC = 15 * 60 - 5
 
 
-def build_head(thumb: Path, out_dir: Path) -> Path:
+def outro_seconds(body_sec: float) -> float:
+    """終了画面用の板の秒数。15分未満に収まる範囲で最大 OUTRO_SEC。"""
+    room = MAX_TOTAL_SEC - body_sec
+    if room < OUTRO_MIN_SEC:
+        raise SystemExit(
+            f"! 本編だけで {int(body_sec) // 60}:{int(body_sec) % 60:02d}。"
+            f"終了画面ぶん {OUTRO_MIN_SEC:.0f}秒を足すと15分を超える。クリップを減らすこと")
+    return min(OUTRO_SEC, room)
+
+
+def build_outro(question: str, out_dir: Path, length: float) -> Path:
+    """最後の問いかけ＋終了画面の余白。読み上げのあとは無音で length 秒まで伸ばす。"""
+    text = f"最後にひとつ質問です。{question}あなたの反論を、コメントで教えてください。"
+    wav = synth(text)
+    png = out_dir / "outro.png"
+    render_outro(question).save(png)
+    dst = out_dir / "outroimg.mp4"
+    _run(["ffmpeg", "-y", "-loglevel", "error",
+          "-loop", "1", "-i", str(png), "-i", str(wav),
+          "-t", f"{length}",
+          "-vf", f"scale={W}:{H},fps={FPS}",
+          "-af", "apad",
+          "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+          "-pix_fmt", "yuv420p",
+          "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
+          str(dst)])
+    return dst
+
+
+def build_head(thumb: Path, out_dir: Path, question: str | None = None) -> Path:
     """サムネイルを冒頭に静止画として置く。
 
     **これだけでは YouTube の自動サムネイルにはならない。** 自動生成の候補は
@@ -143,12 +183,22 @@ def build_head(thumb: Path, out_dir: Path) -> Path:
     それでも冒頭に置くのは、視聴者に何の動画かを最初の2秒で示せるから。
     """
     dst = out_dir / "part_head.mp4"
-    _run(["ffmpeg", "-y", "-loglevel", "error",
-          "-loop", "1", "-i", str(thumb),
+    base = (f"scale={W}:{H}:force_original_aspect_ratio=decrease,"
+            f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:color=0x0E1116,fps={FPS}")
+    inputs = ["-loop", "1", "-i", str(thumb)]
+    if question:
+        # 冒頭の呼びかけ。サムネの静止画にだけ重ねる（本編には触らない）
+        band = out_dir / "head_question.png"
+        render_question_band(question).save(band)
+        inputs += ["-loop", "1", "-i", str(band)]
+        vf = ["-filter_complex", f"[0:v]{base}[b];[b][1:v]overlay=0:0[v]",
+              "-map", "[v]", "-map", "2:a"]
+    else:
+        vf = ["-vf", base]
+    _run(["ffmpeg", "-y", "-loglevel", "error", *inputs,
           "-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo",
-          "-t", f"{HEAD_SEC}",
-          "-vf", f"scale={W}:{H}:force_original_aspect_ratio=decrease,"
-                 f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:color=0x0E1116,fps={FPS}",
+          "-t", f"{HEAD_Q_SEC if question else HEAD_SEC}",
+          *vf,
           "-c:v", "libx264", "-preset", "medium", "-crf", "20",
           "-pix_fmt", "yuv420p",
           "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
@@ -236,6 +286,9 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
               f"元動画 {len(srcs)}本")
         if total < 780:
             print("  ! 13分未満。この市場の相場は13〜20分")
+        if engagement_enabled(recipe):
+            print(f"  問いかけ「{question_for(recipe)}」"
+                  f"（冒頭カードに帯、最後に終了画面用の板 最大{OUTRO_SEC:.0f}秒）")
         return out
 
     out.mkdir(parents=True, exist_ok=True)
@@ -272,9 +325,16 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
 
     # サムネイルがあれば冒頭に置く。thumbnail.py は本編から1枚抜くので、
     # 初回ビルドの時点ではまだ無い。作ったあと --concat-only で足す
+    question = question_for(recipe) if engagement_enabled(recipe) else None
+    if question:
+        # 終盤の呼びかけ＋終了画面の余白。尺は15分未満に収まる範囲で20秒
+        body = sum(probe_duration(p) for p in parts)
+        thumb_sec = HEAD_Q_SEC if (out / "thumb.png").exists() else 0.0
+        parts.append(build_outro(question, out, outro_seconds(body + thumb_sec)))
+
     thumb = out / "thumb.png"
     if thumb.exists():
-        parts.insert(0, build_head(thumb, out))
+        parts.insert(0, build_head(thumb, out, question))
         clip_at = [n + 1 for n in clip_at]        # 冒頭カードのぶん後ろへずれる
     else:
         print("- thumb.png がまだ無いので冒頭カードは入れません"
@@ -310,6 +370,8 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
         "privacy_status": recipe.get("privacy_status", "private"),
         "expected_channel_id": recipe["expected_channel_id"],
         "sources": sorted({c["video_id"] for c in clips}),
+        # 概要欄の1行目と公開後の問いかけコメントに使う（upload_youtube / engage）
+        "engagement_question": question,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     if actual > 15 * 60:
