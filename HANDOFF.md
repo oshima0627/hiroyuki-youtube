@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-15 14:35 JST（日次ops: 10/16 資格とキャリア長尺を18:30予約）
+最終更新: 2026-10-16 14:35 JST（日次ops: 10/17 酒と飲み物長尺を18:30予約）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -16,7 +16,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 ## Linux ボックスでの手順（2026-10-10 実績）
 
 1. `work/` は git 管理外。候補探しに必要な字幕・メタ（work/**/*.json, *.txt, *.py、約5MB zip）は PC から tar で CopyToBox して展開した。新しい配信を候補に足すときは fetch_source.py --subs-only（ボックスで未検証）か PC から再コピー。
-2. 未使用ブロック一覧: `work/_unused_1014.py` の出力先を変えて実行 → `work/_unused_1014.txt`（再生成で更新）。
+2. 未使用ブロック一覧: `work/_unused_1014.py` の出力先を変えて実行 → `work/_unused_1016.txt`（再生成で更新）。
 3. レシピを recipes/ に作り `PYTHONPATH=. .venv/bin/python -c "from scripts.recipe import validate ..."` で検証。
 4. **クリップ取得はボックスで可（2026-10-12〜）**: `PYTHONPATH=. .venv/bin/python scripts/fetch_clips.py recipes/<id>.json --browser none`。
    cookie 無しだと bestvideo が Premium の HLS（itag 616）を選んで書き出し0のまま止まるため、fetch_clips.py の -f を avc1 の HLS（270/232）+ m4a 優先に変更済み。
@@ -24,32 +24,31 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-15 14:13 日次）
+## 今回やったこと（2026-10-16 14:13 日次）
 
-- 当日ショート u_vN9xYpzyI（すぐ辞めたくなる性格は直すべきか・公開済）既存スキップ
-- 当日長尺 hZCbbUwQVOI（車と移動・10/15 18:30 JST＝09:30Z）既存スキップ
-- 翌日ショート 5UDR-8tVjAE（復職に引っ越し・10/16 07:00 JST）既存
-- **新規** 翌日長尺 2026-10-16-shikaku → Mw4CM0_gFhw「資格とキャリアの話7連発。エンジニアで優秀なやつは試験を受けません」9:40、18:30 JST（09:30Z）予約、thumbnail_set=true（差分0.8で確認）
-- フルで見る: 4CIkzIwtq5M → EY3dsQ3MUPY は既に設定済みのため変更なし
+- 当日ショート 5UDR-8tVjAE（復職に引っ越し・07:00公開済）既存スキップ
+- 当日長尺 Mw4CM0_gFhw（資格とキャリア・10/16 18:30 JST＝09:30Z）既存スキップ
+- **新規** 翌日長尺 2026-10-17-sake → id0Ju8MPkBU「酒と飲み物の話7連発。酒は百薬の長は大嘘です」10:10、18:30 JST（09:30Z）予約、thumbnail_set=true（差分1.0で確認）
+- フルで見る: u_vN9xYpzyI Di-K-jhqgMg→hZCbbUwQVOI（昨日ショート→昨日長尺）
 - エンゲージメント: 概要欄1行目・冒頭/終盤テロップは新規長尺に自動入り。Studio関連動画・コメント固定は夕方ルーチン
-- 未使用ブロック再生成: work/_unused_1014.txt（852件）
+- 未使用ブロック再生成: work/_unused_1016.txt（852件）
+- cookie無し fetch_clips 7区間成功（ボックス単独）
 
-## 前回やったこと（2026-10-15 昼）エンゲージメント施策
+## 前回やったこと（2026-10-15 14:13 日次）
 
-- scripts/engagement.py / engage.py、docs/engagement.md、tests/test_engagement.py
-- 予約済み2本の概要欄先頭に問いかけ行: hZCbbUwQVOI、5UDR-8tVjAE
+- 翌日長尺 Mw4CM0_gFhw（資格とキャリア・10/16 18:30）作成
+- 当日短長は既存スキップ
 
 ## 検証済みの事実
 
-- status（2026-10-15 14:33 JST）: Mw4CM0_gFhw private→2026-10-16T09:30Z 9M40S、hZCbbUwQVOI private→2026-10-15T09:30Z、5UDR-8tVjAE private→2026-10-15T22:00Z
-- 4CIkzIwtq5M description が EY3dsQ3MUPY を指す（変更なし）
-- cookie 無し fetch_clips 7区間成功（403 再試行ありだが完了）
-- ショート予約在庫は 10/16 朝07:00 JST まで。10/17 以降の長尺・ショートは未作成
+- status（2026-10-16 14:35 JST）: Mw4CM0_gFhw private→2026-10-16T09:30Z 9M40S、id0Ju8MPkBU private→2026-10-17T09:30Z、5UDR-8tVjAE public
+- u_vN9xYpzyI description が hZCbbUwQVOI を指す
+- cookie 無し fetch_clips 7区間成功
 
 ## 次にやること
 
-1. 10/17 以降の長尺・ショート在庫（候補: ペットと動物、見た目と美容、酒と飲み物。_unused 再生成してから選ぶ）
-2. 夕方: hZCbbUwQVOI（10/15 18:30 公開）に `engage.py --post hZCbbUwQVOI` → Studio で固定・終了画面・関連動画（当日ショート u_vN9xYpzyI ← 当日長尺 hZCbbUwQVOI）
+1. 10/18 以降の長尺・ショート在庫（候補: ペットと動物、見た目と美容。_unused 再生成してから選ぶ）
+2. 夕方: Mw4CM0_gFhw（10/16 18:30 公開）に `engage.py --post Mw4CM0_gFhw` → Studio で固定・終了画面・関連動画（当日ショート 5UDR-8tVjAE ← 当日長尺 Mw4CM0_gFhw）
 3. cookie 無し取得が再び落ちる場合のみ cookies.txt を検討
 
 ## 触ってはいけないところ

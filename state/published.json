@@ -247,7 +247,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T09:00:37Z",
       "upload_status": "processed",
-      "view_count": 14,
+      "view_count": 16,
       "duration": "PT5M37S"
     },
     "2026-08-27-fudosan": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1460,
+      "view_count": 1467,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -796,7 +796,7 @@
       "publish_at": null,
       "published_at": "2026-09-24T22:00:37Z",
       "upload_status": "processed",
-      "view_count": 1303,
+      "view_count": 1304,
       "duration": "PT45S"
     },
     "2026-09-26-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2066,
+      "view_count": 2069,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1454,
+      "view_count": 1456,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1307,
+      "view_count": 1309,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1363,
+      "view_count": 1365,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1085,7 +1085,7 @@
       "publish_at": null,
       "published_at": "2026-10-11T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1278,
+      "view_count": 1277,
       "duration": "PT40S"
     },
     "2026-10-13-am": {
@@ -1119,7 +1119,7 @@
       "publish_at": null,
       "published_at": "2026-10-13T22:00:05Z",
       "upload_status": "processed",
-      "view_count": 1055,
+      "view_count": 1057,
       "duration": "PT52S"
     },
     "2026-10-15-am": {
@@ -1136,24 +1136,24 @@
       "publish_at": null,
       "published_at": "2026-10-14T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1170,
+      "view_count": 1181,
       "duration": "PT43S"
     },
     "2026-10-16-am": {
       "youtube_video_id": "5UDR-8tVjAE",
       "url": "https://www.youtube.com/watch?v=5UDR-8tVjAE",
       "title": "【ひろゆき】復職に引っ越し。大手を辞めるか【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-15T22:00:00Z",
-      "published_at": "2026-09-02T05:57:48Z",
+      "publish_at": null,
+      "published_at": "2026-10-15T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1231,
       "duration": "PT41S"
     },
     "2026-08-22-ai": {
@@ -1413,7 +1413,7 @@
       "publish_at": null,
       "published_at": "2026-10-03T09:30:14Z",
       "upload_status": "processed",
-      "view_count": 10,
+      "view_count": 17,
       "duration": "PT14M16S"
     },
     "2026-10-06-ningen": {
@@ -1605,7 +1605,7 @@
       "publish_at": null,
       "published_at": "2026-10-14T09:30:03Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 2,
       "duration": "PT13M31S"
     },
     "2026-10-15-kuruma": {
@@ -1626,7 +1626,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 2,
       "duration": "PT8M22S"
     },
     "2026-10-16-shikaku": {
@@ -1649,6 +1649,25 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT9M40S"
+    },
+    "2026-10-17-sake": {
+      "youtube_video_id": "id0Ju8MPkBU",
+      "url": "https://www.youtube.com/watch?v=id0Ju8MPkBU",
+      "title": "【ひろゆき】酒と飲み物の話7連発。酒は百薬の長は大嘘です",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "23vSB2fXjc8",
+        "4vmH4mejnjI",
+        "jHWUy2IiZvs",
+        "skPyrH0WTzY"
+      ],
+      "publish_at": "2026-10-17T09:30:00Z",
+      "published_at": "2026-10-16T05:33:08Z",
+      "upload_status": "uploaded",
+      "duration": "PT10M11S"
     }
   }
 }

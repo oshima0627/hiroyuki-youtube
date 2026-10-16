@@ -1,0 +1,113 @@
+{
+  "id": "2026-10-17-sake",
+  "title": "【ひろゆき】酒と飲み物の話7連発。酒は百薬の長は大嘘です",
+  "description": "ひろゆきさんの配信から、アルコール・養命酒・ビールコラボ・締めの食事・密造・酵母の話だけを集めて解説を付けました。\n各チャプターの黄色い行は編集側の補足です。",
+  "tags": [
+    "ひろゆき",
+    "切り抜き",
+    "解説",
+    "酒",
+    "アルコール",
+    "ビール",
+    "飲酒",
+    "養命酒",
+    "健康",
+    "飲み方"
+  ],
+  "category_id": "22",
+  "privacy_status": "private",
+  "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+  "summary": "七本を通して、酒は百薬の長ではなく体に悪い、健康訴求の酒も構造的にきつい、タレントコラボは在庫リスクを消す仕組み、締めは炭水化物と脂、パンでも酵母でも発酵は進む、という話が並びました。",
+  "thumb": {
+    "main": [
+      "酒は百薬の長は",
+      "大嘘です"
+    ],
+    "sub": "酒と飲み物の話7連発",
+    "at": 80
+  },
+  "theme": [
+    "酒",
+    "アルコール",
+    "ビール",
+    "飲酒",
+    "養命酒",
+    "飲み物"
+  ],
+  "engagement": {
+    "question": "「酒は百薬の長は大嘘です」この考え方、アリ？ナシ？",
+    "enabled": true
+  },
+  "clips": [
+    {
+      "video_id": "4vmH4mejnjI",
+      "video_title": "いつになったらホルムズ海峡は解放されるのか？ Venus",
+      "video_url": "https://www.youtube.com/watch?v=4vmH4mejnjI",
+      "start": 179.0,
+      "end": 237.0,
+      "title": "アルコールは体に悪い",
+      "note": "酒は百薬の長は嘘で、適量でも健康に良いという説は否定された。健康を売りにする酒も論文ベースでは厳しい、という話",
+      "hook": "酒は百薬の長は嘘"
+    },
+    {
+      "video_id": "4vmH4mejnjI",
+      "video_title": "いつになったらホルムズ海峡は解放されるのか？ Venus",
+      "video_url": "https://www.youtube.com/watch?v=4vmH4mejnjI",
+      "start": 237.0,
+      "end": 287.0,
+      "title": "分解で毒物が残る",
+      "note": "アルコールを分解する過程でホルムアルデヒドなどの毒物ができ、長く続けると体に悪いだけ。タバコのように正直に体に悪いと言うべき、という話",
+      "hook": "分解で毒物が出る"
+    },
+    {
+      "video_id": "4vmH4mejnjI",
+      "video_title": "いつになったらホルムズ海峡は解放されるのか？ Venus",
+      "video_url": "https://www.youtube.com/watch?v=4vmH4mejnjI",
+      "start": 341.0,
+      "end": 392.0,
+      "title": "養命酒でもアルコールはきつい",
+      "note": "養命酒は植物をアルコールで抽出して飲む構造。抽出後にアルコールを飛ばせばまだしも、アルコールベースのままでは健康訴求はきつい、という整理",
+      "hook": "抽出でもアルコールは残る"
+    },
+    {
+      "video_id": "jHWUy2IiZvs",
+      "video_title": "『過程は自分を納得させ、結果は自分以外を納得させる』MIRA BLONDE",
+      "video_url": "https://www.youtube.com/watch?v=jHWUy2IiZvs",
+      "start": 2305.0,
+      "end": 2356.0,
+      "title": "タレントビールは在庫リスクがない",
+      "note": "タレントとビールのコラボが流行る理由は、限定販売で在庫リスクを消し、売れた分の割合を払う形にすれば損しないから、という見立て",
+      "hook": "限定なら損しない"
+    },
+    {
+      "video_id": "skPyrH0WTzY",
+      "video_title": "「逮捕されるとハンドサインする人」MIRA BLONDE",
+      "video_url": "https://www.youtube.com/watch?v=skPyrH0WTzY",
+      "start": 6872.0,
+      "end": 7041.0,
+      "title": "締めは炭水化物と脂",
+      "note": "つまみなしでも飲めるが、締めは炭水化物と油が向く。辛いラーメンや麻婆など脂の濃いものが好き、フランスには辛い料理が少ない、という話",
+      "hook": "締めは炭水化物と脂"
+    },
+    {
+      "video_id": "23vSB2fXjc8",
+      "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+      "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+      "start": 5348.0,
+      "end": 5402.0,
+      "title": "刑務所のパンでビールが作れる",
+      "note": "Netflixのドキュメンタリーで、パンと水と熱があれば発酵させて酒が作れると紹介されていた。材料はビールと同じ小麦、という雑学",
+      "hook": "パンと熱で酒になる"
+    },
+    {
+      "video_id": "23vSB2fXjc8",
+      "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+      "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+      "start": 5501.0,
+      "end": 5562.0,
+      "title": "生きた酵母のビールは破裂する",
+      "note": "自然酵母が残った低アルコールビールは瓶内で発酵が進み破裂することがある。出荷前に酵母を殺すか、冷蔵庫管理が必要、という注意",
+      "hook": "酵母が残ると破裂する"
+    }
+  ]
+}
