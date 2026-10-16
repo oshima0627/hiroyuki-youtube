@@ -1136,7 +1136,7 @@
       "publish_at": null,
       "published_at": "2026-10-14T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1181,
+      "view_count": 1182,
       "duration": "PT43S"
     },
     "2026-10-16-am": {
@@ -1153,7 +1153,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1231,
+      "view_count": 1236,
       "duration": "PT41S"
     },
     "2026-08-22-ai": {
@@ -1633,7 +1633,7 @@
       "youtube_video_id": "Mw4CM0_gFhw",
       "url": "https://www.youtube.com/watch?v=Mw4CM0_gFhw",
       "title": "【ひろゆき】資格とキャリアの話7連発。エンジニアで優秀なやつは試験を受けません",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1644,8 +1644,8 @@
         "c2X5ZUIpRSk",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-16T09:30:00Z",
-      "published_at": "2026-10-15T05:32:28Z",
+      "publish_at": null,
+      "published_at": "2026-10-16T09:30:00Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT9M40S"
@@ -1683,9 +1683,9 @@
       ],
       "publish_at": "2026-10-16T22:00:00Z",
       "published_at": "2026-10-16T05:38:53Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT1M17S"
     }
   }
 }
