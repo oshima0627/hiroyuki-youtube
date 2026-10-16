@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-16 14:35 JST（日次ops: 10/17 酒と飲み物長尺を18:30予約）
+最終更新: 2026-10-16 15:05 JST（10/17 07:00 ショートを新規作成・予約。ショート在庫切れの補充）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,30 +24,33 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-16 14:13 日次）
+## 今回やったこと（2026-10-16 15:00 ショート補充）
 
-- 当日ショート 5UDR-8tVjAE（復職に引っ越し・07:00公開済）既存スキップ
-- 当日長尺 Mw4CM0_gFhw（資格とキャリア・10/16 18:30 JST＝09:30Z）既存スキップ
-- **新規** 翌日長尺 2026-10-17-sake → id0Ju8MPkBU「酒と飲み物の話7連発。酒は百薬の長は大嘘です」10:10、18:30 JST（09:30Z）予約、thumbnail_set=true（差分1.0で確認）
-- フルで見る: u_vN9xYpzyI Di-K-jhqgMg→hZCbbUwQVOI（昨日ショート→昨日長尺）
-- エンゲージメント: 概要欄1行目・冒頭/終盤テロップは新規長尺に自動入り。Studio関連動画・コメント固定は夕方ルーチン
-- 未使用ブロック再生成: work/_unused_1016.txt（852件）
-- cookie無し fetch_clips 7区間成功（ボックス単独）
+- 予約済みショート在庫が 10/16 07:00 分で切れていたため、10/17 07:00 JST 分を1本作成
+- 素材: 未使用ブロック再生成 work/_unused_1016b.txt（840件）から 4vmH4mejnjI 7755.2-7831.6（映画館で子どもが前の席を蹴って注意された相談。政治なし）
+- recipes/shorts/2026-10-17-am.json → build_short.py → `PYTHONPATH=. .venv/bin/python scripts/publish_shorts.py`
+  → **hxzDGMs-aWE**「【ひろゆき】子どもが映画館で前の席を蹴ったら【切り抜き】」76秒、private→2026-10-16T22:00Z（10/17 07:00 JST）
+- 問いかけ（テロップ最後3.5秒＋概要欄1行目）:「謝ったらさっさとその場を離れる」この考え方、アリ？ナシ？
+- フルで見る: parent=2026-10-16-shikaku → Mw4CM0_gFhw（10/16 18:30 JST 公開）。footer は「長尺の解説動画は概要欄から」（親と題材が違うため本編名を書かない）
+- 注意: publish_shorts.py は **PYTHONPATH=. 無しだと** upload_youtube.with_engagement_line の `from scripts.engagement` で ModuleNotFoundError（アップロード前に止まる）。PYTHONPATH=. を付けて実行する
 
-## 前回やったこと（2026-10-15 14:13 日次）
+## 前回やったこと（2026-10-16 14:13 日次）
 
-- 翌日長尺 Mw4CM0_gFhw（資格とキャリア・10/16 18:30）作成
-- 当日短長は既存スキップ
+- 当日ショート 5UDR-8tVjAE・当日長尺 Mw4CM0_gFhw は既存スキップ
+- 翌日長尺 2026-10-17-sake → id0Ju8MPkBU「酒と飲み物の話7連発」18:30 JST（09:30Z）予約
+- フルで見る: u_vN9xYpzyI → hZCbbUwQVOI
 
 ## 検証済みの事実
 
-- status（2026-10-16 14:35 JST）: Mw4CM0_gFhw private→2026-10-16T09:30Z 9M40S、id0Ju8MPkBU private→2026-10-17T09:30Z、5UDR-8tVjAE public
+- status（2026-10-16 15:00 JST）: Mw4CM0_gFhw private→2026-10-16T09:30Z 9M40S、id0Ju8MPkBU private→2026-10-17T09:30Z、hxzDGMs-aWE private→2026-10-16T22:00Z（処理中）、5UDR-8tVjAE public
+- hxzDGMs-aWE: API で channelId=UCqK3KYqEeeJiAWr4nSryJYQ、publishAt 2026-10-16T22:00:00Z、概要欄1行目の問いかけと Mw4CM0_gFhw へのリンクを確認。フレーム抽出（9点＋終盤）で崩れなし（顔が左端に寄る瞬間はあるが切れていない）、末尾は無音区間で切れている
 - u_vN9xYpzyI description が hZCbbUwQVOI を指す
 - cookie 無し fetch_clips 7区間成功
 
 ## 次にやること
 
-1. 10/18 以降の長尺・ショート在庫（候補: ペットと動物、見た目と美容。_unused 再生成してから選ぶ）
+1. **10/18 以降のショート在庫が0**（予約済みは 10/17 07:00 の hxzDGMs-aWE のみ）。10/18 長尺も未作成。候補ショート: 賃貸の結露と原状回復（4vmH4mejnjI 4922-4986）、結婚式前のジム（0ojMhUyiHB4 1011-1102）など _unused_1016b.txt から
+1b. 翌日の日次で hxzDGMs-aWE の「フルで見る」を 10/17 長尺 id0Ju8MPkBU に更新（公開後のみ。work/_update_short_full.py hxzDGMs-aWE id0Ju8MPkBU）
 2. 夕方: Mw4CM0_gFhw（10/16 18:30 公開）に `engage.py --post Mw4CM0_gFhw` → Studio で固定・終了画面・関連動画（当日ショート 5UDR-8tVjAE ← 当日長尺 Mw4CM0_gFhw）
 3. cookie 無し取得が再び落ちる場合のみ cookies.txt を検討
 

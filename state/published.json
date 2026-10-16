@@ -1666,8 +1666,26 @@
       ],
       "publish_at": "2026-10-17T09:30:00Z",
       "published_at": "2026-10-16T05:33:08Z",
+      "upload_status": "processed",
+      "duration": "PT10M11S",
+      "view_count": 0
+    },
+    "2026-10-17-am": {
+      "youtube_video_id": "hxzDGMs-aWE",
+      "url": "https://www.youtube.com/watch?v=hxzDGMs-aWE",
+      "title": "【ひろゆき】子どもが映画館で前の席を蹴ったら【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "4vmH4mejnjI"
+      ],
+      "publish_at": "2026-10-16T22:00:00Z",
+      "published_at": "2026-10-16T05:38:53Z",
       "upload_status": "uploaded",
-      "duration": "PT10M11S"
+      "view_count": 0,
+      "duration": "P0D"
     }
   }
 }

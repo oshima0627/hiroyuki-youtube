@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-17-am",
+ "parent": "2026-10-16-shikaku",
+ "publish_at": "2026-10-16T22:00:00Z",
+ "title": "【ひろゆき】子どもが映画館で前の席を蹴ったら【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "映画館",
+  "マナー",
+  "子育て",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "4vmH4mejnjI",
+  "video_title": "いつになったらホルムズ海峡は解放されるのか？ Venus",
+  "video_url": "https://www.youtube.com/watch?v=4vmH4mejnjI",
+  "start": 7755.0,
+  "end": 7833.0,
+  "title": "映画館で子どもが前の席を蹴って注意された",
+  "note": "謝ったこと自体は正しいとしたうえで、その場に居続けたから文句が続いたと見ている。悪い時は謝ってさっさと離れる、というトラブルを長引かせない技術の話になっている",
+  "hook": "子どもが映画館で前の席を蹴ったら"
+ },
+ "short": {
+  "start": 0.2,
+  "end": 76.6,
+  "hook": "子どもが映画館で前の席を蹴ったら",
+  "hook_px": 64,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「謝ったらさっさとその場を離れる」この考え方、アリ？ナシ？"
+ }
+}
