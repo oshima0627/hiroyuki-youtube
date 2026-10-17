@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2074,
+      "view_count": 2075,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1850,
+      "view_count": 1852,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1119,7 +1119,7 @@
       "publish_at": null,
       "published_at": "2026-10-13T22:00:05Z",
       "upload_status": "processed",
-      "view_count": 1061,
+      "view_count": 1063,
       "duration": "PT52S"
     },
     "2026-10-15-am": {
@@ -1136,7 +1136,7 @@
       "publish_at": null,
       "published_at": "2026-10-14T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1299,
+      "view_count": 1300,
       "duration": "PT43S"
     },
     "2026-10-16-am": {
@@ -1626,7 +1626,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT8M22S"
     },
     "2026-10-16-shikaku": {
@@ -1654,7 +1654,7 @@
       "youtube_video_id": "id0Ju8MPkBU",
       "url": "https://www.youtube.com/watch?v=id0Ju8MPkBU",
       "title": "【ひろゆき】酒と飲み物の話7連発。酒は百薬の長は大嘘です",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1664,8 +1664,8 @@
         "jHWUy2IiZvs",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-17T09:30:00Z",
-      "published_at": "2026-10-16T05:33:08Z",
+      "publish_at": null,
+      "published_at": "2026-10-17T09:30:34Z",
       "upload_status": "processed",
       "duration": "PT10M11S",
       "view_count": 0
@@ -1684,7 +1684,7 @@
       "publish_at": null,
       "published_at": "2026-10-16T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1130,
+      "view_count": 1199,
       "duration": "PT1M17S"
     },
     "2026-10-18-am": {
@@ -1718,9 +1718,9 @@
       ],
       "publish_at": "2026-10-18T09:30:00Z",
       "published_at": "2026-10-17T05:30:32Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT11M21S"
     }
   }
 }
