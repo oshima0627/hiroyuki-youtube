@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-18-am",
+ "parent": "2026-10-17-sake",
+ "publish_at": "2026-10-17T22:00:00Z",
+ "title": "【ひろゆき】結露の壁紙で16万円請求されたら【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "賃貸",
+  "原状回復",
+  "引っ越し",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "4vmH4mejnjI",
+  "video_title": "いつになったらホルムズ海峡は解放されるのか？ Venus",
+  "video_url": "https://www.youtube.com/watch?v=4vmH4mejnjI",
+  "start": 4921.0,
+  "end": 4987.0,
+  "title": "賃貸の結露で壁紙の全面張り替えを請求された",
+  "note": "生活の中で普通に起きた傷みは借りた人が払う必要はない、という国の指針を挙げ、過失がなければ結露も自然損耗と言い張れる、迷うなら専門家に相談を、という話",
+  "hook": "結露の壁紙で16万円請求されたら"
+ },
+ "short": {
+  "start": 0.5,
+  "end": 65.5,
+  "hook": "結露の壁紙で16万円請求されたら",
+  "hook_px": 64,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「結露の修繕費は1円も払わない」この考え方、アリ？ナシ？"
+ }
+}

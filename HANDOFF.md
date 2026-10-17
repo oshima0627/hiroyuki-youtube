@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-16 15:05 JST（10/17 07:00 ショートを新規作成・予約。ショート在庫切れの補充）
+最終更新: 2026-10-17 15:10 JST（14:13 日次: 10/18 長尺と 10/18 07:00 ショートを作成・予約）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,15 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-16 15:00 ショート補充）
+## 今回やったこと（2026-10-17 14:13 日次）
+
+- 当日ショート hxzDGMs-aWE（07:00 公開済）・当日長尺 id0Ju8MPkBU（18:30 予約済）は既存でスキップ
+- 翌日長尺 recipes/2026-10-18-mitame.json → **k5hQ5NpJHQU**「見た目とブランドの話7連発。ジム通いはブランド消費です」11:20、private→2026-10-18T09:30Z（10/18 18:30 JST）、サムネ API 設定済み。未使用ブロック一覧は work/_unused_1017.txt
+- 翌日ショート recipes/shorts/2026-10-18-am.json → **UlaZRnjIeXA**「結露の壁紙で16万円請求されたら」65秒、private→2026-10-17T22:00Z（10/18 07:00 JST）。フルで見る→id0Ju8MPkBU（parent 2026-10-17-sake）
+  - ショート単体レシピは fetch_clips.py が拾わない（0区間）。clips:[clip] の一時レシピを作って fetch した
+- フルで見る: 5UDR-8tVjAE → Mw4CM0_gFhw に更新（API で確認）
+
+## 前々回やったこと（2026-10-16 15:00 ショート補充）
 
 - 予約済みショート在庫が 10/16 07:00 分で切れていたため、10/17 07:00 JST 分を1本作成
 - 素材: 未使用ブロック再生成 work/_unused_1016b.txt（840件）から 4vmH4mejnjI 7755.2-7831.6（映画館で子どもが前の席を蹴って注意された相談。政治なし）
@@ -49,8 +57,9 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. **10/18 以降のショート在庫が0**（予約済みは 10/17 07:00 の hxzDGMs-aWE のみ）。10/18 長尺も未作成。候補ショート: 賃貸の結露と原状回復（4vmH4mejnjI 4922-4986）、結婚式前のジム（0ojMhUyiHB4 1011-1102）など _unused_1016b.txt から
-1b. 翌日の日次で hxzDGMs-aWE の「フルで見る」を 10/17 長尺 id0Ju8MPkBU に更新（公開後のみ。work/_update_short_full.py hxzDGMs-aWE id0Ju8MPkBU）
+1. 10/19 以降の長尺・ショートは未作成（次の日次で作る）
+1b. 10/18 の日次で hxzDGMs-aWE の「フルで見る」を 10/17 長尺 id0Ju8MPkBU に更新（work/_update_short_full.py hxzDGMs-aWE id0Ju8MPkBU）
+1c. 夕方 10/17: 当日ショート hxzDGMs-aWE ← 当日長尺 id0Ju8MPkBU の関連動画・engage
 2. 夕方: Mw4CM0_gFhw（10/16 18:30 公開）に `engage.py --post Mw4CM0_gFhw` → Studio で固定・終了画面・関連動画（当日ショート 5UDR-8tVjAE ← 当日長尺 Mw4CM0_gFhw）
 3. cookie 無し取得が再び落ちる場合のみ cookies.txt を検討
 
