@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-17 15:10 JST（14:13 日次: 10/18 長尺と 10/18 07:00 ショートを作成・予約）
+最終更新: 2026-10-18 19:20 JST（10/18 14:13 日次の続き: 10/19 長尺と 10/19 07:00 ショートを作成・予約）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,22 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-17 14:13 日次）
+## 今回やったこと（2026-10-18 14:13 日次 → 途中停止 → 19:00 に再開して完了）
+
+- 止まった原因: 14:18〜15:02 の fetch_clips.py（cookie 無し）で jmADUo9Vcho 162-286 / jPOui7xHeOw 4585-4642 が
+  「ログインして bot ではないことを確認してください」（YouTube の bot 判定）で3回リトライ後に失敗し exit 1。
+  1回目は 25 分の timeout で Terminated(143)。ショート素材 4vmH4mejnjI 4413-4471 も未取得のまま止まった。
+  18:50 の再実行でも同じ bot 判定。player_client=web_embedded はフォーマット0、android_vr は 360p のみ
+- 対処: PC（ASUS_i9）で `python scripts\fetch_clips.py work\tmp-1019-fetch.json`（Firefox cookie、未取得3区間だけの一時レシピ）→ CopyToBox で work/clips へ（1080p）
+- 翌日長尺 recipes/2026-10-19-suimin.json → **HNNmVJ2MAls**「睡眠の話7連発。目覚ましで起きる人は睡眠が足りていません」13:18、private→2026-10-19T09:30Z（10/19 18:30 JST）。
+  thumb.at は 15（冒頭カード追加前の時刻で顔が崩れた）→ 90 に変更（腕時計を見るカット）。サムネ API 反映を差分 0.85 で確認
+- 翌日ショート recipes/shorts/2026-10-19-am.json → **ERaQcCP2p2I**「会社のカードを私用した部長が逃げたら」56秒、private→2026-10-18T22:00Z（10/19 07:00 JST）。
+  フルで見る→k5hQ5NpJHQU（parent 2026-10-18-mitame、10/18 18:30 公開済み）。問いかけ「「回収できないなら泣き寝入りも合理的」この考え方、アリ？ナシ？」
+  冒頭〜15秒はスパチャを読んで下を向くので顔の下半分が黒帯側に切れる（build_short の自動クロップのまま）
+- hxzDGMs-aWE のフルで見るは既に id0Ju8MPkBU（更新不要、API で確認）
+- 未使用ブロック一覧は work/_unused_1018.txt
+
+## 前回やったこと（2026-10-17 14:13 日次）
 
 - 当日ショート hxzDGMs-aWE（07:00 公開済）・当日長尺 id0Ju8MPkBU（18:30 予約済）は既存でスキップ
 - 翌日長尺 recipes/2026-10-18-mitame.json → **k5hQ5NpJHQU**「見た目とブランドの話7連発。ジム通いはブランド消費です」11:20、private→2026-10-18T09:30Z（10/18 18:30 JST）、サムネ API 設定済み。未使用ブロック一覧は work/_unused_1017.txt
@@ -32,7 +47,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
   - ショート単体レシピは fetch_clips.py が拾わない（0区間）。clips:[clip] の一時レシピを作って fetch した
 - フルで見る: 5UDR-8tVjAE → Mw4CM0_gFhw に更新（API で確認）
 
-## 前々回やったこと（2026-10-16 15:00 ショート補充）
+## 過去（2026-10-16 15:00 ショート補充）
 
 - 予約済みショート在庫が 10/16 07:00 分で切れていたため、10/17 07:00 JST 分を1本作成
 - 素材: 未使用ブロック再生成 work/_unused_1016b.txt（840件）から 4vmH4mejnjI 7755.2-7831.6（映画館で子どもが前の席を蹴って注意された相談。政治なし）
@@ -42,7 +57,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - フルで見る: parent=2026-10-16-shikaku → Mw4CM0_gFhw（10/16 18:30 JST 公開）。footer は「長尺の解説動画は概要欄から」（親と題材が違うため本編名を書かない）
 - 注意: publish_shorts.py は **PYTHONPATH=. 無しだと** upload_youtube.with_engagement_line の `from scripts.engagement` で ModuleNotFoundError（アップロード前に止まる）。PYTHONPATH=. を付けて実行する
 
-## 前回やったこと（2026-10-16 14:13 日次）
+## 過去（2026-10-16 14:13 日次）
 
 - 当日ショート 5UDR-8tVjAE・当日長尺 Mw4CM0_gFhw は既存スキップ
 - 翌日長尺 2026-10-17-sake → id0Ju8MPkBU「酒と飲み物の話7連発」18:30 JST（09:30Z）予約
@@ -57,9 +72,9 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/19 以降の長尺・ショートは未作成（次の日次で作る）
-1b. 10/18 の日次で hxzDGMs-aWE の「フルで見る」を 10/17 長尺 id0Ju8MPkBU に更新（work/_update_short_full.py hxzDGMs-aWE id0Ju8MPkBU）
-1c. 夕方 10/17: 当日ショート hxzDGMs-aWE ← 当日長尺 id0Ju8MPkBU の関連動画・engage
+1. 10/20 以降の長尺・ショートは未作成（次の日次で作る）。cookie 無し取得が bot 判定で落ちたら最初から PC 取得に切り替える
+1b. 10/19 の日次で UlaZRnjIeXA（10/18 ショート）の「フルで見る」を 10/18 長尺 k5hQ5NpJHQU に更新するか確認（work/_update_short_full.py UlaZRnjIeXA k5hQ5NpJHQU）
+1c. 夕方 10/19: HNNmVJ2MAls 公開後に engage・Studio（固定・終了画面）、ショート ERaQcCP2p2I ← k5hQ5NpJHQU の関連動画
 2. 夕方: Mw4CM0_gFhw（10/16 18:30 公開）に `engage.py --post Mw4CM0_gFhw` → Studio で固定・終了画面・関連動画（当日ショート 5UDR-8tVjAE ← 当日長尺 Mw4CM0_gFhw）
 3. cookie 無し取得が再び落ちる場合のみ cookies.txt を検討
 

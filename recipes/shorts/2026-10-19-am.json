@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-19-am",
+ "parent": "2026-10-18-mitame",
+ "publish_at": "2026-10-18T22:00:00Z",
+ "title": "【ひろゆき】会社のカードを私用した部長が逃げたら【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "会社",
+  "横領",
+  "退職",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "4vmH4mejnjI",
+  "video_title": "いつになったらホルムズ海峡は解放されるのか？ Venus",
+  "video_url": "https://www.youtube.com/watch?v=4vmH4mejnjI",
+  "start": 4413.0,
+  "end": 4471.0,
+  "title": "会社のカードを私用して辞めた部長にどこまで責任を問えるか",
+  "note": "横領として刑事事件にはできるが、警察や裁判に時間を取られても相手にお金が無ければ回収できない。仕事に使ったと言い張られると証明も難しく、泣き寝入りになりがち、という現実の話",
+  "hook": "会社の金を私用した部長が逃げたら"
+ },
+ "short": {
+  "start": 1.5,
+  "end": 57.0,
+  "hook": "会社の金を私用した部長が逃げたら",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「回収できないなら泣き寝入りも合理的」この考え方、アリ？ナシ？"
+ }
+}

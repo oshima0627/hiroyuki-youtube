@@ -1701,7 +1701,7 @@
       "publish_at": null,
       "published_at": "2026-10-17T22:00:20Z",
       "upload_status": "processed",
-      "view_count": 1095,
+      "view_count": 1097,
       "duration": "PT1M6S"
     },
     "2026-10-18-mitame": {
@@ -1721,6 +1721,45 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT11M21S"
+    },
+    "2026-10-19-suimin": {
+      "youtube_video_id": "HNNmVJ2MAls",
+      "url": "https://www.youtube.com/watch?v=HNNmVJ2MAls",
+      "title": "【ひろゆき】睡眠の話7連発。目覚ましで起きる人は睡眠が足りていません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "23vSB2fXjc8",
+        "4vmH4mejnjI",
+        "M7KWrHANxHs",
+        "daulqJwmooE",
+        "jPOui7xHeOw",
+        "jmADUo9Vcho"
+      ],
+      "publish_at": "2026-10-19T09:30:00Z",
+      "published_at": "2026-10-18T10:01:36Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT13M18S"
+    },
+    "2026-10-19-am": {
+      "youtube_video_id": "ERaQcCP2p2I",
+      "url": "https://www.youtube.com/watch?v=ERaQcCP2p2I",
+      "title": "【ひろゆき】会社のカードを私用した部長が逃げたら【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "4vmH4mejnjI"
+      ],
+      "publish_at": "2026-10-18T22:00:00Z",
+      "published_at": "2026-10-18T10:02:42Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT56S"
     }
   }
 }
