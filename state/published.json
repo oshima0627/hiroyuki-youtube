@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1311,
+      "view_count": 1314,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1866,
+      "view_count": 1869,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1366,
+      "view_count": 1368,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1684,7 +1684,7 @@
       "publish_at": null,
       "published_at": "2026-10-16T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1210,
+      "view_count": 1211,
       "duration": "PT1M17S"
     },
     "2026-10-18-am": {
@@ -1726,7 +1726,7 @@
       "youtube_video_id": "HNNmVJ2MAls",
       "url": "https://www.youtube.com/watch?v=HNNmVJ2MAls",
       "title": "【ひろゆき】睡眠の話7連発。目覚ましで起きる人は睡眠が足りていません",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1738,8 +1738,8 @@
         "jPOui7xHeOw",
         "jmADUo9Vcho"
       ],
-      "publish_at": "2026-10-19T09:30:00Z",
-      "published_at": "2026-10-18T10:01:36Z",
+      "publish_at": null,
+      "published_at": "2026-10-19T09:30:00Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT13M18S"
@@ -1758,7 +1758,7 @@
       "publish_at": null,
       "published_at": "2026-10-18T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 948,
+      "view_count": 959,
       "duration": "PT56S"
     },
     "2026-10-20-am": {
@@ -1793,9 +1793,9 @@
       ],
       "publish_at": "2026-10-20T09:30:00Z",
       "published_at": "2026-10-19T05:55:31Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT14M10S"
     }
   }
 }
