@@ -1,0 +1,30 @@
+{
+ "id": "2026-10-20-am",
+ "parent": "2026-10-19-suimin",
+ "publish_at": "2026-10-19T22:00:00Z",
+ "title": "【ひろゆき】かまってちゃんの夫にもう疲れたら【切り抜き】",
+ "tags": ["ひろゆき", "切り抜き", "解説", "夫婦", "かまってちゃん", "カウンセリング", "Shorts"],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "O0YEy2NB3os",
+  "video_title": "「獅子は我が子を千尋の谷に落とす、現代で通じるか？」OX IPA",
+  "video_url": "https://www.youtube.com/watch?v=O0YEy2NB3os",
+  "start": 6094.5,
+  "end": 6163.0,
+  "title": "かまってちゃんの夫の愚痴を聞くのに疲れた妻はどうするか",
+  "note": "聞きたくないと突き放すより、自分も辛いから一緒に来てほしいと頼んでカウンセリングへ連れて行き、事情は先に伝えてプロに任せる。夫を説得しようとしないのがコツ、という提案",
+  "hook": "かまってちゃんの夫に疲れたら"
+ },
+ "short": {
+  "start": 1.5,
+  "end": 67.5,
+  "hook": "かまってちゃんの夫に疲れたら",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「夫を説得せず自分の悩みとして相談に誘う」この考え方、アリ？ナシ？"
+ }
+}

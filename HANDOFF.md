@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-18 19:20 JST（10/18 14:13 日次の続き: 10/19 長尺と 10/19 07:00 ショートを作成・予約）
+最終更新: 2026-10-19 15:00 JST（10/19 14:13 日次: 10/20 長尺と 10/20 07:00 ショートを作成・予約）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,21 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-18 14:13 日次 → 途中停止 → 19:00 に再開して完了）
+## 今回やったこと（2026-10-19 14:13 日次）
+
+- 当日ショート ERaQcCP2p2I（07:00 公開済）・当日長尺 HNNmVJ2MAls（18:30 予約済）は既存でスキップ
+- フルで見る: UlaZRnjIeXA（10/18 ショート）を id0Ju8MPkBU → k5hQ5NpJHQU（10/18 長尺）に更新（API で確認）
+- 取得: cookie 無しの box fetch で 0ojMhUyiHB4 5区間と O0YEy2NB3os 1区間は成功、M7KWrHANxHs 4665-4846 / skPyrH0WTzY 5617-5658 は
+  bot 判定で失敗 → PC（ASUS_i9）で work/tmp-1020-pc.json を fetch（Firefox cookie）→ CopyToBox
+- 翌日長尺 recipes/2026-10-20-uchu.json → **aM46O8fw5JU**「宇宙とAIの話7連発。宇宙人が見つからないのは文明が自滅したからかも」14:10、
+  private→2026-10-20T09:30Z（10/20 18:30 JST）。thumb.at=60（ピースのカット）、thumbnail_set true。
+  問いかけ「「AIに禁止ルールは教え込めない」この考え方、アリ？ナシ？」。武漢の研究所の話（0ojMhUyiHB4 4333以降）は政治寄りなので切った
+- 翌日ショート recipes/shorts/2026-10-20-am.json → **-MKj2GDwPzQ**「かまってちゃんの夫にもう疲れたら」67秒、private→2026-10-19T22:00Z（10/20 07:00 JST）。
+  フルで見る→HNNmVJ2MAls（parent 2026-10-19-suimin）。問いかけ「「夫を説得せず自分の悩みとして相談に誘う」この考え方、アリ？ナシ？」
+  冒頭の相談読み上げ中はうつむくので顔が下に切れる（元配信のカードの位置で直せない）
+- 未使用ブロック一覧は work/_unused_1019.txt
+
+## 前回やったこと（2026-10-18 14:13 日次 → 途中停止 → 19:00 に再開して完了）
 
 - 止まった原因: 14:18〜15:02 の fetch_clips.py（cookie 無し）で jmADUo9Vcho 162-286 / jPOui7xHeOw 4585-4642 が
   「ログインして bot ではないことを確認してください」（YouTube の bot 判定）で3回リトライ後に失敗し exit 1。
@@ -39,7 +53,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - hxzDGMs-aWE のフルで見るは既に id0Ju8MPkBU（更新不要、API で確認）
 - 未使用ブロック一覧は work/_unused_1018.txt
 
-## 前回やったこと（2026-10-17 14:13 日次）
+## 過去（2026-10-17 14:13 日次）
 
 - 当日ショート hxzDGMs-aWE（07:00 公開済）・当日長尺 id0Ju8MPkBU（18:30 予約済）は既存でスキップ
 - 翌日長尺 recipes/2026-10-18-mitame.json → **k5hQ5NpJHQU**「見た目とブランドの話7連発。ジム通いはブランド消費です」11:20、private→2026-10-18T09:30Z（10/18 18:30 JST）、サムネ API 設定済み。未使用ブロック一覧は work/_unused_1017.txt
@@ -72,11 +86,11 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/20 以降の長尺・ショートは未作成（次の日次で作る）。cookie 無し取得が bot 判定で落ちたら最初から PC 取得に切り替える
-1b. 10/19 の日次で UlaZRnjIeXA（10/18 ショート）の「フルで見る」を 10/18 長尺 k5hQ5NpJHQU に更新するか確認（work/_update_short_full.py UlaZRnjIeXA k5hQ5NpJHQU）
-1c. 夕方 10/19: HNNmVJ2MAls 公開後に engage・Studio（固定・終了画面）、ショート ERaQcCP2p2I ← k5hQ5NpJHQU の関連動画
-2. 夕方: Mw4CM0_gFhw（10/16 18:30 公開）に `engage.py --post Mw4CM0_gFhw` → Studio で固定・終了画面・関連動画（当日ショート 5UDR-8tVjAE ← 当日長尺 Mw4CM0_gFhw）
-3. cookie 無し取得が再び落ちる場合のみ cookies.txt を検討
+1. 10/21 以降の長尺・ショートは未作成（次の日次で作る）。cookie 無し取得は動画によって bot 判定で落ちる。落ちた区間だけ PC で取得
+1b. 10/20 の日次で ERaQcCP2p2I（10/19 ショート）の「フルで見る」を 10/19 長尺 HNNmVJ2MAls に更新（work/_update_short_full.py ERaQcCP2p2I HNNmVJ2MAls）
+1c. 夕方 10/19: HNNmVJ2MAls 公開後に engage・Studio（固定・終了画面）、当日ショート ERaQcCP2p2I ← HNNmVJ2MAls の関連動画
+1d. 10/18 の Studio 作業（UlaZRnjIeXA ← k5hQ5NpJHQU の関連動画・固定2件・終了画面）は Google ログイン切れで未実施のまま
+2. cookie 無し取得が全滅する場合のみ cookies.txt を検討
 
 ## 触ってはいけないところ
 

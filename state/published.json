@@ -101,7 +101,7 @@
       "publish_at": null,
       "published_at": "2026-08-18T03:00:32Z",
       "upload_status": "processed",
-      "view_count": 403,
+      "view_count": 405,
       "duration": "PT13M"
     },
     "2026-08-19-shigoto2": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1469,
+      "view_count": 1470,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -520,7 +520,7 @@
       "publish_at": null,
       "published_at": "2026-09-09T22:00:28Z",
       "upload_status": "processed",
-      "view_count": 1323,
+      "view_count": 1325,
       "duration": "PT1M3S"
     },
     "2026-09-11-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2077,
+      "view_count": 2078,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1860,
+      "view_count": 1866,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1174,7 +1174,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T03:00:17Z",
       "upload_status": "processed",
-      "view_count": 4,
+      "view_count": 5,
       "duration": "PT12M16S"
     },
     "2026-09-07-gaishoku": {
@@ -1605,7 +1605,7 @@
       "publish_at": null,
       "published_at": "2026-10-14T09:30:03Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 8,
       "duration": "PT13M31S"
     },
     "2026-10-15-kuruma": {
@@ -1626,7 +1626,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 3,
+      "view_count": 4,
       "duration": "PT8M22S"
     },
     "2026-10-16-shikaku": {
@@ -1701,7 +1701,7 @@
       "publish_at": null,
       "published_at": "2026-10-17T22:00:20Z",
       "upload_status": "processed",
-      "view_count": 1097,
+      "view_count": 1092,
       "duration": "PT1M6S"
     },
     "2026-10-18-mitame": {
@@ -1740,7 +1740,7 @@
       ],
       "publish_at": "2026-10-19T09:30:00Z",
       "published_at": "2026-10-18T10:01:36Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT13M18S"
     },
@@ -1748,18 +1748,54 @@
       "youtube_video_id": "ERaQcCP2p2I",
       "url": "https://www.youtube.com/watch?v=ERaQcCP2p2I",
       "title": "【ひろゆき】会社のカードを私用した部長が逃げたら【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "4vmH4mejnjI"
       ],
-      "publish_at": "2026-10-18T22:00:00Z",
-      "published_at": "2026-10-18T10:02:42Z",
+      "publish_at": null,
+      "published_at": "2026-10-18T22:00:29Z",
+      "upload_status": "processed",
+      "view_count": 948,
+      "duration": "PT56S"
+    },
+    "2026-10-20-am": {
+      "youtube_video_id": "-MKj2GDwPzQ",
+      "url": "https://www.youtube.com/watch?v=-MKj2GDwPzQ",
+      "title": "【ひろゆき】かまってちゃんの夫にもう疲れたら【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "O0YEy2NB3os"
+      ],
+      "publish_at": "2026-10-19T22:00:00Z",
+      "published_at": "2026-10-19T05:50:18Z",
       "upload_status": "processed",
       "view_count": 0,
-      "duration": "PT56S"
+      "duration": "PT1M7S"
+    },
+    "2026-10-20-uchu": {
+      "youtube_video_id": "aM46O8fw5JU",
+      "url": "https://www.youtube.com/watch?v=aM46O8fw5JU",
+      "title": "【ひろゆき】宇宙とAIの話7連発。宇宙人が見つからないのは文明が自滅したからかも",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "0ojMhUyiHB4",
+        "M7KWrHANxHs",
+        "skPyrH0WTzY"
+      ],
+      "publish_at": "2026-10-20T09:30:00Z",
+      "published_at": "2026-10-19T05:55:31Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "P0D"
     }
   }
 }
