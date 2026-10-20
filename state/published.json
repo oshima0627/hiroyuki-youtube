@@ -1796,6 +1796,42 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M10S"
+    },
+    "2026-10-21-machi": {
+      "youtube_video_id": "fDO58HAngXo",
+      "url": "https://www.youtube.com/watch?v=fDO58HAngXo",
+      "title": "【ひろゆき】街の話7連発。エリートが街を作ると個性が消えます",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "4vmH4mejnjI",
+        "Fydc3YFumow",
+        "VYJ-zTB8TVY"
+      ],
+      "publish_at": "2026-10-21T09:30:00Z",
+      "published_at": "2026-10-20T05:46:22Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT14M25S"
+    },
+    "2026-10-21-am": {
+      "youtube_video_id": "wb3NmCaYikw",
+      "url": "https://www.youtube.com/watch?v=wb3NmCaYikw",
+      "title": "【ひろゆき】運動会の徒競走で1位を取る裏ワザ【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "O0YEy2NB3os"
+      ],
+      "publish_at": "2026-10-20T22:00:00Z",
+      "published_at": "2026-10-20T05:47:34Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "P0D"
     }
   }
 }
