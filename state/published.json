@@ -101,7 +101,7 @@
       "publish_at": null,
       "published_at": "2026-08-18T03:00:32Z",
       "upload_status": "processed",
-      "view_count": 407,
+      "view_count": 408,
       "duration": "PT13M"
     },
     "2026-08-19-shigoto2": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1457,
+      "view_count": 1458,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1870,
+      "view_count": 1871,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1583,7 +1583,7 @@
       "publish_at": null,
       "published_at": "2026-10-13T09:30:13Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 2,
       "duration": "PT11M54S"
     },
     "2026-10-14-ryokou": {
@@ -1758,7 +1758,7 @@
       "publish_at": null,
       "published_at": "2026-10-18T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 959,
+      "view_count": 967,
       "duration": "PT56S"
     },
     "2026-10-20-am": {
@@ -1775,14 +1775,14 @@
       "publish_at": null,
       "published_at": "2026-10-19T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 1132,
+      "view_count": 1179,
       "duration": "PT1M7S"
     },
     "2026-10-20-uchu": {
       "youtube_video_id": "aM46O8fw5JU",
       "url": "https://www.youtube.com/watch?v=aM46O8fw5JU",
       "title": "【ひろゆき】宇宙とAIの話7連発。宇宙人が見つからないのは文明が自滅したからかも",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1791,8 +1791,8 @@
         "M7KWrHANxHs",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-20T09:30:00Z",
-      "published_at": "2026-10-19T05:55:31Z",
+      "publish_at": null,
+      "published_at": "2026-10-20T09:30:10Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M10S"
@@ -1812,7 +1812,7 @@
       ],
       "publish_at": "2026-10-21T09:30:00Z",
       "published_at": "2026-10-20T05:46:22Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M25S"
     },
@@ -1829,9 +1829,9 @@
       ],
       "publish_at": "2026-10-20T22:00:00Z",
       "published_at": "2026-10-20T05:47:34Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT1M11S"
     }
   }
 }
