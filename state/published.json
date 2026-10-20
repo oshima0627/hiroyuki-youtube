@@ -101,7 +101,7 @@
       "publish_at": null,
       "published_at": "2026-08-18T03:00:32Z",
       "upload_status": "processed",
-      "view_count": 405,
+      "view_count": 407,
       "duration": "PT13M"
     },
     "2026-08-19-shigoto2": {
@@ -196,7 +196,7 @@
       "publish_at": null,
       "published_at": "2026-08-20T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT42S"
     },
     "2026-08-21-pm": {
@@ -520,7 +520,7 @@
       "publish_at": null,
       "published_at": "2026-09-09T22:00:28Z",
       "upload_status": "processed",
-      "view_count": 1325,
+      "view_count": 1327,
       "duration": "PT1M3S"
     },
     "2026-09-11-am": {
@@ -588,7 +588,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T22:00:19Z",
       "upload_status": "processed",
-      "view_count": 1343,
+      "view_count": 1345,
       "duration": "PT1M5S"
     },
     "2026-09-15-am": {
@@ -690,7 +690,7 @@
       "publish_at": null,
       "published_at": "2026-09-19T22:00:24Z",
       "upload_status": "processed",
-      "view_count": 1282,
+      "view_count": 1283,
       "duration": "PT42S"
     },
     "2026-09-21-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1869,
+      "view_count": 1870,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -983,7 +983,7 @@
       "publish_at": null,
       "published_at": "2026-10-05T22:00:10Z",
       "upload_status": "processed",
-      "view_count": 1131,
+      "view_count": 1133,
       "duration": "PT59S"
     },
     "2026-10-07-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1368,
+      "view_count": 1374,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1153,7 +1153,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1236,
+      "view_count": 1237,
       "duration": "PT41S"
     },
     "2026-08-22-ai": {
@@ -1563,7 +1563,7 @@
       "publish_at": null,
       "published_at": "2026-10-12T09:30:04Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT12M47S"
     },
     "2026-10-13-bouhan": {
@@ -1605,7 +1605,7 @@
       "publish_at": null,
       "published_at": "2026-10-14T09:30:03Z",
       "upload_status": "processed",
-      "view_count": 8,
+      "view_count": 10,
       "duration": "PT13M31S"
     },
     "2026-10-15-kuruma": {
@@ -1626,7 +1626,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 4,
+      "view_count": 5,
       "duration": "PT8M22S"
     },
     "2026-10-16-shikaku": {
@@ -1684,7 +1684,7 @@
       "publish_at": null,
       "published_at": "2026-10-16T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1211,
+      "view_count": 1212,
       "duration": "PT1M17S"
     },
     "2026-10-18-am": {
@@ -1765,17 +1765,17 @@
       "youtube_video_id": "-MKj2GDwPzQ",
       "url": "https://www.youtube.com/watch?v=-MKj2GDwPzQ",
       "title": "【ひろゆき】かまってちゃんの夫にもう疲れたら【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "O0YEy2NB3os"
       ],
-      "publish_at": "2026-10-19T22:00:00Z",
-      "published_at": "2026-10-19T05:50:18Z",
+      "publish_at": null,
+      "published_at": "2026-10-19T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1132,
       "duration": "PT1M7S"
     },
     "2026-10-20-uchu": {

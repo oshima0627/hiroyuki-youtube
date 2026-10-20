@@ -1,0 +1,30 @@
+{
+ "id": "2026-10-21-am",
+ "parent": "2026-10-20-uchu",
+ "publish_at": "2026-10-20T22:00:00Z",
+ "title": "【ひろゆき】運動会の徒競走で1位を取る裏ワザ【切り抜き】",
+ "tags": ["ひろゆき", "切り抜き", "解説", "運動会", "徒競走", "学校", "Shorts"],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "O0YEy2NB3os",
+  "video_title": "「獅子は我が子を千尋の谷に落とす、現代で通じるか？」OX IPA",
+  "video_url": "https://www.youtube.com/watch?v=O0YEy2NB3os",
+  "start": 2134.0,
+  "end": 2207.0,
+  "title": "運動会の徒競走で1位を取るにはどうするか",
+  "note": "走る組はタイム順で決まるので、体育のタイム測定でわざと遅く走れば遅い組に入って1位になれる。ただ学校は順位より自分の能力を上げることに力を使う時期だ、という答え",
+  "hook": "運動会で1位を取る裏ワザ"
+ },
+ "short": {
+  "start": 1.5,
+  "end": 71.5,
+  "hook": "運動会で1位を取る裏ワザ",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「1位を取るより自分の能力を上げる方が大事」この考え方、アリ？ナシ？"
+ }
+}

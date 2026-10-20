@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-19 15:00 JST（10/19 14:13 日次: 10/20 長尺と 10/20 07:00 ショートを作成・予約）
+最終更新: 2026-10-20 14:45 JST（10/20 14:13 日次: 10/21 長尺・ショートのレシピまで作成。素材取得が bot 判定で全滅しビルド・予約は未了）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,43 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-19 14:13 日次）
+## 今回やったこと（2026-10-20 14:13 日次）— 途中停止（素材待ち）
+
+- status（14:22 JST）: 当日ショート -MKj2GDwPzQ（07:00 公開済・フルで見る→HNNmVJ2MAls を API で確認）、当日長尺 aM46O8fw5JU
+  （private→2026-10-20T09:30Z = 10/20 18:30 JST、14:10）は既存でスキップ。10/21 分は長尺・ショートとも 0 本
+- フルで見る: ERaQcCP2p2I（10/19 ショート）を k5hQ5NpJHQU → HNNmVJ2MAls（10/19 長尺）に更新（work/_update_short_full.py、API で AFTER 確認）
+- 翌日長尺レシピ recipes/2026-10-21-machi.json「【ひろゆき】街の話7連発。エリートが街を作ると個性が消えます」を新規作成
+  （validate OK、クリップ計 725.7 秒 → 見込み 14:20〜14:30。thumb.at=60 は仮。コンタクトシートを見て直す）。
+  お台場の回は東京都知事批判（Fydc3YFumow 962 以降）を政治寄りとして切った。秋葉原の回はメイドカフェ違法の断定（7523 以降）の手前で切った
+- 翌日ショートレシピ recipes/shorts/2026-10-21-am.json「【ひろゆき】運動会の徒競走で1位を取る裏ワザ【切り抜き】」
+  （O0YEy2NB3os 2134-2207、short 1.5-71.5、parent 2026-10-20-uchu → フルで見る aM46O8fw5JU、publish_at 2026-10-20T22:00Z = 10/21 07:00 JST）
+- **素材取得が全滅**: 14:25〜14:29 JST、cookie 無しの box fetch で Fydc3YFumow / VYJ-zTB8TVY / 4vmH4mejnjI / O0YEy2NB3os の
+  すべてが「Sign in to confirm you’re not a bot」。player_client=tv（要リロード）/ tv_simply（bot 判定）/ mweb・web_safari（storyboard のみ）も不可
+- scripts/fetch_clips.py: ショート単体レシピ（clip キー）も1区間として拾うよう修正（一時レシピ不要に）。pytest 36 passed
+- 未使用ブロック一覧は work/_unused_1020.txt（811件）
+
+### ▶ 再開手順（素材が揃ったら）
+
+PC（ASUS_i9）で `git pull` → `python scripts\fetch_clips.py recipes\2026-10-21-machi.json` と
+`python scripts\fetch_clips.py recipes\shorts\2026-10-21-am.json`（Firefox cookie）→ work/clips の下記8ファイルを tar → CopyToBox で box の work/clips へ:
+Fydc3YFumow_880-961 / VYJ-zTB8TVY_7095-7215 / VYJ-zTB8TVY_7215-7411 / VYJ-zTB8TVY_7454-7523 / VYJ-zTB8TVY_7599-7747 /
+4vmH4mejnjI_6890-6923 / 4vmH4mejnjI_6692-6769 / O0YEy2NB3os_2134-2207（.mp4）
+
+```bash
+cd /workspace/hiroyuki-youtube
+PYTHONPATH=. .venv/bin/python scripts/build_episode.py recipes/2026-10-21-machi.json
+PYTHONPATH=. .venv/bin/python scripts/contact_sheet.py work/2026-10-21-machi/video.mp4 /tmp/sheet.png 20 40 60 90 120 150   # 良い秒を thumb.at に
+PYTHONPATH=. .venv/bin/python scripts/thumbnail.py recipes/2026-10-21-machi.json
+PYTHONPATH=. .venv/bin/python scripts/build_episode.py recipes/2026-10-21-machi.json --concat-only
+PYTHONPATH=. .venv/bin/python scripts/upload_youtube.py work/2026-10-21-machi --schedule 2026-10-21T09:30:00Z
+PYTHONPATH=. .venv/bin/python scripts/set_thumbnails.py --only <videoId>
+PYTHONPATH=. .venv/bin/python scripts/build_short.py recipes/shorts/2026-10-21-am.json
+PYTHONPATH=. .venv/bin/python scripts/publish_shorts.py --dry-run && PYTHONPATH=. .venv/bin/python scripts/publish_shorts.py
+.venv/bin/python scripts/ops_youtube.py --status
+```
+ショートは 10/21 07:00 JST（2026-10-20T22:00Z）を過ぎたら publish_shorts が上げない。その場合は publish_at を後ろにずらす（同じ日に2本目は作らない）
+
+## 前回やったこと（2026-10-19 14:13 日次）
 
 - 当日ショート ERaQcCP2p2I（07:00 公開済）・当日長尺 HNNmVJ2MAls（18:30 予約済）は既存でスキップ
 - フルで見る: UlaZRnjIeXA（10/18 ショート）を id0Ju8MPkBU → k5hQ5NpJHQU（10/18 長尺）に更新（API で確認）
@@ -38,7 +74,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
   冒頭の相談読み上げ中はうつむくので顔が下に切れる（元配信のカードの位置で直せない）
 - 未使用ブロック一覧は work/_unused_1019.txt
 
-## 前回やったこと（2026-10-18 14:13 日次 → 途中停止 → 19:00 に再開して完了）
+## 過去（2026-10-18 14:13 日次 → 途中停止 → 19:00 に再開して完了）
 
 - 止まった原因: 14:18〜15:02 の fetch_clips.py（cookie 無し）で jmADUo9Vcho 162-286 / jPOui7xHeOw 4585-4642 が
   「ログインして bot ではないことを確認してください」（YouTube の bot 判定）で3回リトライ後に失敗し exit 1。
@@ -61,21 +97,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
   - ショート単体レシピは fetch_clips.py が拾わない（0区間）。clips:[clip] の一時レシピを作って fetch した
 - フルで見る: 5UDR-8tVjAE → Mw4CM0_gFhw に更新（API で確認）
 
-## 過去（2026-10-16 15:00 ショート補充）
-
-- 予約済みショート在庫が 10/16 07:00 分で切れていたため、10/17 07:00 JST 分を1本作成
-- 素材: 未使用ブロック再生成 work/_unused_1016b.txt（840件）から 4vmH4mejnjI 7755.2-7831.6（映画館で子どもが前の席を蹴って注意された相談。政治なし）
-- recipes/shorts/2026-10-17-am.json → build_short.py → `PYTHONPATH=. .venv/bin/python scripts/publish_shorts.py`
-  → **hxzDGMs-aWE**「【ひろゆき】子どもが映画館で前の席を蹴ったら【切り抜き】」76秒、private→2026-10-16T22:00Z（10/17 07:00 JST）
-- 問いかけ（テロップ最後3.5秒＋概要欄1行目）:「謝ったらさっさとその場を離れる」この考え方、アリ？ナシ？
-- フルで見る: parent=2026-10-16-shikaku → Mw4CM0_gFhw（10/16 18:30 JST 公開）。footer は「長尺の解説動画は概要欄から」（親と題材が違うため本編名を書かない）
-- 注意: publish_shorts.py は **PYTHONPATH=. 無しだと** upload_youtube.with_engagement_line の `from scripts.engagement` で ModuleNotFoundError（アップロード前に止まる）。PYTHONPATH=. を付けて実行する
-
-## 過去（2026-10-16 14:13 日次）
-
-- 当日ショート 5UDR-8tVjAE・当日長尺 Mw4CM0_gFhw は既存スキップ
-- 翌日長尺 2026-10-17-sake → id0Ju8MPkBU「酒と飲み物の話7連発」18:30 JST（09:30Z）予約
-- フルで見る: u_vN9xYpzyI → hZCbbUwQVOI
+- ショート単体の publish_shorts.py は **PYTHONPATH=. 必須**（無いと upload_youtube.with_engagement_line の import で止まる）
 
 ## 検証済みの事実
 
@@ -86,11 +108,11 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/21 以降の長尺・ショートは未作成（次の日次で作る）。cookie 無し取得は動画によって bot 判定で落ちる。落ちた区間だけ PC で取得
-1b. 10/20 の日次で ERaQcCP2p2I（10/19 ショート）の「フルで見る」を 10/19 長尺 HNNmVJ2MAls に更新（work/_update_short_full.py ERaQcCP2p2I HNNmVJ2MAls）
-1c. 夕方 10/19: HNNmVJ2MAls 公開後に engage・Studio（固定・終了画面）、当日ショート ERaQcCP2p2I ← HNNmVJ2MAls の関連動画
-1d. 10/18 の Studio 作業（UlaZRnjIeXA ← k5hQ5NpJHQU の関連動画・固定2件・終了画面）は Google ログイン切れで未実施のまま
-2. cookie 無し取得が全滅する場合のみ cookies.txt を検討
+1. 10/21 長尺・ショートの素材を PC で取得 → 上の再開手順でビルド・予約（長尺 2026-10-21T09:30Z、ショート 2026-10-20T22:00Z）
+1b. 10/21 の日次で -MKj2GDwPzQ（10/20 ショート）の「フルで見る」を 10/20 長尺 aM46O8fw5JU に更新（work/_update_short_full.py -MKj2GDwPzQ aM46O8fw5JU）
+1c. 夕方 10/20: aM46O8fw5JU 公開後に engage・Studio（固定・終了画面）、当日ショート -MKj2GDwPzQ ← aM46O8fw5JU の関連動画
+1d. 10/18・10/19 の Studio 作業は box Chrome の Google ログイン切れで未実施のまま（ユーザーの再ログイン待ち）
+2. box の cookie 無し取得は 10/20 に全動画で bot 判定。続くようなら cookies.txt（ユーザー判断）か PC 取得を常用にする
 
 ## 触ってはいけないところ
 

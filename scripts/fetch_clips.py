@@ -162,7 +162,9 @@ def main() -> None:
         raise SystemExit(f"! {a.cookies} がありません")
 
     recipe = json.loads(a.recipe.read_text(encoding="utf-8"))
-    clips = recipe.get("clips") or recipe.get("clips", [])
+    # ショート単体レシピ（recipes/shorts/*.json）は clips ではなく clip を1つ持つ。
+    # 以前は 0 区間で素通りしていたので、一時レシピを作って取っていた（2026-10-17〜20）
+    clips = recipe.get("clips") or ([recipe["clip"]] if recipe.get("clip") else [])
     total = sum(c["end"] - c["start"] for c in clips)
     print(f"{len(clips)}区間 / 合計 {int(total) // 60}:{int(total) % 60:02d}\n")
 
