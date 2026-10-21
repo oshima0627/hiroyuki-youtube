@@ -1318,7 +1318,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T09:00:01Z",
       "upload_status": "processed",
-      "view_count": 5,
+      "view_count": 6,
       "duration": "PT14M31S"
     },
     "2026-09-29-youtube": {
@@ -1758,7 +1758,7 @@
       "publish_at": null,
       "published_at": "2026-10-18T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1161,
+      "view_count": 1163,
       "duration": "PT56S"
     },
     "2026-10-20-am": {
@@ -1801,7 +1801,7 @@
       "youtube_video_id": "fDO58HAngXo",
       "url": "https://www.youtube.com/watch?v=fDO58HAngXo",
       "title": "【ひろゆき】街の話7連発。エリートが街を作ると個性が消えます",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1810,8 +1810,8 @@
         "Fydc3YFumow",
         "VYJ-zTB8TVY"
       ],
-      "publish_at": "2026-10-21T09:30:00Z",
-      "published_at": "2026-10-20T05:46:22Z",
+      "publish_at": null,
+      "published_at": "2026-10-21T09:30:05Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M25S"
@@ -1830,7 +1830,7 @@
       "publish_at": null,
       "published_at": "2026-10-20T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1076,
+      "view_count": 1077,
       "duration": "PT1M11S"
     },
     "2026-10-22-am": {
@@ -1867,7 +1867,7 @@
       ],
       "publish_at": "2026-10-22T09:30:00Z",
       "published_at": "2026-10-21T05:42:04Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M3S"
     }
