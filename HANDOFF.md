@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-20 15:00 JST（10/20 14:13 日次: 素材を PC で取得 → box でビルド・予約まで完了）
+最終更新: 2026-10-21 15:00 JST（10/21 14:17 日次: 素材は box 4区間＋PC 3区間 → box でビルド・予約まで完了）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,27 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-20 14:13 日次）— 素材は PC 取得で補完して完了
+## 今回やったこと（2026-10-21 14:17 日次）— 完了
+
+- status（14:18 JST）: 当日ショート wb3NmCaYikw（07:00 公開済、フルで見る→aM46O8fw5JU を API で確認）、当日長尺 fDO58HAngXo
+  （private→2026-10-21T09:30Z = 10/21 18:30 JST、14:25）は既存でスキップ。10/22 分は長尺・ショートとも 0 本だった
+- フルで見る: -MKj2GDwPzQ（10/20 ショート）を HNNmVJ2MAls → aM46O8fw5JU（10/20 長尺）に更新（work/_update_short_full.py、API で AFTER 確認）。
+  wb3NmCaYikw は前日長尺 aM46O8fw5JU を指していて慣例どおりなので変更なし（10/22 の日次で fDO58HAngXo に更新する）
+- 取得: box の cookie 無し fetch で 2ol7cHkAOMw 2区間・VYJ-zTB8TVY 233-375・jmADUo9Vcho 4890-5002 は成功（14:22〜14:30）。
+  skPyrH0WTzY 1359-1444 で5分以上進まず（以前と同じ bot 判定のリトライとみて停止）→ PC（ASUS_i9）で work/tmp-1022-pc.json
+  （skPy・c2X5ZUIpRSk 4478-4526・ショート素材 VYJ-zTB8TVY 6540-6599）を fetch（Firefox cookie、2分40秒）→ CopyToBox。ffprobe で全て h264+aac
+- 翌日長尺 recipes/2026-10-22-doubutsu.json → **RNDHtUShK58**「【ひろゆき】動物とペットの話6連発。人間は牛に使われているのかもしれません」14:03（PT14M3S）、
+  private→2026-10-22T09:30Z（10/22 18:30 JST）。thumb.at 60、thumbnail_set true。問いかけ「「ペットを飼うなら犬税くらい払うべき」この考え方、アリ？ナシ？」。
+  犬税の回は自民党総裁選の話（jmADUo9Vcho 5005 以降）の手前で切った。生体販売の回（5016〜5260）はドンキ店舗名と総裁選が絡むので使わず。
+  少子化とペットの回は「政治家がやる気がない」（c2X5ZUIpRSk 4552 以降）の手前で切った
+- 翌日ショート recipes/shorts/2026-10-22-am.json → **uc6LY1dluHo**「【ひろゆき】向かいの家の犬がほったらかしにされていたら【切り抜き】」59秒、
+  private→2026-10-21T22:00Z（10/22 07:00 JST）。フルで見る→fDO58HAngXo（parent 2026-10-21-machi、API で確認）。
+  問いかけ「「人に頼まず自分で解決するか諦めるかの2択」この考え方、アリ？ナシ？」。顔が左に寄る瞬間あり（自動クロップのまま）
+- 未使用ブロック一覧は work/_unused_1021.txt（797件）。字幕から拾う補助 work/_sub.py <video_id> <start> <end>
+- 動物ネタの残り: 2ol7cHkAOMw 1080-1230（山猫も北アフリカDNA）、jmADUo9Vcho 5324-5476（坂上忍さんのレンタル保護犬猫）、
+  O0YEy2NB3os 2606-2678（保護猫カフェ）、VYJ-zTB8TVY 5478-5510 / O0YEy2NB3os 6664-6692（34歳の猫）
+
+## 前回やったこと（2026-10-20 14:13 日次）— 素材は PC 取得で補完して完了
 
 - status（14:22 JST）: 当日ショート -MKj2GDwPzQ（07:00 公開済・フルで見る→HNNmVJ2MAls を API で確認）、当日長尺 aM46O8fw5JU
   （private→2026-10-20T09:30Z = 10/20 18:30 JST、14:10）は既存でスキップ。10/21 分は長尺・ショートとも 0 本だった
@@ -46,7 +66,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - scripts/fetch_clips.py: ショート単体レシピ（clip キー）も1区間として拾うよう修正（一時レシピ不要に）。pytest 36 passed
 - 未使用ブロック一覧は work/_unused_1020.txt（811件）
 
-## 前回やったこと（2026-10-19 14:13 日次）
+## 過去（2026-10-19 14:13 日次）
 
 - 当日ショート ERaQcCP2p2I（07:00 公開済）・当日長尺 HNNmVJ2MAls（18:30 予約済）は既存でスキップ
 - フルで見る: UlaZRnjIeXA（10/18 ショート）を id0Ju8MPkBU → k5hQ5NpJHQU（10/18 長尺）に更新（API で確認）
@@ -94,11 +114,11 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/21 の日次で -MKj2GDwPzQ（10/20 ショート）の「フルで見る」を 10/20 長尺 aM46O8fw5JU に更新（work/_update_short_full.py -MKj2GDwPzQ aM46O8fw5JU）
-1b. 夕方 10/20: aM46O8fw5JU 公開後に engage・Studio（固定・終了画面）、当日ショート -MKj2GDwPzQ ← aM46O8fw5JU の関連動画
-1c. 10/18・10/19 の Studio 作業は box Chrome の Google ログイン切れで未実施のまま（ユーザーの再ログイン待ち）
-1d. 夕方 10/21: fDO58HAngXo 公開後に engage・Studio（固定・終了画面）、当日ショート wb3NmCaYikw ← fDO58HAngXo の関連動画
-2. box の cookie 無し取得は 10/20 に全動画で bot 判定（PC 取得で補完）。続くようなら cookies.txt（ユーザー判断）か PC 取得を常用にする
+1. 10/22 の日次で wb3NmCaYikw（10/21 ショート）の「フルで見る」を 10/21 長尺 fDO58HAngXo に更新（work/_update_short_full.py wb3NmCaYikw fDO58HAngXo）
+1b. 夕方 10/21: fDO58HAngXo 公開後に engage・Studio（固定・終了画面）、当日ショート wb3NmCaYikw ← fDO58HAngXo の関連動画
+1c. 10/18〜10/20 の Studio 作業は box Chrome の Google ログイン切れで未実施のまま（ユーザーの再ログイン待ち）
+1d. 夕方 10/22: RNDHtUShK58 公開後に engage・Studio、当日ショート uc6LY1dluHo ← RNDHtUShK58 の関連動画
+2. box の cookie 無し取得は 10/21 は半分成功（skPyrH0WTzY は bot 判定が続く）。失敗区間だけ PC 取得で補完する運用
 
 ## 触ってはいけないところ
 

@@ -1,0 +1,30 @@
+{
+ "id": "2026-10-22-am",
+ "parent": "2026-10-21-machi",
+ "publish_at": "2026-10-21T22:00:00Z",
+ "title": "【ひろゆき】向かいの家の犬がほったらかしにされていたら【切り抜き】",
+ "tags": ["ひろゆき", "切り抜き", "解説", "犬", "ペット", "近所", "Shorts"],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "VYJ-zTB8TVY",
+  "video_title": "技術は優秀な召使いだが、危険な主人にもなる。 宇宙ALE",
+  "video_url": "https://www.youtube.com/watch?v=VYJ-zTB8TVY",
+  "start": 6540.5,
+  "end": 6599.5,
+  "title": "向かいの家の犬がほったらかしにされていたら",
+  "note": "向かいの家の犬が外でほったらかしにされていて見るのが辛いという相談。誰かに何とかしてと頼んでも相手は動かないので、自分で解決するか諦めるかの2択。自分で引き取るのも一つの手、という答え",
+  "hook": "向かいの犬がほったらかし"
+ },
+ "short": {
+  "start": 0.5,
+  "end": 58.5,
+  "hook": "向かいの犬がほったらかし",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「人に頼まず自分で解決するか諦めるかの2択」この考え方、アリ？ナシ？"
+ }
+}

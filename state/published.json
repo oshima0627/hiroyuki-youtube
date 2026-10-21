@@ -101,7 +101,7 @@
       "publish_at": null,
       "published_at": "2026-08-18T03:00:32Z",
       "upload_status": "processed",
-      "view_count": 408,
+      "view_count": 410,
       "duration": "PT13M"
     },
     "2026-08-19-shigoto2": {
@@ -401,7 +401,7 @@
       "publish_at": null,
       "published_at": "2026-09-02T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1841,
+      "view_count": 1842,
       "duration": "PT44S"
     },
     "2026-09-04-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1470,
+      "view_count": 1472,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -537,7 +537,7 @@
       "publish_at": null,
       "published_at": "2026-09-10T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1364,
+      "view_count": 1366,
       "duration": "PT43S"
     },
     "2026-09-12-am": {
@@ -813,7 +813,7 @@
       "publish_at": null,
       "published_at": "2026-09-25T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 1758,
+      "view_count": 1760,
       "duration": "PT41S"
     },
     "2026-09-27-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2078,
+      "view_count": 2079,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1871,
+      "view_count": 1872,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1701,7 +1701,7 @@
       "publish_at": null,
       "published_at": "2026-10-17T22:00:20Z",
       "upload_status": "processed",
-      "view_count": 1092,
+      "view_count": 1088,
       "duration": "PT1M6S"
     },
     "2026-10-18-mitame": {
@@ -1719,7 +1719,7 @@
       "publish_at": null,
       "published_at": "2026-10-18T09:30:11Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT11M21S"
     },
     "2026-10-19-suimin": {
@@ -1758,7 +1758,7 @@
       "publish_at": null,
       "published_at": "2026-10-18T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 967,
+      "view_count": 1161,
       "duration": "PT56S"
     },
     "2026-10-20-am": {
@@ -1775,7 +1775,7 @@
       "publish_at": null,
       "published_at": "2026-10-19T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 1179,
+      "view_count": 1262,
       "duration": "PT1M7S"
     },
     "2026-10-20-uchu": {
@@ -1820,18 +1820,56 @@
       "youtube_video_id": "wb3NmCaYikw",
       "url": "https://www.youtube.com/watch?v=wb3NmCaYikw",
       "title": "【ひろゆき】運動会の徒競走で1位を取る裏ワザ【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "O0YEy2NB3os"
       ],
-      "publish_at": "2026-10-20T22:00:00Z",
-      "published_at": "2026-10-20T05:47:34Z",
+      "publish_at": null,
+      "published_at": "2026-10-20T22:00:23Z",
+      "upload_status": "processed",
+      "view_count": 1076,
+      "duration": "PT1M11S"
+    },
+    "2026-10-22-am": {
+      "youtube_video_id": "uc6LY1dluHo",
+      "url": "https://www.youtube.com/watch?v=uc6LY1dluHo",
+      "title": "【ひろゆき】向かいの家の犬がほったらかしにされていたら【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "VYJ-zTB8TVY"
+      ],
+      "publish_at": "2026-10-21T22:00:00Z",
+      "published_at": "2026-10-21T05:39:17Z",
       "upload_status": "processed",
       "view_count": 0,
-      "duration": "PT1M11S"
+      "duration": "PT59S"
+    },
+    "2026-10-22-doubutsu": {
+      "youtube_video_id": "RNDHtUShK58",
+      "url": "https://www.youtube.com/watch?v=RNDHtUShK58",
+      "title": "【ひろゆき】動物とペットの話6連発。人間は牛に使われているのかもしれません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "2ol7cHkAOMw",
+        "VYJ-zTB8TVY",
+        "c2X5ZUIpRSk",
+        "jmADUo9Vcho",
+        "skPyrH0WTzY"
+      ],
+      "publish_at": "2026-10-22T09:30:00Z",
+      "published_at": "2026-10-21T05:42:04Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT14M3S"
     }
   }
 }
