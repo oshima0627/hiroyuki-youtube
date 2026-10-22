@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-23-am",
+ "parent": "2026-10-22-doubutsu",
+ "publish_at": "2026-10-22T22:00:00Z",
+ "title": "【ひろゆき】手編みと偽ってマフラーを贈る人をどう思うか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "嘘",
+  "恋愛",
+  "性格",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "Fydc3YFumow",
+  "video_title": "この先、日本はどうなるのか会議。",
+  "video_url": "https://www.youtube.com/watch?v=Fydc3YFumow",
+  "start": 7718.8,
+  "end": 7771.5,
+  "title": "手編みと偽ってマフラーを贈る人をどう思うか",
+  "note": "デパートで買ったマフラーを手編みと偽って贈り、人を騙しても何も感じない人をどう思うかという質問。嘘をついてもデメリットがなかった経験を積むと嘘をつく方が得という人格になる。嘘つきは頭がいい人が多い、という答え",
+  "hook": "手編みと偽ってプレゼント"
+ },
+ "short": {
+  "start": 0.2,
+  "end": 52.2,
+  "hook": "手編みと偽ってプレゼント",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「嘘で得した経験が嘘つきを作る」この考え方、アリ？ナシ？"
+ }
+}

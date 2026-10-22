@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-21 15:00 JST（10/21 14:17 日次: 素材は box 4区間＋PC 3区間 → box でビルド・予約まで完了）
+最終更新: 2026-10-22 15:00 JST（10/22 14:19 日次: box 取得は 429/bot 判定で全滅 → 全9区間 PC 取得 → box でビルド・予約まで完了）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,19 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-21 14:17 日次）— 完了
+## 今回やったこと（2026-10-22 14:19 日次）— 完了
+
+- status（14:20 JST）: 当日ショート uc6LY1dluHo（07:00 公開済）・当日長尺 RNDHtUShK58（private→2026-10-22T09:30Z、14:03）は既存でスキップ。10/23 分は 0 本だった
+- フルで見る: wb3NmCaYikw（10/21 ショート）aM46O8fw5JU → fDO58HAngXo（10/21 長尺）。uc6LY1dluHo（10/22 ショート）fDO58HAngXo → RNDHtUShK58（ユーザー指示で当日長尺へ前倒し。18:30 公開までは非公開リンク）。API で AFTER 確認
+- 取得: box の cookie 無し yt-dlp は「HTTP 429 Too Many Requests」＋「Sign in to confirm you're not a bot」で全区間不可 → PC（ASUS_i9）で work/tmp-1023-pc.json（長尺8区間＋ショート1区間）を fetch（Firefox cookie、約7分半）→ CopyToBox。ffprobe で h264+aac（VYJ-zTB8TVY は 1280x720、他 1920x1080）
+- 翌日長尺 recipes/2026-10-23-kokoro.json → **rhXUqMbHxMk**「【ひろゆき】幸せと心の話8連発。嫌な記憶は飽きるまで思い出すと平気になります」11:05（PT11M6S）、
+  private→2026-10-23T09:30Z（10/23 18:30 JST）。thumb.at 60（頭が切れる）→ 110（カメラ向きの笑顔）、thumbnail_set true。問いかけ「「嫌な記憶は忘れるより飽きるまで思い出す」この考え方、アリ？ナシ？」
+  M7KWrHANxHs 1092-1146 は「声がいいおじさん」の悪口部分（1147 以降）の手前で切った
+- 翌日ショート recipes/shorts/2026-10-23-am.json → **Nq-n9B5ROuU**「【ひろゆき】手編みと偽ってマフラーを贈る人をどう思うか【切り抜き】」52秒、
+  private→2026-10-22T22:00Z（10/23 07:00 JST）。フルで見る→RNDHtUShK58（parent 2026-10-22-doubutsu、API で確認）。問いかけ「「嘘で得した経験が嘘つきを作る」この考え方、アリ？ナシ？」
+- 未使用ブロック一覧は work/_unused_1022.txt（793件）。心の話の残り: _Qc2ZF3MLO0 1598-1666（怒りの心理・番組評なので未使用）、4vmH4mejnjI 3972-4128（幸福キャラのタレント・個人名と下ネタで未使用）
+
+## 前回やったこと（2026-10-21 14:17 日次）— 完了
 
 - status（14:18 JST）: 当日ショート wb3NmCaYikw（07:00 公開済、フルで見る→aM46O8fw5JU を API で確認）、当日長尺 fDO58HAngXo
   （private→2026-10-21T09:30Z = 10/21 18:30 JST、14:25）は既存でスキップ。10/22 分は長尺・ショートとも 0 本だった
@@ -44,7 +56,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - 動物ネタの残り: 2ol7cHkAOMw 1080-1230（山猫も北アフリカDNA）、jmADUo9Vcho 5324-5476（坂上忍さんのレンタル保護犬猫）、
   O0YEy2NB3os 2606-2678（保護猫カフェ）、VYJ-zTB8TVY 5478-5510 / O0YEy2NB3os 6664-6692（34歳の猫）
 
-## 前回やったこと（2026-10-20 14:13 日次）— 素材は PC 取得で補完して完了
+## 過去（2026-10-20 14:13 日次）— 素材は PC 取得で補完して完了
 
 - status（14:22 JST）: 当日ショート -MKj2GDwPzQ（07:00 公開済・フルで見る→HNNmVJ2MAls を API で確認）、当日長尺 aM46O8fw5JU
   （private→2026-10-20T09:30Z = 10/20 18:30 JST、14:10）は既存でスキップ。10/21 分は長尺・ショートとも 0 本だった
@@ -114,11 +126,12 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/22 の日次で wb3NmCaYikw（10/21 ショート）の「フルで見る」を 10/21 長尺 fDO58HAngXo に更新（work/_update_short_full.py wb3NmCaYikw fDO58HAngXo）
+1. 10/23 の日次: uc6LY1dluHo は既に RNDHtUShK58 を指す（更新不要）。Nq-n9B5ROuU は 10/23 長尺 rhXUqMbHxMk へ 10/24 の日次で更新する慣例
+1e. 夕方 10/23: rhXUqMbHxMk 公開後に engage・Studio、当日ショート Nq-n9B5ROuU ← rhXUqMbHxMk の関連動画
 1b. 夕方 10/21: fDO58HAngXo 公開後に engage・Studio（固定・終了画面）、当日ショート wb3NmCaYikw ← fDO58HAngXo の関連動画
 1c. 10/18〜10/20 の Studio 作業は box Chrome の Google ログイン切れで未実施のまま（ユーザーの再ログイン待ち）
 1d. 夕方 10/22: RNDHtUShK58 公開後に engage・Studio、当日ショート uc6LY1dluHo ← RNDHtUShK58 の関連動画
-2. box の cookie 無し取得は 10/21 は半分成功（skPyrH0WTzY は bot 判定が続く）。失敗区間だけ PC 取得で補完する運用
+2. box の cookie 無し取得は 10/22 は 429＋bot 判定で全滅。まず box で試し、失敗区間を PC 取得で補完する運用
 
 ## 触ってはいけないところ
 
