@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-24-am",
+ "parent": "2026-10-23-kokoro",
+ "publish_at": "2026-10-23T22:00:00Z",
+ "title": "【ひろゆき】「あの人は腹黒い」と言う人の正体【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "職場",
+  "人間関係",
+  "悪口",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "jHWUy2IiZvs",
+  "video_title": "『過程は自分を納得させ、結果は自分以外を納得させる』MIRA BLONDE",
+  "video_url": "https://www.youtube.com/watch?v=jHWUy2IiZvs",
+  "start": 6901.0,
+  "end": 6943.0,
+  "title": "「あの人は腹黒い」と言う人の正体",
+  "note": "職場で思ったことを口にしない人が腹黒いと言われているという相談。欠点が見つからない相手に、証拠がなくても言える悪口として腹黒いと言っているだけなので、相手にするだけ時間の無駄という答え",
+  "hook": "腹黒いの定義を教えて"
+ },
+ "short": {
+  "start": 0.3,
+  "end": 41.8,
+  "hook": "腹黒いの定義を教えて",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「証拠のない悪口は相手にするだけ時間の無駄」この考え方、アリ？ナシ？"
+ }
+}
