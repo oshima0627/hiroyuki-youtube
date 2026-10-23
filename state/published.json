@@ -1847,7 +1847,7 @@
       "publish_at": null,
       "published_at": "2026-10-21T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1020,
+      "view_count": 1016,
       "duration": "PT59S"
     },
     "2026-10-22-doubutsu": {
@@ -1875,7 +1875,7 @@
       "youtube_video_id": "rhXUqMbHxMk",
       "url": "https://www.youtube.com/watch?v=rhXUqMbHxMk",
       "title": "【ひろゆき】幸せと心の話8連発。嫌な記憶は飽きるまで思い出すと平気になります",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1887,8 +1887,8 @@
         "c2X5ZUIpRSk",
         "daulqJwmooE"
       ],
-      "publish_at": "2026-10-23T09:30:00Z",
-      "published_at": "2026-10-22T05:37:59Z",
+      "publish_at": null,
+      "published_at": "2026-10-23T09:30:00Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT11M6S"
@@ -1926,7 +1926,7 @@
       ],
       "publish_at": "2026-10-24T09:30:00Z",
       "published_at": "2026-10-23T05:38:39Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT13M28S"
     },
@@ -1943,9 +1943,9 @@
       ],
       "publish_at": "2026-10-23T22:00:00Z",
       "published_at": "2026-10-23T05:39:14Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT42S"
     }
   }
 }
