@@ -333,7 +333,7 @@
       "publish_at": null,
       "published_at": "2026-08-29T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1699,
+      "view_count": 1701,
       "duration": "PT39S"
     },
     "2026-08-31-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1479,
+      "view_count": 1481,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2080,
+      "view_count": 2081,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1459,
+      "view_count": 1460,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1318,
+      "view_count": 1319,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1017,7 +1017,7 @@
       "publish_at": null,
       "published_at": "2026-10-07T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1010,
+      "view_count": 1011,
       "duration": "PT55S"
     },
     "2026-10-09-am": {
@@ -1051,7 +1051,7 @@
       "publish_at": null,
       "published_at": "2026-10-09T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1195,
+      "view_count": 1196,
       "duration": "PT1M5S"
     },
     "2026-10-11-am": {
@@ -1085,7 +1085,7 @@
       "publish_at": null,
       "published_at": "2026-10-11T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1278,
+      "view_count": 1279,
       "duration": "PT40S"
     },
     "2026-10-13-am": {
@@ -1456,7 +1456,7 @@
       "publish_at": null,
       "published_at": "2026-10-07T09:30:23Z",
       "upload_status": "processed",
-      "view_count": 5,
+      "view_count": 6,
       "duration": "PT13M52S"
     },
     "2026-10-08-gaman": {
@@ -1626,7 +1626,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 8,
+      "view_count": 9,
       "duration": "PT8M22S"
     },
     "2026-10-16-shikaku": {
@@ -1668,7 +1668,7 @@
       "published_at": "2026-10-17T09:30:34Z",
       "upload_status": "processed",
       "duration": "PT10M11S",
-      "view_count": 0
+      "view_count": 1
     },
     "2026-10-17-am": {
       "youtube_video_id": "hxzDGMs-aWE",
@@ -1701,7 +1701,7 @@
       "publish_at": null,
       "published_at": "2026-10-17T22:00:20Z",
       "upload_status": "processed",
-      "view_count": 1089,
+      "view_count": 1092,
       "duration": "PT1M6S"
     },
     "2026-10-18-mitame": {
@@ -1758,7 +1758,7 @@
       "publish_at": null,
       "published_at": "2026-10-18T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1165,
+      "view_count": 1164,
       "duration": "PT56S"
     },
     "2026-10-20-am": {
@@ -1775,7 +1775,7 @@
       "publish_at": null,
       "published_at": "2026-10-19T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 1277,
+      "view_count": 1276,
       "duration": "PT1M7S"
     },
     "2026-10-20-uchu": {
@@ -1830,7 +1830,7 @@
       "publish_at": null,
       "published_at": "2026-10-20T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1104,
+      "view_count": 1106,
       "duration": "PT1M11S"
     },
     "2026-10-22-am": {
@@ -1847,7 +1847,7 @@
       "publish_at": null,
       "published_at": "2026-10-21T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1016,
+      "view_count": 1019,
       "duration": "PT59S"
     },
     "2026-10-22-doubutsu": {
@@ -1907,7 +1907,7 @@
       "publish_at": null,
       "published_at": "2026-10-22T22:00:18Z",
       "upload_status": "processed",
-      "view_count": 1061,
+      "view_count": 1067,
       "duration": "PT53S"
     },
     "2026-10-24-warai": {
@@ -1934,18 +1934,46 @@
       "youtube_video_id": "ravNhkw0Wu4",
       "url": "https://www.youtube.com/watch?v=ravNhkw0Wu4",
       "title": "【ひろゆき】「あの人は腹黒い」と言う人の正体【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-23T22:00:00Z",
-      "published_at": "2026-10-23T05:39:14Z",
+      "publish_at": null,
+      "published_at": "2026-10-23T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1026,
       "duration": "PT42S"
+    },
+    "2026-10-25-eiga": {
+      "youtube_video_id": "WaXp52ksF50",
+      "url": "https://www.youtube.com/watch?v=WaXp52ksF50",
+      "title": "【ひろゆき】映画とドラマの話7連発。ガチで面白い作品しか国境を越えてきません",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "0ojMhUyiHB4",
+        "5xJ3ZzEnyI8",
+        "_o8W_QKNHEo",
+        "c2X5ZUIpRSk",
+        "jHWUy2IiZvs"
+      ]
+    },
+    "2026-10-25-am": {
+      "youtube_video_id": "wbLkK40nUXw",
+      "url": "https://www.youtube.com/watch?v=wbLkK40nUXw",
+      "title": "【ひろゆき】好きな人に仕事メールで「この映画見た？」と聞かれたら【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "skPyrH0WTzY"
+      ]
     }
   }
 }

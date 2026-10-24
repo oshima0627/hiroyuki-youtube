@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-23 15:00 JST（10/23 14:19 日次: box 取得は進まず → 全8区間 PC 取得 → box でビルド・予約まで完了）
+最終更新: 2026-10-24 15:00 JST（10/24 14:25 日次: box の cookie 無し取得が全8区間成功 → box だけでビルド・予約まで完了）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,19 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-23 14:19 日次）— 完了
+## 今回やったこと（2026-10-24 14:25 日次）— 完了
+
+- status（14:25 JST）: 当日ショート ravNhkw0Wu4（07:00 公開済、フルで見る→rhXUqMbHxMk）・当日長尺 k9vGnOkWgG4（private→2026-10-24T09:30Z、13:28）は既存でスキップ。10/25 分は 0 本だった
+- フルで見る: Nq-n9B5ROuU は rhXUqMbHxMk を指していて変更なし（API で確認）。ravNhkw0Wu4 も rhXUqMbHxMk のまま（指示どおり触っていない）
+- 取得: **box の cookie 無し fetch_clips.py が長尺7区間＋ショート1区間すべて成功**（14:25〜14:34 JST、PC 不要。ASUS_i9 はこの時点でオフライン）。ffprobe で h264+aac（_o8W_QKNHEo の2区間は 1280x720、他 1920x1080）
+- 翌日長尺 recipes/2026-10-25-eiga.json（新テーマ: 映画とドラマ）→ **WaXp52ksF50**「【ひろゆき】映画とドラマの話7連発。ガチで面白い作品しか国境を越えてきません」14:00（ffprobe 840.99秒）、
+  private→2026-10-25T09:30Z（10/25 18:30 JST）。thumb.at 60（720p でブレ）→ 150（jHWU の笑顔のカット）、upload 時に thumbnail_set true。問いかけ「「外国の映画やドラマの方が当たりが多い」この考え方、アリ？ナシ？」を概要欄1行目で API 確認。
+  ガンダムの回（_o8W_QKNHEo 1656-1850）はイスラエル・イランの戦争に触れるので使わず、ペーパーハウスの回は玉木氏の話（2003 以降）の手前で切った。透明人間（2030-2112）は下ネタ寄りなので未使用。『爆弾』の回は VPN の話（6930 以降）の手前で切った
+- 翌日ショート recipes/shorts/2026-10-25-am.json → **wbLkK40nUXw**「【ひろゆき】好きな人に仕事メールで「この映画見た？」と聞かれたら【切り抜き】」84秒（競合22〜73秒より長いという警告のみ）、
+  private→2026-10-24T22:00Z（10/25 07:00 JST）。フルで見る→k9vGnOkWgG4（parent 2026-10-24-warai、API で確認）。hook「映画の話は脈あり？」（「」や？の途中で折り返すと崩れるので短くした）。問いかけ「「興味があると言うなら少しは調べてから言うべき」この考え方、アリ？ナシ？」。顔が左下に寄る（自動クロップのまま）
+- 未使用ブロック一覧は work/_unused_1024.txt（773件、10/25 分を足す前）。映画の残り: jHWUy2IiZvs 1036-1115（ハンターハンター新刊を忘れる）、jHWUy2IiZvs 5065-5267（映画で各国の常識が分かる）、skPyrH0WTzY 3898-3950（日本映画は過去の人気作頼み）
+
+## 前回やったこと（2026-10-23 14:19 日次）— 完了
 
 - status（14:20 JST）: 当日ショート Nq-n9B5ROuU（07:00 公開済）・当日長尺 rhXUqMbHxMk（private→2026-10-23T09:30Z、11:06）は既存でスキップ。10/24 分は 0 本だった
 - フルで見る: uc6LY1dluHo は RNDHtUShK58 を指していて変更なし。Nq-n9B5ROuU を RNDHtUShK58 → rhXUqMbHxMk（当日長尺、18:30 公開までは非公開リンク）に更新（work/_update_short_full.py、API で AFTER 確認）
@@ -35,18 +47,6 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - 翌日ショート recipes/shorts/2026-10-24-am.json → **ravNhkw0Wu4**「【ひろゆき】「あの人は腹黒い」と言う人の正体【切り抜き】」42秒、
   private→2026-10-23T22:00Z（10/24 07:00 JST）。フルで見る→rhXUqMbHxMk（parent 2026-10-23-kokoro、API で確認）。問いかけ「「証拠のない悪口は相手にするだけ時間の無駄」この考え方、アリ？ナシ？」。冒頭は顔が左下に寄る（自動クロップのまま）
 - 未使用ブロック一覧は work/_unused_1023.txt（781件、10/24 分を足す前）。笑いの残り: daulqJwmooE 568-673（水曜日のダウンタウン未放送回）、_o8W_QKNHEo 5551-5596（気まずい相手との生放送）
-
-## 前回やったこと（2026-10-22 14:19 日次）— 完了
-
-- status（14:20 JST）: 当日ショート uc6LY1dluHo（07:00 公開済）・当日長尺 RNDHtUShK58（private→2026-10-22T09:30Z、14:03）は既存でスキップ。10/23 分は 0 本だった
-- フルで見る: wb3NmCaYikw（10/21 ショート）aM46O8fw5JU → fDO58HAngXo（10/21 長尺）。uc6LY1dluHo（10/22 ショート）fDO58HAngXo → RNDHtUShK58（ユーザー指示で当日長尺へ前倒し。18:30 公開までは非公開リンク）。API で AFTER 確認
-- 取得: box の cookie 無し yt-dlp は「HTTP 429 Too Many Requests」＋「Sign in to confirm you're not a bot」で全区間不可 → PC（ASUS_i9）で work/tmp-1023-pc.json（長尺8区間＋ショート1区間）を fetch（Firefox cookie、約7分半）→ CopyToBox。ffprobe で h264+aac（VYJ-zTB8TVY は 1280x720、他 1920x1080）
-- 翌日長尺 recipes/2026-10-23-kokoro.json → **rhXUqMbHxMk**「【ひろゆき】幸せと心の話8連発。嫌な記憶は飽きるまで思い出すと平気になります」11:05（PT11M6S）、
-  private→2026-10-23T09:30Z（10/23 18:30 JST）。thumb.at 60（頭が切れる）→ 110（カメラ向きの笑顔）、thumbnail_set true。問いかけ「「嫌な記憶は忘れるより飽きるまで思い出す」この考え方、アリ？ナシ？」
-  M7KWrHANxHs 1092-1146 は「声がいいおじさん」の悪口部分（1147 以降）の手前で切った
-- 翌日ショート recipes/shorts/2026-10-23-am.json → **Nq-n9B5ROuU**「【ひろゆき】手編みと偽ってマフラーを贈る人をどう思うか【切り抜き】」52秒、
-  private→2026-10-22T22:00Z（10/23 07:00 JST）。フルで見る→RNDHtUShK58（parent 2026-10-22-doubutsu、API で確認）。問いかけ「「嘘で得した経験が嘘つきを作る」この考え方、アリ？ナシ？」
-- 未使用ブロック一覧は work/_unused_1022.txt（793件）。心の話の残り: _Qc2ZF3MLO0 1598-1666（怒りの心理・番組評なので未使用）、4vmH4mejnjI 3972-4128（幸福キャラのタレント・個人名と下ネタで未使用）
 
 ## 過去（2026-10-21 14:17 日次）— 完了
 
@@ -128,11 +128,11 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/24 の日次: 当日ショート ravNhkw0Wu4（07:00）・当日長尺 k9vGnOkWgG4（18:30）は確認してスキップ。ravNhkw0Wu4 のフルで見るを当日長尺 k9vGnOkWgG4 へ更新するか確認（10/22・10/23 は当日長尺へ前倒しした）。10/25 分の長尺・ショートを作る
+1. 10/25 の日次: 当日ショート wbLkK40nUXw（07:00）・当日長尺 WaXp52ksF50（18:30）は確認してスキップ。前日ショート ravNhkw0Wu4 のフルで見るを前日長尺 k9vGnOkWgG4 に更新するか確認。10/26 分の長尺・ショートを作る
    `.venv/bin/python work/_update_short_full.py <short_id> <long_id>`
-2. 夕方 10/23: rhXUqMbHxMk 公開後に engage・Studio、当日ショート Nq-n9B5ROuU ← rhXUqMbHxMk の関連動画
-3. 10/18〜10/22 の Studio 作業（関連動画・固定・終了画面）は box Chrome の Google ログイン切れで未実施のまま（ユーザーの再ログイン待ち）
-4. box の cookie 無し取得は 10/22・10/23 とも実質不可（429/bot 判定・進まない）。box で数分試して進まなければすぐ PC 取得に切り替える
+2. 夕方 10/24: k9vGnOkWgG4 公開後に engage（問いかけコメント・返信）
+3. 10/18〜 の Studio 作業（関連動画・固定・終了画面）は box Chrome の Google ログイン切れで未実施のまま（ユーザーの再ログイン待ち）
+4. box の cookie 無し取得は 10/22・10/23 は不可、10/24 は全区間成功と日によって違う。box で数分試して進まなければ PC 取得に切り替える
 
 ## 触ってはいけないところ
 

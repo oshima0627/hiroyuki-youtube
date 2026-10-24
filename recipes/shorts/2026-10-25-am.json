@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-25-am",
+ "parent": "2026-10-24-warai",
+ "publish_at": "2026-10-24T22:00:00Z",
+ "title": "【ひろゆき】好きな人に仕事メールで「この映画見た？」と聞かれたら【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "恋愛",
+  "職場",
+  "映画",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "skPyrH0WTzY",
+  "video_title": "「逮捕されるとハンドサインする人」MIRA BLONDE",
+  "video_url": "https://www.youtube.com/watch?v=skPyrH0WTzY",
+  "start": 5181.0,
+  "end": 5266.0,
+  "title": "仕事メールの「この映画見た？」の意味",
+  "note": "好きな男性が仕事のメールの最後に脈絡なく映画を見たかと聞いてきたので誘いかと思い返事をしたら返信が来なくなったという相談。仕事の文脈の映画の話だったのでは、という答えと、見てないけど興味ありますという返事は雑すぎるというツッコミ",
+  "hook": "映画の話は脈あり？"
+ },
+ "short": {
+  "start": 0.5,
+  "end": 84.5,
+  "hook": "映画の話は脈あり？",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「興味があると言うなら少しは調べてから言うべき」この考え方、アリ？ナシ？"
+ }
+}
