@@ -101,7 +101,7 @@
       "publish_at": null,
       "published_at": "2026-08-18T03:00:32Z",
       "upload_status": "processed",
-      "view_count": 410,
+      "view_count": 411,
       "duration": "PT13M"
     },
     "2026-08-19-shigoto2": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1481,
+      "view_count": 1482,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -571,7 +571,7 @@
       "publish_at": null,
       "published_at": "2026-09-12T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1195,
+      "view_count": 1196,
       "duration": "PT55S"
     },
     "2026-09-14-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2081,
+      "view_count": 2082,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1460,
+      "view_count": 1468,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1319,
+      "view_count": 1320,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1741,7 +1741,7 @@
       "publish_at": null,
       "published_at": "2026-10-19T09:30:00Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT13M18S"
     },
     "2026-10-19-am": {
@@ -1794,7 +1794,7 @@
       "publish_at": null,
       "published_at": "2026-10-20T09:30:10Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 2,
       "duration": "PT14M10S"
     },
     "2026-10-21-machi": {
@@ -1813,7 +1813,7 @@
       "publish_at": null,
       "published_at": "2026-10-21T09:30:05Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT14M25S"
     },
     "2026-10-21-am": {
@@ -1868,7 +1868,7 @@
       "publish_at": null,
       "published_at": "2026-10-22T09:30:08Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 2,
       "duration": "PT14M3S"
     },
     "2026-10-23-kokoro": {
@@ -1890,7 +1890,7 @@
       "publish_at": null,
       "published_at": "2026-10-23T09:30:00Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 2,
       "duration": "PT11M6S"
     },
     "2026-10-23-am": {
@@ -1914,7 +1914,7 @@
       "youtube_video_id": "k9vGnOkWgG4",
       "url": "https://www.youtube.com/watch?v=k9vGnOkWgG4",
       "title": "【ひろゆき】笑いとトークの話7連発。面白い人はみんな性格が悪いです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1924,8 +1924,8 @@
         "_o8W_QKNHEo",
         "skPyrH0WTzY"
       ],
-      "publish_at": "2026-10-24T09:30:00Z",
-      "published_at": "2026-10-23T05:38:39Z",
+      "publish_at": null,
+      "published_at": "2026-10-24T09:30:22Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT13M28S"
@@ -1944,7 +1944,7 @@
       "publish_at": null,
       "published_at": "2026-10-23T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1026,
+      "view_count": 1035,
       "duration": "PT42S"
     },
     "2026-10-25-eiga": {
@@ -1961,7 +1961,12 @@
         "_o8W_QKNHEo",
         "c2X5ZUIpRSk",
         "jHWUy2IiZvs"
-      ]
+      ],
+      "publish_at": "2026-10-25T09:30:00Z",
+      "published_at": "2026-10-24T05:39:45Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT14M1S"
     },
     "2026-10-25-am": {
       "youtube_video_id": "wbLkK40nUXw",
@@ -1973,7 +1978,12 @@
       "thumbnail_set": false,
       "sources": [
         "skPyrH0WTzY"
-      ]
+      ],
+      "publish_at": "2026-10-24T22:00:00Z",
+      "published_at": "2026-10-24T05:39:56Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT1M25S"
     }
   }
 }
