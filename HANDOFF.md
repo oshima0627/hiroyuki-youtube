@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-24 15:00 JST（10/24 14:25 日次: box の cookie 無し取得が全8区間成功 → box だけでビルド・予約まで完了）
+最終更新: 2026-10-25 14:50 JST（10/25 14:18 日次: box の cookie 無し取得が全8区間成功 → box だけでビルド・予約まで完了）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,23 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-24 14:25 日次）— 完了
+## 今回やったこと（2026-10-25 14:18 日次）— 完了
+
+- .venv が壊れていた（bin に Activate.ps1 だけ）ので作り直した（requirements.txt、pytest 36 passed）。VOICEVOX 0.25.2 は起動済みだった
+- status（14:19 JST）: 当日ショート wbLkK40nUXw（07:00 公開済）・当日長尺 WaXp52ksF50（private→2026-10-25T09:30Z、14:01）は既存でスキップ。10/26 分は 0 本だった
+- フルで見る: ravNhkw0Wu4（10/24 ショート）を rhXUqMbHxMk → k9vGnOkWgG4（10/24 長尺）に更新（work/_update_short_full.py、API で再取得して確認）。wbLkK40nUXw は k9vGnOkWgG4 のまま（慣例どおり）
+- 取得: **box の cookie 無し fetch_clips.py が長尺7区間＋ショート1区間すべて成功**（14:21〜14:27 JST、PC 不要）。h264+aac（_o8W_QKNHEo と VYJ-zTB8TVY は 1280x720、他 1920x1080）
+- 翌日長尺 recipes/2026-10-26-fuufu.json（新テーマ: 結婚と夫婦）→ **QN45yEvHd8s**「【ひろゆき】結婚と夫婦の話7連発。好きな人と結婚するべきというルールが良くないんです」10:07（PT10M8S）、
+  private→2026-10-26T09:30Z（10/26 18:30 JST）。thumb.at 60（後ろ向き）→ 330（自分の時間が欲しい妻の回の正面カット）、upload 時に thumbnail_set true。
+  問いかけ「「結婚相手は大好きな人じゃなくてもいい」この考え方、アリ？ナシ？」を概要欄1行目で API 確認。冒頭カードと終盤20秒の問いかけボードあり。
+  恋愛結婚至上主義の回（O0YEy2NB3os）は相談者の病名部分（3925〜3948）を外して 3948.9 から。直後の元首相事件の話（4017 以降）は入れていない。
+  マチアプ33歳の回（0ojMhUyiHB4 6851〜）と「メンヘラと結婚」の回（jHWUy2IiZvs 4400〜）は言い方がきついので使わず
+- 翌日ショート recipes/shorts/2026-10-26-am.json → **oUt6kcCwW5c**「【ひろゆき】上司に詰められて辛い…会社を辞めるか迷ったら【切り抜き】」50秒、
+  private→2026-10-25T22:00Z（10/26 07:00 JST）。フルで見る→WaXp52ksF50（parent 2026-10-25-eiga、API で確認）。問いかけ「「辞めるなら損をしない辞め方を先に考えるべき」この考え方、アリ？ナシ？」。
+  直後の「中道分裂」（4vmH4mejnjI 2559 以降、政治）の手前で切った。顔が左下に寄る（自動クロップのまま）。ショートのサムネは API 未設定（thumbnail_set false、従来どおり）
+- 未使用ブロック一覧は work/_unused_1025.txt（764件、10/26 分を足す前）。結婚の残り: _Qc2ZF3MLO0 2771-2816（結婚市場の35歳の壁）、23vSB2fXjc8 9496-9625（妊娠と結婚・割り勘の彼）、daulqJwmooE 11282-11294（年金分割）
+
+## 前回やったこと（2026-10-24 14:25 日次）— 完了
 
 - status（14:25 JST）: 当日ショート ravNhkw0Wu4（07:00 公開済、フルで見る→rhXUqMbHxMk）・当日長尺 k9vGnOkWgG4（private→2026-10-24T09:30Z、13:28）は既存でスキップ。10/25 分は 0 本だった
 - フルで見る: Nq-n9B5ROuU は rhXUqMbHxMk を指していて変更なし（API で確認）。ravNhkw0Wu4 も rhXUqMbHxMk のまま（指示どおり触っていない）
@@ -36,7 +52,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
   private→2026-10-24T22:00Z（10/25 07:00 JST）。フルで見る→k9vGnOkWgG4（parent 2026-10-24-warai、API で確認）。hook「映画の話は脈あり？」（「」や？の途中で折り返すと崩れるので短くした）。問いかけ「「興味があると言うなら少しは調べてから言うべき」この考え方、アリ？ナシ？」。顔が左下に寄る（自動クロップのまま）
 - 未使用ブロック一覧は work/_unused_1024.txt（773件、10/25 分を足す前）。映画の残り: jHWUy2IiZvs 1036-1115（ハンターハンター新刊を忘れる）、jHWUy2IiZvs 5065-5267（映画で各国の常識が分かる）、skPyrH0WTzY 3898-3950（日本映画は過去の人気作頼み）
 
-## 前回やったこと（2026-10-23 14:19 日次）— 完了
+## 過去（2026-10-23 14:19 日次）— 完了
 
 - status（14:20 JST）: 当日ショート Nq-n9B5ROuU（07:00 公開済）・当日長尺 rhXUqMbHxMk（private→2026-10-23T09:30Z、11:06）は既存でスキップ。10/24 分は 0 本だった
 - フルで見る: uc6LY1dluHo は RNDHtUShK58 を指していて変更なし。Nq-n9B5ROuU を RNDHtUShK58 → rhXUqMbHxMk（当日長尺、18:30 公開までは非公開リンク）に更新（work/_update_short_full.py、API で AFTER 確認）
@@ -128,11 +144,11 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/25 の日次: 当日ショート wbLkK40nUXw（07:00）・当日長尺 WaXp52ksF50（18:30）は確認してスキップ。前日ショート ravNhkw0Wu4 のフルで見るを前日長尺 k9vGnOkWgG4 に更新するか確認。10/26 分の長尺・ショートを作る
+1. 10/26 の日次: 当日ショート oUt6kcCwW5c（07:00）・当日長尺 QN45yEvHd8s（18:30）は確認してスキップ。前日ショート wbLkK40nUXw のフルで見るを前日長尺 WaXp52ksF50 に更新するか確認。10/27 分の長尺・ショートを作る
    `.venv/bin/python work/_update_short_full.py <short_id> <long_id>`
-2. 夕方 10/24: k9vGnOkWgG4 公開後に engage（問いかけコメント・返信）
-3. 10/18〜 の Studio 作業（関連動画・固定・終了画面）は box Chrome の Google ログイン切れで未実施のまま（ユーザーの再ログイン待ち）
-4. box の cookie 無し取得は 10/22・10/23 は不可、10/24 は全区間成功と日によって違う。box で数分試して進まなければ PC 取得に切り替える
+2. 夕方 10/25: WaXp52ksF50 公開後に engage（問いかけコメント・返信）、Studio の関連動画・固定・終了画面
+3. box の cookie 無し取得は 10/22・10/23 は不可、10/24・10/25 は全区間成功と日によって違う。box で数分試して進まなければ PC 取得に切り替える
+4. box の .venv はたびたび壊れる/消える。import できなければ `rm -rf .venv && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
 
 ## 触ってはいけないところ
 

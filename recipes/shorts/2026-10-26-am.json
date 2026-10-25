@@ -1,0 +1,39 @@
+{
+ "id": "2026-10-26-am",
+ "parent": "2026-10-25-eiga",
+ "publish_at": "2026-10-25T22:00:00Z",
+ "title": "【ひろゆき】上司に詰められて辛い…会社を辞めるか迷ったら【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "仕事",
+  "退職",
+  "転職",
+  "職場",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "4vmH4mejnjI",
+  "video_title": "いつになったらホルムズ海峡は解放されるのか？ Venus",
+  "video_url": "https://www.youtube.com/watch?v=4vmH4mejnjI",
+  "start": 2507.0,
+  "end": 2558.0,
+  "title": "会社を辞めるか迷ったときの辞め方",
+  "note": "派遣から正社員になったものの上司に詰められて精神的に辛く、会社を辞めるか迷っているという27歳の相談。労基署への相談や診断書での休職も使いながら転職活動をして、辞めるときに損をしない辞め方を考えるべきという答え",
+  "hook": "会社を辞めるか迷ったら"
+ },
+ "short": {
+  "start": 0.2,
+  "end": 50.6,
+  "hook": "会社辞めるか迷ったら",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「辞めるなら損をしない辞め方を先に考えるべき」この考え方、アリ？ナシ？"
+ }
+}
