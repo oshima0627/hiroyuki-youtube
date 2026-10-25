@@ -1830,7 +1830,7 @@
       "publish_at": null,
       "published_at": "2026-10-20T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1106,
+      "view_count": 1107,
       "duration": "PT1M11S"
     },
     "2026-10-22-am": {
@@ -1847,7 +1847,7 @@
       "publish_at": null,
       "published_at": "2026-10-21T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1024,
+      "view_count": 1023,
       "duration": "PT59S"
     },
     "2026-10-22-doubutsu": {
@@ -1890,7 +1890,7 @@
       "publish_at": null,
       "published_at": "2026-10-23T09:30:00Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT11M6S"
     },
     "2026-10-23-am": {
@@ -1951,7 +1951,7 @@
       "youtube_video_id": "WaXp52ksF50",
       "url": "https://www.youtube.com/watch?v=WaXp52ksF50",
       "title": "【ひろゆき】映画とドラマの話7連発。ガチで面白い作品しか国境を越えてきません",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -1962,8 +1962,8 @@
         "c2X5ZUIpRSk",
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-25T09:30:00Z",
-      "published_at": "2026-10-24T05:39:45Z",
+      "publish_at": null,
+      "published_at": "2026-10-25T09:30:21Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M1S"
@@ -1982,7 +1982,7 @@
       "publish_at": null,
       "published_at": "2026-10-24T22:00:04Z",
       "upload_status": "processed",
-      "view_count": 1125,
+      "view_count": 1132,
       "duration": "PT1M25S"
     },
     "2026-10-26-fuufu": {
@@ -2003,7 +2003,7 @@
       ],
       "publish_at": "2026-10-26T09:30:00Z",
       "published_at": "2026-10-25T05:32:43Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT10M8S"
     },
@@ -2020,9 +2020,9 @@
       ],
       "publish_at": "2026-10-25T22:00:00Z",
       "published_at": "2026-10-25T05:32:58Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT51S"
     }
   }
 }
