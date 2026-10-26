@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1324,
+      "view_count": 1325,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1385,
+      "view_count": 1389,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1153,7 +1153,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1240,
+      "view_count": 1242,
       "duration": "PT41S"
     },
     "2026-08-22-ai": {
@@ -1982,14 +1982,14 @@
       "publish_at": null,
       "published_at": "2026-10-24T22:00:04Z",
       "upload_status": "processed",
-      "view_count": 1197,
+      "view_count": 1322,
       "duration": "PT1M25S"
     },
     "2026-10-26-fuufu": {
       "youtube_video_id": "QN45yEvHd8s",
       "url": "https://www.youtube.com/watch?v=QN45yEvHd8s",
       "title": "【ひろゆき】結婚と夫婦の話7連発。好きな人と結婚するべきというルールが良くないんです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -2001,8 +2001,8 @@
         "_o8W_QKNHEo",
         "c2X5ZUIpRSk"
       ],
-      "publish_at": "2026-10-26T09:30:00Z",
-      "published_at": "2026-10-25T05:32:43Z",
+      "publish_at": null,
+      "published_at": "2026-10-26T09:30:12Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT10M8S"
@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1216,
+      "view_count": 1249,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2040,7 +2040,7 @@
       ],
       "publish_at": "2026-10-27T09:30:00Z",
       "published_at": "2026-10-26T05:33:23Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT12M49S"
     },
@@ -2057,9 +2057,9 @@
       ],
       "publish_at": "2026-10-26T22:00:00Z",
       "published_at": "2026-10-26T05:33:41Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT41S"
     }
   }
 }
