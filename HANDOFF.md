@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-25 14:50 JST（10/25 14:18 日次: box の cookie 無し取得が全8区間成功 → box だけでビルド・予約まで完了）
+最終更新: 2026-10-26 14:45 JST（10/26 14:16 日次: box の cookie 無し取得が全7区間成功 → box だけでビルド・予約まで完了）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,22 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-25 14:18 日次）— 完了
+## 今回やったこと（2026-10-26 14:16 日次）— 完了
+
+- status（14:17 JST）: 当日ショート oUt6kcCwW5c（07:00 公開済）・当日長尺 QN45yEvHd8s（private→2026-10-26T09:30Z、10:08）は既存でスキップ。10/27 分は 0 本だった。.venv・VOICEVOX は生きていた
+- フルで見る: wbLkK40nUXw（10/25 ショート）を k9vGnOkWgG4 → WaXp52ksF50（10/25 長尺）に更新（work/_update_short_full.py、AFTER を API で確認）。oUt6kcCwW5c は WaXp52ksF50 のまま（慣例どおり）
+- 未使用ブロック一覧 work/_unused_1026.txt（751件、10/27 分を足す前。work/_unused_1026.py）
+- 取得: **box の cookie 無し fetch_clips.py が長尺6区間＋ショート1区間すべて成功**（14:18〜14:27 JST、PC 不要）
+- 翌日長尺 recipes/2026-10-27-sports.json（新テーマ: スポーツと格闘技）→ **rKEhAInsB74**「【ひろゆき】スポーツと格闘技の話6連発。根性論より理論でやる人の方が伸びるんです」12:48（PT12M49S）、
+  private→2026-10-27T09:30Z（10/27 18:30 JST）。thumb.at 60 は注釈カードに当たった → 45（笑顔で手振りのカット）、upload 時に thumbnail_set true。
+  問いかけ「「スポーツは根性より理論で伸びる」この考え方、アリ？ナシ？」を概要欄1行目で API 確認。
+  根性論の回（O0YEy2NB3os）は暴力指導のプロレスラー個人の話（105〜231）を外し、231.4〜284.5 のみ。ボディビルダー対格闘家（daulqJwmooE 3119〜3245）は尺（15分超え）のため未使用
+- 翌日ショート recipes/shorts/2026-10-27-am.json → **kyTzNgBqUvQ**「【ひろゆき】結婚相手を年収と顔で選ぶと失敗する理由【切り抜き】」40秒（Fydc3YFumow 8133.7〜8174.1）、
+  private→2026-10-26T22:00Z（10/27 07:00 JST）。フルで見る→QN45yEvHd8s（parent 2026-10-26-fuufu、API で確認）。hook「美人は3日で飽きる」。問いかけ「「結婚相手は顔より生活力で選ぶべき」この考え方、アリ？ナシ？」。
+  直後の「やってすればいい」（下ネタ寄り）の手前、「美人は3日で飽きますよ」直後の無音で切った。顔が左下に寄る（自動クロップのまま）。サムネ API 未設定（従来どおり）
+- スポーツの残り: daulqJwmooE 2948〜3119（男女の筋肉量・木村モナさん）、3119〜3245（ルール次第・ボディビルダー）、M7KWrHANxHs 7607〜7637（有馬記念）、O0YEy2NB3os 285〜368（のびのび系が増えた）
+
+## 前回やったこと（2026-10-25 14:18 日次）— 完了
 
 - .venv が壊れていた（bin に Activate.ps1 だけ）ので作り直した（requirements.txt、pytest 36 passed）。VOICEVOX 0.25.2 は起動済みだった
 - status（14:19 JST）: 当日ショート wbLkK40nUXw（07:00 公開済）・当日長尺 WaXp52ksF50（private→2026-10-25T09:30Z、14:01）は既存でスキップ。10/26 分は 0 本だった
@@ -40,7 +55,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
   直後の「中道分裂」（4vmH4mejnjI 2559 以降、政治）の手前で切った。顔が左下に寄る（自動クロップのまま）。ショートのサムネは API 未設定（thumbnail_set false、従来どおり）
 - 未使用ブロック一覧は work/_unused_1025.txt（764件、10/26 分を足す前）。結婚の残り: _Qc2ZF3MLO0 2771-2816（結婚市場の35歳の壁）、23vSB2fXjc8 9496-9625（妊娠と結婚・割り勘の彼）、daulqJwmooE 11282-11294（年金分割）
 
-## 前回やったこと（2026-10-24 14:25 日次）— 完了
+## 過去（2026-10-24 14:25 日次）— 完了
 
 - status（14:25 JST）: 当日ショート ravNhkw0Wu4（07:00 公開済、フルで見る→rhXUqMbHxMk）・当日長尺 k9vGnOkWgG4（private→2026-10-24T09:30Z、13:28）は既存でスキップ。10/25 分は 0 本だった
 - フルで見る: Nq-n9B5ROuU は rhXUqMbHxMk を指していて変更なし（API で確認）。ravNhkw0Wu4 も rhXUqMbHxMk のまま（指示どおり触っていない）
@@ -144,17 +159,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/26 の日次: 当日ショート oUt6kcCwW5c（07:00）・当日長尺 QN45yEvHd8s（18:30）は確認してスキップ。前日ショート wbLkK40nUXw のフルで見るを前日長尺 WaXp52ksF50 に更新するか確認。10/27 分の長尺・ショートを作る
+1. 10/27 の日次: 当日ショート kyTzNgBqUvQ（07:00）・当日長尺 rKEhAInsB74（18:30）は確認してスキップ。前日ショート oUt6kcCwW5c のフルで見るを前日長尺 QN45yEvHd8s に更新。10/28 分の長尺・ショートを作る
    `.venv/bin/python work/_update_short_full.py <short_id> <long_id>`
-2. 夕方 10/25: WaXp52ksF50 公開後に engage（問いかけコメント・返信）、Studio の関連動画・固定・終了画面
-3. box の cookie 無し取得は 10/22・10/23 は不可、10/24・10/25 は全区間成功と日によって違う。box で数分試して進まなければ PC 取得に切り替える
-4. box の .venv はたびたび壊れる/消える。import できなければ `rm -rf .venv && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
-
-## 触ってはいけないところ
-
-- 「公式」「公認」と書かない（定型の「公式チャンネルではありません」表記は除く）。政治的な話題は落とす
-- 切り抜き禁止: exnFXUMMLLI / q0GyNI3X8cg。ゲスト共演回（IXiLxkgHUMM, naVkgtFmRvg, Sq1YChd0RqQ）は使わない
-- 予約時刻を過ぎた publishAt を渡さない。15分以上は上げない
-- _plan-kenko / _plan-kosodate / _plan-kigyo は使わない。note は clips[].note（20文字以上）
-- Studio 関連動画は朝ルーチンで触らない
-- 問いかけ・返信: 攻撃・政治・「公式/公認」・本人なりすまし・自作自演（いいね/登録/別アカウント）・報酬付き依頼は禁止。公開済み動画の概要欄は改変しない（予約済み分のみ可）
+2. 夕方 10/26: QN45yEvHd8s 公開後に engage（問いかけコメント・返信）、Studio の関連動画（oUt6kcCwW5c→QN45yEvHd8s）・固定・終了画面
+3. box の cookie 無し取得は 10/22・10/23 は不可、10/24〜10/26 は全区間成功。box で数分試して進まなければ PC 取得に切り替える
