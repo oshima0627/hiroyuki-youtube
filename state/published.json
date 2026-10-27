@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1393,
+      "view_count": 1397,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1435,7 +1435,7 @@
       "publish_at": null,
       "published_at": "2026-10-06T09:30:38Z",
       "upload_status": "processed",
-      "view_count": 8,
+      "view_count": 9,
       "duration": "PT13M"
     },
     "2026-10-07-un": {
@@ -1944,7 +1944,7 @@
       "publish_at": null,
       "published_at": "2026-10-23T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1038,
+      "view_count": 1037,
       "duration": "PT42S"
     },
     "2026-10-25-eiga": {
@@ -2021,14 +2021,14 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1546,
+      "view_count": 1581,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
       "youtube_video_id": "rKEhAInsB74",
       "url": "https://www.youtube.com/watch?v=rKEhAInsB74",
       "title": "【ひろゆき】スポーツと格闘技の話6連発。根性論より理論でやる人の方が伸びるんです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -2038,8 +2038,8 @@
         "O0YEy2NB3os",
         "daulqJwmooE"
       ],
-      "publish_at": "2026-10-27T09:30:00Z",
-      "published_at": "2026-10-26T05:33:23Z",
+      "publish_at": null,
+      "published_at": "2026-10-27T09:30:34Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT12M49S"
@@ -2058,7 +2058,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1140,
+      "view_count": 1147,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
@@ -2078,9 +2078,9 @@
       ],
       "publish_at": "2026-10-28T09:30:00Z",
       "published_at": "2026-10-27T05:33:05Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT12M50S"
     },
     "2026-10-28-am": {
       "youtube_video_id": "CfPbeHlWoP8",
@@ -2095,9 +2095,9 @@
       ],
       "publish_at": "2026-10-27T22:00:00Z",
       "published_at": "2026-10-27T05:33:19Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT1M5S"
     }
   }
 }
