@@ -1,0 +1,39 @@
+{
+ "id": "2026-10-28-am",
+ "parent": "2026-10-27-sports",
+ "publish_at": "2026-10-27T22:00:00Z",
+ "title": "【ひろゆき】投資の収入が給料を超えたら会社を辞めていいのか【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "投資",
+  "仕事",
+  "早期リタイア",
+  "FIRE",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "daulqJwmooE",
+  "video_title": "神を信じない経営者は傲慢である。",
+  "video_url": "https://www.youtube.com/watch?v=daulqJwmooE",
+  "start": 7158.6,
+  "end": 7224.0,
+  "title": "お金があっても仕事は続けた方がいい",
+  "note": "投資の収入が給料を上回ったので人間関係のきつい会社を辞めたいという40代の相談に、社会との接点がないと考えがずれていき、直す手段もなくなるので、金額が少なくても取引先のある仕事は残した方がいい、という答え",
+  "hook": "投資で稼げたら会社を辞める？"
+ },
+ "short": {
+  "start": 0.75,
+  "end": 65.4,
+  "hook": "仕事は辞めるな",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「お金があっても仕事は続けるべき」この考え方、アリ？ナシ？"
+ }
+}

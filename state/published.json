@@ -247,7 +247,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T09:00:37Z",
       "upload_status": "processed",
-      "view_count": 16,
+      "view_count": 20,
       "duration": "PT5M37S"
     },
     "2026-08-27-fudosan": {
@@ -418,7 +418,7 @@
       "publish_at": null,
       "published_at": "2026-09-03T22:00:10Z",
       "upload_status": "processed",
-      "view_count": 1344,
+      "view_count": 1346,
       "duration": "PT1M5S"
     },
     "2026-09-05-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1488,
+      "view_count": 1491,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -537,7 +537,7 @@
       "publish_at": null,
       "published_at": "2026-09-10T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1368,
+      "view_count": 1369,
       "duration": "PT43S"
     },
     "2026-09-12-am": {
@@ -554,7 +554,7 @@
       "publish_at": null,
       "published_at": "2026-09-11T22:00:02Z",
       "upload_status": "processed",
-      "view_count": 1214,
+      "view_count": 1215,
       "duration": "PT39S"
     },
     "2026-09-13-am": {
@@ -796,7 +796,7 @@
       "publish_at": null,
       "published_at": "2026-09-24T22:00:37Z",
       "upload_status": "processed",
-      "view_count": 1304,
+      "view_count": 1305,
       "duration": "PT45S"
     },
     "2026-09-26-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2083,
+      "view_count": 2086,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1325,
+      "view_count": 1326,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1389,
+      "view_count": 1393,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1051,7 +1051,7 @@
       "publish_at": null,
       "published_at": "2026-10-09T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1196,
+      "view_count": 1197,
       "duration": "PT1M5S"
     },
     "2026-10-11-am": {
@@ -1626,7 +1626,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 9,
+      "view_count": 10,
       "duration": "PT8M22S"
     },
     "2026-10-16-shikaku": {
@@ -1830,7 +1830,7 @@
       "publish_at": null,
       "published_at": "2026-10-20T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1108,
+      "view_count": 1110,
       "duration": "PT1M11S"
     },
     "2026-10-22-am": {
@@ -1982,7 +1982,7 @@
       "publish_at": null,
       "published_at": "2026-10-24T22:00:04Z",
       "upload_status": "processed",
-      "view_count": 1322,
+      "view_count": 1326,
       "duration": "PT1M25S"
     },
     "2026-10-26-fuufu": {
@@ -2004,7 +2004,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T09:30:12Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 4,
       "duration": "PT10M8S"
     },
     "2026-10-26-am": {
@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1249,
+      "view_count": 1546,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2048,18 +2048,56 @@
       "youtube_video_id": "kyTzNgBqUvQ",
       "url": "https://www.youtube.com/watch?v=kyTzNgBqUvQ",
       "title": "【ひろゆき】結婚相手を年収と顔で選ぶと失敗する理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "Fydc3YFumow"
       ],
-      "publish_at": "2026-10-26T22:00:00Z",
-      "published_at": "2026-10-26T05:33:41Z",
+      "publish_at": null,
+      "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1140,
       "duration": "PT41S"
+    },
+    "2026-10-28-kagaku": {
+      "youtube_video_id": "MT7ArIklAm4",
+      "url": "https://www.youtube.com/watch?v=MT7ArIklAm4",
+      "title": "【ひろゆき】科学と技術の話6連発。資源が取れても儲かるとは限らないんです",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "23vSB2fXjc8",
+        "4vmH4mejnjI",
+        "5xJ3ZzEnyI8",
+        "Fydc3YFumow",
+        "VYJ-zTB8TVY"
+      ],
+      "publish_at": "2026-10-28T09:30:00Z",
+      "published_at": "2026-10-27T05:33:05Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "P0D"
+    },
+    "2026-10-28-am": {
+      "youtube_video_id": "CfPbeHlWoP8",
+      "url": "https://www.youtube.com/watch?v=CfPbeHlWoP8",
+      "title": "【ひろゆき】投資の収入が給料を超えたら会社を辞めていいのか【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "daulqJwmooE"
+      ],
+      "publish_at": "2026-10-27T22:00:00Z",
+      "published_at": "2026-10-27T05:33:19Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "P0D"
     }
   }
 }

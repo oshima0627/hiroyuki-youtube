@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-26 14:45 JST（10/26 14:16 日次: box の cookie 無し取得が全7区間成功 → box だけでビルド・予約まで完了）
+最終更新: 2026-10-27 14:55 JST（10/27 14:15 日次: box の cookie 無し取得が全7区間成功 → box だけでビルド・予約まで完了）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,25 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-26 14:16 日次）— 完了
+## 今回やったこと（2026-10-27 14:15 日次）— 完了
+
+- git pull（75b92ab で最新）。.venv・VOICEVOX 0.25.2 は生きていた
+- status（14:16 JST）: 当日ショート kyTzNgBqUvQ（07:00 公開済）・当日長尺 rKEhAInsB74（private→2026-10-27T09:30Z、12:49）は既存でスキップ。10/28 分は 0 本だった
+- フルで見る: oUt6kcCwW5c（10/26 ショート）を WaXp52ksF50 → QN45yEvHd8s（10/26 長尺）に更新（work/_update_short_full.py、AFTER を API で確認）。kyTzNgBqUvQ は QN45yEvHd8s のまま（確認済み）
+- 未使用ブロック一覧 work/_unused_1027.txt（743件、10/28 分を足す前。work/_unused_1027.py）
+- 取得: **box の cookie 無し fetch_clips.py が長尺6区間＋ショート1区間すべて成功**（14:17〜14:25 JST、PC 不要）。h264+aac（VYJ-zTB8TVY は 1280x720、他 1920x1080）
+- 翌日長尺 recipes/2026-10-28-kagaku.json（新テーマ: 科学と技術）→ **MT7ArIklAm4**「【ひろゆき】科学と技術の話6連発。資源が取れても儲かるとは限らないんです」12:49（ffprobe 769.3秒）、
+  private→2026-10-28T09:30Z（10/28 18:30 JST）。thumb.at 60（横向き）→ 45（手を広げて笑うカット）、upload 時に thumbnail_set true（API で maxres あり）。
+  問いかけ「「技術があっても採算が合わなければ意味がない」この考え方、アリ？ナシ？」を概要欄1行目で API 確認。冒頭カードと終盤20秒の問いかけボードあり（フレームで確認）。
+  レアメタルの回は高市政権・三菱商事の話（Fydc3YFumow 2286 以降の洋上風力）の手前で切った。量子暗号の回（VYJ-zTB8TVY 4133〜）は直前の AI「ミトス」の話を外した。
+  冷凍食品の温めムラ（23vSB2fXjc8 2731〜2835）は本人が CM に出た商品の PR なので使わず。物理学の実在の話（M7KWrHANxHs 7191〜7480）は尺のため未使用。
+  区間の終わりは無音を測って調整（区間ファイル名は int(start)-int(end) なので、end を変えて名前が変わる VYJ-zTB8TVY_4133-4268.mp4 は 4133-4269 をコピーした）
+- 翌日ショート recipes/shorts/2026-10-28-am.json → **CfPbeHlWoP8**「【ひろゆき】投資の収入が給料を超えたら会社を辞めていいのか【切り抜き】」65秒（daulqJwmooE 7159.4〜7224.0）、
+  private→2026-10-27T22:00Z（10/28 07:00 JST）。フルで見る→rKEhAInsB74（parent 2026-10-27-sports、API で確認）。hook「仕事は辞めるな」。問いかけ「「お金があっても仕事は続けるべき」この考え方、アリ？ナシ？」。
+  先頭の前の回答の「ます」と、終わりの「うん」を無音で外した。顔が左下に寄る（自動クロップのまま）。ショートのサムネは API 未設定（従来どおり）
+- 科学の残り: M7KWrHANxHs 7191〜7480（観測と物質・相対性理論）、Fydc3YFumow 2286〜2428（洋上風力は台風で採算が合わない。2428 以降は政権の話なので切る）、23vSB2fXjc8 8745〜（量子コンピューター短い）、Fydc3YFumow 10221〜10450（農業ロボット・ドローン）
+
+## 前回やったこと（2026-10-26 14:16 日次）— 完了
 
 - status（14:17 JST）: 当日ショート oUt6kcCwW5c（07:00 公開済）・当日長尺 QN45yEvHd8s（private→2026-10-26T09:30Z、10:08）は既存でスキップ。10/27 分は 0 本だった。.venv・VOICEVOX は生きていた
 - フルで見る: wbLkK40nUXw（10/25 ショート）を k9vGnOkWgG4 → WaXp52ksF50（10/25 長尺）に更新（work/_update_short_full.py、AFTER を API で確認）。oUt6kcCwW5c は WaXp52ksF50 のまま（慣例どおり）
@@ -39,117 +57,6 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
   直後の「やってすればいい」（下ネタ寄り）の手前、「美人は3日で飽きますよ」直後の無音で切った。顔が左下に寄る（自動クロップのまま）。サムネ API 未設定（従来どおり）
 - スポーツの残り: daulqJwmooE 2948〜3119（男女の筋肉量・木村モナさん）、3119〜3245（ルール次第・ボディビルダー）、M7KWrHANxHs 7607〜7637（有馬記念）、O0YEy2NB3os 285〜368（のびのび系が増えた）
 
-## 前回やったこと（2026-10-25 14:18 日次）— 完了
-
-- .venv が壊れていた（bin に Activate.ps1 だけ）ので作り直した（requirements.txt、pytest 36 passed）。VOICEVOX 0.25.2 は起動済みだった
-- status（14:19 JST）: 当日ショート wbLkK40nUXw（07:00 公開済）・当日長尺 WaXp52ksF50（private→2026-10-25T09:30Z、14:01）は既存でスキップ。10/26 分は 0 本だった
-- フルで見る: ravNhkw0Wu4（10/24 ショート）を rhXUqMbHxMk → k9vGnOkWgG4（10/24 長尺）に更新（work/_update_short_full.py、API で再取得して確認）。wbLkK40nUXw は k9vGnOkWgG4 のまま（慣例どおり）
-- 取得: **box の cookie 無し fetch_clips.py が長尺7区間＋ショート1区間すべて成功**（14:21〜14:27 JST、PC 不要）。h264+aac（_o8W_QKNHEo と VYJ-zTB8TVY は 1280x720、他 1920x1080）
-- 翌日長尺 recipes/2026-10-26-fuufu.json（新テーマ: 結婚と夫婦）→ **QN45yEvHd8s**「【ひろゆき】結婚と夫婦の話7連発。好きな人と結婚するべきというルールが良くないんです」10:07（PT10M8S）、
-  private→2026-10-26T09:30Z（10/26 18:30 JST）。thumb.at 60（後ろ向き）→ 330（自分の時間が欲しい妻の回の正面カット）、upload 時に thumbnail_set true。
-  問いかけ「「結婚相手は大好きな人じゃなくてもいい」この考え方、アリ？ナシ？」を概要欄1行目で API 確認。冒頭カードと終盤20秒の問いかけボードあり。
-  恋愛結婚至上主義の回（O0YEy2NB3os）は相談者の病名部分（3925〜3948）を外して 3948.9 から。直後の元首相事件の話（4017 以降）は入れていない。
-  マチアプ33歳の回（0ojMhUyiHB4 6851〜）と「メンヘラと結婚」の回（jHWUy2IiZvs 4400〜）は言い方がきついので使わず
-- 翌日ショート recipes/shorts/2026-10-26-am.json → **oUt6kcCwW5c**「【ひろゆき】上司に詰められて辛い…会社を辞めるか迷ったら【切り抜き】」50秒、
-  private→2026-10-25T22:00Z（10/26 07:00 JST）。フルで見る→WaXp52ksF50（parent 2026-10-25-eiga、API で確認）。問いかけ「「辞めるなら損をしない辞め方を先に考えるべき」この考え方、アリ？ナシ？」。
-  直後の「中道分裂」（4vmH4mejnjI 2559 以降、政治）の手前で切った。顔が左下に寄る（自動クロップのまま）。ショートのサムネは API 未設定（thumbnail_set false、従来どおり）
-- 未使用ブロック一覧は work/_unused_1025.txt（764件、10/26 分を足す前）。結婚の残り: _Qc2ZF3MLO0 2771-2816（結婚市場の35歳の壁）、23vSB2fXjc8 9496-9625（妊娠と結婚・割り勘の彼）、daulqJwmooE 11282-11294（年金分割）
-
-## 過去（2026-10-24 14:25 日次）— 完了
-
-- status（14:25 JST）: 当日ショート ravNhkw0Wu4（07:00 公開済、フルで見る→rhXUqMbHxMk）・当日長尺 k9vGnOkWgG4（private→2026-10-24T09:30Z、13:28）は既存でスキップ。10/25 分は 0 本だった
-- フルで見る: Nq-n9B5ROuU は rhXUqMbHxMk を指していて変更なし（API で確認）。ravNhkw0Wu4 も rhXUqMbHxMk のまま（指示どおり触っていない）
-- 取得: **box の cookie 無し fetch_clips.py が長尺7区間＋ショート1区間すべて成功**（14:25〜14:34 JST、PC 不要。ASUS_i9 はこの時点でオフライン）。ffprobe で h264+aac（_o8W_QKNHEo の2区間は 1280x720、他 1920x1080）
-- 翌日長尺 recipes/2026-10-25-eiga.json（新テーマ: 映画とドラマ）→ **WaXp52ksF50**「【ひろゆき】映画とドラマの話7連発。ガチで面白い作品しか国境を越えてきません」14:00（ffprobe 840.99秒）、
-  private→2026-10-25T09:30Z（10/25 18:30 JST）。thumb.at 60（720p でブレ）→ 150（jHWU の笑顔のカット）、upload 時に thumbnail_set true。問いかけ「「外国の映画やドラマの方が当たりが多い」この考え方、アリ？ナシ？」を概要欄1行目で API 確認。
-  ガンダムの回（_o8W_QKNHEo 1656-1850）はイスラエル・イランの戦争に触れるので使わず、ペーパーハウスの回は玉木氏の話（2003 以降）の手前で切った。透明人間（2030-2112）は下ネタ寄りなので未使用。『爆弾』の回は VPN の話（6930 以降）の手前で切った
-- 翌日ショート recipes/shorts/2026-10-25-am.json → **wbLkK40nUXw**「【ひろゆき】好きな人に仕事メールで「この映画見た？」と聞かれたら【切り抜き】」84秒（競合22〜73秒より長いという警告のみ）、
-  private→2026-10-24T22:00Z（10/25 07:00 JST）。フルで見る→k9vGnOkWgG4（parent 2026-10-24-warai、API で確認）。hook「映画の話は脈あり？」（「」や？の途中で折り返すと崩れるので短くした）。問いかけ「「興味があると言うなら少しは調べてから言うべき」この考え方、アリ？ナシ？」。顔が左下に寄る（自動クロップのまま）
-- 未使用ブロック一覧は work/_unused_1024.txt（773件、10/25 分を足す前）。映画の残り: jHWUy2IiZvs 1036-1115（ハンターハンター新刊を忘れる）、jHWUy2IiZvs 5065-5267（映画で各国の常識が分かる）、skPyrH0WTzY 3898-3950（日本映画は過去の人気作頼み）
-
-## 過去（2026-10-23 14:19 日次）— 完了
-
-- status（14:20 JST）: 当日ショート Nq-n9B5ROuU（07:00 公開済）・当日長尺 rhXUqMbHxMk（private→2026-10-23T09:30Z、11:06）は既存でスキップ。10/24 分は 0 本だった
-- フルで見る: uc6LY1dluHo は RNDHtUShK58 を指していて変更なし。Nq-n9B5ROuU を RNDHtUShK58 → rhXUqMbHxMk（当日長尺、18:30 公開までは非公開リンク）に更新（work/_update_short_full.py、API で AFTER 確認）
-- 取得: box の cookie 無し fetch は約4分で1区間も完了せず（.part が増えない）→ 停止して PC（ASUS_i9）で work/tmp-1024-pc.json（長尺7区間＋ショート1区間）を fetch（Firefox cookie、約9分）→ tar で CopyToBox。ffprobe で h264+aac（_o8W_QKNHEo と VYJ-zTB8TVY は 1280x720、他 1920x1080）
-- 翌日長尺 recipes/2026-10-24-warai.json（新テーマ: 笑いとトーク）→ **k9vGnOkWgG4**「【ひろゆき】笑いとトークの話7連発。面白い人はみんな性格が悪いです」13:27（PT13M28S）、
-  private→2026-10-24T09:30Z（10/24 18:30 JST）。thumb.at 60（笑顔）、upload 時に thumbnail_set true。問いかけ「「面白い人はみんな性格が悪い」この考え方、アリ？ナシ？」を概要欄1行目で API 確認。
-  性格の回（skPyrH0WTzY 6401-6542）は芸人個人名を挙げて性格が悪いと言う部分（6543 以降）の手前で切った。タモリさんの回は「放送できないこと」（_o8W_QKNHEo 5737 以降）の手前で切った
-- 翌日ショート recipes/shorts/2026-10-24-am.json → **ravNhkw0Wu4**「【ひろゆき】「あの人は腹黒い」と言う人の正体【切り抜き】」42秒、
-  private→2026-10-23T22:00Z（10/24 07:00 JST）。フルで見る→rhXUqMbHxMk（parent 2026-10-23-kokoro、API で確認）。問いかけ「「証拠のない悪口は相手にするだけ時間の無駄」この考え方、アリ？ナシ？」。冒頭は顔が左下に寄る（自動クロップのまま）
-- 未使用ブロック一覧は work/_unused_1023.txt（781件、10/24 分を足す前）。笑いの残り: daulqJwmooE 568-673（水曜日のダウンタウン未放送回）、_o8W_QKNHEo 5551-5596（気まずい相手との生放送）
-
-## 過去（2026-10-21 14:17 日次）— 完了
-
-- status（14:18 JST）: 当日ショート wb3NmCaYikw（07:00 公開済、フルで見る→aM46O8fw5JU を API で確認）、当日長尺 fDO58HAngXo
-  （private→2026-10-21T09:30Z = 10/21 18:30 JST、14:25）は既存でスキップ。10/22 分は長尺・ショートとも 0 本だった
-- フルで見る: -MKj2GDwPzQ（10/20 ショート）を HNNmVJ2MAls → aM46O8fw5JU（10/20 長尺）に更新（work/_update_short_full.py、API で AFTER 確認）。
-  wb3NmCaYikw は前日長尺 aM46O8fw5JU を指していて慣例どおりなので変更なし（10/22 の日次で fDO58HAngXo に更新する）
-- 取得: box の cookie 無し fetch で 2ol7cHkAOMw 2区間・VYJ-zTB8TVY 233-375・jmADUo9Vcho 4890-5002 は成功（14:22〜14:30）。
-  skPyrH0WTzY 1359-1444 で5分以上進まず（以前と同じ bot 判定のリトライとみて停止）→ PC（ASUS_i9）で work/tmp-1022-pc.json
-  （skPy・c2X5ZUIpRSk 4478-4526・ショート素材 VYJ-zTB8TVY 6540-6599）を fetch（Firefox cookie、2分40秒）→ CopyToBox。ffprobe で全て h264+aac
-- 翌日長尺 recipes/2026-10-22-doubutsu.json → **RNDHtUShK58**「【ひろゆき】動物とペットの話6連発。人間は牛に使われているのかもしれません」14:03（PT14M3S）、
-  private→2026-10-22T09:30Z（10/22 18:30 JST）。thumb.at 60、thumbnail_set true。問いかけ「「ペットを飼うなら犬税くらい払うべき」この考え方、アリ？ナシ？」。
-  犬税の回は自民党総裁選の話（jmADUo9Vcho 5005 以降）の手前で切った。生体販売の回（5016〜5260）はドンキ店舗名と総裁選が絡むので使わず。
-  少子化とペットの回は「政治家がやる気がない」（c2X5ZUIpRSk 4552 以降）の手前で切った
-- 翌日ショート recipes/shorts/2026-10-22-am.json → **uc6LY1dluHo**「【ひろゆき】向かいの家の犬がほったらかしにされていたら【切り抜き】」59秒、
-  private→2026-10-21T22:00Z（10/22 07:00 JST）。フルで見る→fDO58HAngXo（parent 2026-10-21-machi、API で確認）。
-  問いかけ「「人に頼まず自分で解決するか諦めるかの2択」この考え方、アリ？ナシ？」。顔が左に寄る瞬間あり（自動クロップのまま）
-- 未使用ブロック一覧は work/_unused_1021.txt（797件）。字幕から拾う補助 work/_sub.py <video_id> <start> <end>
-- 動物ネタの残り: 2ol7cHkAOMw 1080-1230（山猫も北アフリカDNA）、jmADUo9Vcho 5324-5476（坂上忍さんのレンタル保護犬猫）、
-  O0YEy2NB3os 2606-2678（保護猫カフェ）、VYJ-zTB8TVY 5478-5510 / O0YEy2NB3os 6664-6692（34歳の猫）
-
-## 過去（2026-10-20 14:13 日次）— 素材は PC 取得で補完して完了
-
-- status（14:22 JST）: 当日ショート -MKj2GDwPzQ（07:00 公開済・フルで見る→HNNmVJ2MAls を API で確認）、当日長尺 aM46O8fw5JU
-  （private→2026-10-20T09:30Z = 10/20 18:30 JST、14:10）は既存でスキップ。10/21 分は長尺・ショートとも 0 本だった
-- フルで見る: ERaQcCP2p2I（10/19 ショート）を k5hQ5NpJHQU → HNNmVJ2MAls（10/19 長尺）に更新（work/_update_short_full.py、API で AFTER 確認）
-- 取得: 14:25〜14:29 JST、cookie 無しの box fetch で Fydc3YFumow / VYJ-zTB8TVY / 4vmH4mejnjI / O0YEy2NB3os の
-  すべてが「Sign in to confirm you’re not a bot」。player_client=tv / tv_simply / mweb・web_safari も不可
-  → PC（ASUS_i9）で fetch_clips.py（Firefox cookie）→ 8ファイルを CopyToBox で work/clips へ（14:40）。
-  ffprobe で全て h264+aac・長さ正常を確認（VYJ-zTB8TVY の4区間は 1280x720、他は 1920x1080）。
-  PC のローカルリポジトリには git pull のローカル merge commit があるが push しない（PC からは push しない）
-- 翌日長尺 recipes/2026-10-21-machi.json → **fDO58HAngXo**「【ひろゆき】街の話7連発。エリートが街を作ると個性が消えます」14:25（PT14M25S）、
-  private→2026-10-21T09:30Z（10/21 18:30 JST）。thumb.at 60 → 55（60 は手で顔が隠れ目を閉じていた。55 はカメラ目線）。
-  set_thumbnails.py --only 2026-10-21-machi --force で平均差分 0.8 を確認。終了ボード 20 秒・冒頭カードと終盤に問いかけ＋CTA。
-  概要欄1行目「「再開発で街はつまらなくなる」この考え方、アリ？ナシ？ あなたの反論をコメントで👇」を API で確認。
-  お台場の回は東京都知事批判（Fydc3YFumow 962 以降）を政治寄りとして切った。秋葉原の回はメイドカフェ違法の断定（7523 以降）の手前で切った
-- 翌日ショート recipes/shorts/2026-10-21-am.json → **wb3NmCaYikw**「【ひろゆき】運動会の徒競走で1位を取る裏ワザ【切り抜き】」70秒、
-  private→2026-10-20T22:00Z（10/21 07:00 JST）。フルで見る→aM46O8fw5JU（parent 2026-10-20-uchu、API で確認）。
-  問いかけ「「1位を取るより自分の能力を上げる方が大事」この考え方、アリ？ナシ？」、終盤に CTA テロップ。
-  冒頭1秒あたりは顔が左下に寄る（build_short の自動クロップのまま）
-- scripts/fetch_clips.py: ショート単体レシピ（clip キー）も1区間として拾うよう修正（一時レシピ不要に）。pytest 36 passed
-- 未使用ブロック一覧は work/_unused_1020.txt（811件）
-
-## 過去（2026-10-19 14:13 日次）
-
-- 当日ショート ERaQcCP2p2I（07:00 公開済）・当日長尺 HNNmVJ2MAls（18:30 予約済）は既存でスキップ
-- フルで見る: UlaZRnjIeXA（10/18 ショート）を id0Ju8MPkBU → k5hQ5NpJHQU（10/18 長尺）に更新（API で確認）
-- 取得: cookie 無しの box fetch で 0ojMhUyiHB4 5区間と O0YEy2NB3os 1区間は成功、M7KWrHANxHs 4665-4846 / skPyrH0WTzY 5617-5658 は
-  bot 判定で失敗 → PC（ASUS_i9）で work/tmp-1020-pc.json を fetch（Firefox cookie）→ CopyToBox
-- 翌日長尺 recipes/2026-10-20-uchu.json → **aM46O8fw5JU**「宇宙とAIの話7連発。宇宙人が見つからないのは文明が自滅したからかも」14:10、
-  private→2026-10-20T09:30Z（10/20 18:30 JST）。thumb.at=60（ピースのカット）、thumbnail_set true。
-  問いかけ「「AIに禁止ルールは教え込めない」この考え方、アリ？ナシ？」。武漢の研究所の話（0ojMhUyiHB4 4333以降）は政治寄りなので切った
-- 翌日ショート recipes/shorts/2026-10-20-am.json → **-MKj2GDwPzQ**「かまってちゃんの夫にもう疲れたら」67秒、private→2026-10-19T22:00Z（10/20 07:00 JST）。
-  フルで見る→HNNmVJ2MAls（parent 2026-10-19-suimin）。問いかけ「「夫を説得せず自分の悩みとして相談に誘う」この考え方、アリ？ナシ？」
-  冒頭の相談読み上げ中はうつむくので顔が下に切れる（元配信のカードの位置で直せない）
-- 未使用ブロック一覧は work/_unused_1019.txt
-
-## 過去（2026-10-18 14:13 日次 → 途中停止 → 19:00 に再開して完了）
-
-- 止まった原因: 14:18〜15:02 の fetch_clips.py（cookie 無し）で jmADUo9Vcho 162-286 / jPOui7xHeOw 4585-4642 が
-  「ログインして bot ではないことを確認してください」（YouTube の bot 判定）で3回リトライ後に失敗し exit 1。
-  1回目は 25 分の timeout で Terminated(143)。ショート素材 4vmH4mejnjI 4413-4471 も未取得のまま止まった。
-  18:50 の再実行でも同じ bot 判定。player_client=web_embedded はフォーマット0、android_vr は 360p のみ
-- 対処: PC（ASUS_i9）で `python scripts\fetch_clips.py work\tmp-1019-fetch.json`（Firefox cookie、未取得3区間だけの一時レシピ）→ CopyToBox で work/clips へ（1080p）
-- 翌日長尺 recipes/2026-10-19-suimin.json → **HNNmVJ2MAls**「睡眠の話7連発。目覚ましで起きる人は睡眠が足りていません」13:18、private→2026-10-19T09:30Z（10/19 18:30 JST）。
-  thumb.at は 15（冒頭カード追加前の時刻で顔が崩れた）→ 90 に変更（腕時計を見るカット）。サムネ API 反映を差分 0.85 で確認
-- 翌日ショート recipes/shorts/2026-10-19-am.json → **ERaQcCP2p2I**「会社のカードを私用した部長が逃げたら」56秒、private→2026-10-18T22:00Z（10/19 07:00 JST）。
-  フルで見る→k5hQ5NpJHQU（parent 2026-10-18-mitame、10/18 18:30 公開済み）。問いかけ「「回収できないなら泣き寝入りも合理的」この考え方、アリ？ナシ？」
-  冒頭〜15秒はスパチャを読んで下を向くので顔の下半分が黒帯側に切れる（build_short の自動クロップのまま）
-- hxzDGMs-aWE のフルで見るは既に id0Ju8MPkBU（更新不要、API で確認）
-- 未使用ブロック一覧は work/_unused_1018.txt
-
 ## 検証済みの事実
 
 - status（2026-10-16 15:00 JST）: Mw4CM0_gFhw private→2026-10-16T09:30Z 9M40S、id0Ju8MPkBU private→2026-10-17T09:30Z、hxzDGMs-aWE private→2026-10-16T22:00Z（処理中）、5UDR-8tVjAE public
@@ -159,7 +66,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 10/27 の日次: 当日ショート kyTzNgBqUvQ（07:00）・当日長尺 rKEhAInsB74（18:30）は確認してスキップ。前日ショート oUt6kcCwW5c のフルで見るを前日長尺 QN45yEvHd8s に更新。10/28 分の長尺・ショートを作る
+1. 10/28 の日次: 当日ショート CfPbeHlWoP8（07:00）・当日長尺 MT7ArIklAm4（18:30）は確認してスキップ。前日ショート kyTzNgBqUvQ のフルで見るを前日長尺 rKEhAInsB74 に更新。10/29 分の長尺・ショートを作る（ショートのフルで見る→MT7ArIklAm4）
    `.venv/bin/python work/_update_short_full.py <short_id> <long_id>`
-2. 夕方 10/26: QN45yEvHd8s 公開後に engage（問いかけコメント・返信）、Studio の関連動画（oUt6kcCwW5c→QN45yEvHd8s）・固定・終了画面
-3. box の cookie 無し取得は 10/22・10/23 は不可、10/24〜10/26 は全区間成功。box で数分試して進まなければ PC 取得に切り替える
+2. 夕方 10/27: rKEhAInsB74 公開後に engage（問いかけコメント・返信）、Studio の関連動画（kyTzNgBqUvQ→rKEhAInsB74）・固定・終了画面
+3. box の cookie 無し取得は 10/22・10/23 は不可、10/24〜10/27 は全区間成功。box で数分試して進まなければ PC 取得に切り替える
