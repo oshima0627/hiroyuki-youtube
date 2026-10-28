@@ -384,7 +384,7 @@
       "publish_at": null,
       "published_at": "2026-09-01T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1204,
+      "view_count": 1205,
       "duration": "PT39S"
     },
     "2026-09-03-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1492,
+      "view_count": 1493,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1874,
+      "view_count": 1875,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1085,7 +1085,7 @@
       "publish_at": null,
       "published_at": "2026-10-11T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1279,
+      "view_count": 1283,
       "duration": "PT40S"
     },
     "2026-10-13-am": {
@@ -1982,7 +1982,7 @@
       "publish_at": null,
       "published_at": "2026-10-24T22:00:04Z",
       "upload_status": "processed",
-      "view_count": 1327,
+      "view_count": 1326,
       "duration": "PT1M25S"
     },
     "2026-10-26-fuufu": {
@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1853,
+      "view_count": 1876,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2058,14 +2058,14 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1160,
+      "view_count": 1307,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
       "youtube_video_id": "MT7ArIklAm4",
       "url": "https://www.youtube.com/watch?v=MT7ArIklAm4",
       "title": "【ひろゆき】科学と技術の話6連発。資源が取れても儲かるとは限らないんです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -2076,8 +2076,8 @@
         "Fydc3YFumow",
         "VYJ-zTB8TVY"
       ],
-      "publish_at": "2026-10-28T09:30:00Z",
-      "published_at": "2026-10-27T05:33:05Z",
+      "publish_at": null,
+      "published_at": "2026-10-28T09:30:39Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT12M50S"
@@ -2096,7 +2096,7 @@
       "publish_at": null,
       "published_at": "2026-10-27T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1188,
+      "view_count": 1210,
       "duration": "PT1M5S"
     },
     "2026-10-29-am": {
@@ -2135,7 +2135,7 @@
       ],
       "publish_at": "2026-10-29T09:30:00Z",
       "published_at": "2026-10-28T05:38:51Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M20S"
     }
