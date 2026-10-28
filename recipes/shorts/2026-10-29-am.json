@@ -1,0 +1,39 @@
+{
+ "id": "2026-10-29-am",
+ "parent": "2026-10-28-kagaku",
+ "publish_at": "2026-10-28T22:00:00Z",
+ "title": "【ひろゆき】金魚すくいのポイにワセリンを塗ったら破れない？【切り抜き】",
+ "tags": [
+  "ひろゆき",
+  "切り抜き",
+  "解説",
+  "金魚すくい",
+  "お祭り",
+  "裏ワザ",
+  "雑学",
+  "Shorts"
+ ],
+ "category_id": "22",
+ "privacy_status": "private",
+ "expected_channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+ "clip": {
+  "video_id": "23vSB2fXjc8",
+  "video_title": "「みんながやっても私がやらない無駄な事」Belzebuth",
+  "video_url": "https://www.youtube.com/watch?v=23vSB2fXjc8",
+  "start": 10151.5,
+  "end": 10206.5,
+  "title": "ワセリンを塗るより水を通した方がいい",
+  "note": "金魚すくいのポイにワセリンを塗れば絶対破れないのではという質問に、破れるかどうかは枠と紙の間にかかる重さの差で決まるので、水をはじくより、むしろ水を通して金魚の重さだけがかかるようにした方が取りやすいのでは、という答え",
+  "hook": "金魚すくいの裏ワザ"
+ },
+ "short": {
+  "start": 1.6,
+  "end": 53.6,
+  "hook": "ワセリンは塗るな",
+  "hook_px": 60,
+  "footer": "長尺の解説動画は概要欄から"
+ },
+ "engagement": {
+  "question": "「裏ワザより仕組みを考えた方が得」この考え方、アリ？ナシ？"
+ }
+}
