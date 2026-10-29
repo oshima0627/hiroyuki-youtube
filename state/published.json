@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1900,
+      "view_count": 1909,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2058,7 +2058,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1345,
+      "view_count": 1347,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
@@ -2096,7 +2096,7 @@
       "publish_at": null,
       "published_at": "2026-10-27T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1349,
+      "view_count": 1353,
       "duration": "PT1M5S"
     },
     "2026-10-29-am": {
@@ -2113,14 +2113,14 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1225,
+      "view_count": 1241,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
       "youtube_video_id": "rpJy_1MYcHg",
       "url": "https://www.youtube.com/watch?v=rpJy_1MYcHg",
       "title": "【ひろゆき】ゲームとアニメの話7連発。ゲームの主人公が学生ばかりなのは子ども向けだからです",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -2133,8 +2133,8 @@
         "_o8W_QKNHEo",
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-29T09:30:00Z",
-      "published_at": "2026-10-28T05:38:51Z",
+      "publish_at": null,
+      "published_at": "2026-10-29T09:30:21Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M20S"
@@ -2154,7 +2154,7 @@
       ],
       "publish_at": "2026-10-30T09:30:00Z",
       "published_at": "2026-10-29T05:25:39Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT7M1S"
     },
@@ -2171,9 +2171,9 @@
       ],
       "publish_at": "2026-10-29T22:00:00Z",
       "published_at": "2026-10-29T05:25:53Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
-      "duration": "P0D"
+      "duration": "PT36S"
     }
   }
 }
