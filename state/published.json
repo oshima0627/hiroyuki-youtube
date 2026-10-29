@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1493,
+      "view_count": 1495,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -520,7 +520,7 @@
       "publish_at": null,
       "published_at": "2026-09-09T22:00:28Z",
       "upload_status": "processed",
-      "view_count": 1327,
+      "view_count": 1328,
       "duration": "PT1M3S"
     },
     "2026-09-11-am": {
@@ -707,7 +707,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1535,
+      "view_count": 1536,
       "duration": "PT55S"
     },
     "2026-09-22-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2086,
+      "view_count": 2087,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1326,
+      "view_count": 1330,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1875,
+      "view_count": 1877,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1398,
+      "view_count": 1399,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1563,7 +1563,7 @@
       "publish_at": null,
       "published_at": "2026-10-12T09:30:04Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT12M47S"
     },
     "2026-10-13-bouhan": {
@@ -1684,7 +1684,7 @@
       "publish_at": null,
       "published_at": "2026-10-16T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1214,
+      "view_count": 1215,
       "duration": "PT1M17S"
     },
     "2026-10-18-am": {
@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1876,
+      "view_count": 1900,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2058,7 +2058,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1307,
+      "view_count": 1345,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
@@ -2079,7 +2079,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T09:30:39Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 2,
       "duration": "PT12M50S"
     },
     "2026-10-28-am": {
@@ -2096,24 +2096,24 @@
       "publish_at": null,
       "published_at": "2026-10-27T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1210,
+      "view_count": 1349,
       "duration": "PT1M5S"
     },
     "2026-10-29-am": {
       "youtube_video_id": "OZnlwCiAMEA",
       "url": "https://www.youtube.com/watch?v=OZnlwCiAMEA",
       "title": "【ひろゆき】金魚すくいのポイにワセリンを塗ったら破れない？【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "23vSB2fXjc8"
       ],
-      "publish_at": "2026-10-28T22:00:00Z",
-      "published_at": "2026-10-28T05:33:24Z",
+      "publish_at": null,
+      "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1225,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2138,6 +2138,42 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT14M20S"
+    },
+    "2026-10-30-tsumerare": {
+      "youtube_video_id": "As5R0jCxHoM",
+      "url": "https://www.youtube.com/watch?v=As5R0jCxHoM",
+      "title": "【ひろゆき】上司に詰められて辛い。会社を辞める前に何をすればいい？",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "0ojMhUyiHB4",
+        "4vmH4mejnjI",
+        "jHWUy2IiZvs"
+      ],
+      "publish_at": "2026-10-30T09:30:00Z",
+      "published_at": "2026-10-29T05:25:39Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT7M1S"
+    },
+    "2026-10-30-am": {
+      "youtube_video_id": "CMkawWTnuxo",
+      "url": "https://www.youtube.com/watch?v=CMkawWTnuxo",
+      "title": "【ひろゆき】年収450万で安定か好きな仕事か迷ったら…NISAの枠を先に埋める？【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "M7KWrHANxHs"
+      ],
+      "publish_at": "2026-10-29T22:00:00Z",
+      "published_at": "2026-10-29T05:25:53Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "P0D"
     }
   }
 }

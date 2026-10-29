@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-28 14:50 JST（10/28 14:17 日次: box の cookie 無し取得が全8区間成功 → box だけでビルド・予約まで完了）
+最終更新: 2026-10-29 14:45 JST（10/29 日次: 昇格1件・新ルール長尺 As5R0jCxHoM・ショート CMkawWTnuxo）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,24 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-28 14:17 日次）— 完了
+## 今回やったこと（2026-10-29 14:15 日次）— 完了
+
+- status: 当日ショート OZnlwCiAMEA（07:00 公開済）・当日長尺 rpJy_1MYcHg（private→10/29 18:30）は既存でスキップ
+- フルで見る: CfPbeHlWoP8 → MT7ArIklAm4（API で確認）
+- **昇格（成長施策5）**: oUt6kcCwW5c が公開3日で1,900回 → 同じ疑問の長尺を 10/30（金）枠に作成し、oUt6kcCwW5c のフルで見るを As5R0jCxHoM に変更（API 確認）。台帳 docs/growth-ledger.md に記録
+- 翌日長尺（新ルール初回：3問の深掘り＋解説板10枚＋まとめ）recipes/2026-10-30-tsumerare.json → **As5R0jCxHoM**「【ひろゆき】上司に詰められて辛い。会社を辞める前に何をすればいい？」7:01、private→2026-10-30T09:30Z。
+  冒頭: 冒頭カード3.5秒→結論の一言（4vmH4mejnjI 2551.15〜2558.3「基本的にはやめるけど損をしない辞め方を」）→予告の解説板。素材 4vmH4mejnjI 2508.4〜2558.3 / jHWUy2IiZvs 7032〜7080.4 / 0ojMhUyiHB4 2758〜2850.3（2853〜は同じ質問の読み直しなので切った）。
+  区間ファイルは *_2508-2558・*_2551-2558 を ffmpeg で、*_7032-7080・*_2758-2850 を cp で作った。thumb.at 171（正面顔）。サムネ maxres あり。概要欄1行目の問いかけを API 確認
+- 翌日ショート recipes/shorts/2026-10-30-am.json → **CMkawWTnuxo**「【ひろゆき】年収450万で安定か好きな仕事か迷ったら…NISAの枠を先に埋める？【切り抜き】」36秒（M7KWrHANxHs 3383.5〜3419.1）、private→2026-10-29T22:00Z。フルで見る→rpJy_1MYcHg。お金の検索語回。概要欄に「投資を勧める動画ではありません／元本割れのリスク」を API で追記
+- 長尺は月水金のみ。次の長尺枠は 11/2（月）。10/31（土）・11/1（日）は長尺を作らない
+
+## 次にやること
+
+1. 10/30 の日次: 当日ショート CMkawWTnuxo・当日長尺 As5R0jCxHoM はスキップ。前日ショート OZnlwCiAMEA のフルで見るを rpJy_1MYcHg に。10/31 のショートを作る（長尺は作らない。11/2 月曜分は 10/31〜11/1 の日次で作る）
+2. 夕方 10/29: rpJy_1MYcHg 公開後に engage、Studio 関連動画 OZnlwCiAMEA→rpJy_1MYcHg・固定・終了画面
+3. 夕方 10/30: 関連動画 CMkawWTnuxo→As5R0jCxHoM に加えて、昇格元 oUt6kcCwW5c の関連動画も As5R0jCxHoM に
+
+## 前回やったこと（2026-10-28 14:17 日次）— 完了
 
 - git pull（8a3d292 で最新）。.venv・VOICEVOX 0.25.2 は生きていた
 - status（14:18 JST）: 当日ショート CfPbeHlWoP8（07:00 公開済）・当日長尺 MT7ArIklAm4（private→2026-10-28T09:30Z、12:50）は既存でスキップ。10/29 分は 0 本だった
@@ -41,7 +58,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - publish_shorts.py は `PYTHONPATH=.` を付けないと upload_youtube.py 内の `from scripts.engagement` で ModuleNotFoundError（アップロード前に止まるので害はない）
 - ゲームの残り: 23vSB2fXjc8 10213〜10217（悟空が強いのは作者がそう描いたから・短い）、10381〜10414（漫画の吹き出し研究）、_o8W_QKNHEo 2021〜2113（透明人間は目が見えない。「女湯」の冗談あり）、23vSB2fXjc8 8243〜（遊戯王も学生、の続き）
 
-## 前回やったこと（2026-10-27 14:15 日次）— 完了
+## 前々回（2026-10-27 14:15 日次）— 完了
 
 - 当日 kyTzNgBqUvQ・rKEhAInsB74 はスキップ。oUt6kcCwW5c のフルで見るを QN45yEvHd8s に更新
 - 10/28 長尺 MT7ArIklAm4（科学と技術の話6連発・recipes/2026-10-28-kagaku.json）、10/28 ショート CfPbeHlWoP8（recipes/shorts/2026-10-28-am.json、フルで見る→rKEhAInsB74）
@@ -53,10 +70,3 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - hxzDGMs-aWE: API で channelId=UCqK3KYqEeeJiAWr4nSryJYQ、publishAt 2026-10-16T22:00:00Z、概要欄1行目の問いかけと Mw4CM0_gFhw へのリンクを確認。フレーム抽出（9点＋終盤）で崩れなし（顔が左端に寄る瞬間はあるが切れていない）、末尾は無音区間で切れている
 - u_vN9xYpzyI description が hZCbbUwQVOI を指す
 - cookie 無し fetch_clips 7区間成功
-
-## 次にやること
-
-1. 10/29 の日次: 当日ショート OZnlwCiAMEA（07:00）・当日長尺 rpJy_1MYcHg（18:30）は確認してスキップ。前日ショート CfPbeHlWoP8 のフルで見るを前日長尺 MT7ArIklAm4 に更新。10/30 分の長尺・ショートを作る（ショートのフルで見る→rpJy_1MYcHg）
-   `.venv/bin/python work/_update_short_full.py <short_id> <long_id>`
-2. 夕方 10/28: MT7ArIklAm4 公開後に engage（問いかけコメント・返信）、Studio の関連動画（CfPbeHlWoP8→MT7ArIklAm4）・固定・終了画面
-3. box の cookie 無し取得は 10/22・10/23 は不可、10/24〜10/28 は全区間成功。box で数分試して進まなければ PC 取得に切り替える
