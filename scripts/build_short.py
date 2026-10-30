@@ -277,6 +277,16 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
     cx = (hx0 + hx1) // 2
     x0 = max(0, min(fw - side, cx - side // 2))
     y0 = max(0, bottom - side)
+    # 手動の切り出し指定（short.crop = [x0, y0, side]）。頭が大きく左右に動く回で、
+    # 自動の正方形が狭すぎて顔が外れたとき用（2026-10-30 追加）
+    if short.get("crop"):
+        x0, y0, side = (int(v) for v in short["crop"])
+        side = min(side, fw - x0, fh_ - y0)
+        bottom = y0 + side
+        over = max(0, bottom - card_min)
+        cover = min(MAX_COVER, -(-over * VIDEO_H // side))
+        if "cover" in short:  # カード検出が白い服を拾って誤るとき用
+            cover = int(short["cover"])
     cw = ch = side
     print(f"  頭部（合併） x{hx0}-{hx1} y{hy0}-{hy1} / 下端 {bottom}"
           f" / 切り出し {side}x{side} @ ({x0},{y0}) / 拡大 {VIDEO_H / side:.2f}倍"

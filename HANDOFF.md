@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-29 14:45 JST（10/29 日次: 昇格1件・新ルール長尺 As5R0jCxHoM・ショート CMkawWTnuxo）
+最終更新: 2026-10-30 15:15 JST（10/30 日次: 11/2 長尺 5jxVZtOwSnI・10/31 ショート 1aeL1jDjL4o）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,45 +24,32 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-29 14:15 日次）— 完了
+## 今回やったこと（2026-10-30 14:20 日次）— 完了
 
-- status: 当日ショート OZnlwCiAMEA（07:00 公開済）・当日長尺 rpJy_1MYcHg（private→10/29 18:30）は既存でスキップ
-- フルで見る: CfPbeHlWoP8 → MT7ArIklAm4（API で確認）
-- **昇格（成長施策5）**: oUt6kcCwW5c が公開3日で1,900回 → 同じ疑問の長尺を 10/30（金）枠に作成し、oUt6kcCwW5c のフルで見るを As5R0jCxHoM に変更（API 確認）。台帳 docs/growth-ledger.md に記録
-- 翌日長尺（新ルール初回：3問の深掘り＋解説板10枚＋まとめ）recipes/2026-10-30-tsumerare.json → **As5R0jCxHoM**「【ひろゆき】上司に詰められて辛い。会社を辞める前に何をすればいい？」7:01、private→2026-10-30T09:30Z。
-  冒頭: 冒頭カード3.5秒→結論の一言（4vmH4mejnjI 2551.15〜2558.3「基本的にはやめるけど損をしない辞め方を」）→予告の解説板。素材 4vmH4mejnjI 2508.4〜2558.3 / jHWUy2IiZvs 7032〜7080.4 / 0ojMhUyiHB4 2758〜2850.3（2853〜は同じ質問の読み直しなので切った）。
-  区間ファイルは *_2508-2558・*_2551-2558 を ffmpeg で、*_7032-7080・*_2758-2850 を cp で作った。thumb.at 171（正面顔）。サムネ maxres あり。概要欄1行目の問いかけを API 確認
-- 翌日ショート recipes/shorts/2026-10-30-am.json → **CMkawWTnuxo**「【ひろゆき】年収450万で安定か好きな仕事か迷ったら…NISAの枠を先に埋める？【切り抜き】」36秒（M7KWrHANxHs 3383.5〜3419.1）、private→2026-10-29T22:00Z。フルで見る→rpJy_1MYcHg。お金の検索語回。概要欄に「投資を勧める動画ではありません／元本割れのリスク」を API で追記
-- 長尺は月水金のみ。次の長尺枠は 11/2（月）。10/31（土）・11/1（日）は長尺を作らない
+- git pull（318611f で最新）。.venv・VOICEVOX 0.25.2 は生きていた
+- status（14:21 JST）: 当日ショート CMkawWTnuxo（07:00 公開済）・当日長尺 As5R0jCxHoM（private→10/30 18:30）は既存。10/31 ショート・11/2 長尺は 0 本だった
+- 昇格判定: 48時間以上たったショートで 1,700 回超は oUt6kcCwW5c（昇格済）だけ。CfPbeHlWoP8 は 1,468 回で対象外 → **昇格なし**
+- フルで見る（API で確認）: CMkawWTnuxo rpJy_1MYcHg→**As5R0jCxHoM**、OZnlwCiAMEA MT7ArIklAm4→**rpJy_1MYcHg**
+- 未使用ブロック一覧 work/_unused_1030.txt（721件、work/_unused_1030.py）
+- 取得: box の cookie 無し fetch_clips.py で長尺4区間＋ショート1区間すべて成功（VYJ-zTB8TVY は元が 720p）
+- 11/2（月）長尺 recipes/2026-11-02-tenshoku-handan.json → **5jxVZtOwSnI**「【ひろゆき】転職した方がいい人、しない方がいい人。公務員から民間はやめた方がいい？」7:12、private→2026-11-02T09:30Z。
+  新ルール：3問の深掘り（答えが「転職するな／しろ／今のままで」に分かれた理由を解説板9枚＋まとめで整理）。冒頭は冒頭カード→結論の一言（skPyrH0WTzY 4006.3〜4011.0「国家公務員転職しない方がいいと思いますよ」）→予告板。
+  素材 skPyrH0WTzY 3978.4〜4091.9 / VYJ-zTB8TVY 7886.5〜7948.0 / 0ojMhUyiHB4 6192.4〜6226.5。*_4006-4011 は *_4004-4009 から ffmpeg -ss 1.9 で作った。thumb.at 225（VYJ の正面顔、105/86 は顔が切れた）。サムネ maxres あり（upload 時に設定）。概要欄1行目の問いかけを API 確認。終盤に問いかけボード＋outro 20秒
+- 10/31 ショート recipes/shorts/2026-10-31-am.json → **1aeL1jDjL4o**「【ひろゆき】転職で年収が上がってもボーナス頼みは危ない？中小企業に移る前の注意点【切り抜き】」35.2秒（O0YEy2NB3os 1266.2〜1301.4、「大丈夫じゃないですね」から開始、質問はスパチャカードとフック）、private→2026-10-30T22:00Z。フルで見る→As5R0jCxHoM。仕事・お金の検索語回。概要欄に「給料やボーナスの扱いは会社の規定や雇用契約で違う」注記を API で追加
+- **ショートの切り出しやり直し**: 最初に上げた QN24TFpO6jk は自動クロップが狭く（ひろゆきが左右に大きく動く回）顔が外れる場面があったので、build_short.py に `short.crop=[x0,y0,side]` と `short.cover` の手動指定を追加し [553,0,815]・cover 0 で作り直して 1aeL1jDjL4o として上げ直した。**QN24TFpO6jk は予約を外して private のまま残っている（削除は未実施・要ユーザー判断）**
+- pytest 36 passed
 
 ## 次にやること
 
-1. 10/30 の日次: 当日ショート CMkawWTnuxo・当日長尺 As5R0jCxHoM はスキップ。前日ショート OZnlwCiAMEA のフルで見るを rpJy_1MYcHg に。10/31 のショートを作る（長尺は作らない。11/2 月曜分は 10/31〜11/1 の日次で作る）
-2. 夕方 10/29: rpJy_1MYcHg 公開後に engage、Studio 関連動画 OZnlwCiAMEA→rpJy_1MYcHg・固定・終了画面
-3. 夕方 10/30: 関連動画 CMkawWTnuxo→As5R0jCxHoM に加えて、昇格元 oUt6kcCwW5c の関連動画も As5R0jCxHoM に
+1. 10/31 の日次: 当日ショート 1aeL1jDjL4o はスキップ。前日ショート CMkawWTnuxo のフルで見るは As5R0jCxHoM 済み。11/1 のショートを作る（長尺は作らない。11/2 長尺 5jxVZtOwSnI は予約済み、次の長尺枠は 11/4（水））
+2. 夕方 10/30: 関連動画 CMkawWTnuxo→As5R0jCxHoM、昇格元 oUt6kcCwW5c の関連動画も As5R0jCxHoM。As5R0jCxHoM の固定コメント・終了画面
+3. 昇格判定: CfPbeHlWoP8（10/28）・OZnlwCiAMEA（10/29）・CMkawWTnuxo（10/30）が48時間を過ぎたら 1,700 回超か見る
+4. 不要な private 動画 QN24TFpO6jk（10/31 ショートの旧版）の削除はユーザー確認後
 
-## 前回やったこと（2026-10-28 14:17 日次）— 完了
+## 前回やったこと（2026-10-29 14:15 日次）— 完了
 
-- git pull（8a3d292 で最新）。.venv・VOICEVOX 0.25.2 は生きていた
-- status（14:18 JST）: 当日ショート CfPbeHlWoP8（07:00 公開済）・当日長尺 MT7ArIklAm4（private→2026-10-28T09:30Z、12:50）は既存でスキップ。10/29 分は 0 本だった
-- フルで見る: kyTzNgBqUvQ（10/27 ショート）を QN45yEvHd8s → rKEhAInsB74（10/27 長尺）に更新（work/_update_short_full.py、数秒後に API で AFTER 確認。直後の AFTER 表示は古い値が返ることがある）
-- 未使用ブロック一覧 work/_unused_1028.txt（733件、10/29 分を足す前。work/_unused_1028.py）
-- 取得: **box の cookie 無し fetch_clips.py が長尺7区間＋ショート1区間すべて成功**（14:20〜14:35 JST、PC 不要。Fydc3YFumow で再試行1回あり）
-- 翌日長尺 recipes/2026-10-29-game.json（新テーマ: ゲームとアニメ）→ **rpJy_1MYcHg**「【ひろゆき】ゲームとアニメの話7連発。ゲームの主人公が学生ばかりなのは子ども向けだからです」14:20（ffprobe 859.7秒）、
-  private→2026-10-29T09:30Z（10/29 18:30 JST）。thumb.at 45（笑顔）、upload 時に thumbnail_set true（API で maxres あり）。
-  問いかけ「「ゲームはそもそも子ども向けに作るもの」この考え方、アリ？ナシ？」を概要欄1行目で API 確認。冒頭カードと終盤の問いかけボードあり（フレームで確認）。
-  途中に6〜7秒の無音（コメント読み）がある区間は手前で切った: _o8W_QKNHEo 1655.5〜1809.3（ガンダム。1816〜「かっこいいから」・パーフェクトジオングは未使用）、M7KWrHANxHs 8943.5〜8980.6（スト6。8987〜大会賞金の話は未使用）、jHWUy2IiZvs 1036.5〜1076.4（ハンターハンター。1083〜ワンピースの話は未使用）。
-  end を変えたものは区間ファイルを新しい名前にコピーした（*_1655-1809, *_8943-8980, *_1036-1076）。VYJ-zTB8TVY は空調ノイズで silencedetect が効かないので RMS を 0.1 秒刻みで見て決めた
-- 翌日ショート recipes/shorts/2026-10-29-am.json → **OZnlwCiAMEA**「【ひろゆき】金魚すくいのポイにワセリンを塗ったら破れない？【切り抜き】」53秒（23vSB2fXjc8 10153.1〜10205.1）、
-  private→2026-10-28T22:00Z（10/29 07:00 JST）。フルで見る→MT7ArIklAm4（parent 2026-10-28-kagaku、API で確認）。hook「ワセリンは塗るな」。問いかけ「「裏ワザより仕組みを考えた方が得」この考え方、アリ？ナシ？」。サムネ API 未設定（従来どおり）
-- publish_shorts.py は `PYTHONPATH=.` を付けないと upload_youtube.py 内の `from scripts.engagement` で ModuleNotFoundError（アップロード前に止まるので害はない）
-- ゲームの残り: 23vSB2fXjc8 10213〜10217（悟空が強いのは作者がそう描いたから・短い）、10381〜10414（漫画の吹き出し研究）、_o8W_QKNHEo 2021〜2113（透明人間は目が見えない。「女湯」の冗談あり）、23vSB2fXjc8 8243〜（遊戯王も学生、の続き）
-
-## 前々回（2026-10-27 14:15 日次）— 完了
-
-- 当日 kyTzNgBqUvQ・rKEhAInsB74 はスキップ。oUt6kcCwW5c のフルで見るを QN45yEvHd8s に更新
-- 10/28 長尺 MT7ArIklAm4（科学と技術の話6連発・recipes/2026-10-28-kagaku.json）、10/28 ショート CfPbeHlWoP8（recipes/shorts/2026-10-28-am.json、フルで見る→rKEhAInsB74）
-- 科学の残り: M7KWrHANxHs 7191〜7480（観測と物質）、Fydc3YFumow 2286〜2428（洋上風力。2428 以降は政権の話なので切る）、Fydc3YFumow 10221〜10450（農業ロボット・ドローン）
+- 昇格: oUt6kcCwW5c（1,900回）→ 10/30 長尺 As5R0jCxHoM（recipes/2026-10-30-tsumerare.json、3問深掘り 7:01）。台帳記録済み
+- 10/30 ショート CMkawWTnuxo（recipes/shorts/2026-10-30-am.json、NISA・36秒）
 
 ## 検証済みの事実
 
