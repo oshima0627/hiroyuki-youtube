@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-30 15:15 JST（10/30 日次: 11/2 長尺 5jxVZtOwSnI・10/31 ショート 1aeL1jDjL4o）
+最終更新: 2026-10-31 14:35 JST（10/31 日次: 11/1 ショート VDVWT-rGlgc）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -24,7 +24,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
-## 今回やったこと（2026-10-30 14:20 日次）— 完了
+## 前々回（2026-10-30 14:20 日次）— 完了
 
 - git pull（318611f で最新）。.venv・VOICEVOX 0.25.2 は生きていた
 - status（14:21 JST）: 当日ショート CMkawWTnuxo（07:00 公開済）・当日長尺 As5R0jCxHoM（private→10/30 18:30）は既存。10/31 ショート・11/2 長尺は 0 本だった
@@ -39,9 +39,18 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - **ショートの切り出しやり直し**: 最初に上げた QN24TFpO6jk は自動クロップが狭く（ひろゆきが左右に大きく動く回）顔が外れる場面があったので、build_short.py に `short.crop=[x0,y0,side]` と `short.cover` の手動指定を追加し [553,0,815]・cover 0 で作り直して 1aeL1jDjL4o として上げ直した。**QN24TFpO6jk は予約を外して private のまま残っている（削除は未実施・要ユーザー判断）**
 - pytest 36 passed
 
+## 今回やったこと（2026-10-31 14:20 日次）— 完了
+
+- git pull（7294323 で最新）。status: 当日ショート 1aeL1jDjL4o（07:00 公開済・フルで見る→As5R0jCxHoM 確認）、11/2 長尺 5jxVZtOwSnI（private→11/2 18:30）。11/1 ショートは 0 本だった
+- 長尺は作らない（土曜。次の枠 11/2 は予約済み、その次は 11/4（水））
+- 昇格判定: 48時間以上たったショートで 1,700 回超は oUt6kcCwW5c（昇格済）だけ → **昇格なし**。CMkawWTnuxo（10/30・1,320回）は 11/1 07:00 で48時間
+- 11/1 ショート recipes/shorts/2026-11-01-am.json → **VDVWT-rGlgc**「【ひろゆき】年収1億円でも家賃は20万円でいい？高い家賃が危ない理由【切り抜き】」37秒（jHWUy2IiZvs 5568.8〜5605.35、「で、これが年収1億円なんだから家賃も200万円…」から「4000万円ぐらい手に残る」まで）、private→2026-10-31T22:00Z。住まい・お金の検索語回。フルで見る→As5R0jCxHoM（前日10/31の長尺なし→直近公開の長尺）。crop [600,10,790]・cover 0（自動クロップは顔が下に寄って切れた）。概要欄に「家賃や住まいの目安は人それぞれ」注記を API で追加
+- 素材は box の cookie 無し fetch_clips.py で取得
+
 ## 次にやること
 
-1. 10/31 の日次: 当日ショート 1aeL1jDjL4o はスキップ。前日ショート CMkawWTnuxo のフルで見るは As5R0jCxHoM 済み。11/1 のショートを作る（長尺は作らない。11/2 長尺 5jxVZtOwSnI は予約済み、次の長尺枠は 11/4（水））
+1. 11/1 の日次: 当日ショート VDVWT-rGlgc はスキップ。11/2 ショートを作り、フルで見るは 11/2 長尺 5jxVZtOwSnI へ（前日ショート VDVWT-rGlgc は前日長尺なしなので As5R0jCxHoM のまま）。長尺は作らない（11/2 予約済み）。11/4（水）長尺は 11/2 か 11/3 の日次で作る
+   夕方 10/31: 1aeL1jDjL4o の関連動画→As5R0jCxHoM
 2. 夕方 10/30: 関連動画 CMkawWTnuxo→As5R0jCxHoM、昇格元 oUt6kcCwW5c の関連動画も As5R0jCxHoM。As5R0jCxHoM の固定コメント・終了画面
 3. 昇格判定: CfPbeHlWoP8（10/28）・OZnlwCiAMEA（10/29）・CMkawWTnuxo（10/30）が48時間を過ぎたら 1,700 回超か見る
 4. 不要な private 動画 QN24TFpO6jk（10/31 ショートの旧版）の削除はユーザー確認後

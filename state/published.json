@@ -282,7 +282,7 @@
       "publish_at": null,
       "published_at": "2026-08-26T22:00:39Z",
       "upload_status": "processed",
-      "view_count": 2180,
+      "view_count": 2182,
       "duration": "PT45S"
     },
     "2026-08-28-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1498,
+      "view_count": 1501,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2089,
+      "view_count": 2090,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1471,
+      "view_count": 1473,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1331,
+      "view_count": 1332,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -949,7 +949,7 @@
       "publish_at": null,
       "published_at": "2026-10-03T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 4,
       "duration": "PT1M3S"
     },
     "2026-10-05-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1400,
+      "view_count": 1405,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1318,7 +1318,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T09:00:01Z",
       "upload_status": "processed",
-      "view_count": 6,
+      "view_count": 7,
       "duration": "PT14M31S"
     },
     "2026-09-29-youtube": {
@@ -1775,7 +1775,7 @@
       "publish_at": null,
       "published_at": "2026-10-19T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 1279,
+      "view_count": 1280,
       "duration": "PT1M7S"
     },
     "2026-10-20-uchu": {
@@ -1830,7 +1830,7 @@
       "publish_at": null,
       "published_at": "2026-10-20T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1112,
+      "view_count": 1114,
       "duration": "PT1M11S"
     },
     "2026-10-22-am": {
@@ -1927,7 +1927,7 @@
       "publish_at": null,
       "published_at": "2026-10-24T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT13M28S"
     },
     "2026-10-24-am": {
@@ -1982,7 +1982,7 @@
       "publish_at": null,
       "published_at": "2026-10-24T22:00:04Z",
       "upload_status": "processed",
-      "view_count": 1331,
+      "view_count": 1332,
       "duration": "PT1M25S"
     },
     "2026-10-26-fuufu": {
@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1949,
+      "view_count": 1960,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2041,7 +2041,7 @@
       "publish_at": null,
       "published_at": "2026-10-27T09:30:34Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT12M49S"
     },
     "2026-10-27-am": {
@@ -2058,7 +2058,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1352,
+      "view_count": 1353,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
@@ -2113,7 +2113,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1260,
+      "view_count": 1271,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2136,14 +2136,14 @@
       "publish_at": null,
       "published_at": "2026-10-29T09:30:21Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 2,
       "duration": "PT14M20S"
     },
     "2026-10-30-tsumerare": {
       "youtube_video_id": "As5R0jCxHoM",
       "url": "https://www.youtube.com/watch?v=As5R0jCxHoM",
       "title": "【ひろゆき】上司に詰められて辛い。会社を辞める前に何をすればいい？",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -2152,10 +2152,10 @@
         "4vmH4mejnjI",
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-30T09:30:00Z",
-      "published_at": "2026-10-29T05:25:39Z",
+      "publish_at": null,
+      "published_at": "2026-10-30T09:30:01Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT7M1S"
     },
     "2026-10-30-am": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1218,
+      "view_count": 1320,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2198,18 +2198,30 @@
       "youtube_video_id": "1aeL1jDjL4o",
       "url": "https://www.youtube.com/watch?v=1aeL1jDjL4o",
       "title": "【ひろゆき】転職で年収が上がってもボーナス頼みは危ない？中小企業に移る前の注意点【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "O0YEy2NB3os"
       ],
-      "publish_at": "2026-10-30T22:00:00Z",
-      "published_at": "2026-10-30T05:32:53Z",
+      "publish_at": null,
+      "published_at": "2026-10-30T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1247,
       "duration": "PT36S"
+    },
+    "2026-11-01-am": {
+      "youtube_video_id": "VDVWT-rGlgc",
+      "url": "https://www.youtube.com/watch?v=VDVWT-rGlgc",
+      "title": "【ひろゆき】年収1億円でも家賃は20万円でいい？高い家賃が危ない理由【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "jHWUy2IiZvs"
+      ]
     }
   }
 }
