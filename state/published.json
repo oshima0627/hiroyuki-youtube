@@ -1174,7 +1174,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T03:00:17Z",
       "upload_status": "processed",
-      "view_count": 6,
+      "view_count": 7,
       "duration": "PT12M16S"
     },
     "2026-09-07-gaishoku": {
@@ -1647,7 +1647,7 @@
       "publish_at": null,
       "published_at": "2026-10-16T09:30:00Z",
       "upload_status": "processed",
-      "view_count": 4,
+      "view_count": 5,
       "duration": "PT9M40S"
     },
     "2026-10-17-sake": {
@@ -1830,7 +1830,7 @@
       "publish_at": null,
       "published_at": "2026-10-20T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1114,
+      "view_count": 1118,
       "duration": "PT1M11S"
     },
     "2026-10-22-am": {
@@ -1927,7 +1927,7 @@
       "publish_at": null,
       "published_at": "2026-10-24T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 3,
+      "view_count": 4,
       "duration": "PT13M28S"
     },
     "2026-10-24-am": {
@@ -1944,7 +1944,7 @@
       "publish_at": null,
       "published_at": "2026-10-23T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1037,
+      "view_count": 1038,
       "duration": "PT42S"
     },
     "2026-10-25-eiga": {
@@ -2041,7 +2041,7 @@
       "publish_at": null,
       "published_at": "2026-10-27T09:30:34Z",
       "upload_status": "processed",
-      "view_count": 3,
+      "view_count": 1,
       "duration": "PT12M49S"
     },
     "2026-10-27-am": {
@@ -2058,7 +2058,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1353,
+      "view_count": 1349,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
@@ -2113,7 +2113,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1271,
+      "view_count": 1272,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1320,
+      "view_count": 1321,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2208,7 +2208,7 @@
       "publish_at": null,
       "published_at": "2026-10-30T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1247,
+      "view_count": 1263,
       "duration": "PT36S"
     },
     "2026-11-01-am": {
@@ -2221,7 +2221,12 @@
       "thumbnail_set": false,
       "sources": [
         "jHWUy2IiZvs"
-      ]
+      ],
+      "publish_at": "2026-10-31T22:00:00Z",
+      "published_at": "2026-10-31T05:22:52Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT37S"
     }
   }
 }
