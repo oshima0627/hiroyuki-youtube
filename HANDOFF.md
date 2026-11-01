@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-10-31 14:35 JST（10/31 日次: 11/1 ショート VDVWT-rGlgc）
+最終更新: 2026-11-01 14:50 JST（11/1 日次: 11/2 ショート qY_hj45hxC0）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -39,7 +39,16 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - **ショートの切り出しやり直し**: 最初に上げた QN24TFpO6jk は自動クロップが狭く（ひろゆきが左右に大きく動く回）顔が外れる場面があったので、build_short.py に `short.crop=[x0,y0,side]` と `short.cover` の手動指定を追加し [553,0,815]・cover 0 で作り直して 1aeL1jDjL4o として上げ直した。**QN24TFpO6jk は予約を外して private のまま残っている（削除は未実施・要ユーザー判断）**
 - pytest 36 passed
 
-## 今回やったこと（2026-10-31 14:20 日次）— 完了
+## 今回やったこと（2026-11-01 14:17 日次）— 完了
+
+- git pull（c53e09e で最新）。status: 当日ショート VDVWT-rGlgc（07:00 公開済・フルで見る→As5R0jCxHoM を API で確認）、11/2 長尺 5jxVZtOwSnI（private→11/2 18:30）。11/2 ショートは 0 本だった
+- 長尺は作らない（日曜。11/2 は予約済み、次の枠 11/4（水）は 11/2 か 11/3 の日次で作る）
+- 昇格判定: 48時間以上たったショートで 1,700 回超は oUt6kcCwW5c（1,967回・昇格済）だけ → **昇格なし**。次点 CfPbeHlWoP8 1,469回、wbLkK40nUXw 1,333回、CMkawWTnuxo 1,323回
+- 11/2 ショート recipes/shorts/2026-11-02-am.json → **qY_hj45hxC0**「【ひろゆき】学歴で年収は決まる？東大・早慶卒でも年収400万円が珍しくない理由【切り抜き】」38秒（Fydc3YFumow 4953.4〜4990.65、「で、この年収300万から1500万コースっていうのが昔は学歴に比例してた」から「いい給料をもらえる人が多いは多いんですよ」まで）、private→2026-11-01T22:00Z。仕事・お金（学歴×年収）の検索語回。フルで見る→5jxVZtOwSnI（11/2 長尺）。crop [600,10,790]・cover 0（自動クロップ 570 は左右に動く顔が切れた）。work/shorts/2026-11-02-am/chk/dense.png で1秒ごとに顔が収まっているのを確認。概要欄に「年収は業界・職種・地域で違う、特定の大学や進路を否定・推奨しない」注記を API で追加
+- 素材は box の cookie 無し fetch_clips.py で取得。未使用一覧 work/_unused_1101.txt（715件）
+- pytest 36 passed
+
+## 前回やったこと（2026-10-31 14:20 日次）— 完了
 
 - git pull（7294323 で最新）。status: 当日ショート 1aeL1jDjL4o（07:00 公開済・フルで見る→As5R0jCxHoM 確認）、11/2 長尺 5jxVZtOwSnI（private→11/2 18:30）。11/1 ショートは 0 本だった
 - 長尺は作らない（土曜。次の枠 11/2 は予約済み、その次は 11/4（水））
@@ -49,11 +58,10 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 11/1 の日次: 当日ショート VDVWT-rGlgc はスキップ。11/2 ショートを作り、フルで見るは 11/2 長尺 5jxVZtOwSnI へ（前日ショート VDVWT-rGlgc は前日長尺なしなので As5R0jCxHoM のまま）。長尺は作らない（11/2 予約済み）。11/4（水）長尺は 11/2 か 11/3 の日次で作る
-   夕方 10/31: 1aeL1jDjL4o の関連動画→As5R0jCxHoM
-2. 夕方 10/30: 関連動画 CMkawWTnuxo→As5R0jCxHoM、昇格元 oUt6kcCwW5c の関連動画も As5R0jCxHoM。As5R0jCxHoM の固定コメント・終了画面
-3. 昇格判定: CfPbeHlWoP8（10/28）・OZnlwCiAMEA（10/29）・CMkawWTnuxo（10/30）が48時間を過ぎたら 1,700 回超か見る
-4. 不要な private 動画 QN24TFpO6jk（10/31 ショートの旧版）の削除はユーザー確認後
+1. 11/2 の日次: 当日ショート qY_hj45hxC0・当日長尺 5jxVZtOwSnI はスキップ。11/4（水）18:30 の長尺を作る（1〜3問深掘り・note厚め）。11/3 ショートのフルで見るは 11/2 長尺 5jxVZtOwSnI へ
+   夕方 11/1: VDVWT-rGlgc の関連動画→As5R0jCxHoM。夕方 11/2: qY_hj45hxC0 の関連動画→5jxVZtOwSnI、5jxVZtOwSnI の固定コメント・終了画面
+2. 昇格判定: CMkawWTnuxo（10/30）・1aeL1jDjL4o（10/31）・VDVWT-rGlgc（11/1）が48時間を過ぎたら 1,700 回超か見る
+3. 不要な private 動画 QN24TFpO6jk（10/31 ショートの旧版）の削除はユーザー確認後
 
 ## 前回やったこと（2026-10-29 14:15 日次）— 完了
 

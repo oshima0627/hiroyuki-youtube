@@ -282,7 +282,7 @@
       "publish_at": null,
       "published_at": "2026-08-26T22:00:39Z",
       "upload_status": "processed",
-      "view_count": 2182,
+      "view_count": 2185,
       "duration": "PT45S"
     },
     "2026-08-28-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1501,
+      "view_count": 1503,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1473,
+      "view_count": 1474,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1332,
+      "view_count": 1335,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1017,7 +1017,7 @@
       "publish_at": null,
       "published_at": "2026-10-07T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1014,
+      "view_count": 1016,
       "duration": "PT55S"
     },
     "2026-10-09-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1405,
+      "view_count": 1407,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1982,7 +1982,7 @@
       "publish_at": null,
       "published_at": "2026-10-24T22:00:04Z",
       "upload_status": "processed",
-      "view_count": 1332,
+      "view_count": 1333,
       "duration": "PT1M25S"
     },
     "2026-10-26-fuufu": {
@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1960,
+      "view_count": 1967,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2058,7 +2058,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1349,
+      "view_count": 1350,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
@@ -2096,7 +2096,7 @@
       "publish_at": null,
       "published_at": "2026-10-27T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1468,
+      "view_count": 1469,
       "duration": "PT1M5S"
     },
     "2026-10-29-am": {
@@ -2113,7 +2113,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1272,
+      "view_count": 1271,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2155,7 +2155,7 @@
       "publish_at": null,
       "published_at": "2026-10-30T09:30:01Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 2,
       "duration": "PT7M1S"
     },
     "2026-10-30-am": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1321,
+      "view_count": 1323,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2208,25 +2208,42 @@
       "publish_at": null,
       "published_at": "2026-10-30T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1263,
+      "view_count": 1287,
       "duration": "PT36S"
     },
     "2026-11-01-am": {
       "youtube_video_id": "VDVWT-rGlgc",
       "url": "https://www.youtube.com/watch?v=VDVWT-rGlgc",
       "title": "【ひろゆき】年収1億円でも家賃は20万円でいい？高い家賃が危ない理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "jHWUy2IiZvs"
       ],
-      "publish_at": "2026-10-31T22:00:00Z",
-      "published_at": "2026-10-31T05:22:52Z",
+      "publish_at": null,
+      "published_at": "2026-10-31T22:00:01Z",
+      "upload_status": "processed",
+      "view_count": 1015,
+      "duration": "PT37S"
+    },
+    "2026-11-02-am": {
+      "youtube_video_id": "qY_hj45hxC0",
+      "url": "https://www.youtube.com/watch?v=qY_hj45hxC0",
+      "title": "【ひろゆき】学歴で年収は決まる？東大・早慶卒でも年収400万円が珍しくない理由【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "Fydc3YFumow"
+      ],
+      "publish_at": "2026-11-01T22:00:00Z",
+      "published_at": "2026-11-01T05:20:53Z",
       "upload_status": "processed",
       "view_count": 0,
-      "duration": "PT37S"
+      "duration": "PT38S"
     }
   }
 }
