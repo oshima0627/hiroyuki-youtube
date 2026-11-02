@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-11-01 14:50 JST（11/1 日次: 11/2 ショート qY_hj45hxC0）
+最終更新: 2026-11-02 15:40 JST（11/2 日次: 11/3 ショート QC24A3gd2jc・11/4 長尺 m4R7_9CT_o4、実験B 開始）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -21,7 +21,7 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 4. **クリップ取得はボックスで可（2026-10-12〜）**: `PYTHONPATH=. .venv/bin/python scripts/fetch_clips.py recipes/<id>.json --browser none`。
    cookie 無しだと bestvideo が Premium の HLS（itag 616）を選んで書き出し0のまま止まるため、fetch_clips.py の -f を avc1 の HLS（270/232）+ m4a 優先に変更済み。
    取れなくなったら PC で `python scripts/fetch_clips.py recipes/<id>.json`（Firefox cookie）→ work/clips/*.mp4 を tar → CopyToBox。
-5. ボックスで `build_episode.py` → `thumbnail.py` → `build_episode.py --concat-only`（冒頭カード）→ `upload_youtube.py work/<id> --schedule <UTC>`。
+5. ボックスで `build_episode.py` → `thumbnail.py` →（**実験B 以降はレシピに `"opening": "cold"` を入れて冒頭カードなし。--concat-only は不要**）→ `upload_youtube.py work/<id> --schedule <UTC>`。
 6. `ops_youtube.py --status` で private→publishAt を確認。サムネは `set_thumbnails.py --only <id>`（必要なら `--force`）。
 
 ## 前々回（2026-10-30 14:20 日次）— 完了
@@ -39,7 +39,19 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - **ショートの切り出しやり直し**: 最初に上げた QN24TFpO6jk は自動クロップが狭く（ひろゆきが左右に大きく動く回）顔が外れる場面があったので、build_short.py に `short.crop=[x0,y0,side]` と `short.cover` の手動指定を追加し [553,0,815]・cover 0 で作り直して 1aeL1jDjL4o として上げ直した。**QN24TFpO6jk は予約を外して private のまま残っている（削除は未実施・要ユーザー判断）**
 - pytest 36 passed
 
-## 今回やったこと（2026-11-01 14:17 日次）— 完了
+## 今回やったこと（2026-11-02 14:22 日次）— 完了
+
+- git pull（最新）。status: 当日ショート qY_hj45hxC0（07:00 公開済・1,239回）、当日長尺 5jxVZtOwSnI（private→11/2 18:30）はスキップ。11/3 ショート・11/4 長尺は 0 本だった
+- 昇格判定: 48時間以上で 1,700 回超は oUt6kcCwW5c（1,975回・昇格済）だけ → **昇格なし**。次点 CfPbeHlWoP8 1,468、wbLkK40nUXw 1,334、CMkawWTnuxo 1,325、1aeL1jDjL4o 1,301
+- お金・住まいの未使用素材が減っていたので新しい配信 4本（2zED6c6zgx4, pUsi5NQQgrA, 0YyAgmv5_Yc, EXUXJaPlKmE）を fetch_source --subs-only / fetch_topics --save / probe_signals --no-audio で取り込み。R9fFru7ST-o（新党の話・共演者あり）も取り込んだが政治なので使わない。未使用一覧 work/_unused_1102.txt（1,119件）
+- 語単位の時刻は yt-dlp の json3 自動字幕（work/_cap/*.ja.json3、work/_words.py）が音声とよく合う。切れ目は ffmpeg の音量包絡で決めた
+- **実験B（冒頭のインパクト）を開始**。適用ログは docs/growth-ledger.md「実験B 適用ログ」
+  - build_episode.py: レシピの `"opening": "cold"` で冒頭カード（サムネ静止画）を入れず 0 秒目から本編。問いかけ帯（head_question.png）は最初の解説板の最後 4.5 秒（BAND_SEC）にだけ重ねる。帯で解説の最後の行が隠れたので telop.render_note に bottom 引数を追加し、帯を重ねる板は文字を帯より上に収める。outro の thumb_sec は cold のとき 0。dry-run の表示文言「冒頭カードに帯」は直していない（表示だけ）
+- 11/3 ショート recipes/shorts/2026-11-03-am.json → **QC24A3gd2jc**「【ひろゆき】住むマンションに資産性はある？「資産になるから買う」が間違いな理由【切り抜き】」42秒、private→2026-11-02T22:00Z。2zED6c6zgx4 3108.55〜3150.45（0秒目「まず資産性というのは間違いです」＝3108.6秒、「下がるわけですよね」まで）。住まい・お金の検索語回（今週2本目）。crop [585,0,830]・cover 160（自動は顔が切れた）。フルで見る→5jxVZtOwSnI。概要欄に「買うか借りるかは人それぞれ、特定の物件の購入を勧めたり否定したりしない」注記を API で追加・確認
+- 11/4（水）長尺 recipes/2026-11-04-hachijikan.json → **m4R7_9CT_o4**「【ひろゆき】1日8時間労働は無理ゲー？会社員と個人事業主、向いている人の違い」8:24、private→2026-11-04T09:30Z。EXUXJaPlKmE の1相談を深掘り（8021.8〜8318.6 を4区間）。0秒目は「会社員の上に経営者っていう…ランクアップがあるって誤解してるって人が多い…」（8180.5〜8195.1）、次の解説板で答えの予告＋問いかけ帯、終盤に問いかけボード＋outro 20秒。thumb.at 13・crop [0.45,0.135,0.8]（自動は顔が下向き・テロップが写った）。サムネ maxres あり（upload 時に設定）。概要欄1行目の問いかけを API 確認
+- pytest 36 passed
+
+## 前回やったこと（2026-11-01 14:17 日次）— 完了
 
 - git pull（c53e09e で最新）。status: 当日ショート VDVWT-rGlgc（07:00 公開済・フルで見る→As5R0jCxHoM を API で確認）、11/2 長尺 5jxVZtOwSnI（private→11/2 18:30）。11/2 ショートは 0 本だった
 - 長尺は作らない（日曜。11/2 は予約済み、次の枠 11/4（水）は 11/2 か 11/3 の日次で作る）
@@ -58,10 +70,11 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 11/2 の日次: 当日ショート qY_hj45hxC0・当日長尺 5jxVZtOwSnI はスキップ。11/4（水）18:30 の長尺を作る（1〜3問深掘り・note厚め）。11/3 ショートのフルで見るは 11/2 長尺 5jxVZtOwSnI へ
-   夕方 11/1: VDVWT-rGlgc の関連動画→As5R0jCxHoM。夕方 11/2: qY_hj45hxC0 の関連動画→5jxVZtOwSnI、5jxVZtOwSnI の固定コメント・終了画面
-2. 昇格判定: CMkawWTnuxo（10/30）・1aeL1jDjL4o（10/31）・VDVWT-rGlgc（11/1）が48時間を過ぎたら 1,700 回超か見る
+1. 11/3（火）の日次: 長尺の枠なし（11/4 は m4R7_9CT_o4 予約済み、次は 11/6（金））。11/4 ショートを作る（フルで見る→前日 11/3 の長尺は無いので直近公開の 5jxVZtOwSnI）。実験B 継続（0秒目から本人の一言、`"opening": "cold"`、台帳に1行）
+   夕方 11/2: qY_hj45hxC0 の関連動画→5jxVZtOwSnI、5jxVZtOwSnI の固定コメント・終了画面。夕方 11/3: QC24A3gd2jc の関連動画→5jxVZtOwSnI。夕方 11/4: m4R7_9CT_o4 の固定コメント・終了画面
+2. 昇格判定: VDVWT-rGlgc（11/1）・qY_hj45hxC0（11/2）が48時間を過ぎたら 1,700 回超か見る
 3. 不要な private 動画 QN24TFpO6jk（10/31 ショートの旧版）の削除はユーザー確認後
+4. 11/16 15:00 に実験B の比較 routine（一回きり）
 
 ## 前回やったこと（2026-10-29 14:15 日次）— 完了
 

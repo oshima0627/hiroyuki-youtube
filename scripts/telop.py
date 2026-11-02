@@ -104,14 +104,19 @@ def render_top_bar_slim(title: str, index: str | None = None) -> Image.Image:
 MAX_TEXT_H = 720          # 板に使ってよい縦幅
 
 
-def render_note(note: str) -> Image.Image:
+def render_note(note: str, bottom: int | None = None) -> Image.Image:
     """解説だけを大きく出す板。区間の切れ目に挟む。
 
     **文字を切り捨ててはいけない。** ナレーションは全文を読むので、画面だけ
     途中で切れると音と表示がずれる。実際にまとめ（183文字）が4行で切れて
     「相手を変えるのは成功」で止まった（2026-08-14）。
     行数を固定せず、全文が収まるまでフォントを縮める。
+
+    bottom を渡すと、文字はその高さより上に収める（問いかけ帯を重ねる板用。
+    帯が最後の行を隠した・2026-11-02）。
     """
+    area = H if bottom is None else bottom
+    max_h = MAX_TEXT_H if bottom is None else min(MAX_TEXT_H, area - 140)
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     d.rectangle([0, 0, W, H], fill=(*INK, 214))
@@ -121,14 +126,14 @@ def render_note(note: str) -> Image.Image:
         f = pick_font(size)
         lines = wrap(d, note, f, W - PAD * 2 - 40)
         lh = int(size * 1.38)
-        if len(lines) * lh <= MAX_TEXT_H:
+        if len(lines) * lh <= max_h:
             break
         size -= 4
     else:
         f, lines, lh = pick_font(24), wrap(d, note, pick_font(24), W - PAD * 2 - 40), 34
 
     block = len(lines) * lh
-    y = top = (H - block) // 2
+    y = top = (H - block) // 2 if bottom is None else max(20, (area - block - 60) // 2)
     d.rectangle([PAD, top, PAD + 8, top + block], fill=(*RED, 255))
 
     for ln in lines:

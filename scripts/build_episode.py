@@ -35,6 +35,7 @@ from scripts.recipe import build_description, validate  # noqa: E402
 from scripts.engagement import enabled as engagement_enabled  # noqa: E402
 from scripts.engagement import question_for  # noqa: E402
 from scripts.telop import (  # noqa: E402
+    QBAND_Y,
     render_lower_third, render_note, render_outro, render_question_band,
     render_top_bar_slim)
 
@@ -134,6 +135,7 @@ def build_clip(clip: dict, index: int, out_dir: Path, pad: float) -> Path:
     return dst
 
 
+BAND_SEC = 4.5           # cold open で予告の板の最後に呼びかけ帯を出す秒数
 TAIL_SEC = 0.6           # 読み終わってから次のカットに移るまでの間
 HEAD_SEC = 2.5           # 冒頭に置くサムネカードの秒数
 HEAD_Q_SEC = 3.5         # 問いかけ帯を重ねるときの冒頭カードの秒数（読める長さ）
@@ -232,7 +234,8 @@ def note_is_current(text: str, index: int, out_dir: Path, kind: str = "note") ->
             and src.read_text(encoding="utf-8") == text.strip())
 
 
-def build_note(text: str, index: int, out_dir: Path, kind: str = "note") -> Path:
+def build_note(text: str, index: int, out_dir: Path, kind: str = "note",
+               band: Path | None = None) -> Path:
     """解説板を作る。静止画＋VOICEVOX の読み上げ。
 
     **ここが「再利用されたコンテンツ」対策の本体。** テロップだけだったときは
@@ -244,13 +247,24 @@ def build_note(text: str, index: int, out_dir: Path, kind: str = "note") -> Path
     length = wav_duration(wav) + TAIL_SEC
 
     png = out_dir / f"{kind}_{index:02d}.png"
-    render_note(text).save(png)
+    render_note(text, bottom=QBAND_Y if band is not None else None).save(png)
 
     dst = out_dir / f"{kind}img_{index:02d}.mp4"
+    if band is not None:
+        # 冒頭の呼びかけ（cold open 用）。予告を読み終える最後の数秒だけ帯を重ねる
+        t0 = max(0.0, length - BAND_SEC)
+        extra_in = ["-loop", "1", "-i", str(band)]
+        vf = ["-filter_complex",
+              f"[0:v]scale={W}:{H},fps={FPS}[b];"
+              f"[b][2:v]overlay=0:0:enable='gte(t,{t0:.2f})'[v]",
+              "-map", "[v]", "-map", "1:a"]
+    else:
+        extra_in = []
+        vf = ["-vf", f"scale={W}:{H},fps={FPS}"]
     _run(["ffmpeg", "-y", "-loglevel", "error",
-          "-loop", "1", "-i", str(png), "-i", str(wav),
+          "-loop", "1", "-i", str(png), "-i", str(wav), *extra_in,
           "-t", f"{length}",
-          "-vf", f"scale={W}:{H},fps={FPS}",
+          *vf,
           "-c:v", "libx264", "-preset", "medium", "-crf", "20",
           "-pix_fmt", "yuv420p",
           # 本編と同じ音声パラメータにしないと concat -c copy が通らない
@@ -301,6 +315,15 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
     # 「本編は偶数番」という前提で計算していたが、それは1クリップに解説板1枚のとき
     # だけ成り立つ。notes を複数持たせたら目次が39秒ずれた（2026-08-25 実測）。
     clip_at: list[int] = []
+    # 実験B（2026-11-02〜）: cold open。0秒目から本人の一言で始め、冒頭カードを入れない。
+    # 冒頭の呼びかけ帯は、最初の解説板（一言の解説と答えの予告）の最後に重ねる
+    cold = recipe.get("opening") == "cold"
+    q_cold = question_for(recipe) if (cold and engagement_enabled(recipe)) else None
+    band_png = None
+    if q_cold:
+        out.mkdir(parents=True, exist_ok=True)
+        band_png = out / "head_question.png"
+        render_question_band(q_cold).save(band_png)
     for i, c in enumerate(clips):
         pc = out / f"part_{i:02d}.mp4"
         clip_at.append(len(parts))
@@ -315,8 +338,10 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
             # --concat-only の作り置きがそのまま効く。
             idx = i if j == 0 else 100 * (i + 1) + j
             pn = out / f"noteimg_{idx:02d}.mp4"
-            parts.append(pn if (concat_only and note_is_current(text, idx, out))
-                         else build_note(text, idx, out))
+            use_band = band_png if (i == 0 and j == 0) else None
+            parts.append(pn if (concat_only and use_band is None
+                                and note_is_current(text, idx, out))
+                         else build_note(text, idx, out, band=use_band))
     if recipe.get("summary"):
         ps = out / "summaryimg_99.mp4"
         parts.append(
@@ -329,11 +354,13 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0,
     if question:
         # 終盤の呼びかけ＋終了画面の余白。尺は15分未満に収まる範囲で20秒
         body = sum(probe_duration(p) for p in parts)
-        thumb_sec = HEAD_Q_SEC if (out / "thumb.png").exists() else 0.0
+        thumb_sec = HEAD_Q_SEC if ((out / "thumb.png").exists() and not cold) else 0.0
         parts.append(build_outro(question, out, outro_seconds(body + thumb_sec)))
 
     thumb = out / "thumb.png"
-    if thumb.exists():
+    if cold:
+        print("- cold open: 冒頭カードは入れません（0秒目から本編）")
+    elif thumb.exists():
         parts.insert(0, build_head(thumb, out, question))
         clip_at = [n + 1 for n in clip_at]        # 冒頭カードのぶん後ろへずれる
     else:
