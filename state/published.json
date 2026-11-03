@@ -316,7 +316,7 @@
       "publish_at": null,
       "published_at": "2026-08-28T22:00:39Z",
       "upload_status": "processed",
-      "view_count": 2461,
+      "view_count": 2463,
       "duration": "PT39S"
     },
     "2026-08-30-am": {
@@ -1626,7 +1626,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 11,
+      "view_count": 12,
       "duration": "PT8M22S"
     },
     "2026-10-16-shikaku": {
@@ -2041,7 +2041,7 @@
       "publish_at": null,
       "published_at": "2026-10-27T09:30:34Z",
       "upload_status": "processed",
-      "view_count": 1,
+      "view_count": 2,
       "duration": "PT12M49S"
     },
     "2026-10-27-am": {
@@ -2136,7 +2136,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T09:30:21Z",
       "upload_status": "processed",
-      "view_count": 8,
+      "view_count": 11,
       "duration": "PT14M20S"
     },
     "2026-10-30-tsumerare": {
@@ -2225,7 +2225,7 @@
       "publish_at": null,
       "published_at": "2026-10-31T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1057,
+      "view_count": 1065,
       "duration": "PT37S"
     },
     "2026-11-02-am": {
@@ -2242,7 +2242,7 @@
       "publish_at": null,
       "published_at": "2026-11-01T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 1307,
+      "view_count": 1365,
       "duration": "PT38S"
     },
     "2026-11-03-am": {
@@ -2259,7 +2259,7 @@
       "publish_at": null,
       "published_at": "2026-11-02T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1210,
+      "view_count": 1273,
       "duration": "PT42S"
     },
     "2026-11-04-hachijikan": {
@@ -2289,7 +2289,12 @@
       "thumbnail_set": false,
       "sources": [
         "VYJ-zTB8TVY"
-      ]
+      ],
+      "publish_at": "2026-11-03T22:00:00Z",
+      "published_at": "2026-11-03T05:28:08Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT39S"
     }
   }
 }
