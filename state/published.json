@@ -162,7 +162,7 @@
       "publish_at": null,
       "published_at": "2026-08-19T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 28,
+      "view_count": 29,
       "duration": "PT39S"
     },
     "2026-08-20-pm": {
@@ -333,7 +333,7 @@
       "publish_at": null,
       "published_at": "2026-08-29T22:00:22Z",
       "upload_status": "processed",
-      "view_count": 1702,
+      "view_count": 1703,
       "duration": "PT39S"
     },
     "2026-08-31-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1507,
+      "view_count": 1513,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -881,7 +881,7 @@
       "publish_at": null,
       "published_at": "2026-09-29T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1477,
+      "view_count": 1478,
       "duration": "PT39S"
     },
     "2026-10-01-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1339,
+      "view_count": 1341,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1416,
+      "view_count": 1422,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1583,7 +1583,7 @@
       "publish_at": null,
       "published_at": "2026-10-13T09:30:13Z",
       "upload_status": "processed",
-      "view_count": 2,
+      "view_count": 3,
       "duration": "PT11M54S"
     },
     "2026-10-14-ryokou": {
@@ -2113,7 +2113,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1273,
+      "view_count": 1275,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2136,7 +2136,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T09:30:21Z",
       "upload_status": "processed",
-      "view_count": 5,
+      "view_count": 8,
       "duration": "PT14M20S"
     },
     "2026-10-30-tsumerare": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1328,
+      "view_count": 1329,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2191,7 +2191,7 @@
       "publish_at": null,
       "published_at": "2026-11-02T09:30:04Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 2,
       "duration": "PT7M12S"
     },
     "2026-10-31-am": {
@@ -2208,7 +2208,7 @@
       "publish_at": null,
       "published_at": "2026-10-30T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1302,
+      "view_count": 1313,
       "duration": "PT36S"
     },
     "2026-11-01-am": {
@@ -2225,7 +2225,7 @@
       "publish_at": null,
       "published_at": "2026-10-31T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1047,
+      "view_count": 1057,
       "duration": "PT37S"
     },
     "2026-11-02-am": {
@@ -2242,24 +2242,24 @@
       "publish_at": null,
       "published_at": "2026-11-01T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 1253,
+      "view_count": 1307,
       "duration": "PT38S"
     },
     "2026-11-03-am": {
       "youtube_video_id": "QC24A3gd2jc",
       "url": "https://www.youtube.com/watch?v=QC24A3gd2jc",
       "title": "【ひろゆき】住むマンションに資産性はある？「資産になるから買う」が間違いな理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "2zED6c6zgx4"
       ],
-      "publish_at": "2026-11-02T22:00:00Z",
-      "published_at": "2026-11-02T05:30:44Z",
+      "publish_at": null,
+      "published_at": "2026-11-02T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1210,
       "duration": "PT42S"
     },
     "2026-11-04-hachijikan": {
@@ -2278,6 +2278,18 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT8M25S"
+    },
+    "2026-11-04-am": {
+      "youtube_video_id": "2lmeaIMPp-c",
+      "url": "https://www.youtube.com/watch?v=2lmeaIMPp-c",
+      "title": "【ひろゆき】20代で年収450万は苦しい？家賃が上がっても職場の近くに引っ越すべき理由【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "VYJ-zTB8TVY"
+      ]
     }
   }
 }
