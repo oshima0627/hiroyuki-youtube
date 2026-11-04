@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -118,7 +119,12 @@ def main() -> None:
             continue
         cmd = [sys.executable, str(ROOT / "scripts" / "upload_youtube.py"),
                str(WORK / rid), "--schedule", recipe["publish_at"]]
-        if subprocess.run(cmd, cwd=ROOT).returncode != 0:
+        # upload_youtube.py は scripts.* を import するので ROOT を通す
+        env = {**os.environ,
+               "PYTHONPATH": os.pathsep.join(
+                   [str(ROOT)] + ([os.environ["PYTHONPATH"]]
+                                  if os.environ.get("PYTHONPATH") else []))}
+        if subprocess.run(cmd, cwd=ROOT, env=env).returncode != 0:
             print(f"✗ {rid} で失敗した。ここで止める（残りは次回）\n"
                   "  uploadLimitExceeded なら YouTube 側の1日の本数上限。"
                   "翌日そのまま再実行すれば続きから上がる")

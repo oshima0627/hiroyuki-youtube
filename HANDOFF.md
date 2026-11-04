@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-11-02 15:40 JST（11/2 日次: 11/3 ショート QC24A3gd2jc・11/4 長尺 m4R7_9CT_o4、実験B 開始）
+最終更新: 2026-11-04 14:40 JST（11/4 日次: 11/5 ショート 93NkdAOx0uo・11/6 長尺 kdcGL3JwZSM（qY_hj45hxC0 の昇格））
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -39,7 +39,18 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 - **ショートの切り出しやり直し**: 最初に上げた QN24TFpO6jk は自動クロップが狭く（ひろゆきが左右に大きく動く回）顔が外れる場面があったので、build_short.py に `short.crop=[x0,y0,side]` と `short.cover` の手動指定を追加し [553,0,815]・cover 0 で作り直して 1aeL1jDjL4o として上げ直した。**QN24TFpO6jk は予約を外して private のまま残っている（削除は未実施・要ユーザー判断）**
 - pytest 36 passed
 
-## 今回やったこと（2026-11-02 14:22 日次）— 完了
+## 今回やったこと（2026-11-04 14:17 日次）— 完了
+
+- git pull（436f7bc で最新）。status: 11/4 ショート 2lmeaIMPp-c 公開済、11/4 長尺 m4R7_9CT_o4（private→11/4 18:30）。11/5 ショート・11/6 長尺は 0 本だった
+- **昇格**: qY_hj45hxC0（11/2 07:00 公開・2,253回）→ 11/6 長尺。ledger の昇格の記録に追記。qY_hj45hxC0 のフルで見るを API で 5jxVZtOwSnI→kdcGL3JwZSM に変更・確認（11/6 18:30 までは非公開動画へのリンク）。recipes/shorts/2026-11-02-am.json の parent も変更
+- 11/6（金）長尺 recipes/2026-11-06-gakureki.json → **kdcGL3JwZSM**「【ひろゆき】学歴で年収は決まる？20代でお金を使うなら学歴よりスキルと経験」6:40、private→2026-11-06T09:30Z、サムネ API 設定成功。Fydc3YFumow 4961.8〜4970.3（cold open）/4901.1〜4961.5/4952.3〜5014.0/5051.2〜5081.3。5015〜5050 の「頭の悪い方には申し訳ない」以降は人を下げる言い方なので使わなかった
+- 11/5 ショート recipes/shorts/2026-11-05-am.json → **93NkdAOx0uo**「【ひろゆき】注意しても止めないなら叩いていい？「相手のため」でも体罰が許されない理由【切り抜き】」37秒（0YyAgmv5_Yc 7895.2〜7931.95）、private→2026-11-04T22:00Z、フルで見る→m4R7_9CT_o4（API 確認）。今週はお金系が3本続いたので非お金。crop [640,0,800]（自動は顔が切れた。下端にスパチャカードの上端が細く入る）
+- 実験B: 0秒目の音声を faster-whisper（/workspace/wvenv、small/large-v3）で書き起こしてテロップと照合。ショートのテロップは聞き取りが割れた動詞を避け「体罰というのが許されるという社会で…」
+- publish_shorts.py: upload_youtube.py を呼ぶとき PYTHONPATH に ROOT を渡すよう修正（PYTHONPATH 無しで成功を確認）
+- fetch_clips は --browser none で成功。json3 字幕 0YyAgmv5_Yc / Fydc3YFumow を work/_cap に追加
+- pytest 36 passed
+
+## 前回やったこと（2026-11-02 14:22 日次）— 完了
 
 - git pull（最新）。status: 当日ショート qY_hj45hxC0（07:00 公開済・1,239回）、当日長尺 5jxVZtOwSnI（private→11/2 18:30）はスキップ。11/3 ショート・11/4 長尺は 0 本だった
 - 昇格判定: 48時間以上で 1,700 回超は oUt6kcCwW5c（1,975回・昇格済）だけ → **昇格なし**。次点 CfPbeHlWoP8 1,468、wbLkK40nUXw 1,334、CMkawWTnuxo 1,325、1aeL1jDjL4o 1,301
@@ -70,11 +81,11 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。�
 
 ## 次にやること
 
-1. 11/3（火）の日次: 長尺の枠なし（11/4 は m4R7_9CT_o4 予約済み、次は 11/6（金））。11/4 ショートを作る（フルで見る→前日 11/3 の長尺は無いので直近公開の 5jxVZtOwSnI）。実験B 継続（0秒目から本人の一言、`"opening": "cold"`、台帳に1行）
-   夕方 11/2: qY_hj45hxC0 の関連動画→5jxVZtOwSnI、5jxVZtOwSnI の固定コメント・終了画面。夕方 11/3: QC24A3gd2jc の関連動画→5jxVZtOwSnI。夕方 11/4: m4R7_9CT_o4 の固定コメント・終了画面
-2. 昇格判定: VDVWT-rGlgc（11/1）・qY_hj45hxC0（11/2）が48時間を過ぎたら 1,700 回超か見る
-3. 不要な private 動画 QN24TFpO6jk（10/31 ショートの旧版）の削除はユーザー確認後
-4. 11/16 15:00 に実験B の比較 routine（一回きり）
+1. 11/5（木）の日次: 長尺の枠なし（11/6 は kdcGL3JwZSM 予約済み、次は 11/9（月））。11/6 ショートを作る（フルで見る→m4R7_9CT_o4）。実験B 継続
+   夕方 11/4: 2lmeaIMPp-c の関連動画→m4R7_9CT_o4、m4R7_9CT_o4 の固定コメント・終了画面。夕方 11/5: 93NkdAOx0uo の関連動画→m4R7_9CT_o4。夕方 11/6: qY_hj45hxC0 の関連動画→kdcGL3JwZSM、kdcGL3JwZSM の固定コメント・終了画面
+2. 昇格判定: QC24A3gd2jc（11/3）・2lmeaIMPp-c（11/4）が48時間を過ぎたら 1,700 回超か見る
+3. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
+4. 11/11 比較、11/16 15:00 実験B 比較 routine
 
 ## 前回やったこと（2026-10-29 14:15 日次）— 完了
 
