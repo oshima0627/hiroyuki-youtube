@@ -1,4 +1,5 @@
 # HANDOFF
+- 11/5 日次: 11/6 ショート recipes/shorts/2026-11-06-am.json → **84oRUIoiUoI**「【ひろゆき】根性論で練習すれば伸びる？イチローも大谷も根性論を言わない理由【切り抜き】」38秒（O0YEy2NB3os 245.8〜283.8）、private→2026-11-05T22:00Z、フルで見る→m4R7_9CT_o4（前日11/5の長尺なし→直近公開長尺、API確認）。今週はお金系3本済みなので非お金。自動クロップで顔OK。長尺は 11/6 kdcGL3JwZSM 予約済みを確認、次枠 11/9（月）は未作成。昇格候補なし（oUt6kcCwW5c 1,976回は As5R0jCxHoM で対応済み、qY_hj45hxC0 は昇格済み）。/workspace/wvenv の faster-whisper は av の版ずれでファイル直渡しが失敗する→wav を numpy で渡すと動く
 最終更新: 2026-11-04 14:40 JST（11/4 日次: 11/5 ショート 93NkdAOx0uo・11/6 長尺 kdcGL3JwZSM（qY_hj45hxC0 の昇格））
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
