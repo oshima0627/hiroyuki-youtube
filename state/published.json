@@ -79,7 +79,7 @@
       "publish_at": null,
       "published_at": "2026-08-16T03:00:04Z",
       "upload_status": "processed",
-      "view_count": 226,
+      "view_count": 227,
       "duration": "PT12M12S"
     },
     "2026-08-18-france": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1515,
+      "view_count": 1524,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -537,7 +537,7 @@
       "publish_at": null,
       "published_at": "2026-09-10T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1370,
+      "view_count": 1371,
       "duration": "PT43S"
     },
     "2026-09-12-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1441,
+      "view_count": 1444,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1174,7 +1174,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T03:00:17Z",
       "upload_status": "processed",
-      "view_count": 7,
+      "view_count": 8,
       "duration": "PT12M16S"
     },
     "2026-09-07-gaishoku": {
@@ -1626,7 +1626,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T09:30:22Z",
       "upload_status": "processed",
-      "view_count": 12,
+      "view_count": 13,
       "duration": "PT8M22S"
     },
     "2026-10-16-shikaku": {
@@ -1775,7 +1775,7 @@
       "publish_at": null,
       "published_at": "2026-10-19T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 1280,
+      "view_count": 1285,
       "duration": "PT1M7S"
     },
     "2026-10-20-uchu": {
@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1976,
+      "view_count": 1977,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2058,7 +2058,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1355,
+      "view_count": 1356,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1332,
+      "view_count": 1333,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2208,7 +2208,7 @@
       "publish_at": null,
       "published_at": "2026-10-30T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1318,
+      "view_count": 1320,
       "duration": "PT36S"
     },
     "2026-11-01-am": {
@@ -2225,7 +2225,7 @@
       "publish_at": null,
       "published_at": "2026-10-31T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1082,
+      "view_count": 1088,
       "duration": "PT37S"
     },
     "2026-11-02-am": {
@@ -2242,7 +2242,7 @@
       "publish_at": null,
       "published_at": "2026-11-01T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 2689,
+      "view_count": 2690,
       "duration": "PT38S"
     },
     "2026-11-03-am": {
@@ -2259,7 +2259,7 @@
       "publish_at": null,
       "published_at": "2026-11-02T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1394,
+      "view_count": 1404,
       "duration": "PT42S"
     },
     "2026-11-04-hachijikan": {
@@ -2293,7 +2293,7 @@
       "publish_at": null,
       "published_at": "2026-11-03T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1242,
+      "view_count": 1246,
       "duration": "PT39S"
     },
     "2026-11-06-gakureki": {
@@ -2310,7 +2310,7 @@
       "publish_at": null,
       "published_at": "2026-11-06T09:30:30Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 2,
       "duration": "PT6M41S"
     },
     "2026-11-05-am": {
@@ -2327,7 +2327,7 @@
       "publish_at": null,
       "published_at": "2026-11-04T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 2203,
+      "view_count": 3108,
       "duration": "PT37S"
     },
     "2026-11-06-am": {
@@ -2344,24 +2344,24 @@
       "publish_at": null,
       "published_at": "2026-11-05T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1381,
+      "view_count": 1835,
       "duration": "PT39S"
     },
     "2026-11-07-am": {
       "youtube_video_id": "e3PGAJ1kFSs",
       "url": "https://www.youtube.com/watch?v=e3PGAJ1kFSs",
       "title": "【ひろゆき】銀行の残高は税務署に筒抜け？マイナポイントより怖い現実【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "0YyAgmv5_Yc"
       ],
-      "publish_at": "2026-11-06T22:00:00Z",
-      "published_at": "2026-11-06T05:23:11Z",
+      "publish_at": null,
+      "published_at": "2026-11-06T22:00:11Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1323,
       "duration": "PT40S"
     },
     "2026-11-09-shikaku": {
@@ -2380,6 +2380,40 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT6M55S"
+    },
+    "2026-11-08-am": {
+      "youtube_video_id": "IzKdqd1Js2s",
+      "url": "https://www.youtube.com/watch?v=IzKdqd1Js2s",
+      "title": "【ひろゆき】国立大学を目指して勉強しても無理？努力しても受からないなら早く働く理由【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "M7KWrHANxHs"
+      ],
+      "publish_at": "2026-11-07T22:00:00Z",
+      "published_at": "2026-11-07T05:24:04Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT39S"
+    },
+    "2026-11-11-taibatsu": {
+      "youtube_video_id": "cvvBcBDKDHk",
+      "url": "https://www.youtube.com/watch?v=cvvBcBDKDHk",
+      "title": "【ひろゆき】注意しても止めないなら叩いていい？「相手のため」でも体罰が許されない理由",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": true,
+      "sources": [
+        "0YyAgmv5_Yc"
+      ],
+      "publish_at": "2026-11-11T09:30:00Z",
+      "published_at": "2026-11-07T05:26:22Z",
+      "upload_status": "uploaded",
+      "view_count": 0,
+      "duration": "PT3M49S"
     }
   }
 }
