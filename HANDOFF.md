@@ -1,57 +1,63 @@
 # HANDOFF
-- 11/7 日次: 11/8 ショート recipes/shorts/2026-11-08-am.json → **IzKdqd1Js2s**「【ひろゆき】国立大学を目指して勉強しても無理？努力しても受からないなら早く働く理由【切り抜き】」38秒（M7KWrHANxHs 8303.7〜8341.7）、private→2026-11-07T22:00Z、フルで見る→kdcGL3JwZSM。冒頭「あなたは国立理系に受かる能力はないです」。仕事・進学系。昇格: 93NkdAOx0uo（3,017→3,108回・48h超）→ 11/11 長尺 recipes/2026-11-11-taibatsu.json → **cvvBcBDKDHk**「【ひろゆき】注意しても止めないなら叩いていい？「相手のため」でも体罰が許されない理由」3:48、private→2026-11-11T09:30Z、cold open「体罰というのが許されるという社会で…」（0YyAgmv5_Yc 7895.2〜）、サムネ API 設定成功（maxres・スパチャ彩度警告あり）。93NkdAOx0uo のフルで見るを m4R7_9CT_o4→cvvBcBDKDHk に変更。11/9 長尺 t8Q5wQp7nPQ は予約済みのため作らない
-最終更新: 2026-11-07 14:28 JST（11/7 日次）
+最終更新: 2026-11-08 14:50 JST（11/8 日次）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
 ```bash
 cd /workspace/hiroyuki-youtube && PYTHONPATH=. python3 scripts/ops_youtube.py --status
-curl -s 127.0.0.1:50021/version   # VOICEVOX 0.25.2（/workspace/voicevox）。返らなければ起動する
+curl -s 127.0.0.1:50021/version   # VOICEVOX（/workspace/voicevox）。返らなければ起動する（話者13）
 ```
 
-`.venv` は無い。`yt_dlp` は `/workspace/.ytvenv/bin/python` で `fetch_clips.py` を回す（`sys.executable -m yt_dlp` のため）。faster-whisper は `/workspace/wvenv`。
+`.venv` は無い。`yt_dlp` は `/workspace/.ytvenv/bin/python` で `fetch_clips.py` を回す（`sys.executable -m yt_dlp` のため）。faster-whisper は `/workspace/wvenv`（wav を numpy で渡す。small で十分。work/tmp1108/ww.py に単語タイムスタンプ版あり）。
 
 ## いま何をしているのか
 
-ひろゆき切り抜きチャンネル「ひろゆき解説ch【切り抜き】」(UCqK3KYqEeeJiAWr4nSryJYQ) の日次運用。
-2026-10-10 から Linux ボックス（/workspace/hiroyuki-youtube）で回している。ASUS_i9 は使わない（fetch 失敗時だけ親が判断）。
+ひろゆき切り抜きチャンネル「ひろゆき解説ch【切り抜き】」(UCqK3KYqEeeJiAWr4nSryJYQ) の日次運用。Linux ボックス（/workspace/hiroyuki-youtube）で回す。ASUS_i9 は使わない（fetch 失敗時だけ親が判断）。
 
 ## Linux ボックスでの手順
 
-1. `work/` は git 管理外。字幕は work/_cap/*.ja.json3。未使用一覧は work/_unused_1102.py を日付更新して再生成。
-2. レシピを recipes/ に作り検証。
-3. **クリップ取得**: `PYTHONPATH=. /workspace/.ytvenv/bin/python scripts/fetch_clips.py recipes/<id>.json --browser none`
-4. ショート: `PYTHONPATH=. python3 scripts/build_short.py` → `publish_shorts.py`。長尺: `build_episode.py`（`"opening": "cold"`）→ `thumbnail.py` → `upload_youtube.py work/<id> --schedule <UTC>`
-5. `ops_youtube.py --status` で確認。サムネは `set_thumbnails.py --only <id> --force`
+1. `work/` は git 管理外。字幕は work/<動画ID>/subs.json（work/_cap/*.ja.json3 は一部のみ）。未使用一覧は `python3 work/_unused_1102.py` → work/_unused_1102.txt
+2. レシピを recipes/ に作る。**クリップ取得**: `PYTHONPATH=. /workspace/.ytvenv/bin/python scripts/fetch_clips.py recipes/<id>.json --browser none`
+3. ショート: `build_short.py <recipe>` → `publish_shorts.py`（予約まで）。ショートは thumb.png が無いので set_thumbnails 対象外
+4. 長尺: `build_episode.py`（`"opening": "cold"`）→ `thumbnail.py`（thumb.at は連結後の秒。note 画面に当たらないよう parts.txt の part_* 区間を選ぶ）→ `upload_youtube.py work/<id> --schedule <UTC>` → `set_thumbnails.py --only <published.jsonのキー> --force`
+5. ショートのフルで見る変更: `PYTHONPATH=. python3 work/_update_short_full.py <ショートID> <長尺ID>`
 
-## 今回やったこと（2026-11-07 14:14 日次）— 完了
+## 今回やったこと（2026-11-08 日次）— 完了
 
-- git pull（up to date）。status: 当日ショート e3PGAJ1kFSs 公開済、11/9 長尺 t8Q5wQp7nPQ 予約済。11/8 ショートは 0 本だった
-- 昇格判定: **93NkdAOx0uo** は 3,017回・11/5 07:00公開で 11/7 07:00 に48時間到達 → **昇格**（次枠 11/11 水）。QC24A3gd2jc 1,404・2lmeaIMPp-c 1,246・84oRUIoiUoI 1,835（48hは11/8 07:00）は対象外。qY_hj45hxC0 / oUt6kcCwW5c は昇格済
-- 11/8 ショート recipes/shorts/2026-11-08-am.json → **IzKdqd1Js2s**「国立大学を目指して勉強しても無理？…」38秒、private→2026-11-07T22:00Z。0秒目「あなたは国立理系に受かる能力はないです」（M7KWrHANxHs 8303.7）。フルで見る→kdcGL3JwZSM。仕事・進学系
-- 11/11（水）長尺 recipes/2026-11-11-taibatsu.json → **cvvBcBDKDHk**「注意しても止めないなら叩いていい？…」3:48、private→2026-11-11T09:30Z。0YyAgmv5_Yc 体罰相談の深掘り（cold 7895.2〜7907.5 / 7880〜7895.2 / 7895.2〜7932）。サムネ at 8・crop [0.40,0.05,0.55]、API で maxres。スパチャカードが下端に残るため彩度警告あり
-- 93NkdAOx0uo のフルで見るを m4R7_9CT_o4→cvvBcBDKDHk。recipes/shorts/2026-11-05-am.json の parent も更新
-- 実験B: 両本とも faster-whisper で0秒目確認。11/9 t8Q5wQp7nPQ は既存のためスキップ
+- state/published.json のローカル差分は --status による再生回数・upload_status 更新のみだったので checkout で破棄 → git pull（up to date）
+- status: 11/8 07:00 IzKdqd1Js2s 公開済、11/9 18:30 t8Q5wQp7nPQ・11/11 18:30 cvvBcBDKDHk 予約済。11/9 07:00 のショートは0本だった
+- 昇格判定（14:22 JST）: **84oRUIoiUoI 2,609回**（11/5 22:00Z 公開・48h 到達済）→ 昇格。QC24A3gd2jc 1,406・2lmeaIMPp-c 1,256 は 1,700 未満。e3PGAJ1kFSs 1,366・IzKdqd1Js2s 1,276 は 48h 未達
+- 11/9 ショート recipes/shorts/2026-11-09-am.json → **7XEjK7VKTGI**「【ひろゆき】給料が安くて経済的に自立できない…転職すべき？低賃金なら正社員を目指す理由【切り抜き】」41秒、private→2026-11-08T22:00Z。2zED6c6zgx4 8381.7〜8422.6。冒頭「高いお金を得なくても楽しく仕事ができれば人生幸せ」。フルで見る→kdcGL3JwZSM。仕事・お金系
+- 11/13（金）昇格長尺 recipes/2026-11-13-konjou.json → **pSkBQyXIKWo**「【ひろゆき】根性論で練習すれば伸びる？昭和のしごきより「理論が土台」の練習好きが結果を出す理由」5:32、private→2026-11-13T09:30Z。O0YEy2NB3os の cold 362.9〜368.9 / 112.1〜153.9 / 231.4〜284.5 / 325.0〜368.9。サムネ at 120・auto-crop、API 設定成功。アップロード直後のタイトル（「スポーツも勉強も」）は内容と合わないので API で変更済み
+- 84oRUIoiUoI のフルで見るを **m4R7_9CT_o4**→pSkBQyXIKWo（変更前は kdcGL3JwZSM ではなく m4R7_9CT_o4 だった）。recipes/shorts/2026-11-06-am.json の parent も更新
+- docs/growth-ledger.md: 昇格1行、実験B 2行を追記（昇格表の途中の空行も除去）
+- 360-368 の初回取得ファイルに音声ストリームが無かったので削除して 362.9 開始で再取得（再取得分は音声あり）
+
+## 検証済みの事実（API / コマンド出力）
+
+- 7XEjK7VKTGI: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt 2026-11-08T22:00:00Z、PT41S、概要欄1行目の問いかけ、フルで見る→kdcGL3JwZSM
+- pSkBQyXIKWo: private、publishAt 2026-11-13T09:30:00Z、PT5M32S、サムネ maxres あり、概要欄1行目の問いかけ、新タイトル反映
+- 84oRUIoiUoI: 概要欄のフルで見る→pSkBQyXIKWo（更新後に再取得で確認）
+- 0秒目音声: 両本 faster-whisper small で確認（ledger の実験B ログ参照）
+
+## 未検証
+
+- pSkBQyXIKWo / 7XEjK7VKTGI の映像を全編通しでは見ていない（0秒目・数フレームのみ確認）
+- 7XEjK7VKTGI の縦型クロップは顔がやや左下寄り（既存処理のまま）
 
 ## 次にやること
 
-1. 11/8（日）の日次: 長尺枠なし（次は 11/9・11/11 予約済み、その次 11/13 金）。11/9 ショートを作る（フルで見る→kdcGL3JwZSM、または 11/9 公開後は t8Q5wQp7nPQ）。実験B 継続
-2. 夕方 11/7: e3PGAJ1kFSs の関連動画→kdcGL3JwZSM（または公開済み長尺）、問いかけコメント固定。夕方 11/8: IzKdqd1Js2s→kdcGL3JwZSM。11/11 公開後に 93NkdAOx0uo 関連→cvvBcBDKDHk・終了画面
-3. 昇格判定: 84oRUIoiUoI は 11/8 07:00 以降に 1,700 超なら候補。e3PGAJ1kFSs も見る
-4. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
-5. 11/11 比較、11/16 15:00 実験B 比較 routine
-
-## 検証済みの事実
-
-- IzKdqd1Js2s: API で publishAt 2026-11-07T22:00:00Z、フルで見る→kdcGL3JwZSM、概要欄1行目の問いかけを確認
-- cvvBcBDKDHk: API で publishAt 2026-11-11T09:30:00Z、概要欄1行目の問いかけ、サムネ maxres、尺 3:48
-- 93NkdAOx0uo: フルで見る→cvvBcBDKDHk を API で確認
-- fetch は `/workspace/.ytvenv/bin/python`（system python3 には yt_dlp が無い）
-- /workspace/wvenv の faster-whisper は wav を numpy で渡す。small で十分なことも
+1. 夕方 11/8: IzKdqd1Js2s 関連→kdcGL3JwZSM・問いかけ固定。夕方 11/9: 7XEjK7VKTGI 関連→t8Q5wQp7nPQ（18:30 公開後）または kdcGL3JwZSM、t8Q5wQp7nPQ の問いかけ固定・終了画面
+2. 11/9（月）日次: 11/10 ショート（フルで見る→t8Q5wQp7nPQ、11/9 18:30 公開済み）。長尺は 11/11・11/13 予約済みなので通常枠なし。次の空き枠は 11/16（月）
+3. 昇格判定: e3PGAJ1kFSs（48h は 11/9 07:00）、IzKdqd1Js2s（48h は 11/10 07:00）。84oRUIoiUoI・93NkdAOx0uo・qY_hj45hxC0・oUt6kcCwW5c は昇格済
+4. 11/11 公開後 93NkdAOx0uo 関連→cvvBcBDKDHk、11/13 公開後 84oRUIoiUoI 関連→pSkBQyXIKWo・終了画面
+5. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
+6. 11/11 比較、11/16 15:00 実験B 比較 routine
 
 ## 触ってはいけないところ
 
 - 禁止プラン: _plan-kenko / _plan-kosodate / _plan-kigyo
-- 政治禁止。「公式」「公認」禁止。偽エンゲージメント禁止
+- 政治禁止。「公式」「公認」禁止。偽エンゲージメント禁止。過去日時の publishAt 禁止
 - Google からサインアウトしない・Cookie/プロファイルを消さない。セッション切れはユーザーに伝える
 - /tmp は他 bot と衝突するので確認画像は work/ 内へ
+- client_secret.json / token.json はコミットしない
