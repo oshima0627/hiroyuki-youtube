@@ -2136,7 +2136,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T09:30:21Z",
       "upload_status": "processed",
-      "view_count": 14,
+      "view_count": 15,
       "duration": "PT14M20S"
     },
     "2026-10-30-tsumerare": {
@@ -2344,7 +2344,7 @@
       "publish_at": null,
       "published_at": "2026-11-05T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 2825,
+      "view_count": 2827,
       "duration": "PT39S"
     },
     "2026-11-07-am": {
@@ -2463,7 +2463,7 @@
       "publish_at": null,
       "published_at": "2026-11-09T22:00:11Z",
       "upload_status": "processed",
-      "view_count": 1744,
+      "view_count": 1780,
       "duration": "PT40S"
     },
     "2026-11-11-am": {
@@ -2480,7 +2480,7 @@
       "publish_at": null,
       "published_at": "2026-11-10T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 1307,
+      "view_count": 1349,
       "duration": "PT42S"
     },
     "2026-11-12-am": {
@@ -2497,7 +2497,7 @@
       "publish_at": null,
       "published_at": "2026-11-11T22:00:06Z",
       "upload_status": "processed",
-      "view_count": 1093,
+      "view_count": 1099,
       "duration": "PT41S"
     },
     "2026-11-13-am": {
@@ -2531,7 +2531,7 @@
       ],
       "publish_at": "2026-11-16T09:30:00Z",
       "published_at": "2026-11-12T05:34:03Z",
-      "upload_status": "uploaded",
+      "upload_status": "processed",
       "view_count": 0,
       "duration": "PT5M54S"
     }
