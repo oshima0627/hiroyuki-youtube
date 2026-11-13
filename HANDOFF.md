@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-11-12 15:20 JST（11/12 日次）
+最終更新: 2026-11-13 14:40 JST（11/13 日次）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -22,33 +22,29 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX（/workspace/voicevox）。返ら�
 4. 長尺: `build_episode.py`（`"opening": "cold"`）→ `thumbnail.py`（thumb.at は連結後の秒。note 画面に当たらないよう parts.txt の part_* 区間を選ぶ）→ `upload_youtube.py work/<id> --schedule <UTC>` → `set_thumbnails.py --only <published.jsonのキー> --force`
 5. ショートのフルで見る変更: `PYTHONPATH=. python3 work/_update_short_full.py <ショートID> <長尺ID>`
 
-## 今回やったこと（2026-11-12 日次）— 完了
+## 今回やったこと（2026-11-13 日次）— 完了
 
-- git pull → status: 11/12 07:00 U0d9D_L-ps4 公開済、11/13 18:30 pSkBQyXIKWo 予約済。11/13 07:00 のショートは0本、11/16（月）長尺枠は空き
-- 昇格判定（14:20 JST）: **653l90JxsV4 1,739回（48h 到達）→ 昇格**。他は 1,700 未満（7XEjK7VKTGI 1,299・IzKdqd1Js2s 1,369・e3PGAJ1kFSs 1,368）、JqrRXmGjMlk 1,307 は 48h 未達（11/13 07:00）
-- 11/13 ショート recipes/shorts/2026-11-13-am.json → **YZVlJgnzMk0**「【ひろゆき】結婚はギャンブル？恋人を作らない若者が増えたのは「頭が良くなった」から【切り抜き】」37秒、private→2026-11-12T22:00Z。0YyAgmv5_Yc クリップ4525〜4625 の 28.55〜65.45秒。冒頭「結婚した後に…60年間…分かるわけがないんですよ」、テロップは同じ意味に短縮。フルで見る→cvvBcBDKDHk（前日長尺なし→直近公開の長尺）。恋愛・価値観系（今週はお金・仕事系が4本続いたので外した）。crop=[600,0,760] 手動
-- 11/16 昇格長尺 recipes/2026-11-16-tokyo.json → **S_-Wjubw8sE**（5:53、private→2026-11-16T09:30Z、サムネAPI設定成功、thumb.at=85）。2問: 4vmH4mejnjI 8402〜8460（新卒は東京か大阪か）＋ 2zED6c6zgx4 3213.2〜3296（子育て世帯は首都圏か地方か。前半3095〜3160 は 11/3 ショートで使用済みなので後半のみ）。冒頭は 4vmH4mejnjI 8420.6〜8428.55「1回大阪で働いてしまって、そっから東京に上がるのが難しくなる可能性がある」
-- 653l90JxsV4 のフルで見る → S_-Wjubw8sE に変更（work/_update_short_full.py）
-- IXiLxkgHUMM（20代は東京→地元・資格の相談 4481〜4570）は collab_warning（いずみ氏との共演）があるので使わなかった
-- docs/growth-ledger.md: 昇格の記録1行・実験B 2行追記
-- 注意: build_short の short.start/end と build_episode のクリップ再生は、区間ファイル（pad 2秒）の 2秒目が recipe の start。faster-whisper はこのショートの完成音声だとほぼ認識しなかったので、素材 wav との包絡相関で開始位置（素材30.55秒）を確認した
+- git pull → status: 11/13 07:00 YZVlJgnzMk0 公開済、11/13 18:30 pSkBQyXIKWo・11/16 18:30 S_-Wjubw8sE 予約済。11/14 07:00 のショートは0本
+- 昇格判定（14:25 JST）: 新規なし。1,700回超は 653l90JxsV4・93NkdAOx0uo・84oRUIoiUoI・qY_hj45hxC0・oUt6kcCwW5c でいずれも昇格済み。JqrRXmGjMlk は48h到達で1,363回→昇格なし。施策C③により長尺は作らない
+- 11/14 ショート recipes/shorts/2026-11-14-am.json → **XnpPzG1ERco**「【ひろゆき】男子ばかりの高校で恋愛できない…若いうちはモテない方が人生楽しい理由【切り抜き】」35.2秒、private→2026-11-13T22:00Z。daulqJwmooE クリップ5985〜6065 の 21.9〜57.1秒。冒頭「若いうちはモテない方が人生楽しいですよ」（音声と一致、faster-whisper）。答え: モテると異性とのやり取りに人生を使い、それ以外の楽しみ方がなくなる。フルで見る→pSkBQyXIKWo（前日長尺）。**C①**（恋愛観）。crop=[600,0,690] 手動（自動だと顔が左に切れた）
+- docs/growth-ledger.md: 実験B 1行・施策C 1行追記
 
 ## 検証済みの事実（API / コマンド出力）
 
-- YZVlJgnzMk0: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt 2026-11-12T22:00:00Z、概要欄1行目の問いかけ、フルで見る→cvvBcBDKDHk。フレーム 0.3/8/15/25/36.3秒で顔は枠内、最後に問いかけテロップ
-- S_-Wjubw8sE: 同チャンネル、private、publishAt 2026-11-16T09:30:00Z、概要欄1行目の問いかけ、サムネ設定 ✓。0秒目音声は faster-whisper で「一回大阪で働いてしまって…」。outro（終了画面用）333.6〜353.6秒
+- XnpPzG1ERco: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt 2026-11-13T22:00:00Z、概要欄1行目の問いかけ、フルで見る→pSkBQyXIKWo。フレーム 0.3/8/15/22/34.8秒で顔は枠内、最後に問いかけテロップ
 
 ## 未検証
 
-- 両動画の全編通し視聴はしていない。653l90JxsV4 の概要欄変更後の全文は API の AFTER 出力のみ確認
+- XnpPzG1ERco の全編通し視聴はしていない（API の duration は処理中で P0D）
 
 ## 次にやること
 
-1. 夕方 11/12: U0d9D_L-ps4 関連→cvvBcBDKDHk・問いかけ固定。夕方 11/13: YZVlJgnzMk0 関連→（前日長尺なし。直近公開の長尺は 11/13 18:30 公開の pSkBQyXIKWo になるので夕方ルールで判断）、84oRUIoiUoI 関連→pSkBQyXIKWo、pSkBQyXIKWo の問いかけ固定・終了画面。653l90JxsV4 の関連動画→S_-Wjubw8sE は 11/16 公開後
-2. 11/13（金）日次: 11/14 ショートのみ。長尺は 11/13・11/16 予約済み。次の空きは 11/18（水）
-3. 昇格判定: JqrRXmGjMlk（48h は 11/13 07:00）、U0d9D_L-ps4（11/14 07:00）、YZVlJgnzMk0（11/15 07:00）
-4. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
-5. 11/16 15:00 実験B 比較 routine
+1. 夕方 11/13: YZVlJgnzMk0 関連→pSkBQyXIKWo、84oRUIoiUoI 関連→pSkBQyXIKWo、pSkBQyXIKWo の問いかけ固定・終了画面。夕方 11/14: XnpPzG1ERco 関連→pSkBQyXIKWo・問いかけ固定。653l90JxsV4 の関連動画→S_-Wjubw8sE は 11/16 公開後
+2. 11/14（土）日次: 11/15 ショートのみ。長尺は昇格があれば次の空き 11/18（水）
+3. 昇格判定: U0d9D_L-ps4（48h は 11/14 07:00）、YZVlJgnzMk0（11/15 07:00）、XnpPzG1ERco（11/16 07:00）
+4. 施策C①: 今週（11/13〜）は XnpPzG1ERco の1本。週2〜3本まで
+5. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
+6. 11/16 15:00 実験B 比較 routine、11/23 09:00 週次レビュー routine
 
 ## 触ってはいけないところ
 
