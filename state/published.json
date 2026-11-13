@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1553,
+      "view_count": 1555,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -2113,7 +2113,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1287,
+      "view_count": 1288,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1341,
+      "view_count": 1342,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2293,7 +2293,7 @@
       "publish_at": null,
       "published_at": "2026-11-03T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1273,
+      "view_count": 1275,
       "duration": "PT39S"
     },
     "2026-11-06-gakureki": {
@@ -2344,7 +2344,7 @@
       "publish_at": null,
       "published_at": "2026-11-05T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 2829,
+      "view_count": 2828,
       "duration": "PT39S"
     },
     "2026-11-07-am": {
@@ -2429,22 +2429,22 @@
       "publish_at": null,
       "published_at": "2026-11-08T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1304,
+      "view_count": 1307,
       "duration": "PT41S"
     },
     "2026-11-13-konjou": {
       "youtube_video_id": "pSkBQyXIKWo",
       "url": "https://www.youtube.com/watch?v=pSkBQyXIKWo",
       "title": "【ひろゆき】根性論で練習すれば伸びる？昭和のしごきより「理論が土台」の練習好きが結果を出す理由",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
       "sources": [
         "O0YEy2NB3os"
       ],
-      "publish_at": "2026-11-13T09:30:00Z",
-      "published_at": "2026-11-08T05:31:06Z",
+      "publish_at": null,
+      "published_at": "2026-11-13T09:30:05Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT5M32S"
@@ -2480,7 +2480,7 @@
       "publish_at": null,
       "published_at": "2026-11-10T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 1363,
+      "view_count": 1369,
       "duration": "PT42S"
     },
     "2026-11-12-am": {
@@ -2497,7 +2497,7 @@
       "publish_at": null,
       "published_at": "2026-11-11T22:00:06Z",
       "upload_status": "processed",
-      "view_count": 1162,
+      "view_count": 1178,
       "duration": "PT41S"
     },
     "2026-11-13-am": {
@@ -2514,7 +2514,7 @@
       "publish_at": null,
       "published_at": "2026-11-12T22:00:05Z",
       "upload_status": "processed",
-      "view_count": 982,
+      "view_count": 1007,
       "duration": "PT37S"
     },
     "2026-11-16-tokyo": {
@@ -2545,7 +2545,12 @@
       "thumbnail_set": false,
       "sources": [
         "daulqJwmooE"
-      ]
+      ],
+      "publish_at": "2026-11-13T22:00:00Z",
+      "published_at": "2026-11-13T05:26:35Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT36S"
     }
   }
 }
