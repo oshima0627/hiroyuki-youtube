@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1361,
+      "view_count": 1362,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1342,
+      "view_count": 1344,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2344,7 +2344,7 @@
       "publish_at": null,
       "published_at": "2026-11-05T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 2838,
+      "view_count": 2839,
       "duration": "PT39S"
     },
     "2026-11-07-am": {
@@ -2514,14 +2514,14 @@
       "publish_at": null,
       "published_at": "2026-11-12T22:00:05Z",
       "upload_status": "processed",
-      "view_count": 1269,
+      "view_count": 1270,
       "duration": "PT37S"
     },
     "2026-11-16-tokyo": {
       "youtube_video_id": "S_-Wjubw8sE",
       "url": "https://www.youtube.com/watch?v=S_-Wjubw8sE",
       "title": "【ひろゆき】新卒は年収の高い東京か、暮らしやすい大阪か？若いうちに東京で働いた方がいい理由と、地方に住んだ方が得になる条件",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
@@ -2529,8 +2529,8 @@
         "2zED6c6zgx4",
         "4vmH4mejnjI"
       ],
-      "publish_at": "2026-11-16T09:30:00Z",
-      "published_at": "2026-11-12T05:34:03Z",
+      "publish_at": null,
+      "published_at": "2026-11-16T09:30:24Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT5M54S"
@@ -2549,7 +2549,7 @@
       "publish_at": null,
       "published_at": "2026-11-13T22:00:03Z",
       "upload_status": "processed",
-      "view_count": 1741,
+      "view_count": 1752,
       "duration": "PT36S"
     },
     "2026-11-15-am": {
@@ -2566,7 +2566,7 @@
       "publish_at": null,
       "published_at": "2026-11-14T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1142,
+      "view_count": 1149,
       "duration": "PT36S"
     },
     "2026-11-16-am": {
@@ -2583,7 +2583,7 @@
       "publish_at": null,
       "published_at": "2026-11-15T22:00:14Z",
       "upload_status": "processed",
-      "view_count": 1117,
+      "view_count": 1179,
       "duration": "PT38S"
     },
     "2026-11-17-am": {
@@ -2596,7 +2596,12 @@
       "thumbnail_set": false,
       "sources": [
         "_Qc2ZF3MLO0"
-      ]
+      ],
+      "publish_at": "2026-11-16T22:00:00Z",
+      "published_at": "2026-11-16T05:35:37Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT36S"
     },
     "2026-11-18-motenai": {
       "youtube_video_id": "wpmnSdP8VNQ",
@@ -2608,7 +2613,12 @@
       "thumbnail_set": true,
       "sources": [
         "daulqJwmooE"
-      ]
+      ],
+      "publish_at": "2026-11-18T09:30:00Z",
+      "published_at": "2026-11-16T05:37:46Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT5M56S"
     }
   }
 }
