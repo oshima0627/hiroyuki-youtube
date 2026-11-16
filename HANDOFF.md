@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-11-15 14:50 JST（11/15 日次）
+最終更新: 2026-11-16 15:05 JST（11/16 日次）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -22,29 +22,35 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX（/workspace/voicevox）。返ら�
 4. 長尺: `build_episode.py`（`"opening": "cold"`）→ `thumbnail.py`（thumb.at は連結後の秒。note 画面に当たらないよう parts.txt の part_* 区間を選ぶ）→ `upload_youtube.py work/<id> --schedule <UTC>` → `set_thumbnails.py --only <published.jsonのキー> --force`
 5. ショートのフルで見る変更: `PYTHONPATH=. python3 work/_update_short_full.py <ショートID> <長尺ID>`
 
-## 今回やったこと（2026-11-15 日次）— 完了
+## 今回やったこと（2026-11-16 日次）— 完了
 
-- git pull → status: 11/15 07:00 Qk1k0JJCyAE 公開済、11/16 18:30 S_-Wjubw8sE 予約済。11/16 07:00 のショートは0本
-- 昇格判定（14:30 JST）: 新規なし。YZVlJgnzMk0 は48h到達で1,255回→昇格なし。XnpPzG1ERco（1,564回）・Qk1k0JJCyAE は48h未達。施策C③により長尺は作らない
-- 11/16 ショート recipes/shorts/2026-11-16-am.json → **OD7nJkdkB0M**「【ひろゆき】AIで仕事がなくなる？リストラの嵐を心配しなくていい理由【切り抜き】」37.4秒、private→2026-11-15T22:00Z。EXUXJaPlKmE クリップ7640〜7720 の 28.65〜66.0秒（**short.start/end はクリップ範囲基準。mp4 は前後 pad 2秒込みなので whisper の秒から2秒引く**）。冒頭「江戸時代7割の人が農業やってたんですよ」（音声一致を出力 mp4 で確認）。フルで見る→pSkBQyXIKWo。仕事・検索語（AI・リストラ）枠、C①ではない。crop [520,0,690] 手動
-- docs/growth-ledger.md: 実験B 1行追記
+- git pull → status: 11/16 07:00 OD7nJkdkB0M 公開済、11/16 18:30 S_-Wjubw8sE 予約済。11/17 07:00 のショートは0本
+- 昇格判定（14:19 JST）: **XnpPzG1ERco が 1,741回（48h超）で昇格**。Qk1k0JJCyAE（1,142回）・OD7nJkdkB0M は48h未達
+- 11/17 ショート recipes/shorts/2026-11-17-am.json → **Z7ZIj6mrBGo**「【ひろゆき】結婚は何歳までに考えるべき？35歳を超えると結婚市場で人気がなくなる理由【切り抜き】」35.2秒、private→2026-11-16T22:00Z。_Qc2ZF3MLO0 クリップ2765〜2835 の 18.4〜53.6秒。冒頭テロップ「35歳を超えると結婚市場で人気がなくなる」。C①（結婚観）。フルで見る→S_-Wjubw8sE（前日長尺）。crop は自動（素材 1280x720）
+- 昇格長尺 recipes/2026-11-18-motenai.json → **wpmnSdP8VNQ**「【ひろゆき】男子ばかりの高校で恋愛できないのは損？若いうちはモテない方が人生が楽しくなる理由」5:55、private→2026-11-18T09:30Z（11/18 18:30 JST）。daulqJwmooE の1問を4区間で深掘り（元動画再生 約156秒）。冒頭「若いうちはモテない方が人生楽しいですよ」（6006.8秒〜）。サムネ API 設定成功（thumb.at=70、前半はスパチャカードが映るので避けた）。「女性芸人は不細工」「モテる女はつまらん」の部分は人を攻撃する表現なので使っていない
+- XnpPzG1ERco のフルで見る → wpmnSdP8VNQ（_update_short_full.py）
+- クリップ区間の微調整は既存の work/clips/daulqJwmooE_5985-6065.mp4 などから ffmpeg で切り出して `<id>_<int(start)>-<int(end)>.mp4`（先頭 = start−2秒）を作った（再取得を省略）
+- docs/growth-ledger.md: 昇格1行、実験B 2行、施策C 2行（Z7ZIj6mrBGo C①、wpmnSdP8VNQ C③）
 
 ## 検証済みの事実（API / コマンド出力）
 
-- OD7nJkdkB0M: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt 2026-11-15T22:00:00Z、概要欄1行目の問いかけ、フルで見る→pSkBQyXIKWo。フレーム 0.3/10/20/30/35.5秒で顔は枠内、最後に問いかけテロップ
+- Z7ZIj6mrBGo・wpmnSdP8VNQ: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt はそれぞれ 2026-11-16T22:00:00Z / 2026-11-18T09:30:00Z、概要欄1行目は二択の問いかけ
+- 概要欄のフルで見る: Z7ZIj6mrBGo→S_-Wjubw8sE、XnpPzG1ERco→wpmnSdP8VNQ
+- 冒頭音声は両方 faster-whisper small で確認。Z7ZIj6mrBGo のフレーム 0.3/10/20/30/34.8秒で顔は枠内、最後に問いかけテロップ
 
 ## 未検証
 
-- OD7nJkdkB0M の全編通し視聴はしていない（API の duration は処理中で P0D）
+- Z7ZIj6mrBGo・wpmnSdP8VNQ の全編通し視聴はしていない
 
 ## 次にやること
 
-1. 夕方 11/15: Qk1k0JJCyAE 関連→pSkBQyXIKWo・問いかけ固定。夕方 11/16: OD7nJkdkB0M 関連→S_-Wjubw8sE（当日公開の長尺）・問いかけ固定、S_-Wjubw8sE の問いかけ固定と終了画面、653l90JxsV4 の関連動画→S_-Wjubw8sE、C②（653l90JxsV4 概要欄・固定コメントに S_-Wjubw8sE）
-2. 11/16（月）日次: 11/17 ショート。長尺は昇格があれば次の空き 11/18（水）
-3. 昇格判定: XnpPzG1ERco（48h は 11/16 07:00）、Qk1k0JJCyAE（11/17 07:00）、OD7nJkdkB0M（11/18 07:00）
-4. 施策C①: 今週（11/13〜）は XnpPzG1ERco・Qk1k0JJCyAE の2本。週3本まで
-5. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
-6. 11/16 15:00 実験B 比較 routine、11/23 09:00 週次レビュー routine
+1. 夕方 11/16: OD7nJkdkB0M 関連→S_-Wjubw8sE・問いかけ固定、S_-Wjubw8sE の問いかけ固定と終了画面、653l90JxsV4 の関連→S_-Wjubw8sE、C②（653l90JxsV4 概要欄・固定コメントに S_-Wjubw8sE）
+2. 夕方 11/17: Z7ZIj6mrBGo 関連→S_-Wjubw8sE・問いかけ固定。夕方 11/18: XnpPzG1ERco 関連→wpmnSdP8VNQ、C②（XnpPzG1ERco 概要欄2行目・固定コメントに wpmnSdP8VNQ）、wpmnSdP8VNQ の問いかけ固定と終了画面
+3. 11/17（火）日次: 11/18 ショート。今週（11/16〜）の長尺は S_-Wjubw8sE・wpmnSdP8VNQ で2本＝上限。次の昇格は来週（11/23〜）の月水金
+4. 昇格判定: Qk1k0JJCyAE（48h は 11/17 07:00）、OD7nJkdkB0M（11/18 07:00）、Z7ZIj6mrBGo（11/19 07:00）
+5. 施策C①: 今週（11/16〜）は Z7ZIj6mrBGo の1本。週2〜3本。直近は恋愛・結婚が続いたので、次のC①は働き方・学歴などに振る
+6. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
+7. 11/16 15:00 実験B 比較 routine、11/23 09:00 週次レビュー routine
 
 ## 触ってはいけないところ
 
