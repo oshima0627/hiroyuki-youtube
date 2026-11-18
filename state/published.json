@@ -367,7 +367,7 @@
       "publish_at": null,
       "published_at": "2026-08-31T22:00:25Z",
       "upload_status": "processed",
-      "view_count": 1177,
+      "view_count": 1179,
       "duration": "PT1M6S"
     },
     "2026-09-02-am": {
@@ -864,7 +864,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T22:00:26Z",
       "upload_status": "processed",
-      "view_count": 2095,
+      "view_count": 2096,
       "duration": "PT41S"
     },
     "2026-09-30-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1498,
+      "view_count": 1500,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -2113,7 +2113,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1298,
+      "view_count": 1299,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2225,7 +2225,7 @@
       "publish_at": null,
       "published_at": "2026-10-31T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1096,
+      "view_count": 1097,
       "duration": "PT37S"
     },
     "2026-11-02-am": {
@@ -2497,7 +2497,7 @@
       "publish_at": null,
       "published_at": "2026-11-11T22:00:06Z",
       "upload_status": "processed",
-      "view_count": 1307,
+      "view_count": 1306,
       "duration": "PT41S"
     },
     "2026-11-13-am": {
@@ -2549,7 +2549,7 @@
       "publish_at": null,
       "published_at": "2026-11-13T22:00:03Z",
       "upload_status": "processed",
-      "view_count": 1820,
+      "view_count": 1818,
       "duration": "PT36S"
     },
     "2026-11-15-am": {
@@ -2583,7 +2583,7 @@
       "publish_at": null,
       "published_at": "2026-11-15T22:00:14Z",
       "upload_status": "processed",
-      "view_count": 1281,
+      "view_count": 1285,
       "duration": "PT38S"
     },
     "2026-11-17-am": {
@@ -2607,15 +2607,15 @@
       "youtube_video_id": "wpmnSdP8VNQ",
       "url": "https://www.youtube.com/watch?v=wpmnSdP8VNQ",
       "title": "【ひろゆき】男子ばかりの高校で恋愛できないのは損？若いうちはモテない方が人生が楽しくなる理由",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": true,
       "sources": [
         "daulqJwmooE"
       ],
-      "publish_at": "2026-11-18T09:30:00Z",
-      "published_at": "2026-11-16T05:37:46Z",
+      "publish_at": null,
+      "published_at": "2026-11-18T09:30:28Z",
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT5M56S"
@@ -2634,7 +2634,7 @@
       "publish_at": null,
       "published_at": "2026-11-17T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1030,
+      "view_count": 1041,
       "duration": "PT38S"
     },
     "2026-11-19-am": {
@@ -2647,7 +2647,12 @@
       "thumbnail_set": false,
       "sources": [
         "O0YEy2NB3os"
-      ]
+      ],
+      "publish_at": "2026-11-18T22:00:00Z",
+      "published_at": "2026-11-18T05:26:28Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT36S"
     }
   }
 }
