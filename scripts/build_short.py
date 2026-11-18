@@ -119,15 +119,19 @@ def render_frame(hook: str, footer: str, cover: int = 0) -> Image.Image:
 END_SEC = 3.5            # 最後の一言テロップを出す秒数
 
 
-def render_end_line(question: str, cover: int = 0) -> Image.Image:
+def render_end_line(question: str, cover: int = 0, end_cover: int = 0) -> Image.Image:
     """最後の数秒だけ下の補足欄を問いかけに差し替える透過PNG。
 
     映像の上には重ねない（下の黒帯の中だけ）。切り抜きの中身は変えない。
+    `end_cover`（short.end_cover）は最後の数秒だけ黒帯を広げる量。終盤に次の
+    スパチャのカードが下から出てくる回で、そこだけ潰す（2026-11-18 追加）。
     """
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    bottom = VIDEO_Y + VIDEO_H - cover
+    bottom = VIDEO_Y + VIDEO_H - max(cover, end_cover)
     d.rectangle([0, bottom + 6, W, H - 110], fill=(*INK, 255))
+    if end_cover > cover:
+        d.rectangle([0, bottom, W, bottom + 6], fill=(*RED, 255))
     # **全文を出す。** 2行で切ったら「イエス？ノー？」の「ノー？」が落ちた（2026-10-15）
     fq, lines = layout_question(d, question, W - PAD * 2, 52, 3, 36)
     y = bottom + 30
@@ -299,7 +303,7 @@ def build(recipe_path: Path, dry_run: bool = False, pad: float = 2.0) -> Path:
     end_in, end_fc = [], "[v][1:v]overlay=0:0[o]"
     if question and e - s > END_SEC * 2:
         endpng = out / "endline.png"
-        render_end_line(question, cover).save(endpng)
+        render_end_line(question, cover, int(short.get("end_cover", 0))).save(endpng)
         end_in = ["-i", str(endpng)]
         end_fc = ("[v][1:v]overlay=0:0[f];"
                   f"[f][2:v]overlay=0:0:enable='gte(t,{e - s - END_SEC:.2f})'[o]")
