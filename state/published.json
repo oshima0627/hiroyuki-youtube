@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1604,
+      "view_count": 1605,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1509,
+      "view_count": 1510,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -2136,7 +2136,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T09:30:21Z",
       "upload_status": "processed",
-      "view_count": 24,
+      "view_count": 25,
       "duration": "PT14M20S"
     },
     "2026-10-30-tsumerare": {
@@ -2395,7 +2395,7 @@
       "publish_at": null,
       "published_at": "2026-11-07T22:00:14Z",
       "upload_status": "processed",
-      "view_count": 1394,
+      "view_count": 1396,
       "duration": "PT39S"
     },
     "2026-11-11-taibatsu": {
@@ -2549,7 +2549,7 @@
       "publish_at": null,
       "published_at": "2026-11-13T22:00:03Z",
       "upload_status": "processed",
-      "view_count": 1826,
+      "view_count": 1825,
       "duration": "PT36S"
     },
     "2026-11-15-am": {
@@ -2600,7 +2600,7 @@
       "publish_at": null,
       "published_at": "2026-11-16T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1104,
+      "view_count": 1105,
       "duration": "PT36S"
     },
     "2026-11-18-motenai": {
@@ -2634,7 +2634,7 @@
       "publish_at": null,
       "published_at": "2026-11-17T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1055,
+      "view_count": 1057,
       "duration": "PT38S"
     },
     "2026-11-19-am": {
@@ -2651,7 +2651,7 @@
       "publish_at": null,
       "published_at": "2026-11-18T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 995,
+      "view_count": 997,
       "duration": "PT36S"
     },
     "2026-11-20-am": {
@@ -2664,7 +2664,12 @@
       "thumbnail_set": false,
       "sources": [
         "M7KWrHANxHs"
-      ]
+      ],
+      "publish_at": "2026-11-19T22:00:00Z",
+      "published_at": "2026-11-19T05:22:31Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT36S"
     }
   }
 }
