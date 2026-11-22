@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-11-21 14:35 JST（11/21 日次）
+最終更新: 2026-11-22 14:55 JST（11/22 日次）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -22,30 +22,30 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX（/workspace/voicevox）。返ら�
 4. 長尺: `build_episode.py`（`"opening": "cold"`）→ `thumbnail.py`（thumb.at は連結後の秒。note 画面に当たらないよう parts.txt の part_* 区間を選ぶ）→ `upload_youtube.py work/<id> --schedule <UTC>` → `set_thumbnails.py --only <published.jsonのキー> --force`
 5. ショートのフルで見る変更: `PYTHONPATH=. python3 work/_update_short_full.py <ショートID> <長尺ID>`
 
-## 今回やったこと（2026-11-21 日次）— 完了
+## 今回やったこと（2026-11-22 日次）— 完了
 
-- git pull → status: 11/21 07:00 3qdS3FVuX_8 公開済。11/22 07:00 のショートは0本だった
-- 昇格判定（14:25 JST）: 48h超で1,700回超の未処理ショートなし（最大は 5RekW-bgrB4 1,334回だが48h未満、48h超では OD7nJkdkB0M 1,293回・h1i3_HsIsmQ 1,021回）。1,700回超は 93NkdAOx0uo・84oRUIoiUoI・qY_hj45hxC0・oUt6kcCwW5c・653l90JxsV4・XnpPzG1ERco で全て昇格済み。長尺は作らず
-- 11/22 ショート recipes/shorts/2026-11-22-am.json → **Ke2zw5ZPiA0**「【ひろゆき】筋トレはジムに通わないと無理？家の自重トレーニングでも十分筋肉がつく理由【切り抜き】」38.4秒、private→2026-11-21T22:00Z。EXUXJaPlKmE クリップ7110〜7230 の 39.1〜77.5秒。健康・筋トレ題材（お金枠でもC①でもない）。フルで見る→wpmnSdP8VNQ。crop [640,50,640]（自動だと頭が左に切れた）
-- docs/growth-ledger.md: 実験B 1行（施策C ログは該当なし）
-- 題材探し: work/_kw.py "<正規表現>" で字幕を全文検索（使用済み区間は除外）。work/_peek.py <動画ID> <開始> <終了> で字幕を読む
+- git pull → status（14:25 JST）: 11/22 07:00 Ke2zw5ZPiA0 公開済。11/23 07:00 のショートは0本だった
+- 昇格判定: 48h超で1,700回超の未処理ショートなし（最大は 5RekW-bgrB4 1,349回＝11/22 07:00 で48h到達、OD7nJkdkB0M 1,297回、Ke2zw5ZPiA0・3qdS3FVuX_8 は48h未満）。1,700回超は 93NkdAOx0uo・84oRUIoiUoI・qY_hj45hxC0・oUt6kcCwW5c・653l90JxsV4・XnpPzG1ERco で全て昇格済み。長尺は作らず
+- 11/23 ショート recipes/shorts/2026-11-23-am.json → **Jy27D8k9HwE**「【ひろゆき】中学受験で有名校に行けば人生有利？有名高校に行かなかった人も結局いい大学に入る理由【切り抜き】」41.0秒、private→2026-11-22T22:00Z。jPOui7xHeOw クリップ1150〜1250 の 43.98〜84.95秒。C①（子育て・教育観）。フルで見る→wpmnSdP8VNQ。crop [650,30,780]（スパチャカード上端818の上）。概要欄2行目に研究の前提（同じ学力の受験生をくじ引きで分けた研究）を手で補足してからアップ
+- docs/growth-ledger.md: 実験B 1行・施策C 1行（C①、新しい週 11/23〜の1本目）
+- 題材探し: work/_kw.py "<正規表現>" で字幕を全文検索（使用済み区間は除外）。work/_peek.py <動画ID> <開始> <終了> で字幕を読む。jPOui7xHeOw 1237〜1320 は「私立一貫校に意味があるパターン」の続き（言い方がきついので使うなら要注意）
 
 ## 検証済みの事実（API / コマンド出力）
 
-- Ke2zw5ZPiA0: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt 2026-11-21T22:00:00Z、概要欄1行目は二択の問いかけ、フルで見る→wpmnSdP8VNQ（API で確認。duration は処理中で P0D）
-- 出力音声を faster-whisper small で確認: 冒頭「あの自重でやるトレーニングでも普通に十分筋肉がつくんですよね」、末尾「お金もったいないでしょって話なんですよ」で終わる（38.06秒）。コンタクトシート work/tmp1122/sheet2.jpg
+- Jy27D8k9HwE: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt 2026-11-22T22:00:00Z、概要欄1行目は二択の問いかけ、フルで見る→wpmnSdP8VNQ（API で確認。duration は処理中で P0D）
+- 出力音声を faster-whisper small で確認: 冒頭「有名高校に行かなかった人たちも結局あの普通の公立高校でもいい大学入るんですよ」、末尾「優秀じゃないやつはどこに行ってもダメだよねっていう話なんですよ」で終わる（41.0秒）。コンタクトシート work/tmp1123/sheet3.jpg
 
 ## 未検証
 
-- Ke2zw5ZPiA0 の全編通し視聴はしていない
+- Jy27D8k9HwE の全編通し視聴はしていない
 - pytest は box に pytest が無く未実行
 
 ## 次にやること
 
-1. 夕方 11/21: 3qdS3FVuX_8 関連→wpmnSdP8VNQ・問いかけ固定
-2. 夕方 11/22: Ke2zw5ZPiA0 関連→wpmnSdP8VNQ・問いかけ固定
-3. 11/22（日）日次: 11/23 ショート（新しい週 11/23〜 なのでお金枠・C① ともに再び可）
-4. 昇格判定: 5RekW-bgrB4（48h は 11/22 07:00、11/21 時点 1,334回）、3qdS3FVuX_8（11/23 07:00）、Ke2zw5ZPiA0（11/24 07:00）。次の昇格長尺枠は 11/23(月)18:30（作るなら 11/22 日次で予約）
+1. 夕方 11/22: Ke2zw5ZPiA0 関連→wpmnSdP8VNQ・問いかけ固定
+2. 夕方 11/23: Jy27D8k9HwE 関連→wpmnSdP8VNQ・問いかけ固定
+3. 11/23（月）日次: 11/24 ショート（今週 11/23〜 はC①1本済み、お金枠0本）
+4. 昇格判定: 3qdS3FVuX_8（48h は 11/23 07:00）、Ke2zw5ZPiA0（11/24 07:00）、Jy27D8k9HwE（11/25 07:00）。次の昇格長尺枠は 11/25(水)18:30（11/23 枠は今日候補なしで見送り）
 5. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
 6. 11/23 09:00 週次レビュー routine
 
