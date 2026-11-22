@@ -796,7 +796,7 @@
       "publish_at": null,
       "published_at": "2026-09-24T22:00:37Z",
       "upload_status": "processed",
-      "view_count": 1305,
+      "view_count": 1306,
       "duration": "PT45S"
     },
     "2026-09-26-am": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1347,
+      "view_count": 1349,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2685,7 +2685,7 @@
       "publish_at": null,
       "published_at": "2026-11-20T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 1220,
+      "view_count": 1224,
       "duration": "PT41S"
     },
     "2026-11-22-am": {
@@ -2702,7 +2702,7 @@
       "publish_at": null,
       "published_at": "2026-11-21T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1312,
+      "view_count": 1319,
       "duration": "PT39S"
     },
     "2026-11-23-am": {
@@ -2715,7 +2715,12 @@
       "thumbnail_set": false,
       "sources": [
         "jPOui7xHeOw"
-      ]
+      ],
+      "publish_at": "2026-11-22T22:00:00Z",
+      "published_at": "2026-11-22T05:26:47Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT41S"
     }
   }
 }
