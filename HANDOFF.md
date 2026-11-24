@@ -1,5 +1,5 @@
 # HANDOFF
-最終更新: 2026-11-23 15:00 JST（11/23 日次）
+最終更新: 2026-11-24 15:30 JST（11/24 日次）
 
 ## ▶ 最初に実行するコマンド（Linux ボックス）
 
@@ -22,20 +22,20 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX（/workspace/voicevox）。返ら�
 4. 長尺: `build_episode.py`（`"opening": "cold"`）→ `thumbnail.py`（thumb.at は連結後の秒。note 画面に当たらないよう parts.txt の part_* 区間を選ぶ）→ `upload_youtube.py work/<id> --schedule <UTC>` → `set_thumbnails.py --only <published.jsonのキー> --force`
 5. ショートのフルで見る変更: `PYTHONPATH=. python3 work/_update_short_full.py <ショートID> <長尺ID>`
 
-## 今回やったこと（2026-11-23 日次）— 完了
+## 今回やったこと（2026-11-24 日次）— 完了
 
-- git pull → status（14:20 JST）: 11/23 07:00 Jy27D8k9HwE 公開済。11/24 の am/pm は0本だった
-- 昇格判定: 48h超で1,700回超の未処理ショートなし（48h超の未昇格で最大は CfPbeHlWoP8 1,470回（旧）、直近週では 5RekW-bgrB4 1,343回・3qdS3FVuX_8 1,233回。Ke2zw5ZPiA0 1,352回・Jy27D8k9HwE 1,290回は48h未満）。長尺は作らず（11/23 枠は見送り、次は 11/25 水）
-- 11/24 am recipes/shorts/2026-11-24-am.json → **adtWAjiQlnQ**「【ひろゆき】仕事がきつくてすぐ転職したい…21歳で転職回数が多いと不利？正社員で2〜3年続けた方がいい理由【切り抜き】」40.2秒、private→2026-11-23T22:00Z。g2N-OcbplbA クリップ2300〜2390 の 41.0〜81.2秒。仕事/お金枠（11/23週1本目）。crop [540,70,676]＋自動黒帯39px。フルで見る→wpmnSdP8VNQ
-- 11/24 pm recipes/shorts/2026-11-24-pm.json → **gkdeigFmqug**「【ひろゆき】「その考えは良くない」と決めつける人にどう言い返す？批判する側も決めつけている理由【切り抜き】」38.0秒、private→2026-11-24T09:00Z（18:00 JST）。0ojMhUyiHB4 クリップ5890〜5990 の 36.6〜74.6秒。どちらでもない枠。crop [600,0,700]＋自動黒帯151px（スパチャカード上端602）。フルで見る→wpmnSdP8VNQ
-- 両方とも概要欄2行目に相談内容を手で補足してからアップ
-- docs/growth-ledger.md: 実験B 2行・施策D 適用ログ1行（pm）。C①は今回なし
-- 11/23週（11/23〜11/29）の集計: C① 1本（Jy27D8k9HwE）、仕事/お金枠 1本（adtWAjiQlnQ）
+- git pull → status（14:20 JST）: 11/24 07:00 adtWAjiQlnQ 公開済、11/24 18:00 gkdeigFmqug は private→2026-11-24T09:00Z で予約済を確認。11/25 の am/pm は0本だった。直近の長尺は wpmnSdP8VNQ（11/18）
+- 昇格判定: 48h超で1,700回超の未昇格ショートなし。48h超の未昇格で最大は CfPbeHlWoP8 1,470回、直近週では Ke2zw5ZPiA0 1,378回・5RekW-bgrB4 1,344回（Jy27D8k9HwE 1,336回・adtWAjiQlnQ 1,273回は48h未満）。長尺は作らず（11/25 水 枠は見送り、次は 11/27 金）
+- 11/25 am recipes/shorts/2026-11-25-am.json → **6cq_CVu_sz8**「【ひろゆき】38歳でモテたい…女性は結婚相手の見た目をそこまで重視しない？見慣れると気にならなくなる理由【切り抜き】」35.6秒、private→2026-11-24T22:00Z。pUsi5NQQgrA クリップ2390〜2490 の 24.8〜60.4秒。C①（11/23週2本目）。crop [700,150,720]（元動画のコメント表示を外す）。フルで見る→wpmnSdP8VNQ
+- 11/25 pm recipes/shorts/2026-11-25-pm.json → **Z577uA8RdyY**「【ひろゆき】1年目からボーナスが出る職場か、資格が取れる職場か？若いうちの給料の差は「マジ誤差」な理由【切り抜き】」35.6秒、private→2026-11-25T09:00Z（18:00 JST）。2zED6c6zgx4 クリップ8640〜8740 の 35.92〜71.5秒。仕事/お金枠（11/23週2本目）。crop [690,180,540]＋cover 230（スパチャカード）。フルで見る→wpmnSdP8VNQ
+- 両方とも概要欄2行目に相談内容を手で補足してからアップ。サムネはショートなので対象外
+- docs/growth-ledger.md: 実験B 2行・施策C C① 1行（am）・施策D 適用ログ1行（pm）
+- 11/23週（11/23〜11/29）の集計: C① 2本（Jy27D8k9HwE, 6cq_CVu_sz8）、仕事/お金枠 2本（adtWAjiQlnQ, Z577uA8RdyY）。どちらもあと1本まで
 
 ## 検証済みの事実（API / コマンド出力）
 
-- adtWAjiQlnQ / gkdeigFmqug: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt 2026-11-23T22:00:00Z / 2026-11-24T09:00:00Z、概要欄1行目は二択の問いかけ、フルで見る→wpmnSdP8VNQ（API。duration は処理中で P0D）
-- 出力音声を faster-whisper small で確認: am 冒頭「21歳で転職歴が多いと履歴書的にも厳しいと思うので」末尾「転職はしやすいんじゃないかなと思います」。pm 冒頭「その質問者さんも人間中心の考えは良くないと勝手に決めつけてるんですよ」末尾「そうじゃない考え方も認めた方がいいんじゃないですか」。コンタクトシート work/tmp1124/out_am.jpg, out_pm3.jpg
+- 6cq_CVu_sz8 / Z577uA8RdyY: channel UCqK3KYqEeeJiAWr4nSryJYQ、private、publishAt 2026-11-24T22:00:00Z / 2026-11-25T09:00:00Z、概要欄1行目は二択の問いかけ、フルで見る→wpmnSdP8VNQ（API。duration は処理中で P0D）
+- 出力音声 faster-whisper: am 冒頭「男の人は女の人が綺麗かどうか結構重要なんですけど」末尾「女性はあるっぽいんですよね」。pm 冒頭「なりたいんだったら放課後デイサービスでいいんじゃないですか」→約4秒目「若いうちに給料が多少高いかどうかってマジ誤差ですよ」末尾「その資格が取れる方に行った方がいいんじゃないかなと思います」＋約2秒無音。確認画像 work/tmp1125/v_am.png, v_pm2.png
 
 ## 未検証
 
@@ -44,12 +44,12 @@ curl -s 127.0.0.1:50021/version   # VOICEVOX（/workspace/voicevox）。返ら�
 
 ## 次にやること
 
-1. 夕方 11/23: Jy27D8k9HwE 関連→wpmnSdP8VNQ・問いかけ固定
-2. 夕方 11/24: adtWAjiQlnQ（am）の関連動画・問いかけ固定。gkdeigFmqug（pm 18:00公開）は夕方が18:00前なら 11/25 夕方に回す
-3. 11/24（火）日次: 11/25 の am（07:00）と pm（18:00）。今週 11/23〜 は C①1本・仕事/お金枠1本なので、どちらもあと1〜2本まで。残りはどちらでもない題材
-4. 昇格判定: Ke2zw5ZPiA0（48h は 11/24 07:00）、Jy27D8k9HwE（11/25 07:00）、adtWAjiQlnQ（11/26 07:00）、gkdeigFmqug（11/26 18:00）。次の昇格長尺枠は 11/25(水)18:30、その次 11/27(金)
+1. 夕方 11/24: adtWAjiQlnQ（am）の関連動画・問いかけ固定。gkdeigFmqug（18:00公開）は夕方が18:00前なら 11/25 夕方に回す
+2. 夕方 11/25: 6cq_CVu_sz8（am）、gkdeigFmqug（前日 pm）。Z577uA8RdyY（18:00）は 11/26 夕方
+3. 11/25（水）日次: 11/26 の am と pm。今週は C① 2本・仕事/お金枠 2本なので、どちらもあと1本まで。残りはどちらでもない題材
+4. 昇格判定: Jy27D8k9HwE（48h は 11/25 07:00）、adtWAjiQlnQ（11/26 07:00）、gkdeigFmqug（11/26 18:00）、6cq_CVu_sz8（11/27 07:00）、Z577uA8RdyY（11/27 18:00）。次の昇格長尺枠は 11/27(金)18:30、その次 11/30(月)
 5. 不要な private 動画 QN24TFpO6jk の削除はユーザー確認後
-6. 題材探し: work/_kw.py "<正規表現>"、work/_peek.py <動画ID> <開始> <終了>、未使用一覧 `PYTHONPATH=. python3 work/_unused_1102.py`。単語タイムスタンプは `/workspace/wvenv/bin/python work/tmp1108/ww.py <wav> <開始> <終了>`
+6. 題材探し: work/_kw.py "<正規表現>"、work/_peek.py <動画ID> <開始> <終了>、未使用一覧 `PYTHONPATH=. python3 work/_unused_1102.py`。単語タイムスタンプは `/workspace/wvenv/bin/python work/tmp1108/ww.py <wav> <開始> <終了>`。35秒に届かない良い一言が多いので、0秒目に一言を置ける区間は早めに確保する
 
 ## 触ってはいけないところ
 

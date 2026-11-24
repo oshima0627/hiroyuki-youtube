@@ -145,7 +145,7 @@
       "publish_at": null,
       "published_at": "2026-08-20T03:00:05Z",
       "upload_status": "processed",
-      "view_count": 275,
+      "view_count": 277,
       "duration": "PT10M58S"
     },
     "2026-08-20-am": {
@@ -316,7 +316,7 @@
       "publish_at": null,
       "published_at": "2026-08-28T22:00:39Z",
       "upload_status": "processed",
-      "view_count": 2463,
+      "view_count": 2464,
       "duration": "PT39S"
     },
     "2026-08-30-am": {
@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1626,
+      "view_count": 1633,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -966,7 +966,7 @@
       "publish_at": null,
       "published_at": "2026-10-04T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1889,
+      "view_count": 1891,
       "duration": "PT41S"
     },
     "2026-10-06-am": {
@@ -1017,7 +1017,7 @@
       "publish_at": null,
       "published_at": "2026-10-07T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1022,
+      "view_count": 1023,
       "duration": "PT55S"
     },
     "2026-10-09-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1522,
+      "view_count": 1529,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1153,7 +1153,7 @@
       "publish_at": null,
       "published_at": "2026-10-15T22:00:23Z",
       "upload_status": "processed",
-      "view_count": 1250,
+      "view_count": 1251,
       "duration": "PT41S"
     },
     "2026-08-22-ai": {
@@ -1684,7 +1684,7 @@
       "publish_at": null,
       "published_at": "2026-10-16T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 1218,
+      "view_count": 1219,
       "duration": "PT1M17S"
     },
     "2026-10-18-am": {
@@ -1775,7 +1775,7 @@
       "publish_at": null,
       "published_at": "2026-10-19T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 1287,
+      "view_count": 1288,
       "duration": "PT1M7S"
     },
     "2026-10-20-uchu": {
@@ -2004,7 +2004,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T09:30:12Z",
       "upload_status": "processed",
-      "view_count": 4,
+      "view_count": 5,
       "duration": "PT10M8S"
     },
     "2026-10-26-am": {
@@ -2058,7 +2058,7 @@
       "publish_at": null,
       "published_at": "2026-10-26T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1366,
+      "view_count": 1368,
       "duration": "PT41S"
     },
     "2026-10-28-kagaku": {
@@ -2113,7 +2113,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1310,
+      "view_count": 1313,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2136,7 +2136,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T09:30:21Z",
       "upload_status": "processed",
-      "view_count": 32,
+      "view_count": 35,
       "duration": "PT14M20S"
     },
     "2026-10-30-tsumerare": {
@@ -2242,7 +2242,7 @@
       "publish_at": null,
       "published_at": "2026-11-01T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 2761,
+      "view_count": 2762,
       "duration": "PT38S"
     },
     "2026-11-03-am": {
@@ -2259,7 +2259,7 @@
       "publish_at": null,
       "published_at": "2026-11-02T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1421,
+      "view_count": 1422,
       "duration": "PT42S"
     },
     "2026-11-04-hachijikan": {
@@ -2293,7 +2293,7 @@
       "publish_at": null,
       "published_at": "2026-11-03T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1287,
+      "view_count": 1291,
       "duration": "PT39S"
     },
     "2026-11-06-gakureki": {
@@ -2327,7 +2327,7 @@
       "publish_at": null,
       "published_at": "2026-11-04T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 3172,
+      "view_count": 3173,
       "duration": "PT37S"
     },
     "2026-11-06-am": {
@@ -2344,7 +2344,7 @@
       "publish_at": null,
       "published_at": "2026-11-05T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 2848,
+      "view_count": 2849,
       "duration": "PT39S"
     },
     "2026-11-07-am": {
@@ -2463,7 +2463,7 @@
       "publish_at": null,
       "published_at": "2026-11-09T22:00:11Z",
       "upload_status": "processed",
-      "view_count": 1833,
+      "view_count": 1834,
       "duration": "PT40S"
     },
     "2026-11-11-am": {
@@ -2497,7 +2497,7 @@
       "publish_at": null,
       "published_at": "2026-11-11T22:00:06Z",
       "upload_status": "processed",
-      "view_count": 1316,
+      "view_count": 1317,
       "duration": "PT41S"
     },
     "2026-11-13-am": {
@@ -2532,7 +2532,7 @@
       "publish_at": null,
       "published_at": "2026-11-16T09:30:24Z",
       "upload_status": "processed",
-      "view_count": 3,
+      "view_count": 4,
       "duration": "PT5M54S"
     },
     "2026-11-14-am": {
@@ -2583,7 +2583,7 @@
       "publish_at": null,
       "published_at": "2026-11-15T22:00:14Z",
       "upload_status": "processed",
-      "view_count": 1299,
+      "view_count": 1301,
       "duration": "PT38S"
     },
     "2026-11-17-am": {
@@ -2600,7 +2600,7 @@
       "publish_at": null,
       "published_at": "2026-11-16T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1113,
+      "view_count": 1117,
       "duration": "PT36S"
     },
     "2026-11-18-motenai": {
@@ -2634,7 +2634,7 @@
       "publish_at": null,
       "published_at": "2026-11-17T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1094,
+      "view_count": 1102,
       "duration": "PT38S"
     },
     "2026-11-19-am": {
@@ -2651,7 +2651,7 @@
       "publish_at": null,
       "published_at": "2026-11-18T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 1027,
+      "view_count": 1029,
       "duration": "PT36S"
     },
     "2026-11-20-am": {
@@ -2668,7 +2668,7 @@
       "publish_at": null,
       "published_at": "2026-11-19T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1343,
+      "view_count": 1344,
       "duration": "PT36S"
     },
     "2026-11-21-am": {
@@ -2685,7 +2685,7 @@
       "publish_at": null,
       "published_at": "2026-11-20T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 1233,
+      "view_count": 1234,
       "duration": "PT41S"
     },
     "2026-11-22-am": {
@@ -2702,7 +2702,7 @@
       "publish_at": null,
       "published_at": "2026-11-21T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1352,
+      "view_count": 1378,
       "duration": "PT39S"
     },
     "2026-11-23-am": {
@@ -2719,20 +2719,25 @@
       "publish_at": null,
       "published_at": "2026-11-22T22:00:08Z",
       "upload_status": "processed",
-      "view_count": 1290,
+      "view_count": 1336,
       "duration": "PT41S"
     },
     "2026-11-24-am": {
       "youtube_video_id": "adtWAjiQlnQ",
       "url": "https://www.youtube.com/watch?v=adtWAjiQlnQ",
       "title": "【ひろゆき】仕事がきつくてすぐ転職したい…21歳で転職回数が多いと不利？正社員で2〜3年続けた方がいい理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "g2N-OcbplbA"
-      ]
+      ],
+      "publish_at": null,
+      "published_at": "2026-11-23T22:00:17Z",
+      "upload_status": "processed",
+      "view_count": 1273,
+      "duration": "PT41S"
     },
     "2026-11-24-pm": {
       "youtube_video_id": "gkdeigFmqug",
@@ -2744,6 +2749,35 @@
       "thumbnail_set": false,
       "sources": [
         "0ojMhUyiHB4"
+      ],
+      "publish_at": "2026-11-24T09:00:00Z",
+      "published_at": "2026-11-23T05:24:25Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT39S"
+    },
+    "2026-11-25-am": {
+      "youtube_video_id": "6cq_CVu_sz8",
+      "url": "https://www.youtube.com/watch?v=6cq_CVu_sz8",
+      "title": "【ひろゆき】38歳でモテたい…女性は結婚相手の見た目をそこまで重視しない？見慣れると気にならなくなる理由【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "pUsi5NQQgrA"
+      ]
+    },
+    "2026-11-25-pm": {
+      "youtube_video_id": "Z577uA8RdyY",
+      "url": "https://www.youtube.com/watch?v=Z577uA8RdyY",
+      "title": "【ひろゆき】1年目からボーナスが出る職場か、資格が取れる職場か？若いうちの給料の差は「マジ誤差」な理由【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "2zED6c6zgx4"
       ]
     }
   }
