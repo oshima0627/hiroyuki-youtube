@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1633,
+      "view_count": 1635,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -932,7 +932,7 @@
       "publish_at": null,
       "published_at": "2026-10-02T22:00:34Z",
       "upload_status": "processed",
-      "view_count": 1265,
+      "view_count": 1266,
       "duration": "PT45S"
     },
     "2026-10-04-am": {
@@ -1017,7 +1017,7 @@
       "publish_at": null,
       "published_at": "2026-10-07T22:00:07Z",
       "upload_status": "processed",
-      "view_count": 1023,
+      "view_count": 1024,
       "duration": "PT55S"
     },
     "2026-10-09-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1529,
+      "view_count": 1530,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -2344,7 +2344,7 @@
       "publish_at": null,
       "published_at": "2026-11-05T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 2849,
+      "view_count": 2850,
       "duration": "PT39S"
     },
     "2026-11-07-am": {
@@ -2719,7 +2719,7 @@
       "publish_at": null,
       "published_at": "2026-11-22T22:00:08Z",
       "upload_status": "processed",
-      "view_count": 1336,
+      "view_count": 1340,
       "duration": "PT41S"
     },
     "2026-11-24-am": {
@@ -2736,24 +2736,24 @@
       "publish_at": null,
       "published_at": "2026-11-23T22:00:17Z",
       "upload_status": "processed",
-      "view_count": 1273,
+      "view_count": 1282,
       "duration": "PT41S"
     },
     "2026-11-24-pm": {
       "youtube_video_id": "gkdeigFmqug",
       "url": "https://www.youtube.com/watch?v=gkdeigFmqug",
       "title": "【ひろゆき】「その考えは良くない」と決めつける人にどう言い返す？批判する側も決めつけている理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "0ojMhUyiHB4"
       ],
-      "publish_at": "2026-11-24T09:00:00Z",
-      "published_at": "2026-11-23T05:24:25Z",
+      "publish_at": null,
+      "published_at": "2026-11-24T09:00:35Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 172,
       "duration": "PT39S"
     },
     "2026-11-25-am": {
@@ -2766,7 +2766,12 @@
       "thumbnail_set": false,
       "sources": [
         "pUsi5NQQgrA"
-      ]
+      ],
+      "publish_at": "2026-11-24T22:00:00Z",
+      "published_at": "2026-11-24T05:30:10Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT36S"
     },
     "2026-11-25-pm": {
       "youtube_video_id": "Z577uA8RdyY",
@@ -2778,7 +2783,12 @@
       "thumbnail_set": false,
       "sources": [
         "2zED6c6zgx4"
-      ]
+      ],
+      "publish_at": "2026-11-25T09:00:00Z",
+      "published_at": "2026-11-24T05:30:12Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT36S"
     }
   }
 }
