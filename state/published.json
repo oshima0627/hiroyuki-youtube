@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1635,
+      "view_count": 1640,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -588,7 +588,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T22:00:19Z",
       "upload_status": "processed",
-      "view_count": 1352,
+      "view_count": 1354,
       "duration": "PT1M5S"
     },
     "2026-09-15-am": {
@@ -639,7 +639,7 @@
       "publish_at": null,
       "published_at": "2026-09-16T22:00:19Z",
       "upload_status": "processed",
-      "view_count": 1583,
+      "view_count": 1584,
       "duration": "PT39S"
     },
     "2026-09-18-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1373,
+      "view_count": 1376,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1530,
+      "view_count": 1535,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1174,7 +1174,7 @@
       "publish_at": null,
       "published_at": "2026-09-13T03:00:17Z",
       "upload_status": "processed",
-      "view_count": 9,
+      "view_count": 13,
       "duration": "PT12M16S"
     },
     "2026-09-07-gaishoku": {
@@ -1215,7 +1215,7 @@
       "publish_at": null,
       "published_at": "2026-09-15T03:00:22Z",
       "upload_status": "processed",
-      "view_count": 9,
+      "view_count": 10,
       "duration": "PT10M4S"
     },
     "2026-09-07-kaigai": {
@@ -1318,7 +1318,7 @@
       "publish_at": null,
       "published_at": "2026-09-28T09:00:01Z",
       "upload_status": "processed",
-      "view_count": 8,
+      "view_count": 9,
       "duration": "PT14M31S"
     },
     "2026-09-29-youtube": {
@@ -1457,7 +1457,7 @@
       "published_at": "2026-10-07T09:30:23Z",
       "upload_status": "processed",
       "view_count": 15,
-      "duration": "PT13M52S"
+      "duration": "PT13M53S"
     },
     "2026-10-08-gaman": {
       "youtube_video_id": "hFeUyOQ1QO0",
@@ -1775,7 +1775,7 @@
       "publish_at": null,
       "published_at": "2026-10-19T22:00:00Z",
       "upload_status": "processed",
-      "view_count": 1288,
+      "view_count": 1291,
       "duration": "PT1M7S"
     },
     "2026-10-20-uchu": {
@@ -2021,7 +2021,7 @@
       "publish_at": null,
       "published_at": "2026-10-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1993,
+      "view_count": 1994,
       "duration": "PT51S"
     },
     "2026-10-27-sports": {
@@ -2172,7 +2172,7 @@
       "publish_at": null,
       "published_at": "2026-10-29T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1349,
+      "view_count": 1353,
       "duration": "PT36S"
     },
     "2026-11-02-tenshoku-handan": {
@@ -2259,7 +2259,7 @@
       "publish_at": null,
       "published_at": "2026-11-02T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1422,
+      "view_count": 1423,
       "duration": "PT42S"
     },
     "2026-11-04-hachijikan": {
@@ -2293,7 +2293,7 @@
       "publish_at": null,
       "published_at": "2026-11-03T22:00:01Z",
       "upload_status": "processed",
-      "view_count": 1291,
+      "view_count": 1292,
       "duration": "PT39S"
     },
     "2026-11-06-gakureki": {
@@ -2327,7 +2327,7 @@
       "publish_at": null,
       "published_at": "2026-11-04T22:00:35Z",
       "upload_status": "processed",
-      "view_count": 3173,
+      "view_count": 3174,
       "duration": "PT37S"
     },
     "2026-11-06-am": {
@@ -2344,7 +2344,7 @@
       "publish_at": null,
       "published_at": "2026-11-05T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 2850,
+      "view_count": 2851,
       "duration": "PT39S"
     },
     "2026-11-07-am": {
@@ -2361,7 +2361,7 @@
       "publish_at": null,
       "published_at": "2026-11-06T22:00:11Z",
       "upload_status": "processed",
-      "view_count": 1371,
+      "view_count": 1372,
       "duration": "PT40S"
     },
     "2026-11-09-shikaku": {
@@ -2395,7 +2395,7 @@
       "publish_at": null,
       "published_at": "2026-11-07T22:00:14Z",
       "upload_status": "processed",
-      "view_count": 1400,
+      "view_count": 1401,
       "duration": "PT39S"
     },
     "2026-11-11-taibatsu": {
@@ -2429,7 +2429,7 @@
       "publish_at": null,
       "published_at": "2026-11-08T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1321,
+      "view_count": 1325,
       "duration": "PT41S"
     },
     "2026-11-13-konjou": {
@@ -2463,7 +2463,7 @@
       "publish_at": null,
       "published_at": "2026-11-09T22:00:11Z",
       "upload_status": "processed",
-      "view_count": 1834,
+      "view_count": 1836,
       "duration": "PT40S"
     },
     "2026-11-11-am": {
@@ -2480,7 +2480,7 @@
       "publish_at": null,
       "published_at": "2026-11-10T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 1394,
+      "view_count": 1395,
       "duration": "PT42S"
     },
     "2026-11-12-am": {
@@ -2497,7 +2497,7 @@
       "publish_at": null,
       "published_at": "2026-11-11T22:00:06Z",
       "upload_status": "processed",
-      "view_count": 1317,
+      "view_count": 1318,
       "duration": "PT41S"
     },
     "2026-11-13-am": {
@@ -2514,7 +2514,7 @@
       "publish_at": null,
       "published_at": "2026-11-12T22:00:05Z",
       "upload_status": "processed",
-      "view_count": 1287,
+      "view_count": 1288,
       "duration": "PT37S"
     },
     "2026-11-16-tokyo": {
@@ -2549,7 +2549,7 @@
       "publish_at": null,
       "published_at": "2026-11-13T22:00:03Z",
       "upload_status": "processed",
-      "view_count": 1827,
+      "view_count": 1829,
       "duration": "PT36S"
     },
     "2026-11-15-am": {
@@ -2566,7 +2566,7 @@
       "publish_at": null,
       "published_at": "2026-11-14T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1168,
+      "view_count": 1170,
       "duration": "PT36S"
     },
     "2026-11-16-am": {
@@ -2583,7 +2583,7 @@
       "publish_at": null,
       "published_at": "2026-11-15T22:00:14Z",
       "upload_status": "processed",
-      "view_count": 1301,
+      "view_count": 1308,
       "duration": "PT38S"
     },
     "2026-11-17-am": {
@@ -2600,7 +2600,7 @@
       "publish_at": null,
       "published_at": "2026-11-16T22:00:12Z",
       "upload_status": "processed",
-      "view_count": 1117,
+      "view_count": 1119,
       "duration": "PT36S"
     },
     "2026-11-18-motenai": {
@@ -2617,7 +2617,7 @@
       "publish_at": null,
       "published_at": "2026-11-18T09:30:28Z",
       "upload_status": "processed",
-      "view_count": 3,
+      "view_count": 4,
       "duration": "PT5M56S"
     },
     "2026-11-18-am": {
@@ -2634,7 +2634,7 @@
       "publish_at": null,
       "published_at": "2026-11-17T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1102,
+      "view_count": 1105,
       "duration": "PT38S"
     },
     "2026-11-19-am": {
@@ -2651,7 +2651,7 @@
       "publish_at": null,
       "published_at": "2026-11-18T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 1029,
+      "view_count": 1033,
       "duration": "PT36S"
     },
     "2026-11-20-am": {
@@ -2668,7 +2668,7 @@
       "publish_at": null,
       "published_at": "2026-11-19T22:00:29Z",
       "upload_status": "processed",
-      "view_count": 1344,
+      "view_count": 1346,
       "duration": "PT36S"
     },
     "2026-11-21-am": {
@@ -2685,7 +2685,7 @@
       "publish_at": null,
       "published_at": "2026-11-20T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 1234,
+      "view_count": 1241,
       "duration": "PT41S"
     },
     "2026-11-22-am": {
@@ -2702,7 +2702,7 @@
       "publish_at": null,
       "published_at": "2026-11-21T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1378,
+      "view_count": 1392,
       "duration": "PT39S"
     },
     "2026-11-23-am": {
@@ -2719,7 +2719,7 @@
       "publish_at": null,
       "published_at": "2026-11-22T22:00:08Z",
       "upload_status": "processed",
-      "view_count": 1340,
+      "view_count": 1367,
       "duration": "PT41S"
     },
     "2026-11-24-am": {
@@ -2736,7 +2736,7 @@
       "publish_at": null,
       "published_at": "2026-11-23T22:00:17Z",
       "upload_status": "processed",
-      "view_count": 1282,
+      "view_count": 1299,
       "duration": "PT41S"
     },
     "2026-11-24-pm": {
@@ -2753,24 +2753,24 @@
       "publish_at": null,
       "published_at": "2026-11-24T09:00:35Z",
       "upload_status": "processed",
-      "view_count": 172,
+      "view_count": 1180,
       "duration": "PT39S"
     },
     "2026-11-25-am": {
       "youtube_video_id": "6cq_CVu_sz8",
       "url": "https://www.youtube.com/watch?v=6cq_CVu_sz8",
       "title": "【ひろゆき】38歳でモテたい…女性は結婚相手の見た目をそこまで重視しない？見慣れると気にならなくなる理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "pUsi5NQQgrA"
       ],
-      "publish_at": "2026-11-24T22:00:00Z",
-      "published_at": "2026-11-24T05:30:10Z",
+      "publish_at": null,
+      "published_at": "2026-11-24T22:00:02Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1295,
       "duration": "PT36S"
     },
     "2026-11-25-pm": {
@@ -2789,6 +2789,40 @@
       "upload_status": "processed",
       "view_count": 0,
       "duration": "PT36S"
+    },
+    "2026-11-26-am": {
+      "youtube_video_id": "Ft6HR0-36rA",
+      "url": "https://www.youtube.com/watch?v=Ft6HR0-36rA",
+      "title": "【ひろゆき】育休中に転職活動・副業準備はすべき？年収700万なら大手に残り続けた方がいい理由【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "pUsi5NQQgrA"
+      ],
+      "publish_at": "2026-11-25T22:00:00Z",
+      "published_at": "2026-11-25T05:28:02Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT42S"
+    },
+    "2026-11-26-pm": {
+      "youtube_video_id": "oXeLGa2taWo",
+      "url": "https://www.youtube.com/watch?v=oXeLGa2taWo",
+      "title": "【ひろゆき】挨拶を強要される文化が嫌なら、挨拶しなくていい？ひろゆきが「挨拶ぐらいした方が楽」と考える理由【切り抜き】",
+      "privacy_status": "private",
+      "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
+      "channel_title": "ひろゆき解説ch【切り抜き】",
+      "thumbnail_set": false,
+      "sources": [
+        "0YyAgmv5_Yc"
+      ],
+      "publish_at": "2026-11-26T09:00:00Z",
+      "published_at": "2026-11-25T05:28:05Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT42S"
     }
   }
 }
