@@ -469,7 +469,7 @@
       "publish_at": null,
       "published_at": "2026-09-06T22:00:09Z",
       "upload_status": "processed",
-      "view_count": 1640,
+      "view_count": 1643,
       "duration": "PT1M1S"
     },
     "2026-09-08-am": {
@@ -915,7 +915,7 @@
       "publish_at": null,
       "published_at": "2026-10-01T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1376,
+      "view_count": 1378,
       "duration": "PT43S"
     },
     "2026-10-03-am": {
@@ -2753,7 +2753,7 @@
       "publish_at": null,
       "published_at": "2026-11-24T09:00:35Z",
       "upload_status": "processed",
-      "view_count": 1180,
+      "view_count": 1181,
       "duration": "PT39S"
     },
     "2026-11-25-am": {
@@ -2770,24 +2770,24 @@
       "publish_at": null,
       "published_at": "2026-11-24T22:00:02Z",
       "upload_status": "processed",
-      "view_count": 1295,
+      "view_count": 1320,
       "duration": "PT36S"
     },
     "2026-11-25-pm": {
       "youtube_video_id": "Z577uA8RdyY",
       "url": "https://www.youtube.com/watch?v=Z577uA8RdyY",
       "title": "【ひろゆき】1年目からボーナスが出る職場か、資格が取れる職場か？若いうちの給料の差は「マジ誤差」な理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "2zED6c6zgx4"
       ],
-      "publish_at": "2026-11-25T09:00:00Z",
-      "published_at": "2026-11-24T05:30:12Z",
+      "publish_at": null,
+      "published_at": "2026-11-25T09:00:32Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 270,
       "duration": "PT36S"
     },
     "2026-11-26-am": {
