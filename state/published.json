@@ -247,7 +247,7 @@
       "publish_at": null,
       "published_at": "2026-09-20T09:00:37Z",
       "upload_status": "processed",
-      "view_count": 21,
+      "view_count": 22,
       "duration": "PT5M37S"
     },
     "2026-08-27-fudosan": {
@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1542,
+      "view_count": 1543,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -1359,7 +1359,7 @@
       "publish_at": null,
       "published_at": "2026-09-30T09:30:16Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 1,
       "duration": "PT11M47S"
     },
     "2026-10-01-sumai": {
@@ -2113,7 +2113,7 @@
       "publish_at": null,
       "published_at": "2026-10-28T22:00:31Z",
       "upload_status": "processed",
-      "view_count": 1314,
+      "view_count": 1316,
       "duration": "PT53S"
     },
     "2026-10-29-game": {
@@ -2634,7 +2634,7 @@
       "publish_at": null,
       "published_at": "2026-11-17T22:00:15Z",
       "upload_status": "processed",
-      "view_count": 1109,
+      "view_count": 1112,
       "duration": "PT38S"
     },
     "2026-11-19-am": {
@@ -2719,7 +2719,7 @@
       "publish_at": null,
       "published_at": "2026-11-22T22:00:08Z",
       "upload_status": "processed",
-      "view_count": 1379,
+      "view_count": 1384,
       "duration": "PT41S"
     },
     "2026-11-24-am": {
@@ -2770,7 +2770,7 @@
       "publish_at": null,
       "published_at": "2026-11-24T22:00:02Z",
       "upload_status": "processed",
-      "view_count": 1393,
+      "view_count": 1405,
       "duration": "PT36S"
     },
     "2026-11-25-pm": {
@@ -2804,24 +2804,24 @@
       "publish_at": null,
       "published_at": "2026-11-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1260,
+      "view_count": 1300,
       "duration": "PT42S"
     },
     "2026-11-26-pm": {
       "youtube_video_id": "oXeLGa2taWo",
       "url": "https://www.youtube.com/watch?v=oXeLGa2taWo",
       "title": "【ひろゆき】挨拶を強要される文化が嫌なら、挨拶しなくていい？ひろゆきが「挨拶ぐらいした方が楽」と考える理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "0YyAgmv5_Yc"
       ],
-      "publish_at": "2026-11-26T09:00:00Z",
-      "published_at": "2026-11-25T05:28:05Z",
+      "publish_at": null,
+      "published_at": "2026-11-26T09:00:17Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 390,
       "duration": "PT42S"
     },
     "2026-11-27-am": {
@@ -2834,7 +2834,12 @@
       "thumbnail_set": false,
       "sources": [
         "a3zM5hCv-Uo"
-      ]
+      ],
+      "publish_at": "2026-11-26T22:00:00Z",
+      "published_at": "2026-11-26T05:24:30Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT42S"
     },
     "2026-11-27-pm": {
       "youtube_video_id": "7boaNmXZUoQ",
@@ -2846,7 +2851,12 @@
       "thumbnail_set": false,
       "sources": [
         "6Pg_wE6hX7w"
-      ]
+      ],
+      "publish_at": "2026-11-27T09:00:00Z",
+      "published_at": "2026-11-26T05:24:32Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT40S"
     }
   }
 }
