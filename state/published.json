@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1546,
+      "view_count": 1548,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -2429,7 +2429,7 @@
       "publish_at": null,
       "published_at": "2026-11-08T22:00:21Z",
       "upload_status": "processed",
-      "view_count": 1325,
+      "view_count": 1326,
       "duration": "PT41S"
     },
     "2026-11-13-konjou": {
@@ -2583,7 +2583,7 @@
       "publish_at": null,
       "published_at": "2026-11-15T22:00:14Z",
       "upload_status": "processed",
-      "view_count": 1314,
+      "view_count": 1317,
       "duration": "PT38S"
     },
     "2026-11-17-am": {
@@ -2651,7 +2651,7 @@
       "publish_at": null,
       "published_at": "2026-11-18T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 1035,
+      "view_count": 1036,
       "duration": "PT36S"
     },
     "2026-11-20-am": {
@@ -2702,7 +2702,7 @@
       "publish_at": null,
       "published_at": "2026-11-21T22:00:36Z",
       "upload_status": "processed",
-      "view_count": 1401,
+      "view_count": 1403,
       "duration": "PT39S"
     },
     "2026-11-23-am": {
@@ -2770,7 +2770,7 @@
       "publish_at": null,
       "published_at": "2026-11-24T22:00:02Z",
       "upload_status": "processed",
-      "view_count": 1414,
+      "view_count": 1415,
       "duration": "PT36S"
     },
     "2026-11-25-pm": {
@@ -2804,7 +2804,7 @@
       "publish_at": null,
       "published_at": "2026-11-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1319,
+      "view_count": 1320,
       "duration": "PT42S"
     },
     "2026-11-26-pm": {
@@ -2821,7 +2821,7 @@
       "publish_at": null,
       "published_at": "2026-11-26T09:00:17Z",
       "upload_status": "processed",
-      "view_count": 1168,
+      "view_count": 1171,
       "duration": "PT42S"
     },
     "2026-11-27-am": {
@@ -2838,24 +2838,24 @@
       "publish_at": null,
       "published_at": "2026-11-26T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 1251,
+      "view_count": 1268,
       "duration": "PT42S"
     },
     "2026-11-27-pm": {
       "youtube_video_id": "7boaNmXZUoQ",
       "url": "https://www.youtube.com/watch?v=7boaNmXZUoQ",
       "title": "【ひろゆき】暗記力は社会に出たらいらない？受験勉強の「覚える力」より検索で答えを出す力が大事な理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "6Pg_wE6hX7w"
       ],
-      "publish_at": "2026-11-27T09:00:00Z",
-      "published_at": "2026-11-26T05:24:32Z",
+      "publish_at": null,
+      "published_at": "2026-11-27T09:00:15Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 225,
       "duration": "PT40S"
     },
     "2026-11-28-am": {
@@ -2868,7 +2868,12 @@
       "thumbnail_set": false,
       "sources": [
         "EXUXJaPlKmE"
-      ]
+      ],
+      "publish_at": "2026-11-27T22:00:00Z",
+      "published_at": "2026-11-27T05:26:06Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT38S"
     },
     "2026-11-28-pm": {
       "youtube_video_id": "6Rw-d__b-Fk",
@@ -2880,7 +2885,12 @@
       "thumbnail_set": false,
       "sources": [
         "ISHh67atXTI"
-      ]
+      ],
+      "publish_at": "2026-11-28T09:00:00Z",
+      "published_at": "2026-11-27T05:26:09Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT42S"
     }
   }
 }
