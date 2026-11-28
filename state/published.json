@@ -1034,7 +1034,7 @@
       "publish_at": null,
       "published_at": "2026-10-08T22:00:30Z",
       "upload_status": "processed",
-      "view_count": 1552,
+      "view_count": 1553,
       "duration": "PT1M2S"
     },
     "2026-10-10-am": {
@@ -2412,7 +2412,7 @@
       "publish_at": null,
       "published_at": "2026-11-11T09:30:13Z",
       "upload_status": "processed",
-      "view_count": 25,
+      "view_count": 26,
       "duration": "PT3M49S"
     },
     "2026-11-09-am": {
@@ -2446,7 +2446,7 @@
       "publish_at": null,
       "published_at": "2026-11-13T09:30:05Z",
       "upload_status": "processed",
-      "view_count": 17,
+      "view_count": 18,
       "duration": "PT5M32S"
     },
     "2026-11-10-am": {
@@ -2685,7 +2685,7 @@
       "publish_at": null,
       "published_at": "2026-11-20T22:00:16Z",
       "upload_status": "processed",
-      "view_count": 1246,
+      "view_count": 1251,
       "duration": "PT41S"
     },
     "2026-11-22-am": {
@@ -2719,7 +2719,7 @@
       "publish_at": null,
       "published_at": "2026-11-22T22:00:08Z",
       "upload_status": "processed",
-      "view_count": 1408,
+      "view_count": 1409,
       "duration": "PT41S"
     },
     "2026-11-24-am": {
@@ -2736,7 +2736,7 @@
       "publish_at": null,
       "published_at": "2026-11-23T22:00:17Z",
       "upload_status": "processed",
-      "view_count": 1323,
+      "view_count": 1325,
       "duration": "PT41S"
     },
     "2026-11-24-pm": {
@@ -2770,7 +2770,7 @@
       "publish_at": null,
       "published_at": "2026-11-24T22:00:02Z",
       "upload_status": "processed",
-      "view_count": 1430,
+      "view_count": 1432,
       "duration": "PT36S"
     },
     "2026-11-25-pm": {
@@ -2787,7 +2787,7 @@
       "publish_at": null,
       "published_at": "2026-11-25T09:00:32Z",
       "upload_status": "processed",
-      "view_count": 1311,
+      "view_count": 1319,
       "duration": "PT36S"
     },
     "2026-11-26-am": {
@@ -2804,7 +2804,7 @@
       "publish_at": null,
       "published_at": "2026-11-25T22:00:38Z",
       "upload_status": "processed",
-      "view_count": 1329,
+      "view_count": 1333,
       "duration": "PT42S"
     },
     "2026-11-26-pm": {
@@ -2821,7 +2821,7 @@
       "publish_at": null,
       "published_at": "2026-11-26T09:00:17Z",
       "upload_status": "processed",
-      "view_count": 1180,
+      "view_count": 1183,
       "duration": "PT42S"
     },
     "2026-11-27-am": {
@@ -2838,7 +2838,7 @@
       "publish_at": null,
       "published_at": "2026-11-26T22:00:27Z",
       "upload_status": "processed",
-      "view_count": 1520,
+      "view_count": 1524,
       "duration": "PT42S"
     },
     "2026-11-27-pm": {
@@ -2855,7 +2855,7 @@
       "publish_at": null,
       "published_at": "2026-11-27T09:00:15Z",
       "upload_status": "processed",
-      "view_count": 1159,
+      "view_count": 1163,
       "duration": "PT40S"
     },
     "2026-11-28-am": {
@@ -2872,24 +2872,24 @@
       "publish_at": null,
       "published_at": "2026-11-27T22:00:34Z",
       "upload_status": "processed",
-      "view_count": 1042,
+      "view_count": 1056,
       "duration": "PT38S"
     },
     "2026-11-28-pm": {
       "youtube_video_id": "6Rw-d__b-Fk",
       "url": "https://www.youtube.com/watch?v=6Rw-d__b-Fk",
       "title": "【ひろゆき】仲良くない友達グループに合わせるべき？嫌な人と付き合わなくていい、「別にぼっちで良くない？」と考える理由【切り抜き】",
-      "privacy_status": "private",
+      "privacy_status": "public",
       "channel_id": "UCqK3KYqEeeJiAWr4nSryJYQ",
       "channel_title": "ひろゆき解説ch【切り抜き】",
       "thumbnail_set": false,
       "sources": [
         "ISHh67atXTI"
       ],
-      "publish_at": "2026-11-28T09:00:00Z",
-      "published_at": "2026-11-27T05:26:09Z",
+      "publish_at": null,
+      "published_at": "2026-11-28T09:00:10Z",
       "upload_status": "processed",
-      "view_count": 0,
+      "view_count": 380,
       "duration": "PT42S"
     },
     "2026-11-29-am": {
@@ -2902,7 +2902,12 @@
       "thumbnail_set": false,
       "sources": [
         "5wwIeF3KgbU"
-      ]
+      ],
+      "publish_at": "2026-11-28T22:00:00Z",
+      "published_at": "2026-11-28T05:23:23Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT42S"
     },
     "2026-11-29-pm": {
       "youtube_video_id": "yinIpQdRK0Q",
@@ -2914,7 +2919,12 @@
       "thumbnail_set": false,
       "sources": [
         "PQzUcVHWNJ8"
-      ]
+      ],
+      "publish_at": "2026-11-29T09:00:00Z",
+      "published_at": "2026-11-28T05:23:26Z",
+      "upload_status": "processed",
+      "view_count": 0,
+      "duration": "PT41S"
     }
   }
 }
